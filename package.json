@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "oo-loop": "^0.3.5",
     "prettify": "^0.1.7",
     "sass-loader": "^6.0.6",
     "vue": "^2.5.2",
