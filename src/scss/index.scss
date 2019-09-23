@@ -1,0 +1,34 @@
+.test {
+  color: red;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+
+  &--large {
+    color: black;
+  }
+}
+
+::placeholder {
+  color: yellow;
+}
+
+.page {
+  display: grid;
+  grid-gap: 33px;
+  grid-template:
+    "head head  head" 1fr
+    "nav  main  main" minmax(100px, 1fr)
+    "nav  foot  foot" 2fr /
+    1fr   100px 1fr;
+}
+.page__head {
+  grid-area: head;
+}
+.page__nav {
+  grid-area: nav;
+}
+.page__main {
+  grid-area: main;
+}
+.page__footer {
+  grid-area: foot;
+}

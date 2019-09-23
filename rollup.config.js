@@ -1,9 +1,13 @@
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import commonjs from 'rollup-plugin-commonjs';
+import sass from 'rollup-plugin-sass';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import postcss from 'postcss';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 
@@ -22,6 +26,21 @@ export default {
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
+			}),
+			sass({
+				output: 'static/global.css',
+				processor: css => dev
+					? css
+					: postcss([
+						autoprefixer({
+							grid: "autoplace"
+						}),
+						cssnano()
+					])
+					.process(css, {
+						from: undefined,
+					})
+					.then(result => result.css),
 			}),
 			svelte({
 				dev,
