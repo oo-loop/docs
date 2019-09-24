@@ -29,16 +29,22 @@ export default {
 			}),
 			sass({
 				output: 'static/global.css',
-				processor: css => dev
-					? css
-					: postcss([
-						autoprefixer({
-							grid: "autoplace"
-						}),
-						cssnano()
-					])
+				processor: css =>
+					postcss(dev
+						? []
+						: [
+							autoprefixer({
+								grid: "autoplace"
+							}),
+							cssnano()
+						]
+					)
 					.process(css, {
-						from: undefined,
+						from: 'undefined',
+						map: dev
+						? {
+							inline: true
+						} : false 
 					})
 					.then(result => result.css),
 			}),
