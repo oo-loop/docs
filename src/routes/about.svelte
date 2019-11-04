@@ -1,6 +1,8 @@
-<svelte:head>
-	<title>About</title>
-</svelte:head>
+<script>
+	import HeadTitle from '../components/HeadTitle.svelte';
+</script>
+
+<HeadTitle title="About"/>
 
 <h1>About this site</h1>
 

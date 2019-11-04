@@ -1,3 +1,6 @@
+<script>
+	import HeadTitle from '../components/HeadTitle.svelte';
+</script>
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -32,9 +35,7 @@
 	}
 </style>
 
-<svelte:head>
-	<title>Sapper project template</title>
-</svelte:head>
+<HeadTitle />
 
 <h1>Great success!</h1>
 
