@@ -1,0 +1,13 @@
+@import '../../../../loop/scss/loop';
+
+$ooLoop: ooSet('body.props.backgroundColor', #f8f8f8);
+
+$ooLoop: ooPaintFont((
+  'primary': this('colors.primary'),
+  'green': #61ffaf,
+  'orange': #f3a038,
+  'pink': #ef9ac5,
+  'yellow': #ffff91,
+));
+
+@include ooCreate;

@@ -1,0 +1,12 @@
+code {
+  padding: 7px 15px;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.4rem;
+  background-color: oo('body.props.color');
+  border-radius: 3px;
+}
+
+pre code {
+  display: block;
+}

@@ -1,9 +1,9 @@
 <script>
   export let title = null;
 
-  $: headTitle = title ? `${title} - ` : '';
+  $: headTitle = title ? `${title} | ` : '';
 </script>
 
 <svelte:head>
-	<title>{headTitle}Loop CSS</title>
+	<title>{headTitle}Loop CSS • Flexible and expressive development</title>
 </svelte:head>
