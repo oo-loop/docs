@@ -57,11 +57,11 @@ section {
 	<pre><code>
 <span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
 
-<span class="color-primary">$ooLoop</span>: (
+<span class="color-blue">$ooLoop</span>: (
   <span class="color-green">html5</span>: true,
   <span class="color-secondary">...</span>
 );
-<span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>(<span class="color-primary">$ooLoop</span>);
+<span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>(<span class="color-blue">$ooLoop</span>);
 	</code></pre>
 
 	<section>

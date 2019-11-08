@@ -9,7 +9,7 @@
   <Col aside prop="fit">
     <SideNav {segment}/>
   </Col>
-  <Col article>
+  <Col article prop="s8@md">
     <slot></slot>
   </Col>
 </Row>
