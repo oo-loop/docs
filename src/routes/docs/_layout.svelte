@@ -1,16 +1,14 @@
 <script>
-	import Row from '../../components/Loop/Row.svelte'
-	import Col from '../../components/Loop/Col.svelte'
 	import SideNav from '../../components/SideNav.svelte';
   export let segment;
 </script>
 
-<Row prop="gutter-large">
-  <Col aside prop="fit">
+<div data-oo-row="gutter-large" class="mt-15">
+  <aside data-oo-col="fit">
     <SideNav {segment}/>
-  </Col>
-  <Col article prop="s8@md">
+  </aside>
+  <article data-oo-col="s8@md">
     <slot></slot>
-  </Col>
-</Row>
+  </article>
+</div>
 
