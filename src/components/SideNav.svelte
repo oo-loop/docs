@@ -30,6 +30,9 @@
 	<ul class="list-unstyle">
 		<li>
 			<h4><a class="{segment === undefined ? 'color-primary' : ''}" href="docs">Getting started</a></h4>
+			<ul class="list-unstyle">
+				<li><a href="docs#config">Config</a></li>
+			</ul>
 		</li>
 		<li>
 			<h4>Base</h4>
