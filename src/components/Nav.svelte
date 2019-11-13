@@ -29,7 +29,7 @@
 	}
 </style>
 
-<nav class="{segment === undefined ? '' : 'mb-15'}">
+<nav>
 	<ul class="list-inline">
 		<li><a class="brand" href="."><img alt="loop css" src="logo-inverted.svg" width="35" height="35"> Loop</a></li>
 		<li><a class="{segment === 'docs' ? "active" : ''}" href="docs">Docs</a></li>

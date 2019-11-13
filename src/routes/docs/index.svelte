@@ -63,6 +63,8 @@ $ooLoop: (
 ));
 `, 'scss')}
 
+<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to <strong class="color-primary">ooCreate()</strong>.</section>
+
 <h3 class="mt-45" id="ooset">ooSet()</h3>
 <p>Set new values to Loop config. This action is <strong>destructive</strong>.</p>
 <p>Function <code class="inline">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:true)</code></p>
@@ -103,33 +105,22 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 @include ooCreate();
 `, 'scss')}
 
-<p>When targetting a single value, the string will become a list.</p>
+<section class="info">When targetting a single value, the string will <strong>become a list</strong>.</section>
 
 <h3 class="mt-45" id="ooadd">ooPipe()</h3>
 <p>Chain rules to update Loop config</p>
 <p>Function <code class="inline">ooPipe(<span class="color-primary">$rules...</span>)</code></p>
 <ul>
-	<li><strong>$rules</strong> <em>(Required)</em> list of setter <code class="inline">_set()</code> and adder<code class="inline">_add()</code>
+	<li><strong>$rules</strong> <em>(Required)</em> list of setter <code class="inline">_set(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code> and adder<code class="inline">_add(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
 
-$ooLoop: ooAdd('breakpoints', (
-  xxl: 140em, // add xxl breakpoint to map
+$ooLoop: ooPipe((
+  _set('breakpoints.xl', 100em),
+  _add('breakpoints', (xxl: 140em)),
+  _add('screens', (xl, xxl))),
 ));
-$ooLoop: ooAdd('screens', xxl); // add responsive screen to list
-
-@include ooCreate();
-`, 'scss')}
-
-<p>When targetting a single value, the string will become a list.</p>
-
-{@html highlight(`@import '~loop/scss';
-
-$ooLoop: ooAdd('breakpoints', (
-  xxl: 140em, // add xxl breakpoint to map
-));
-$ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 
 @include ooCreate();
 `, 'scss')}
