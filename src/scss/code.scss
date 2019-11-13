@@ -17,23 +17,38 @@ code.inline {
 }
 
 pre {
-  padding: 15px;
+  padding: 20px 15px;
   display: block;
   overflow: auto;
   code {
     padding: 0;
     display: block;
-    counter-reset: section;
   }
-  i::before {
-    margin-right: 15px;
-    display: inline-block;
-    width: 17px;
-    counter-increment: section;
-    content: counter(section);
-   
-    font-style: normal;
-    text-align: right;
-    color: oo('colors.secondary');
+}
+
+.language-scss {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.3rem;
+  line-height: 1.4;
+
+  .token {
+    &.keyword {
+      color: #ef9ac5;
+    }
+    &.string {
+      color: #fbad75;
+    }
+    &.variable {
+      color: #6cd7f7;
+    }
+    &.function {
+      color: #ffff91;
+    }
+    &.property {
+      color: #61ffaf;
+    }
+    &.comment {
+      color: oo('colors.secondary');
+    }
   }
 }

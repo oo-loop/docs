@@ -1,5 +1,6 @@
 <script>
 	import HeadTitle from '../../components/HeadTitle.svelte';
+  import highlight from '../../utils/highlight.js';
 </script>
 
 <style>
@@ -24,45 +25,43 @@
 </ul>
 <p>Import <strong>Loop framework</strong> into your sass file and <strong>launch it</strong> to start with.</p>
 
-<pre><code>
-<span class="color-secondary">1</span>  <span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>; <span class="color-secondary">// Import loop</span>
-<span class="color-secondary">2</span>  <span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>; <span class="color-secondary">// Launch loop</span>
-</code></pre>
-
+{@html highlight(`@import '~loop/scss'; // Import loop
+@include ooCreate(); // Launch loop
+`, 'scss')}
 
 <h2 class="mt-45" id="config">Configuration</h2>
 <p>Loop encourages you to set your own rules and shape the css the way you like. The single config file make it easy to adjust your preferences.</p>
 
 <p>Pass a set of rules to <code class="inline">ooCreate(<span class="color-primary">$config</span>)</code> in a map format. Those new configurations will be merged into the default Loop config in a <strong>non-destructive</strong> way for <em>Map</em> values and <strong>destructive</strong> for <em>String</em> and <em>List</em> values.</p>
-<pre><code>
-<span class="color-secondary">// Loop default config</span>
 
-<i></i><span class="color-blue">$ooLoop</span>: (
-<i></i>  <span class="color-green">html5</span>: true,
-<i></i>  <span class="color-green">breakpoints</span>: (
-<i></i>    <span class="color-green">xs</span>: 30em,     <span class="color-secondary">// 480px</span>
-<i></i>    <span class="color-green">sm</span>: 37.500em, <span class="color-secondary">// 600px</span>
-<i></i>    <span class="color-green">md</span>: 60em,     <span class="color-secondary">// 960px</span>
-<i></i>    <span class="color-green">lg</span>: 80em,     <span class="color-secondary">// 1280px</span>
-<i></i>    <span class="color-green">xl</span>: 120em,    <span class="color-secondary">// 1980px</span>
-<i></i>  ),
-<i></i>  <span class="color-green">screens</span>: (sm, md, lg),
-<i></i>  <span class="color-secondary">...</span>
-<i></i>);
-</code></pre>
-<pre><code>
-<span class="color-secondary">// Your config.scss file</span>
+{@html highlight(`// Loop default config
 
-<i></i><span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
-<i></i>
-<i></i><span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>((
-<i></i>  <span class="color-green">breakpoints</span>: (
-<i></i>    <span class="color-green">xl</span>: 100em, <span class="color-secondary">// update value for xl breakpoint to 1600px</span>
-<i></i>  ),
-<i></i>  <span class="color-green">screens</span>: (sm, md, lg, xl), <span class="color-secondary">// add xl to available responsive value</span>
-<i></i>  <span class="color-secondary">...</span>
-<i></i>));
-</code></pre>
+$ooLoop: (
+  html5: true,
+  breakpoints: (
+    xs: 30em,     // 480px
+    sm: 37.500em, // 600px
+    md: 60em,     // 960px
+    lg: 80em,     // 1280px
+    xl: 120em,    // 1980px
+  ),
+  screens: (sm, md, lg),
+  ...
+);
+`, 'scss')}
+
+{@html highlight(`// Your config.scss file
+
+@import '~loop/scss';
+
+@include ooCreate((
+  breakpoints: (
+    xl: 100em, // update value for xl breakpoint to 1600px
+  ),
+  screens: (sm, md, lg, xl), // add xl to available responsive value
+  ...
+));
+`, 'scss')}
 
 <h3 class="mt-45" id="ooset">ooSet()</h3>
 <p>Set new values to Loop config. This action is <strong>destructive</strong>.</p>
@@ -73,32 +72,18 @@
 	<li><strong>$hard</strong> <em>(optional)</em>  desctructive merging mode ?</li>
 </ul>
 
-<pre><code>
-<span class="color-secondary">// Your config.scss file</span>
+{@html highlight(`@import '~loop/scss';
 
-<i></i><span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
-<i></i>
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooSet</span>(<span class="color-orange">'breakpoints.xl'</span>, 100em); <span class="color-secondary">// set single xl breakpoint value</span>
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooSet</span>(<span class="color-orange">'screens'</span>, (sm, md, lg, xl)); <span class="color-secondary">// set responsive screens</span>
-<i></i>
-<i></i><span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>;
-</code></pre>
+$ooLoop: ooSet('breakpoints', (
+  sm: 37.500em,
+  md: 60em,
+  xl: 100em,
+)); // set breakpoint values (xs, lg not available anymore)
 
-<pre><code>
-<span class="color-secondary">// Your config.scss file</span>
+$ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 
-<i></i><span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
-<i></i>
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooSet</span>(<span class="color-orange">'breakpoints'</span>, (
-<i></i>  <span class="color-green">sm:</span> 37.500em,
-<i></i>  <span class="color-green">md:</span> 60em,
-<i></i>  <span class="color-green">xl:</span> 100em,
-<i></i>)); <span class="color-secondary">// set breakpoint values (xs, lg not available anymore)</span>
-<i></i>
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooSet</span>(<span class="color-orange">'screens'</span>, (sm, md, xl)); <span class="color-secondary">// set responsive screens</span>
-<i></i>
-<i></i><span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>;
-</code></pre>
+@include ooCreate();
+`, 'scss')}
 
 <h3 class="mt-45" id="ooadd">ooAdd()</h3>
 <p>Add values to Loop config. This action is <strong>non-destructive</strong>.</p>
@@ -108,15 +93,43 @@
 	<li><strong>$value</strong> <em>(Required)</em> value to append</li>
 </ul>
 
-<pre><code>
-<span class="color-secondary">// Your config.scss file</span>
+{@html highlight(`@import '~loop/scss';
 
-<i></i><span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
-<i></i>
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooAdd</span>(<span class="color-orange">'breakpoints'</span>, (
-<i></i>  <span class="color-green">xxl</span>: 140em, <span class="color-secondary">// add xxl breakpoint to map</span>
-<i></i>));
-<i></i><span class="color-blue">$ooLoop</span>: <span class="color-yellow">ooAdd</span>(<span class="color-orange">'screens'</span>, xxl); <span class="color-secondary">// add responsive screen to list</span>
-<i></i>
-<i></i><span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>;
-</code></pre>
+$ooLoop: ooAdd('breakpoints', (
+  xxl: 140em, // add xxl breakpoint to map
+));
+$ooLoop: ooAdd('screens', xxl); // add responsive screen to list
+
+@include ooCreate();
+`, 'scss')}
+
+<p>When targetting a single value, the string will become a list.</p>
+
+<h3 class="mt-45" id="ooadd">ooPipe()</h3>
+<p>Chain rules to update Loop config</p>
+<p>Function <code class="inline">ooPipe(<span class="color-primary">$rules...</span>)</code></p>
+<ul>
+	<li><strong>$rules</strong> <em>(Required)</em> list of setter <code class="inline">_set()</code> and adder<code class="inline">_add()</code>
+</ul>
+
+{@html highlight(`@import '~loop/scss';
+
+$ooLoop: ooAdd('breakpoints', (
+  xxl: 140em, // add xxl breakpoint to map
+));
+$ooLoop: ooAdd('screens', xxl); // add responsive screen to list
+
+@include ooCreate();
+`, 'scss')}
+
+<p>When targetting a single value, the string will become a list.</p>
+
+{@html highlight(`@import '~loop/scss';
+
+$ooLoop: ooAdd('breakpoints', (
+  xxl: 140em, // add xxl breakpoint to map
+));
+$ooLoop: ooAdd('screens', xxl); // add responsive screen to list
+
+@include ooCreate();
+`, 'scss')}

@@ -34,6 +34,7 @@
 				<li><a href="docs#config">Configuration</a></li>
 				<li><a href="docs#ooset">ooSet</a></li>
 				<li><a href="docs#ooadd">ooAdd</a></li>
+				<li><a href="docs#oopipe">ooPipe</a></li>
 			</ul>
 		</li>
 		<li>
