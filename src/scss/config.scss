@@ -7,17 +7,23 @@ $ooLoop: ooPaintFont((
   (
     'blue': #6cd7f7,
     'green': #61ffaf,
-    'orange': #ffaf4b,
+    'orange': #fbad75,
     'pink': #ef9ac5,
     'yellow': #ffff91,
   )
 ));
 
+$ooLoop: ooSet('headings.classes', ('h4'));
+
+$ooLoop: ooAdd('spacing.top.values', (
+  45: 4.5rem,
+));
+
 $ooLoop: ooAdd('column.gutter.sizes', (
   'large': (
-    rt: 2.4rem,
+    rt: 3rem,
     md: 5rem,
   ) 
 ));
 
-@include ooCreate;
+@include ooCreate();
