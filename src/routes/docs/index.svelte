@@ -69,7 +69,7 @@ $ooLoop: (
 `, 'scss')}
 
 <hr>
-<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to <strong class="color-primary">ooCreate()</strong> configuration.</section>
+<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration via <strong class="color-primary">ooCreate()</strong>.</section>
 <hr>
 
 <h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
