@@ -29,10 +29,15 @@
 @include ooCreate(); // Launch loop
 `, 'scss')}
 
-<h2 class="mt-45" id="config">Configuration</h2>
+<h2 class="mt-45" id="oocreate">Adjust to your need</h2>
 <p>Loop encourages you to set your own rules and shape the css the way you like. The single config file make it easy to adjust your preferences.</p>
 
-<p>Pass a set of rules to <code class="inline">ooCreate(<span class="color-primary">$config</span>)</code> in a map format. Those new configurations will be merged into the default Loop config in a <strong>non-destructive</strong> way for <em>Map</em> values and <strong>destructive</strong> for <em>String</em> and <em>List</em> values.</p>
+<h3 class="h4 font-code mt-30">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
+<p><em class="text-uppercase text-small">Mixin</em> - Launch Loop framework and generate styling</p>
+<ul>
+  <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+  <br>Set of rules that will be merged into the default Loop config</li>
+</ul>
 
 {@html highlight(`// Loop default config
 
@@ -57,21 +62,25 @@ $ooLoop: (
 @include ooCreate((
   breakpoints: (
     xl: 100em, // update value for xl breakpoint to 1600px
+    xxl: 140em, // add extra breakpoint
   ),
-  screens: (sm, md, lg, xl), // add xl to available responsive value
-  ...
+  screens: (sm, md, lg, xl, xxl), // add xl & xxl to available responsive value
 ));
 `, 'scss')}
 
-<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to <strong class="color-primary">ooCreate()</strong>.</section>
+<hr>
+<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to <strong class="color-primary">ooCreate()</strong> configuration.</section>
+<hr>
 
-<h3 class="mt-45" id="ooset">ooSet()</h3>
-<p>Set new values to Loop config. This action is <strong>destructive</strong>.</p>
-<p>Function <code class="inline">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:true)</code></p>
+<h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
+<p><em class="text-uppercase text-small">Function</em> - Set new values to Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
 <ul>
-	<li><strong>$path</strong> <em>(Required)</em> concatenated path to a Loop config attribute</li>
-	<li><strong>$value</strong> <em>(Required)</em> new Loop attribute value</li>
-	<li><strong>$hard</strong> <em>(optional)</em>  desctructive merging mode ?</li>
+	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
+  <br>Concatenated path to a Loop config attribute</li>
+	<li class="mb-10"><strong>$value</strong> <em class="font-monospace">(mixed)</em>
+  <br>New Loop attribute value</li>
+	<li><strong>$hard</strong> <em class="font-monospace">(boolean) <span class="color-secondary">Optional</span></em>
+  <br>Destructive merging mode ?</li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
@@ -80,19 +89,22 @@ $ooLoop: ooSet('breakpoints', (
   sm: 37.500em,
   md: 60em,
   xl: 100em,
-)); // set breakpoint values (xs, lg not available anymore)
+)); // set breakpoint values (xs, lg no longer available)
 
 $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 
 @include ooCreate();
 `, 'scss')}
 
-<h3 class="mt-45" id="ooadd">ooAdd()</h3>
-<p>Add values to Loop config. This action is <strong>non-destructive</strong>.</p>
-<p>Function <code class="inline">ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code></p>
+<hr>
+
+<h3 class="font-code h4" id="ooadd">ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</h3>
+<p><em class="text-uppercase text-small">Function</em> - Add values to Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
 <ul>
-	<li><strong>$path</strong> <em>(Required)</em> concatenated path to a Loop config attribute</li>
-	<li><strong>$value</strong> <em>(Required)</em> value to append</li>
+	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
+  <br>Concatenated path to a Loop config attribute</li>
+	<li><strong>$value</strong> <em class="font-monospace">(mixed)</em>
+  <br>Value to append</li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
@@ -105,22 +117,24 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 @include ooCreate();
 `, 'scss')}
 
-<section class="info">When targetting a single value, the string will <strong>become a list</strong>.</section>
+<hr>
+<section class="info">When targetting a single value with <strong class="color-primary">ooAdd()</strong>, the string will <strong>become a list</strong>.</section>
+<hr>
 
-<h3 class="mt-45" id="ooadd">ooPipe()</h3>
-<p>Chain rules to update Loop config</p>
-<p>Function <code class="inline">ooPipe(<span class="color-primary">$rules...</span>)</code></p>
+<h3 class="font-code h4" id="oopipe">ooPipe(<span class="color-primary">$rules...</span>)</h3>
+<p><em class="text-uppercase text-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
 <ul>
-	<li><strong>$rules</strong> <em>(Required)</em> list of setter <code class="inline">_set(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code> and adder<code class="inline">_add(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code>
+	<li><strong>$rules</strong> <em class="font-monospace">(list)</em>
+  <br>List of setter <code class="inline">_set(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code> and adder<code class="inline">_add(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code></li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
 
-$ooLoop: ooPipe((
+$ooLoop: ooPipe(
   _set('breakpoints.xl', 100em),
   _add('breakpoints', (xxl: 140em)),
-  _add('screens', (xl, xxl))),
-));
+  _add('screens', (xl, xxl))
+);
 
 @include ooCreate();
 `, 'scss')}

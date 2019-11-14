@@ -1,12 +1,12 @@
 @import '../../../../loop/scss/loop';
 
-$ooLoop: ooSet('body.props.backgroundColor', #f8f8f8);
+$ooLoop: ooPipe(
+  _set('body.props.backgroundColor', #f8f8f8),
+  _set('hr.props.margin', 4.5rem auto),
+);
+
 
 $ooLoop: ooSet('headings.classes', ('h4'));
-
-$ooLoop: ooAdd('spacing.top.values', (
-  45: 4.5rem,
-));
 
 $ooLoop: ooAdd('column.gutter.sizes', (
   'large': (
@@ -14,5 +14,19 @@ $ooLoop: ooAdd('column.gutter.sizes', (
     md: 5rem,
   ) 
 ));
+
+// Utilities
+$ooLoop: ooPipe(
+  _add('paint.font.values', (
+    'danger': #da3b3b,
+  )),
+  _set('text.fontFamily.values', (
+    'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
+    'monospace': monospace,
+  )),
+  _add('spacing.top.values', (
+    45: 4.5rem,
+  ))
+);
 
 @include ooCreate();

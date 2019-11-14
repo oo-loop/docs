@@ -31,10 +31,16 @@
 		<li>
 			<h4><a class="{segment === undefined ? 'color-primary' : ''}" href="docs">Getting started</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs#config">Configuration</a></li>
+				<li><a href="docs#oocreate">ooCreate</a></li>
 				<li><a href="docs#ooset">ooSet</a></li>
 				<li><a href="docs#ooadd">ooAdd</a></li>
 				<li><a href="docs#oopipe">ooPipe</a></li>
+			</ul>
+		</li>
+		<li>
+			<h4><a class="{segment === undefined ? 'color-primary' : ''}" href="docs">$Loop</a></h4>
+			<ul class="list-unstyle">
+				<li><a href="docs#config">Config Map</a></li>
 			</ul>
 		</li>
 		<li>
