@@ -56,7 +56,7 @@
 
 <p class="mt-30">When a CSS value <strong>is multiple</strong> (containing commas), make sure to wrap the whole value <strong>between parenthesis</strong>.</p>
 
-{@html highlight(`// parenthesis wrapping css multiple value
+{@html highlight(`// parenthesis wrapping CSS multiple value
 ... : (
   props: (
     fontFamily: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
@@ -67,3 +67,24 @@
 
 <p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> attributes to provide default styling.
 Check the <a href="docs/base" title="Base documentation">Base documentation</a> to know what they are and change them at your own will.</p>
+
+<hr>
+<h2 id="states"><em class="font-regular">States</em> Attribute</h2>
+<p>The <em>states</em> attribute is reserved to pass a map of Element states containing CSS properties.
+<br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
+
+<p>Any css state is available such as <strong>active, hover, focus, visited</strong>...</p>
+
+{@html highlight(
+`... : (
+  states: (
+    hover: ( // CSS properties
+      color: #cdcdcd,
+      border: 1px solid #cdcdcd,
+    ),
+    focus: ( // CSS properties
+      color: blue,
+    ),
+  )
+),
+`, 'scss')}

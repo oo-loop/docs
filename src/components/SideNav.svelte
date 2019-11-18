@@ -42,6 +42,9 @@
 			<ul class="list-unstyle">
 				<li><a href="docs/loop-config#global">Global properties</a></li>
 				<li><a href="docs/loop-config#props">Props attribute</a></li>
+				<li><a href="docs/loop-config#states">States attribute</a></li>
+				<li><a href="docs/loop-config#context">Context reference</a></li>
+				<li><a href="docs/loop-config#context">Utility format</a></li>
 			</ul>
 		</li>
 		<li>
