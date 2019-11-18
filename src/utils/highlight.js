@@ -3,12 +3,14 @@ import 'prismjs/components/prism-scss';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-export default function highlight(source, lang) {
+export default function highlight(source, lang, line) {
 	const highlighted = PrismJS.highlight(
 		source,
 		PrismJS.languages[lang],
 		lang,
 	);
 
-	return `<pre class="language-${lang} line-numbers"><code>${highlighted}</code></pre>`;
+	let lineNumbers = line === false ? false : true || true;
+
+	return `<pre class="language-${lang}${lineNumbers ? ' line-numbers' : ''}"><code>${highlighted}</code></pre>`;
 }

@@ -38,9 +38,9 @@
 			</ul>
 		</li>
 		<li>
-			<h4><a class="{segment === undefined ? 'color-primary' : ''}" href="docs">$Loop</a></h4>
+			<h4><a class="{segment === 'loop-config' ? 'color-primary' : ''}" href="docs/loop-config">Config Map</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs#config">Config Map</a></li>
+				<li><a href="docs/loop-config#global">Global properties</a></li>
 			</ul>
 		</li>
 		<li>
