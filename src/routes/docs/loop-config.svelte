@@ -27,15 +27,43 @@
   md: 60em,     // 960px
   lg: 80em,     // 1280px
   xl: 120em,    // 1980px
-)`, 'scss')}
+),`, 'scss')}
 
 <h3 class="h4 mt-30 font-code">screens</h3>
 <p><em class="text-uppercase text-small">List</em> - Set of responsive screens being globally used.</p>
-{@html highlight(`screens: (sm, md, lg)`, 'scss')}
+{@html highlight(`screens: (sm, md, lg),`, 'scss')}
 
 <h3 class="h4 mt-30 font-code">colors</h3>
 <p><em class="text-uppercase text-small">Map</em> - Available colors in your project.</p>
 {@html highlight(`colors: (
   'primary': #0ea7d6,
   'secondary': #959595,
-)`, 'scss')}
+),`, 'scss')}
+
+<hr>
+<h2 id="props"><em class="font-regular">Props</em> Attribute</h2>
+<p>The <em>props</em> attribute is reserved to pass a map of CSS properties within the config.
+<br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
+
+{@html highlight(
+`... : (
+  props: (
+    fontSize: 1.6em,    // camelCase
+    line-height: 1.375, // CSS kebab-case
+  )
+),
+`, 'scss')}
+
+<p class="mt-30">When a CSS value <strong>is multiple</strong> (containing commas), make sure to wrap the whole value <strong>between parenthesis</strong>.</p>
+
+{@html highlight(`// parenthesis wrapping css multiple value
+... : (
+  props: (
+    fontFamily: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+    transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out)
+  )
+),
+`, 'scss')}
+
+<p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> attributes to provide default styling.
+Check the <a href="docs/base" title="Base documentation">Base documentation</a> to know what they are and change them at your own will.</p>

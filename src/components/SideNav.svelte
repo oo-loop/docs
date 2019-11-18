@@ -41,10 +41,11 @@
 			<h4><a class="{segment === 'loop-config' ? 'color-primary' : ''}" href="docs/loop-config">Config Map</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/loop-config#global">Global properties</a></li>
+				<li><a href="docs/loop-config#props">Props attribute</a></li>
 			</ul>
 		</li>
 		<li>
-			<h4>Base</h4>
+			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/base">Base</a></h4>
 			<ul class="list-unstyle">
 				<li><a class="{segment === 'body' ? 'color-primary' : ''}" href="docs/body">Body</a></li>
 				<li><a class="{segment === 'headings' ? 'color-primary' : ''}" href="docs/headings">Headings</a></li>

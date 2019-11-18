@@ -20,6 +20,9 @@ $ooLoop: ooPipe(
   _add('paint.font.values', (
     'danger': #da3b3b,
   )),
+  _add('text.fontWeight.values', (
+    'regular': 400,
+  )),
   _set('text.fontFamily.values', (
     'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
     'monospace': monospace,

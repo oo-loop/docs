@@ -30,6 +30,7 @@ pre {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1.3rem;
   line-height: 1.4;
+  color: #ddffd2;
 
   .token {
     &.keyword {
@@ -46,6 +47,9 @@ pre {
     }
     &.property {
       color: #61ffaf;
+    }
+    &.punctuation {
+      color: #fff;
     }
     &.comment {
       color: oo('colors.secondary');
