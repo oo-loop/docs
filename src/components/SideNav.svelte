@@ -50,10 +50,10 @@
 		<li>
 			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/base">Base</a></h4>
 			<ul class="list-unstyle">
-				<li><a class="{segment === 'body' ? 'color-primary' : ''}" href="docs/body">Body</a></li>
-				<li><a class="{segment === 'headings' ? 'color-primary' : ''}" href="docs/headings">Headings</a></li>
-				<li><a class="{segment === 'type' ? 'color-primary' : ''}" href="docs/type">Type</a></li>
-				<li><a class="{segment === 'list' ? 'color-primary' : ''}" href="docs/list">List</a></li>
+				<li><a href="docs/base#body">Body</a></li>
+				<li><a href="docs/base#headings">Headings</a></li>
+				<li><a href="docs/base#type">Type</a></li>
+				<li><a href="docs/base#list">List</a></li>
 			</ul>
 		</li>
 		<li>

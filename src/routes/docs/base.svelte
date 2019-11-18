@@ -6,7 +6,7 @@
   /* your styles go here */
 </style>
 
-<HeadTitle title="Body"/>
+<HeadTitle title="Base"/>
 
-<h1>Body</h1>
+<h1>Base</h1>
 <p>Loop set up s</p>
