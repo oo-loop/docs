@@ -30,7 +30,7 @@
 `, 'scss')}
 
 <h2 class="mt-45" id="oocreate">Adjust to your need</h2>
-<p>Loop encourages you to set your own rules and shape the css the way you like. The single config file make it easy to adjust your preferences.</p>
+<p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/loop-config" title="Loop Map">config map</a>, modify its properties by passing your preferences to the mixin <code class="inline">ooCreate</code> when launching loop.
 
 <h3 class="h4 font-code mt-30">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
 <p><em class="text-uppercase text-small">Mixin</em> - Launch Loop framework and generate styling</p>
@@ -69,7 +69,7 @@ $ooLoop: (
 `, 'scss')}
 
 <hr>
-<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration via <strong class="color-primary">ooCreate()</strong>.</section>
+<section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration being passed to <strong class="color-primary">ooCreate()</strong>.</section>
 <hr>
 
 <h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
@@ -93,7 +93,7 @@ $ooLoop: ooSet('breakpoints', (
 
 $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 
-@include ooCreate();
+@include ooCreate(); // generate styles
 `, 'scss')}
 
 <hr>
@@ -114,7 +114,7 @@ $ooLoop: ooAdd('breakpoints', (
 ));
 $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 
-@include ooCreate();
+@include ooCreate(); // generate styles
 `, 'scss')}
 
 <hr>
@@ -136,5 +136,5 @@ $ooLoop: ooPipe(
   _add('screens', (xl, xxl))
 );
 
-@include ooCreate();
+@include ooCreate(); // generate styles
 `, 'scss')}
