@@ -10,7 +10,7 @@ export default function highlight(source, lang, line) {
 		lang,
 	);
 
-	let lineNumbers = line === false ? false : true || true;
+	let lineNumbers = line || false;
 
 	return `<pre class="language-${lang}${lineNumbers ? ' line-numbers' : ''}"><code>${highlighted}</code></pre>`;
 }

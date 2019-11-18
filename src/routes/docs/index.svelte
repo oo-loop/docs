@@ -27,7 +27,7 @@
 
 {@html highlight(`@import '~loop/scss'; // Import loop
 @include ooCreate(); // Launch loop
-`, 'scss')}
+`, 'scss', true)}
 
 <h2 class="mt-45" id="oocreate">Adjust to your need</h2>
 <p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/loop-config" title="Loop Map">config map</a>, modify its properties by passing your preferences to the mixin <code class="inline">ooCreate</code> when launching loop.
@@ -53,7 +53,7 @@ $ooLoop: (
   screens: (sm, md, lg),
   ...
 );
-`, 'scss')}
+`, 'scss', true)}
 
 {@html highlight(`// Your config.scss file
 
@@ -66,7 +66,7 @@ $ooLoop: (
   ),
   screens: (sm, md, lg, xl, xxl), // add xl & xxl to available responsive value
 ));
-`, 'scss')}
+`, 'scss', true)}
 
 <hr>
 <section class="info mt-30">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration being passed to <strong class="color-primary">ooCreate()</strong>.</section>
@@ -94,7 +94,7 @@ $ooLoop: ooSet('breakpoints', (
 $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 
 @include ooCreate(); // generate styles
-`, 'scss')}
+`, 'scss', true)}
 
 <hr>
 
@@ -115,7 +115,7 @@ $ooLoop: ooAdd('breakpoints', (
 $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 
 @include ooCreate(); // generate styles
-`, 'scss')}
+`, 'scss', true)}
 
 <hr>
 <section class="info">When targetting a single value with <strong class="color-primary">ooAdd()</strong>, the string will <strong>become a list</strong>.</section>
@@ -137,4 +137,4 @@ $ooLoop: ooPipe(
 );
 
 @include ooCreate(); // generate styles
-`, 'scss')}
+`, 'scss', true)}
