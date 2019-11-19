@@ -26,11 +26,11 @@ pre {
   }
 }
 
-.language-scss {
+.language-scss,
+.language-css {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1.3rem;
   line-height: 1.4;
-  color: #ddffd2;
 
   .token {
     &.keyword {
@@ -45,14 +45,33 @@ pre {
     &.function {
       color: #ffff91;
     }
-    &.property {
-      color: #61ffaf;
-    }
     &.punctuation {
       color: #fff;
     }
+    &.selector {
+      color: #ffd12b;
+    }
     &.comment {
-      color: oo('colors.secondary');
+      color: oo('palette.secondary');
+    }
+  }
+}
+
+.language-css {
+  color: #fbad75;
+  .token {
+    &.property {
+      color: #a5eaff;
+    }
+  }
+}
+
+.language-scss {
+  color: #ddffd2;
+
+  .token {
+    &.property {
+      color: #61ffaf;
     }
   }
 }

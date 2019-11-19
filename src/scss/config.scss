@@ -17,7 +17,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 
 // Utilities
 $ooLoop: ooPipe(
-  _add('paint.font.values', (
+  _add('color.font.values', (
     'danger': #da3b3b,
   )),
   _add('text.fontWeight.values', (
