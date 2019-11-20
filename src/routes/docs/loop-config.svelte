@@ -90,8 +90,8 @@ Check the <a href="docs/base" title="Base documentation">Base documentation</a> 
 `, 'scss')}
 
 <hr>
-<h2 id="this">Self Reference</h2>
-<p>Refer to a value in the context of the config map by using the keyword <code class="inline">this</code></p>
+<h2 id="this"><em class="font-regular">This</em> Reference</h2>
+<p>The keyword <code class="inline">this()</code> refers to a value in the context of the config map.</p>
 {@html highlight(`$ooLoop: (
   palette: (
     'primary': #0ea7d6,
@@ -113,7 +113,7 @@ a {
 `, 'css', true)}
 
 <h3 class="mt-45">Spread operator</h3>
-<p>Expand a map by referring a set of values in the context of the config map by using the operator <code class="inline">_this</code></p>
+<p>Expand a map by referring a set of values in the context of the config map by using the operator <code class="inline">_this()</code></p>
 
 {@html highlight(`$ooLoop: (
   palette: (
@@ -144,7 +144,7 @@ a {
 .color-danger    { color: red }
 `, 'css', true)}
 
-<section class="info mt-30 mb-30">In the case where the expansion is <strong>targetting a single value</strong>, the <strong>last crumb </strong>of the path will be <strong>used as the name</strong> of this value.</section>
+<p class="info mt-30 mb-30">In the case where the expansion is <strong>targetting a single value</strong>, the <strong>last crumb </strong>of the path will be <strong>used as the name</strong> of its value.</p>
 
 {@html highlight(`$ooLoop: (
   palette: (
@@ -170,6 +170,58 @@ a {
 `, 'scss', true)}
 {@html highlight(
 `/* will generate */
-.color-primary   { color: #0ea7d6 }
-.color-danger    { color: red }
+.color-primary { color: #0ea7d6 }
+.color-danger  { color: red }
 `, 'css', true)}
+
+<h3 class="mt-45">Aliases</h3>
+<p>The config map not being initialized,
+the use of sass functions <strong>along with</strong> the keyword <code class="inline">this</code> <strong>cannot be performed</strong>.
+They are however working with regular values.</p>
+
+{@html highlight(`$ooLoop: (
+  palette: (
+    'primary': #0ea7d6,
+    'secondary': #959595,
+  ),
+  anchor: (
+    props: (
+      color: this('palette.primary'),
+    ),
+    states: (
+      hover: (
+        // this will throw an error
+        color: darken(this('anchor.props.color'), 12%),
+      ),
+      focus: (
+        // this works fine
+        color: darken(#0ea7d6, 12%);
+      )
+    )
+  ),
+  ...
+)
+`, 'scss', true)}
+
+<p class="mt-30">Aliases will help you overcome this problem and avoid you repeating values already set.
+At this stage, the few available are <code class="inline">ooDarken</code> and <code class="inline">ooLighten</code>.</p>
+
+{@html highlight(`$ooLoop: (
+  palette: (
+    'primary': #0ea7d6,
+    'secondary': #959595,
+  ),
+  anchor: (
+    props: (
+      color: this('palette.primary'),
+    ),
+    states: (
+      hover: (
+        color: ooDarken(this('anchor.props.color'), 12%),
+      ),
+      focus: this('anchor.states.hover'),
+    )
+  ),
+  ...
+)
+`, 'scss', true)}

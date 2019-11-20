@@ -41,9 +41,9 @@
 			<h4><a class="{segment === 'loop-config' ? 'color-primary' : ''}" href="docs/loop-config">Config Map</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/loop-config#global">Global properties</a></li>
-				<li><a href="docs/loop-config#props">Props attribute</a></li>
-				<li><a href="docs/loop-config#states">States attribute</a></li>
-				<li><a href="docs/loop-config#this">Self reference</a></li>
+				<li><a href="docs/loop-config#props"><i>Props</i> attribute</a></li>
+				<li><a href="docs/loop-config#states"><i>States</i> attribute</a></li>
+				<li><a href="docs/loop-config#this"><i>This</i> reference</a></li>
 				<li><a href="docs/loop-config#context">Utility format</a></li>
 			</ul>
 		</li>

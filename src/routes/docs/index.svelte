@@ -30,10 +30,10 @@
 `, 'scss', true)}
 
 <h2 class="mt-45" id="oocreate">Adjust to your need</h2>
-<p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/loop-config" title="Loop Map">config map</a>, modify its properties by passing your preferences to the mixin <code class="inline">ooCreate</code> when launching loop.
+<p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/loop-config" title="Config Map">config map</a>, modify its properties by passing your preferences to the mixin <code class="inline">ooCreate</code> when launching loop.
 
 <h3 class="h4 font-code mt-30">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
-<p><em class="text-uppercase text-small">Mixin</em> - Launch Loop framework and generate styling</p>
+<p><em class="text-uppercase text-small">Mixin</em> - Launch framework by instantiating <a href="docs/loop-config" title="Loop Map">$ooLoop</a> and generate styling.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
