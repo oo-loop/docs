@@ -1,25 +1,28 @@
-code,
-pre {
-  padding: 7px 15px;
-  display: inline-block;
-  color: #fff;
-  font-size: 1.4rem;
-  background-color: #263940;
-  border-radius: 3px;
-}
-
-code.inline {
+code {
   padding: 2px 8px;
   margin-left: 5px;
   margin-right: 5px;
-  color: #424242;
+  display: inline-block;
+  color: #b70d0d;
+  font-size: 1.4rem;
+  border-radius: 3px;
   background-color: #e8e8e8;
 }
 
+code.large,
+pre > code,
+pre {
+  padding: 7px 15px;
+  color: #fff;
+  background-color: #263940;
+}
+
+
 pre {
   padding: 20px;
-  display: block;
   overflow: auto;
+  display: block;
+  border-radius: 3px;
   code {
     padding: 0;
     display: block;

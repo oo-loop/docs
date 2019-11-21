@@ -30,7 +30,7 @@
 `, 'scss', true)}
 
 <h2 class="mt-45" id="oocreate">Adjust to your need</h2>
-<p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/config" title="Config Map">config map</a>, modify its properties by passing your preferences to the mixin <code class="inline">ooCreate</code> when launching loop.
+<p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/config" title="Config Map">config map</a>, modify its properties by passing your preferences to the mixin <code>ooCreate</code> when launching loop.
 
 <h3 class="h4 font-code mt-30">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
 <p><em class="text-uppercase text-small">Mixin</em> - Launch framework by instantiating <a href="docs/config" title="Loop Map">$ooLoop</a> and generate styling.</p>
@@ -73,7 +73,7 @@ $ooLoop: (
 <hr>
 
 <h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Set new values to Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
+<p><em class="text-uppercase text-small">Function</em> - Set new values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
   <br>Concatenated path to a Loop config attribute</li>
@@ -99,7 +99,7 @@ $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 <hr>
 
 <h3 class="font-code h4" id="ooadd">ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Add values to Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
+<p><em class="text-uppercase text-small">Function</em> - Add values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
   <br>Concatenated path to a Loop config attribute</li>
@@ -122,10 +122,10 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 <hr>
 
 <h3 class="font-code h4" id="oopipe">ooPipe(<span class="color-primary">$rules...</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code class="inline color-primary">$ooLoop</code>.</p>
+<p><em class="text-uppercase text-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li><strong>$rules</strong> <em class="font-monospace">(list)</em>
-  <br>List of setter <code class="inline">_set(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code> and adder<code class="inline">_add(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</code></li>
+  <br>List of setter <code>_set(<span class="color-secondary">$path</span>, <span class="color-secondary">$value</span>)</code> and adder<code>_add(<span class="color-secondary">$path</span>, <span class="color-secondary">$value</span>)</code></li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';

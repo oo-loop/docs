@@ -42,7 +42,7 @@ section {
 		<Col prop="self-valign-middle">
 			<h1>Loop CSS</h1>
 			<h2>Sass Framework for Flexible Development</h2>
-			<code>npm install oo-loop</code>
+			<code class="large">npm install oo-loop</code>
 		</Col>
 	</Row>
 </div>

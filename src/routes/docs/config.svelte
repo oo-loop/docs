@@ -10,7 +10,7 @@
 
 <p>The single map is there to simplify the use of variables and the configuration of the framework.</p>
 
-<p>Every data is being set <strong>inside</strong> the variable <code class="inline color-primary">$ooLoop</code></p>
+<p>Every data is being set <strong>inside</strong> the variable <code>$ooLoop</code></p>
 {@html highlight(`$ooLoop: (
   // properties
 );
@@ -91,7 +91,7 @@ Check the <a href="docs/base" title="Base documentation">Base documentation</a> 
 
 <hr>
 <h2 id="this"><em class="font-regular">This</em> Reference</h2>
-<p>The keyword <code class="inline">this()</code> refers to a value in the context of the config map.</p>
+<p>The keyword <code>this()</code> refers to a value in the context of the config map.</p>
 {@html highlight(`$ooLoop: (
   palette: (
     'primary': #0ea7d6,
@@ -113,7 +113,7 @@ a {
 `, 'css', true)}
 
 <h3 class="mt-45">Spread operator</h3>
-<p>Expand a map by referring a set of values in the context of the config map by using the operator <code class="inline">_this()</code></p>
+<p>Expand a map by referring a set of values in the context of the config map by using the operator <code>_this()</code></p>
 
 {@html highlight(`$ooLoop: (
   palette: (
@@ -176,7 +176,7 @@ a {
 
 <h3 class="mt-45">Aliases</h3>
 <p>The config map not being initialized,
-the use of sass functions <strong>along with</strong> the keyword <code class="inline">this</code> <strong>cannot be performed</strong>.
+the use of sass functions <strong>along with</strong> the keyword <code>this</code> <strong>cannot be performed</strong>.
 They are however working with regular values.</p>
 
 {@html highlight(`$ooLoop: (
@@ -204,7 +204,7 @@ They are however working with regular values.</p>
 `, 'scss', true)}
 
 <p class="mt-30">Aliases will help you overcome this problem and avoid you repeating values already set.
-At this stage, the few available are <code class="inline">ooDarken</code> and <code class="inline">ooLighten</code>.</p>
+At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</code>.</p>
 
 {@html highlight(`$ooLoop: (
   palette: (
