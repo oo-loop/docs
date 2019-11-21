@@ -51,7 +51,7 @@
 			<h4><a class="{segment === 'importation' ? 'color-primary' : ''}" href="docs/importation">Importation</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/importation#adjust">Adjust your needs</a></li>
-				<li><a href="docs/importation#manually">Include manually</a></li>
+				<li><a href="docs/importation#from-scratch">Start from scratch</a></li>
 			</ul>
 		</li>
 		<li>

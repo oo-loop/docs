@@ -58,7 +58,7 @@ $ooLoop: (
   ...,
 );`, 'scss')}
 
-<h3 class="mt-45">Update with ooCreate</h3>
+<h3 class="h4 mt-45">Update with ooCreate</h3>
 {@html highlight(
 `@import '~loop/scss';
 
@@ -71,7 +71,7 @@ $ooLoop: (
 ));
 `, 'scss', true)}
 
-<h3 class="mt-45">Update one property at the time</h3>
+<h3 class="h4 mt-45">Update one property at the time</h3>
 {@html highlight(
 `@import '~loop/scss';
 
@@ -84,9 +84,9 @@ $ooLoop: ooPipe(
 @include ooCreate();
 `, 'scss', true)}
 
-<h3 class="mt-45">Update with ooUse()</h3>
-<p>Pass a config map to <code class="inline">ooUse()</code> to only update the <em>use</em> property. <br>
-This allows you to avoid going through <code class="inline">ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
+<h3 class="h4 mt-45">Update with ooUse()</h3>
+<p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
+This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
 
 {@html highlight(`@import '~loop/scss';
 
@@ -100,3 +100,44 @@ $ooLoop: ooUse((
 
 @include ooCreate();
 `, 'scss', true)}
+
+<hr>
+<h2 id="from-scratch">Start from scratch</h2>
+<p>Instead of using the autobuild of <code>ooCreate()</code>, you can include one by one the desired element from Loop framework.</p>
+<p>In any case, before doing so, <strong>the instatation of $ooLoop is necessary</strong> and will be done via <code>ooInit()</code>.
+That will also give you the opportunity to set some global settings by passing a config map.</p>
+
+<h3 class="h4 font-code mt-30">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
+<p><em class="text-uppercase text-small">Mixin</em> - Instantiate <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
+<ul>
+  <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+  <br>Set of rules that will be merged into the default Loop config</li>
+</ul>
+
+{@html highlight(`@import '~loop/scss';
+
+@include ooInit((
+  palette: (
+    'primary': #0ea7d6,
+    'danger': #b70d0d,
+  ),
+));
+`, 'scss', true)}
+
+<p>Here is the list of single include:</p>
+<ul>
+  <li>@include Base;</li>
+  <li>@include Headings;</li>
+  <li>@include Type;</li>
+  <li>@include Column;</li>
+  <li>@include Template;</li>
+  <li>@include Button;</li>
+  <li>@include Label;</li>
+  <li>@include TextField;</li>
+  <li>@include SelectField;</li>
+  <li>@include Checkbox;</li>
+  <li>@include Radio;</li>
+  <li>@include Toggle;</li>
+  <li>@include Container;</li>
+  <li>@include Visibility;</li>
+</ul>
