@@ -48,6 +48,13 @@
 			</ul>
 		</li>
 		<li>
+			<h4><a class="{segment === 'importation' ? 'color-primary' : ''}" href="docs/importation">Importation</a></h4>
+			<ul class="list-unstyle">
+				<li><a href="docs/importation#adjust">Adjust your needs</a></li>
+				<li><a href="docs/importation#manually">Include manually</a></li>
+			</ul>
+		</li>
+		<li>
 			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/base">Base</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/base#body">Body</a></li>

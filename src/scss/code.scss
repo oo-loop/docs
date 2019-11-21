@@ -51,6 +51,9 @@ pre {
     &.selector {
       color: #ffd12b;
     }
+    &.boolean {
+      color: #fff;
+    }
     &.comment {
       color: oo('palette.secondary');
     }
