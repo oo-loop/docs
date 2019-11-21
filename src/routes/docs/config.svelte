@@ -103,7 +103,7 @@ Check the <a href="docs/base" title="Base documentation">Base documentation</a> 
     )
   ),
   ...
-)
+);
 `, 'scss', true)}
 {@html highlight(
 `/* will generate */
@@ -135,7 +135,7 @@ a {
     )
   ),
   ...
-)
+);
 `, 'scss', true)}
 {@html highlight(
 `/* will generate */
@@ -166,7 +166,7 @@ a {
     )
   ),
   ...
-)
+);
 `, 'scss', true)}
 {@html highlight(
 `/* will generate */
@@ -200,7 +200,7 @@ They are however working with regular values.</p>
     )
   ),
   ...
-)
+);
 `, 'scss', true)}
 
 <p class="mt-30">Aliases will help you overcome this problem and avoid you repeating values already set.
@@ -223,5 +223,45 @@ At this stage, the few available are <code class="inline">ooDarken</code> and <c
     )
   ),
   ...
-)
+);
 `, 'scss', true)}
+
+<hr>
+<h2>Access Data</h2>
+<p>Access any data of the config map during your development.</p>
+
+<h3 class="h4 font-code" id="oo">oo(<span class="color-primary">$path</span>)</h3>
+<p><em class="text-uppercase text-small">Function</em> - Get values from Loop config.</p>
+<ul>
+	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
+  <br>Concatenated path to a Loop config attribute.
+  <br>When accessing a value from <em>props</em>, the kebab-case css property can be targetting with a camelCase name.</li>
+</ul>
+
+{@html highlight(`$ooLoop: (
+  palette: (
+    'primary': #0ea7d6,
+    'secondary': #959595,
+  ),
+  body: (
+    props: (
+      font-family: ('Helvetica Neue', Helvetica), // kebab-case
+    )
+  ),
+  ...
+);
+`, 'scss', true)}
+
+{@html highlight(
+`.hero {
+ display: flex;
+ height: 400px;
+
+ /* Access kebab-case from camelCase */
+ font-family: oo('body.props.fontFamily');
+
+ background-color: oo('palette.primary');
+} `, 'css', true)}
+
+<p class="info mt-15">Make sure to <strong>use <span class="color-primary">oo()</span> after the initialization </strong>of the config map to have all the updated data.</p>
+<hr>

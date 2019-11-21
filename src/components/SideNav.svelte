@@ -38,13 +38,13 @@
 			</ul>
 		</li>
 		<li>
-			<h4><a class="{segment === 'loop-config' ? 'color-primary' : ''}" href="docs/loop-config">Config Map</a></h4>
+			<h4><a class="{segment === 'config' ? 'color-primary' : ''}" href="docs/config">Config Map</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs/loop-config#global">Global properties</a></li>
-				<li><a href="docs/loop-config#props"><i>Props</i> attribute</a></li>
-				<li><a href="docs/loop-config#states"><i>States</i> attribute</a></li>
-				<li><a href="docs/loop-config#this"><i>This</i> reference</a></li>
-				<li><a href="docs/loop-config#context">Utility format</a></li>
+				<li><a href="docs/config#global">Global properties</a></li>
+				<li><a href="docs/config#props"><i>Props</i> attribute</a></li>
+				<li><a href="docs/config#states"><i>States</i> attribute</a></li>
+				<li><a href="docs/config#this"><i>This</i> reference</a></li>
+				<li><a href="docs/config#access">Access data</a></li>
 			</ul>
 		</li>
 		<li>
