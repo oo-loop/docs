@@ -23,13 +23,6 @@ img {
 	margin-right: -430px;
   margin-left: -70px;
 }
-
-section {
-	padding: 15px 25px;
-	margin-bottom: 30px;
-	background-color: #fff;
-	box-shadow: 1px 1px 2px rgba(0,0,0, .15);
-}
 </style>
 
 <HeadTitle />
@@ -48,7 +41,7 @@ section {
 </div>
 
 <Col prop="self-align-center s8">
-	<section>
+	<section class="section">
 		<h3>Fully customizable</h3>
 		<p>Loop is a Sass (scss) framework aiming to create a more maintainable and readable CSS. Fully customizable, It gives you complete control on your project to let you create and match your styles with your design needs.</p>
 		<p>Loop offers easy management and access to all your variables in a single config map.</p>
@@ -64,7 +57,7 @@ section {
 <span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>(<span class="color-blue">$config</span>);
 	</code></pre>
 
-	<section>
+	<section class="section">
 		<h3>Semantic</h3>
 		<p>Loop differentiates components and utilities with semantic for more clarity</p>
 
@@ -74,14 +67,14 @@ section {
 		</ul>
 	</section>
 
-	<section>
+	<section class="section">
 		<h3>Why Loop ?</h3>
 		<p>Have you ever worked on a project with your go-to css framework realizing that you were only using 10% of it. You had to add your own utilities, your own components and when trying to reuse something from its library, you actually had to overwrite some rules, tweak it, in order to reproduce what you wish for.</p>  
 		<p>Have you ever wonder if the framework you were using was a real fit?.</p>
 		<p>Loop has been developed out of that feeling to overcome this problem.</p>
 	</section>
 
-	<section>
+	<section class="section">
 		<h3>Philosophy</h3>
 		<p>Loop is not a framework providing any possible existing components. It's more like a companion for CSS development, encouraging the use and creation of utilities while considering recurring components. Loop works towards flexibility and expressive CSS.</p>
 	</section>

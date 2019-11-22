@@ -50,8 +50,8 @@
 		<li>
 			<h4><a class="{segment === 'importation' ? 'color-primary' : ''}" href="docs/importation">Importation</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs/importation#adjust">Adjust your needs</a></li>
-				<li><a href="docs/importation#from-scratch">Start from scratch</a></li>
+				<li><a href="docs/importation#config">Use of Config</a></li>
+				<li><a href="docs/importation#mixin">Use of Mixin</a></li>
 			</ul>
 		</li>
 		<li>
