@@ -2,7 +2,7 @@
 
 $ooLoop: ooPipe(
   _set('body.props.backgroundColor', #f8f8f8),
-  _set('hr.props.margin', 4.5rem auto),
+  _set('hr.props.margin', rem(45) auto),
 );
 
 
@@ -10,8 +10,8 @@ $ooLoop: ooSet('headings.classes', ('h4'));
 
 $ooLoop: ooAdd('column.gutter.sizes', (
   'large': (
-    rt: 3rem,
-    md: 5rem,
+    rt: rem(30),
+    md: rem(50),
   ) 
 ));
 
@@ -28,7 +28,7 @@ $ooLoop: ooPipe(
     'monospace': monospace,
   )),
   _add('spacing.top.values', (
-    45: 4.5rem,
+    45: rem(45),
   ))
 );
 

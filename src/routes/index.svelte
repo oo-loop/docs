@@ -11,7 +11,7 @@ h1 {
 	font-size: 3em;
 }
 h2 {
-	margin-bottom: 3rem;
+	margin-bottom: 30px;
 	font-weight: 400;
 }
 .brand {

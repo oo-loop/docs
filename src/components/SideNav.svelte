@@ -11,7 +11,7 @@
 		box-shadow: 2px 2px 3px -1px rgba(0,0,0,.25);
 	}
 	ul {
-		font-size: 1.4rem;
+		font-size: .875rem;
 	}
 	li {
 		margin-bottom: 3px;
@@ -21,7 +21,7 @@
 	}
 	h4 {
 		color: #808080;
-		font-size: 1.4rem;
+		font-size: inherit;
 		text-transform: uppercase;
 	}
 </style>

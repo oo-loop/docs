@@ -4,7 +4,7 @@ code {
   margin-right: 5px;
   display: inline-block;
   color: #b70d0d;
-  font-size: 1.4rem;
+  font-size: rem(14);
   border-radius: 3px;
   background-color: #e8e8e8;
 }
@@ -17,7 +17,6 @@ pre {
   background-color: #263940;
 }
 
-
 pre {
   padding: 20px;
   overflow: auto;
@@ -29,10 +28,17 @@ pre {
   }
 }
 
+pre[class*="language-"].line-numbers {
+  padding-left: 4.4em !important;
+}
+.line-numbers .line-numbers-rows {
+  left: -4.6em !important;
+}
+
 .language-scss,
 .language-css {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1.3rem;
+  font-size: rem(13);
   line-height: 1.4;
 
   .token {
