@@ -214,7 +214,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/type" title="Type documentation">Learn more</a>
+    <a data-oo-button href="docs/base#type" title="Type documentation">Learn more</a>
   </Col>
 </Row>
 
@@ -416,6 +416,21 @@ That will also give you the opportunity to set some global settings.</p>
 <hr>
 <Row>
   <Col>
+    <h4 class="font-code">Spacing(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the spacing utilities.</p>
+    <ul>
+      <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+      <br>Set the properties of <code>spacing</code>.</li>
+    </ul>
+  </Col>
+  <Col prop="s12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/spacing" title="Spacing documentation">Learn more</a>
+  </Col>
+</Row>
+
+<hr>
+<Row>
+  <Col>
     <h4 class="font-code">Color(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
     <p><em class="text-uppercase text-small">Mixin</em> - Include the color utilities.</p>
     <ul>
@@ -442,3 +457,35 @@ That will also give you the opportunity to set some global settings.</p>
     <a data-oo-button href="docs/color" title="Color documentation">Learn more</a>
   </Col>
 </Row>
+
+<hr>
+<Row>
+  <Col>
+    <h4 class="font-code">List(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the list utilities.</p>
+    <ul>
+      <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+      <br>Set the properties of <code>list</code>.</li>
+    </ul>
+  </Col>
+  <Col prop="s12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/list" title="List documentation">Learn more</a>
+  </Col>
+</Row>
+
+<hr>
+<Row>
+  <Col>
+    <h4 class="font-code">Wrapper(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the wrapper utilities.</p>
+    <ul>
+      <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+      <br>Set the property <code>wrapper</code> in an utility format.</li>
+    </ul>
+  </Col>
+  <Col prop="s12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/wrapper" title="Spacing documentation">Learn more</a>
+  </Col>
+</Row>
+
+<hr>
