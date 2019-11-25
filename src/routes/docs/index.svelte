@@ -80,7 +80,7 @@ $ooLoop: (
 	<li class="mb-10"><strong>$value</strong> <em class="font-monospace">(mixed)</em>
   <br>New Loop attribute value</li>
 	<li><strong>$hard</strong> <em class="font-monospace">(boolean) <span class="color-secondary">Optional</span></em>
-  <br>Destructive merging mode ?</li>
+  <br>Destructive mode?</li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
@@ -125,7 +125,7 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 <p><em class="text-uppercase text-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li><strong>$rules</strong> <em class="font-monospace">(list)</em>
-  <br>List of setter <code>_set(<span class="color-secondary">$path</span>, <span class="color-secondary">$value</span>)</code> and adder<code>_add(<span class="color-secondary">$path</span>, <span class="color-secondary">$value</span>)</code></li>
+  <br>List of setter <code>_set(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code> and adder<code>_add(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code></li>
 </ul>
 
 {@html highlight(`@import '~loop/scss';
@@ -138,3 +138,5 @@ $ooLoop: ooPipe(
 
 @include ooCreate(); // generate styles
 `, 'scss', true)}
+
+<hr>
