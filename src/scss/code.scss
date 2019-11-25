@@ -36,13 +36,15 @@ pre[class*="language-"].line-numbers {
 }
 
 .language-scss,
-.language-css {
+.language-css,
+.language-html {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: rem(13);
   line-height: 1.4;
 
   .token {
-    &.keyword {
+    &.keyword,
+    &.rule {
       color: #ef9ac5;
     }
     &.string {
@@ -84,6 +86,30 @@ pre[class*="language-"].line-numbers {
   .token {
     &.property {
       color: #61ffaf;
+    }
+  }
+}
+
+.language-html {
+  color: #fff;
+  .token {
+    &.tag {
+      color:#44cdf7;
+      .punctuation {
+        color: #a7a7a7;
+      }
+      .attr-name {
+        color: #a4eaff;
+      }
+      .attr-value {
+        color: #fbad75;
+        .punctuation {
+          color: #fbad75;
+          &:first-child {
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }
