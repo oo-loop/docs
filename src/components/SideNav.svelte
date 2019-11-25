@@ -43,7 +43,7 @@
 				<li><a href="docs/config#global">Global properties</a></li>
 				<li><a href="docs/config#props"><i>Props</i> attribute</a></li>
 				<li><a href="docs/config#states"><i>States</i> attribute</a></li>
-				<li><a href="docs/config#this"><i>This</i> reference</a></li>
+				<li><a href="docs/config#this"><i>This</i> referer</a></li>
 				<li><a href="docs/config#access">Access data</a></li>
 			</ul>
 		</li>
@@ -57,10 +57,8 @@
 		<li>
 			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/base">Base</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs/base#body">Body</a></li>
-				<li><a href="docs/base#headings">Headings</a></li>
 				<li><a href="docs/base#type">Type</a></li>
-				<li><a href="docs/base#list">List</a></li>
+				<li><a href="docs/base#headings">Headings</a></li>
 			</ul>
 		</li>
 		<li>

@@ -90,7 +90,7 @@ Check the <a href="docs/base" title="Base documentation">Base documentation</a> 
 `, 'scss')}
 
 <hr>
-<h2 id="this"><em class="font-regular">This</em> Reference</h2>
+<h2 id="this"><em class="font-regular">This</em> Referer</h2>
 <p>The keyword <code>this()</code> refers to a value in the context of the config map.</p>
 {@html highlight(`$ooLoop: (
   palette: (
