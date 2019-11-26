@@ -1,7 +1,7 @@
 @import '../../../../loop/scss/loop';
 
 $ooLoop: ooPipe(
-  _set('base.props.backgroundColor', #f8f8f8),
+  _set('body.props.backgroundColor', #f8f8f8),
   _set('hr.props.margin', rem(45) auto),
 );
 
@@ -18,7 +18,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 // Utilities
 $ooLoop: ooPipe(
   _add('color.font.values', (
-    'base': this('base.props.color'),
+    'body': this('body.props.color'),
     'danger': #da3b3b,
   )),
   _add('text.fontWeight.values', (

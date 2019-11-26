@@ -7,70 +7,65 @@
   /* your styles go here */
 </style>
 
-<HeadTitle title="Base"/>
+<HeadTitle title="HTML elements"/>
 
-<h1>Base</h1>
-<p class="text-large">Format css and set default styles for elements to act the same accross browsers.
-This is <strong>highly recommended</strong> and is turned on by default.</p>
+<h1>HTML elements</h1>
+<p class="text-large">Set default styles and format css elements to act the same accross browsers.</p>
+
+<h2 id="base">Base</h2>
+<p>The Base is <strong>highly recommended</strong> as it sets the global styling of the page rendering html elements more consistently. It includes:</p>
 
 <ul class="mb-30">
- <li>Adjust <code>box-sizing</code> to all elements allowing padding and border in their total width and height (removing uneeded mathematics).</li>
- <li>Include <a href="https://necolas.github.io/normalize.css/" title="normalize" target="_blank">Normalize.css</a> (rendering all elements more consistently)</li>
- <li>Set main css properties to the body of your application</li>
- <li>Render better typography readibilty (for mac users)</li>
+ <li><a href="https://necolas.github.io/normalize.css/" title="normalize" target="_blank">Normalize.css</a> (render all elements in line with modern standards)</li>
+ <li><code>box-sizing: border-box;</code> (remove uneeded mathematics when setting sizes).</li>
+ <li>Font smoothing (render to antialiasing for better readibilty)</li>
+ <li>Global properties (set the body your application)</li>
 </ul>
 
-{@html highlight(`// Default config in $ooLoop
+<p class="info">Loop config <strong>includes base by default</strong>. In manual mode add the mixin <strong>Base()</strong></p>
 
-$ooLoop: (
-  base: (
-    props: ( // body properties
-      fontFamily: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
-      fontSize: 1em, // 16px
-      lineHeight: 1.375,
-      color: #2c444c,
-    ),
-    smoothing: true,  // enable font smoothing
+<h3 class="mt-30"><em class="font-regular">body</em> Config</h3>
+<ul>
+  <li><code>props</code> CSS properties</li>
+  <li><code>smoothing</code> Enable font smoothing</li>
+</ul>
+
+{@html highlight(
+`body: (
+  props: (
+    fontFamily: ('Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+    fontSize: 1em, // 16px
+    lineHeight: 1.375,
+    color: #2c444c,
   ),
-  ...
-);`, 'scss')}
-
-{@html highlight(`// Auto mode referring to use.base
-$ooLoop: (
-  use: (
-    base: true,
-  ),
-  ...
-);
-
-// Manual mode
-@include Base();
+  smoothing: true,
+),
 `, 'scss')}
 
-<h3 class="mt-30">Update values</h3>
+<h4 class="mt-30">Update values</h4>
 <p>Change the props value or add new ones at your own will.</p>
 
 {@html highlight(
-`$ooLoop: ooSet('base.props.color', #333); // update value
-$ooLoop: ooSet('base.props.backgroundColor', #f8f8f8); // add new one
+`$ooLoop: ooSet('body.props.color', #333); // update value
+$ooLoop: ooSet('body.props.backgroundColor', #f8f8f8); // add new one
 
 // or
-$ooLoop: ooAdd('base.props', (
+$ooLoop: ooAdd('body.props', (
   backgroundColor: #f8f8f8, //add new one
   color: #333, // will overwrite current value
 ));
 
 //or
 $ooLoop: ooPipe(
-  _set('base.props.color', #333),
-  _add('base.props', (
+  _set('body.props.color', #333),
+  _add('body.props', (
     backgroundColor: #f8f8f8,
   ))
 );
 
 // or 
 @include ooCreate((
-  base: (
+  body: (
     props: (
       backgroundColor: #f8f8f8,
       color: #333,
@@ -89,7 +84,7 @@ $ooLoop: ooPipe(
 
 {@html highlight(`/* will generate */
 body {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1em;
   line-height: 1.375;
   color: #333;
@@ -119,44 +114,41 @@ body {
 <p>Here are the default settings if you wish to modify them</p>
 
 {@html highlight(`// Default config in $ooLoop
+paragraph: (
+  props: (
+    marginTop: .5em,
+    marginBottom: 1.125em,
+  )
+),
 
-$ooLoop: (
-  paragraph: (
-    props: (
-      marginTop: .5em,
-      marginBottom: 1.125em,
-    )
+anchor: (
+  props: (
+    color: this('palette.primary'),
+    textDecoration: none,
   ),
-
-  anchor: (
-    props: (
-      color: this('palette.primary'),
-      textDecoration: none,
+  states: (
+    hover: (
+      color: ooDarken(this('anchor.props.color'), 12%),
     ),
-    states: (
-      hover: (
-        color: ooDarken(this('anchor.props.color'), 12%),
-      ),
-      focus: this('anchor.states.hover'),
-    )
-  ),
+    focus: this('anchor.states.hover'),
+  )
+),
 
-  list: (
-    props: (
-      marginTop: .5em,
-      marginBottom: 1.125em,
-      paddingLeft: 1.1em,
-    ),
+list: (
+  props: (
+    marginTop: .5em,
+    marginBottom: 1.125em,
+    paddingLeft: 1.1em,
   ),
+),
 
-  hr: (
-    props:(
-      margin: 1rem auto,
-      borderBottom: 1px solid #cdcdcd,
-    )
-  ),
-  ...
-);`, 'scss')}
+hr: (
+  props:(
+    margin: 1rem auto,
+    borderBottom: 1px solid #cdcdcd,
+  )
+),
+`, 'scss')}
 
 {@html highlight(`// Auto mode
 $ooLoop: (

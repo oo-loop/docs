@@ -9,10 +9,9 @@
 <HeadTitle title="Getting Started"/>
 
 <h1>Start with Loop</h1>
-<p>Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
+<p class="text-large">Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
 <ul class="text-small">
-	<li><a href="#">Normalize css</a></li>
-	<li><a href="#">Base typography and headings</a></li>
+	<li><a href="docs/html-elements" title="HTML elements">HTML formatting</a></li>
 	<li><a href="#">Layout container</a></li>
 	<li><a href="#">Column component</a></li>
 	<li><a href="#">Button component</a></li>

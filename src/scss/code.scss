@@ -7,6 +7,10 @@ code {
   font-size: rem(14);
   border-radius: 3px;
   background-color: #fdf1f1;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 code.large,
@@ -24,6 +28,7 @@ pre {
   border-radius: 3px;
   code {
     padding: 0;
+    margin: 0;
     display: block;
   }
 }

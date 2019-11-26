@@ -55,10 +55,11 @@
 			</ul>
 		</li>
 		<li>
-			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/base">Base</a></h4>
+			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/html-elements">HTML elements</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs/base#type">Type</a></li>
-				<li><a href="docs/base#headings">Headings</a></li>
+				<li><a href="docs/html-elements#base">Base</a></li>
+				<li><a href="docs/html-elements#type">Type</a></li>
+				<li><a href="docs/html-elements#headings">Headings</a></li>
 			</ul>
 		</li>
 		<li>
