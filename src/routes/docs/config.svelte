@@ -66,7 +66,7 @@
 `, 'scss')}
 
 <p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> attributes to provide default styling.
-Check the <a href="docs/base" title="Base documentation">Base documentation</a> to know what they are and change them at your own will.</p>
+Check the <a href="docs/html-elements" title="HTML elements documentation">HTML elements documentation</a> to know what they are and change them at your own will.</p>
 
 <hr>
 <h2 id="states"><em class="font-regular">States</em> Attribute</h2>

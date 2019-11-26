@@ -16,49 +16,46 @@
 <p>Adjust your needs of the framework by updating the <em>use</em> property of the config map.</p>
 
 {@html highlight(`// the default use map
-
-$ooLoop: (
-  use: (
-    base: true,
-    headings: true,
-    type: true,
-    button: true,
-    
-    input: (
-      textfield: true,
-      textarea: true,
-      select: true,
-      checkbox: true,
-      radio: true,
-      toggle: false,
-    ),
-
-    column: (
-      system: true,
-      fit: true,
-      order: false,
-      offset: false,
-      alignment: true,
-      selfAlignment: true,
-      childAlignment: false,
-    ),
-
-    template: true,
-    container: true,
-    visibility: true,
-    misc: true,
-
-    utilities: (
-      color: true,
-      float: true,
-      list: true,
-      spacing: true,
-      text: true,
-      wrapper: true,
-    ),
+use: (
+  base: true,
+  headings: true,
+  type: true,
+  button: true,
+  
+  input: (
+    textfield: true,
+    textarea: true,
+    select: true,
+    checkbox: true,
+    radio: true,
+    toggle: false,
   ),
-  ...,
-);`, 'scss')}
+
+  column: (
+    system: true,
+    fit: true,
+    order: false,
+    offset: false,
+    alignment: true,
+    selfAlignment: true,
+    childAlignment: false,
+  ),
+
+  template: true,
+  container: true,
+  visibility: true,
+  misc: true,
+
+  utilities: (
+    color: true,
+    float: true,
+    list: true,
+    spacing: true,
+    text: true,
+    wrapper: true,
+  ),
+),
+`, 'scss')}
 
 <h3 class="h4 mt-45">Update with ooCreate</h3>
 <p>Use the <code>ooCreate()</code> config to pass some preferences.</p>
