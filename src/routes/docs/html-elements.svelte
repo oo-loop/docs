@@ -22,7 +22,7 @@
  <li>Global properties (set the body your application)</li>
 </ul>
 
-<p class="info">Loop config <strong>includes base by default</strong>. In manual mode add the mixin <strong>Base()</strong></p>
+<p class="info">Loop config <strong>includes <em>base</em> by default</strong>. In manual mode add the mixin <strong>Base()</strong></p>
 
 <h3 class="mt-30"><em class="font-regular">body</em> Config</h3>
 <ul>
@@ -82,7 +82,7 @@ $ooLoop: ooPipe(
 ));
 `, 'scss')}
 
-{@html highlight(`/* will generate */
+{@html highlight(`/* generating */
 body {
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1em;
@@ -93,13 +93,13 @@ body {
 `, 'css', true)}
 
 <p class="mt-30">Add only the properties you want to the body</p>
-{@html highlight(`$ooLoop: ooSet('base.props', (
+{@html highlight(`$ooLoop: ooSet('body.props', (
   fontFamily: Robotto,
   color: #333,
   backgroundColor: #f8f8f8,
 ));`, 'scss')}
 
-{@html highlight(`/* will generate */
+{@html highlight(`/* generating */
 body {
   font-family: Robotto;
   color: #333;
@@ -110,18 +110,28 @@ body {
 <hr>
 
 <h2 id="type">Type</h2>
-<p class="text-large">Global text elements such as paragraph, anchor, list and hr</p>
-<p>Here are the default settings if you wish to modify them</p>
+<p>Sets global text elements such as paragraph, anchor and list as well as the hr tag</p>
+<p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Type()</strong></p>
 
-{@html highlight(`// Default config in $ooLoop
-paragraph: (
+<h3 class="mt-30"><em class="font-regular">paragraph</em> Config</h3>
+<ul>
+  <li><code>props</code> CSS properties</li>
+</ul>
+{@html highlight(
+`paragraph: (
   props: (
     marginTop: .5em,
     marginBottom: 1.125em,
   )
-),
+)`, 'scss')}
 
-anchor: (
+<h3 class="mt-30"><em class="font-regular">anchor</em> Config</h3>
+<ul>
+  <li><code>props</code> CSS properties</li>
+  <li><code>states</code> State element properties</li>
+</ul>
+{@html highlight(
+`anchor: (
   props: (
     color: this('palette.primary'),
     textDecoration: none,
@@ -132,46 +142,52 @@ anchor: (
     ),
     focus: this('anchor.states.hover'),
   )
-),
+)`, 'scss')}
 
-list: (
+<h3 class="mt-30"><em class="font-regular">list</em> Config</h3>
+<ul>
+  <li><code>props</code> CSS properties</li>
+</ul>
+{@html highlight(
+`list: (
   props: (
     marginTop: .5em,
     marginBottom: 1.125em,
     paddingLeft: 1.1em,
-  ),
-),
+  )
+)`, 'scss')}
 
-hr: (
+<h3 class="mt-30"><em class="font-regular">hr</em> Config</h3>
+<ul>
+  <li><code>props</code> CSS properties</li>
+</ul>
+{@html highlight(
+`hr: (
   props:(
     margin: 1rem auto,
     borderBottom: 1px solid #cdcdcd,
   )
-),
-`, 'scss')}
-
-{@html highlight(`// Auto mode
-$ooLoop: (
-  use: (
-    type: true,
-  ),
-  ...
-);
-
-// Manual mode
-@include Type();
-`, 'scss')}
+)`, 'scss')}
 
 <hr>
 
-<h2 id="headings">HTML Headings</h2>
-<p class="text-large">Tags from h1 through h6</p>
-<p>Unlike <a href="v04" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilate the conversion from pixel to rem unit.</p>
-<h3 class="h4 font-code">headings</h3>
+<h2 id="headings">Headings</h2>
+<p>Sets HTML headings from <code>{`<h1>`}</code> through <code>{`<h6>`}</code>. Unlike <a href="v04" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilitate the conversion from pixel to rem unit.</p>
+<p class="info">Loop config <strong>includes <em>headings</em> by default</strong>. In manual mode add the mixin <strong>Headings()</strong></p>
+<section class="section color-secondary">
+  <h1>H1 heading</h1>
+  <h2>H2 heading</h2>
+  <h3>H3 heading</h3>
+  <h4>H4 heading</h4>
+  <h5>H5 heading</h5>
+  <h6>H6 heading</h6>
+</section>
+
+<h3><em class="font-regular">headings</em> Config</h3>
 <ul>
   <li><code>props</code> CSS properties</li>
   <li><code>sizes</code> H1 to H6 sizes</li>
-  <li><code>classes</code> List of heading classes <i class="color-secondary">(null by default)</i></li>
+  <li><code>classes</code>List of heading that will be used as a class <i class="color-secondary">(optional)</i></li>
 </ul>
 
 {@html highlight(
@@ -190,14 +206,6 @@ $ooLoop: (
     h6: rem(14), // from 14px generate 0.875rem
   ),
 )`, 'scss')}
-<section class="section color-secondary">
-  <h1>H1 heading</h1>
-  <h2>H2 heading</h2>
-  <h3>H3 heading</h3>
-  <h4>H4 heading</h4>
-  <h5>H5 heading</h5>
-  <h6>H6 heading</h6>
-</section>
 
 <h3 class="mt-45">Responsive headings</h3>
 <p>The value of each size can contain a responsive map based on the name of the <code>breakpoints</code> from the Loop config. <code>rt</code> means the root value. Remember that Loop is using the mobile first approach (from root to small, medium, large screens)</p>
@@ -212,7 +220,11 @@ $ooLoop: (
     rt: rem(26), // root value
     sm: rem(28), // sm value
   ),
-), false); // non desctructive mode
+  h3: rem(22),
+  h4: rem(18),
+  h5: 1rem,
+  h6: rem(14), 
+));
 `, 'scss')}
 
 {@html highlight(`/* will generate */
@@ -232,7 +244,12 @@ h2 {
 @media (min-width: 37.5em) {
   h2 { font-size: 1.75rem; }
 }
-`, 'css')}
+
+h3 { font-size: 1.375rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+`, 'css', true)}
 
 <h3 class="mt-45">Headings classes</h3>
 <p>List each heading you would like to use as an utility class by adding the property <code>classes</code> to the <code>headings</code> map.</p>
