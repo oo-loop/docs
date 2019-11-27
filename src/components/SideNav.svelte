@@ -63,7 +63,7 @@
 			</ul>
 		</li>
 		<li>
-			<h4>Components</h4>
+			<h4><a class="{segment === 'components' ? 'color-primary' : ''}" href="docs/components">Components</a></h4>
 			<ul class="list-unstyle">
 				<li><a class="{segment === 'column' ? 'color-primary' : ''}" href="docs/column">Column</a></li>
 				<li><a class="{segment === 'template' ? 'color-primary' : ''}" href="docs/template">Template</a></li>

@@ -7,7 +7,7 @@
   <aside data-oo-col="fit">
     <SideNav {segment}/>
   </aside>
-  <article data-oo-col="s8@md">
+  <article data-oo-col="span8@md">
     <slot></slot>
   </article>
 </div>

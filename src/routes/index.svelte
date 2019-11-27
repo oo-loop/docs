@@ -40,7 +40,7 @@ img {
 	</Row>
 </div>
 
-<Col prop="self-align-center s8">
+<Col prop="self-align-center span8">
 	<section class="section">
 		<h3>Fully customizable</h3>
 		<p>Loop is a Sass (scss) framework aiming to create a more maintainable and readable CSS. Fully customizable, It gives you complete control on your project to let you create and match your styles with your design needs.</p>

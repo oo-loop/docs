@@ -20,8 +20,10 @@ use: (
   base: true,
   headings: true,
   type: true,
+
+  column: true,
+  template: true,
   button: true,
-  
   input: (
     textfield: true,
     textarea: true,
@@ -31,17 +33,6 @@ use: (
     toggle: false,
   ),
 
-  column: (
-    system: true,
-    fit: true,
-    order: false,
-    offset: false,
-    alignment: true,
-    selfAlignment: true,
-    childAlignment: false,
-  ),
-
-  template: true,
   container: true,
   visibility: true,
   misc: true,
@@ -63,10 +54,27 @@ use: (
 `@import '~loop/scss';
 
 @include ooCreate((
-  input: (
-    select: false, // remove select component
-    checkbox: false, // remove checkbox component
-    radio: false,  // remove radio component
+  use: (
+    input: (
+      select: false, // remove select component
+      checkbox: false, // remove checkbox component
+      radio: false,  // remove radio component
+    ),
+    utilities: (
+      wrapper: false,
+    )
+  )
+));
+`, 'scss', true)}
+{@html highlight(
+`@import '~loop/scss';
+
+@include ooCreate((
+  use: (
+    input: false, // remove all input components
+    utilities: (
+      wrapper: false,
+    )
   )
 ));
 `, 'scss', true)}
@@ -98,6 +106,9 @@ $ooLoop: ooUse((
     select: false,
     checkbox: false,
     radio: false,
+  ),
+  utilities: (
+    wrapper: false,
   )
 ));
 
@@ -181,22 +192,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/base" title="Base documentation">Learn more</a>
-  </Col>
-</Row>
-
-<hr>
-<Row>
-  <Col>
-    <h4 class="font-code">Headings(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Set your css headings.</p>
-    <ul>
-      <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
-      <br>Set the properties <code>headings</code>.</li>
-    </ul>
-  </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/headings" title="Headings documentation">Learn more</a>
+    <a data-oo-button href="docs/html-elements" title="Base documentation">Learn more</a>
   </Col>
 </Row>
 
@@ -211,7 +207,22 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/base#type" title="Type documentation">Learn more</a>
+    <a data-oo-button href="docs/html-elements#type" title="Type documentation">Learn more</a>
+  </Col>
+</Row>
+
+<hr>
+<Row>
+  <Col>
+    <h4 class="font-code">Headings(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase text-small">Mixin</em> - Set your css headings.</p>
+    <ul>
+      <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+      <br>Set the properties <code>headings</code>.</li>
+    </ul>
+  </Col>
+  <Col prop="s12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/html-elements#headings" title="Headings documentation">Learn more</a>
   </Col>
 </Row>
 

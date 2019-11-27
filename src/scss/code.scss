@@ -24,6 +24,7 @@ pre {
 pre {
   padding: 20px;
   overflow: auto;
+  clear: both;
   display: block;
   border-radius: 3px;
   code {
@@ -43,9 +44,11 @@ pre[class*="language-"].line-numbers {
 .language-scss,
 .language-css,
 .language-html {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: rem(13);
-  line-height: 1.4;
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: rem(13);
+    line-height: 1.4;
+  }
 
   .token {
     &.keyword,
@@ -97,6 +100,11 @@ pre[class*="language-"].line-numbers {
 
 .language-html {
   color: #fff;
+
+  code {
+    line-height: 1.5;
+  }
+
   .token {
     &.tag {
       color:#44cdf7;
