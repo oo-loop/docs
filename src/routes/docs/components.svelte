@@ -7,15 +7,44 @@
 </script>
 
 <style>
-  /* your styles go here */
+  .notification {
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);
+    border: 1px solid;
+  }
+
+  .notification-success {
+    background-color: #c8f7e1;
+    color: #015a31;
+    border-color: #83cca9;
+  }
+
+  .notification-large {
+    padding: 1.75rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .notification-accent-top {
+    border-width: 0;
+    border-top-width: 5px;
+    border-top-style: solid;
+  }
+  .notification-accent-left {
+    border-width: 0;
+    border-left-width: 5px;
+    border-left-style: solid;
+    text-align: left;
+  }
+
 </style>
 
 <HeadTitle title="Components"/>
 
 <h1>Components</h1>
-<p class="text-large">Use recurring elements as components and create their own attribute's syntax for development purposes.</p>
+<p class="text-large">Use recurring elements as components and create their own attribute syntax for development purposes.</p>
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
-The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded.</p>
+The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
 <p>By default, Loop components are used along with the <em>data attribute</em> <code>data-oo-componentName</code> to be a valid html5 attribute.
 You could turn off the html5 validity and have a shorter name for speed purposes<code>oo-componentName</code> <i>(Which was the case in Loop v0.4)</i></p>
@@ -46,4 +75,50 @@ You could turn off the html5 validity and have a shorter name for speed purposes
 
 <hr>
 <h2>Custom components</h2>
-<p>It is possible to create your own component with the loop syntax.</p>
+<p>Loop gives you the possibilty to create your own Loop syntax component.
+That offers you an alternative to regular css in the case of making a recurring style along with numerous modifiers.</p>
+
+<h4 class="mt-30">Example of situation</h4>
+<p class="font-italic">I created a reusable component for all the diverse messages of my project.
+I named it <code>.notification</code> and namespaced each modifiers with it.
+I'm happy as it is extremely understandable.</p>
+
+{@html highlight(
+`<!-- Notification component -->
+<div class="notification notification-success notification-large notification-accent-left">
+  <strong>Hey, well done!</strong><br>You've created a successfull notification component
+</div>
+`, 'html')}
+
+<p class="font-italic mt-30">It's a bit redundant. So I refactored the modifiers' logic by using keywords such as <code>is</code> and <code>has</code>.
+I'm very happy as it is still extremely understandable with less writting.</p>
+
+{@html highlight(
+`<!-- Notification component with shorter modifier -->
+<div class="notification is-success is-large has-accent-left">
+  <strong>Hey, well done!</strong><br>You've created a successfull notification component
+</div>
+`, 'html')}
+
+<p class="font-italic mt-30">While adding utilities in some cases, the class attribute gets crowded, making it harder to know what's going on at a glance.
+I sometimes get confused to differentiate the modifiers from the utilities.</p>
+{@html highlight(
+`<!-- Notification component along with utilities -->
+<div class="notification is-success is-large has-accent-left font-italic float-left hidden@print mt-15 mb-30">
+  <strong>Hey, well done!</strong><br>You've created a successfull notification component
+</div>
+`, 'html')}
+
+<p class="font-italic mt-30">I refactored my component again using Loop syntax. I'm extremely happy with the separation of concerns as I know what does what as well as avoiding redundant text.</p>
+{@html highlight(
+`<!-- Loop Notification component with utilities -->
+<div oo-notification="success large accent-left" class="font-italic float-left hidden@print mt-15 mb-30">
+  <strong>Hey, well done!</strong><br>You've created a successfull notification component
+</div>
+`, 'html')}
+
+<h4 class="mt-30">Use of mixin</h4>
+
+<div class="notification notification-success notification-large notification-accent-top mb-30">
+  <strong>Hey, well done!</strong><br>You've created a successfull notification component.
+</div>
