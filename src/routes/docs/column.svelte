@@ -131,7 +131,7 @@ column: (
 <hr>
 <h2>Fit column</h2>
 <p>Let the column fits to the size of the content.<br>
-The responsive screens is refering to the column component screens which it giving you <code>fit</code><code>fit@sm</code><code>fit@md</code><code>fit@lg</code> by default.</p>
+The responsive screens is refering to the column component screens which is giving you <code>fit</code><code>fit@sm</code><code>fit@md</code><code>fit@lg</code> by default.</p>
 
 {@html highlight(
 `column: (
@@ -179,5 +179,29 @@ The responsive screens is refering to the column component screens which it givi
       <div class="h3 mt-10">My media component</div><!-- don't want to use an h3 here on my page-->
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error laudantium totam ab expedita necessitatibus!</p>
     </Col>
+  </Row>
+</div>
+
+<hr>
+<h2>Clear column</h2>
+<p>Force to start a new row within the flow of columns.</p>
+
+{@html highlight(
+`<div oo-row>
+  <div oo-col="span2"></div>
+  <div oo-col></div>
+  <div oo-col="clear"></div>
+  <div oo-col></div>
+  <div oo-col></div>
+</div>
+`, 'html')}
+
+<div class="ground">
+  <Row>
+    <Col cell prop="span2"></Col>
+    <Col cell></Col>
+    <Col prop="clear"></Col>
+    <Col cell></Col>
+    <Col cell></Col>
   </Row>
 </div>
