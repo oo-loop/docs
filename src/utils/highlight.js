@@ -1,16 +1,16 @@
 import PrismJS from 'prismjs';
 import 'prismjs/components/prism-scss';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+// import 'prismjs/plugins/line-numbers/prism-line-numbers';
+// import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-export default function highlight(source, lang, line) {
+export default function highlight(source, lang, className) {
 	const highlighted = PrismJS.highlight(
 		source,
 		PrismJS.languages[lang],
 		lang,
 	);
 
-	let lineNumbers = line || false;
+	let classes = className || false;
 
-	return `<pre class="language-${lang}${lineNumbers ? ' line-numbers' : ''}"><code>${highlighted}</code></pre>`;
+	return `<pre class="language-${lang}${classes ? ` ${classes}` : ''}"><code>${highlighted}</code></pre>`;
 }

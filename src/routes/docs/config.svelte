@@ -14,7 +14,7 @@
 {@html highlight(`$ooLoop: (
   // properties
 );
-`, 'scss', true)}
+`, 'scss')}
 
 <h2 class="mt-45" id="global">Global Properties</h2>
 <p>The global properties are data to be refered to within your configuration to avoid duplicating them.</p>
@@ -104,13 +104,13 @@ Check the <a href="docs/html-elements" title="HTML elements documentation">HTML 
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 {@html highlight(
 `/* will generate */
 a {
   color: #0ea7d6;
 }
-`, 'css', true)}
+`, 'css')}
 
 <h3 class="mt-45">Spread operator</h3>
 <p>Expand a map by referring a set of values in the context of the config map by using the operator <code>_this()</code></p>
@@ -136,13 +136,13 @@ a {
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 {@html highlight(
 `/* will generate */
 .color-primary   { color: #0ea7d6 }
 .color-secondary { color: #959595 }
 .color-danger    { color: red }
-`, 'css', true)}
+`, 'css')}
 
 <p class="info mt-30 mb-30">In the case where the expansion is <strong>targetting a single value</strong>, the <strong>last crumb </strong>of the path will be <strong>used as the name</strong> of its value.</p>
 
@@ -167,12 +167,12 @@ a {
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 {@html highlight(
 `/* will generate */
 .color-primary { color: #0ea7d6 }
 .color-danger  { color: red }
-`, 'css', true)}
+`, 'css')}
 
 <h3 class="mt-45">Aliases</h3>
 <p>The config map not being initialized,
@@ -201,7 +201,7 @@ They are however working with regular values.</p>
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 
 <p class="mt-30">Aliases will help you overcome this problem and avoid you repeating values already set.
 At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</code>.</p>
@@ -224,7 +224,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 
 <hr>
 <h2>Access Data</h2>
@@ -250,7 +250,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
   ),
   ...
 );
-`, 'scss', true)}
+`, 'scss')}
 
 {@html highlight(
 `.hero {
@@ -261,7 +261,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
  font-family: oo('body.props.fontFamily');
 
  background-color: oo('palette.primary');
-} `, 'css', true)}
+} `, 'css')}
 
 <p class="info mt-15">Make sure to <strong>use <span class="color-primary">oo()</span> after the initialization </strong>of the config map to have all the updated data.</p>
 <hr>

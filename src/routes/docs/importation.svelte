@@ -10,7 +10,7 @@
 <h1>Importation</h1>
 <p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a> including the selection of the part of the framework. This makes the loop main file <strong>the only needed</strong> import.</p>
 
-{@html highlight(`@import 'loop/scss'; // that's all`, 'scss', true)}
+{@html highlight(`@import 'loop/scss'; // that's all`, 'scss')}
 
 <h2 class="mt-30" id="config">Use of Config</h2>
 <p>Adjust your needs of the framework by updating the <em>use</em> property of the config map.</p>
@@ -65,7 +65,7 @@ use: (
     )
   )
 ));
-`, 'scss', true)}
+`, 'scss')}
 {@html highlight(
 `@import '~loop/scss';
 
@@ -77,7 +77,7 @@ use: (
     )
   )
 ));
-`, 'scss', true)}
+`, 'scss')}
 
 <h3 class="h4 mt-45">Update one property at the time</h3>
 <p>Use the functions <code>ooSet()</code> or <code>ooPipe()</code> to set individual properties.</p>
@@ -93,7 +93,7 @@ $ooLoop: ooPipe(
 );
 
 @include ooCreate();
-`, 'scss', true)}
+`, 'scss')}
 
 <h3 class="h4 mt-45">Update with ooUse()</h3>
 <p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
@@ -113,7 +113,7 @@ $ooLoop: ooUse((
 ));
 
 @include ooCreate();
-`, 'scss', true)}
+`, 'scss')}
 
 <hr>
 <h2 id="mixin">Use of mixin</h2>
@@ -171,7 +171,7 @@ That will also give you the opportunity to set some global settings.</p>
 
 // Add visibility utility
 @include Visibility();
-`, 'scss', true)}
+`, 'scss')}
 
 <hr>
 <h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>

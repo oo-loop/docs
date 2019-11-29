@@ -90,7 +90,7 @@ body {
   color: #333;
   background-color: #f8f8f8;
 }
-`, 'css', true)}
+`, 'css')}
 
 <p class="mt-30">Add only the properties you want to the body</p>
 {@html highlight(`$ooLoop: ooSet('body.props', (
@@ -105,7 +105,7 @@ body {
   color: #333;
   background-color: #f8f8f8;
 }
-`, 'css', true)}
+`, 'css')}
 
 <hr>
 
@@ -249,7 +249,7 @@ h3 { font-size: 1.375rem; }
 h4 { font-size: 1.125rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.875rem; }
-`, 'css', true)}
+`, 'css')}
 
 <h3 class="mt-45">Headings classes</h3>
 <p>List each heading you would like to use as an utility class by adding the property <code>classes</code> to the <code>headings</code> map.</p>
