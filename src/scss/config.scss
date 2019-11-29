@@ -12,12 +12,15 @@ $ooLoop: ooAdd('headings', (
   classes: ('h3', 'h4'),
 ));
 
-$ooLoop: ooAdd('column.gutter.sizes', (
-  'large': (
-    rt: rem(30),
-    md: rem(50),
-  ) 
-));
+$ooLoop: ooPipe(
+  _add('column.gutter.sizes', (
+    'large': (
+      rt: rem(30),
+      md: rem(50),
+    )
+  )),
+  _add('column.alignment.screens', 'lg'),
+);
 
 // Utilities
 $ooLoop: ooPipe(

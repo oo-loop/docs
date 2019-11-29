@@ -6,6 +6,17 @@
 
   let isClear = true
   let isStretch = true
+
+  let alignment = ['left', 'center', 'right', 'evenly', 'between']
+  let alignmentSelected = 'center'
+  let lgAlignmentSelected = 'evenly'
+
+  let valignment = ['top', 'middle', 'bottom']
+  let valignmentSelected = 'middle'
+  let lgValignmentSelected = ''
+
+  $: alignmentProp = `align-${valignmentSelected}${alignmentSelected !== `left` ? ` align-${alignmentSelected}` : ''}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}${lgValignmentSelected ? ` align-${lgValignmentSelected}@lg` : ''}`
+
 </script>
 
 <style>
@@ -120,14 +131,14 @@ column: (
 
 <hr>
 <h2>Fit column</h2>
-<p>Let the column fits to the size of the content.<br>
-The responsive screens config property is refering to the column component screens, giving you <code>fit</code><code>fit@sm</code><code>fit@md</code><code>fit@lg</code> modifiers.</p>
+<p>Let the column fits to the size of the content.<code>col="fit"</code><br>
+The responsive screens config property is refering to the column component screens, giving you <code>fit@sm</code><code>fit@md</code><code>fit@lg</code> modifiers.</p>
 
-{@html highlight(
-`column: (
+{@html highlight(`// default config
+column: (
   fit: (
-    use: true,
-    screens: this('column.screens'),
+    use: true, // included
+    screens: this('column.screens'), // sm, md, lg
   ),
 ),`, 'scss')}
 
@@ -174,7 +185,7 @@ The responsive screens config property is refering to the column component scree
 
 <hr>
 <h2>Clear column</h2>
-<p>Start a new row within the flow of columns. <code>clear</code></p>
+<p>Start a new row within the flow of columns. <code>col="clear"</code></p>
 
 {@html highlight(
 `<div oo-row>
@@ -223,5 +234,79 @@ The responsive screens config property is refering to the column component scree
     <Col cell>
       <div class="child">Less here</div>
     </Col>
+  </Row>
+</div>
+
+<hr>
+<h2>Alignment</h2>
+<p>Align a group of columns <code>row="align..."</p>
+{@html highlight(`// default config 
+column: (
+  alignment: (
+    use: true, // included
+    screens: (), // no-reponsive available
+  ),
+),`, 'scss')}
+
+{@html highlight(`// set lg as available screen
+$ooLoop: ooSet('column.alignment.screens', 'lg');
+`, 'scss')}
+
+{@html highlight(
+`<div oo-row="${alignmentProp}">
+  <div oo-col="span5">1</div>
+  <div oo-col="span5">2</div>
+</div>
+`, 'html')}
+
+<div class="ground">
+  <Row>
+    <Col prop="span6 span3@sm">
+      <label class="color-body text-small float-left">Align</label>
+      <div data-oo-select>
+        <select class="text-small" bind:value={alignmentSelected}>
+        {#each alignment as val}
+        <option value={val}>{val}</option>
+        {/each}
+        </select>
+      </div>
+    </Col>
+    <Col prop="span6 span3@sm">
+      <label class="color-body text-small float-left">@lg</label>
+      <div data-oo-select>
+        <select class="text-small" bind:value={lgAlignmentSelected}>
+          <option value="{null}">none</option>
+          {#each alignment as val}
+          <option value={val}>{val}@lg</option>
+          {/each}
+        </select>
+      </div>
+    </Col>
+    <Col>
+      <label class="color-body text-small float-left">Valign</label>
+      <div data-oo-select>
+        <select class="text-small" bind:value={valignmentSelected}>
+        {#each valignment as val}
+        <option value={val}>{val}</option>
+        {/each}
+        </select>
+      </div>
+    </Col>
+    <Col>
+      <label class="color-body text-small float-left">@lg</label>
+      <div data-oo-select>
+        <select class="text-small" bind:value={lgValignmentSelected}>
+          <option value="{null}">none</option>
+          {#each valignment as val}
+            <option value={val}>{val}@lg</option>
+          {/each}
+        </select>
+      </div>
+    </Col>
+  </Row>
+  <div class="hr mt-15 mb-30"></div>
+  <Row prop={alignmentProp}>
+    <Col cellLarge prop="span5">1</Col>
+    <Col cell prop="span5">2</Col>
   </Row>
 </div>
