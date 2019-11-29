@@ -3,8 +3,8 @@
   export let segment;
 </script>
 
-<div data-oo-row="gutter-large" class="mt-15">
-  <aside data-oo-col="fit">
+<div data-oo-row="gutter-large">
+  <aside data-oo-col="span12 fit@md">
     <SideNav {segment}/>
   </aside>
   <article data-oo-col="span8@md">

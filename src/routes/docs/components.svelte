@@ -209,10 +209,10 @@ I sometimes get confused between the modifiers and the utilities.</p>
 
 {@html highlight(
 `<div oo-notification="danger">
-  <strong>Oops!</strong><br>You've created a <i>danger</i> notification component.
+  <strong>Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>`, 'html')}
 <div class="notification notification-danger mb-30">
-  <strong>Oops!</strong><br>You've created a <i>danger</i> notification component.
+  <strong>Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>
 <div class="hr"></div>
 <h4>Create from config</h4>

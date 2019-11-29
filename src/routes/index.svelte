@@ -15,7 +15,7 @@ h2 {
 	font-weight: 400;
 }
 .brand {
-	margin: -60px auto 50px;
+	margin: -75px auto 50px;
   max-width: 960px;
 }
 

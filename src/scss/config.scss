@@ -5,8 +5,12 @@ $ooLoop: ooPipe(
   _set('hr.props.margin', rem(45) auto),
 );
 
-
-$ooLoop: ooSet('headings.classes', ('h4'));
+$ooLoop: ooAdd('headings', (
+  props: (
+    fontWeight: 700,
+  ),
+  classes: ('h3', 'h4'),
+));
 
 $ooLoop: ooAdd('column.gutter.sizes', (
   'large': (

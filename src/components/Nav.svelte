@@ -7,6 +7,7 @@
 		position: relative;
     z-index: 1;
 		padding: 0 1em;
+		margin-bottom: 1rem;
 	}
 	ul {
 		margin: 0;
