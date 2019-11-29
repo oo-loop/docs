@@ -3,28 +3,18 @@
   import Row from '../../components/Loop/Row.svelte';
   import Col from '../../components/Loop/Col.svelte';
   import highlight from '../../utils/highlight.js';
+
+  let isClear = true
+  let isStretch = true
 </script>
 
 <style>
-  .ground {
-    padding: 1.25rem;
-    margin-bottom: 30px;
-    color: #046886;
-    text-align: center;
-    border: 1px solid #d5d6d6;
-    background-color: #e7efef;
+  .child {
+    padding: .5rem;
+    margin: .5rem;
+    background-color: #459cb5;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  tr {
-    border-bottom: 1px solid #d5d6d6;
-  }
-  th, td {
-    padding: .5rem;
-  }
   .square {
     display: block;
     width: 80px;
@@ -131,7 +121,7 @@ column: (
 <hr>
 <h2>Fit column</h2>
 <p>Let the column fits to the size of the content.<br>
-The responsive screens is refering to the column component screens which is giving you <code>fit</code><code>fit@sm</code><code>fit@md</code><code>fit@lg</code> by default.</p>
+The responsive screens config property is refering to the column component screens, giving you <code>fit</code><code>fit@sm</code><code>fit@md</code><code>fit@lg</code> modifiers.</p>
 
 {@html highlight(
 `column: (
@@ -184,24 +174,54 @@ The responsive screens is refering to the column component screens which is givi
 
 <hr>
 <h2>Clear column</h2>
-<p>Force to start a new row within the flow of columns.</p>
+<p>Start a new row within the flow of columns. <code>clear</code></p>
 
 {@html highlight(
 `<div oo-row>
-  <div oo-col="span2"></div>
-  <div oo-col></div>
-  <div oo-col="clear"></div>
-  <div oo-col></div>
-  <div oo-col></div>
+  <div oo-col="span2">1</div>
+  <div oo-col>2</div>
+  ${isClear ? '<div oo-col="clear"></div>' : '<!-- no clear -->'}
+  <div oo-col>3</div>
+  <div oo-col>4</div>
 </div>
 `, 'html')}
 
+<button data-oo-button class="float-right" on:click={() => isClear = !isClear}>toggle clear</button>
 <div class="ground">
   <Row>
-    <Col cell prop="span2"></Col>
-    <Col cell></Col>
-    <Col prop="clear"></Col>
-    <Col cell></Col>
-    <Col cell></Col>
+    <Col cell prop="span2">1</Col>
+    <Col cell>2</Col>
+    {#if isClear}
+      <Col prop="clear"></Col>
+    {/if}
+    <Col cell>3</Col>
+    <Col cell>4</Col>
+  </Row>
+</div>
+
+<hr>
+<h2>Stretch children height</h2>
+<p>Match the eight of each column child elements. <code>row="stretch"</code></p>
+
+{@html highlight(
+`<div oo-row${isStretch ? '="stretch"' : ''}>
+  <div oo-col>
+    <div class="child">More content<br>in<br>that column</div>
+  </div>
+  <div oo-col>
+    <div class="child">Less content</div>
+  </div>
+</div>
+`, 'html')}
+
+<button data-oo-button class="float-right" on:click={() => isStretch = !isStretch}>toggle stretch</button>
+<div class="ground">
+  <Row prop="{isStretch ? 'stretch' : ''}">
+    <Col cell>
+      <div class="child">More content<br>for that child</div>
+    </Col>
+    <Col cell>
+      <div class="child">Less here</div>
+    </Col>
   </Row>
 </div>
