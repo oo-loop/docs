@@ -382,7 +382,7 @@ column: (
 
 <hr>
 <h2>Children content alignment</h2>
-<p>Align content of a <strong>stretched</strong> child.</p>
+<p>Align content of a <strong>stretched</strong> child by passing to <code>col=""</code> the options  <code>child-align-left</code><code>child-align-center</code><code>child-align-right</code><code>child-valign-top</code><code>child-valign-middle</code><code>child-valign-bottom</code>.</p>
 {@html highlight(`// default config 
 column: (
   childAlignment: (
@@ -390,7 +390,10 @@ column: (
   ),
 ),`, 'scss')}
 
-<p class="mt-30">Enable the property and get the  options <code>child-align-left</code><code>child-align-center</code><code>child-align-right</code><code>child-valign-top</code><code>child-valign-middle</code><code>child-valign-bottom</code>.</p>
+{@html highlight(`// enable the feature
+$ooLoop: ooSet('column.childAlignment.use', true);
+`, 'scss')}
+
 {@html highlight(
 `<div oo-row="stretch">
   <div oo-col="span6">
@@ -437,3 +440,59 @@ column: (
     </Col>
   </Row>
 </div>
+
+<hr>
+<h2>Order</h2>
+<p>Rearrange the order <i>(from 0 to 11)</i> of the columns for responsive purposes <code>col="order<i class="color-secondary">#</i>@<i class="color-secondary">screenName</i>"</code>.</p>
+{@html highlight(`// default config 
+column: (
+  order: (
+    use: false, // not included
+    screens: this('column.screens'), // sm, md, lg
+  ),
+),`, 'scss')}
+
+{@html highlight(`// enable the feature
+$ooLoop: ooSet('column.order.use', true);
+`, 'scss')}
+
+{@html highlight(
+`<div oo-row>
+  <div oo-col="span6 span3@sm order2@lg">one</div>
+  <div oo-col="span6 span3@sm order0@lg">two</div>
+  <div oo-col="span6 span3@sm order3@sm">three</div>
+  <div oo-col="span6 span3@sm order0@md">four</div>
+</div>
+`, 'html')}
+<div class="ground">
+  <Row>
+    <Col cell prop="span6 span3@sm order2@lg">one</Col>
+    <Col cell prop="span6 span3@sm order0@lg">two</Col>
+    <Col cell prop="span6 span3@sm order3@sm">three</Col>
+    <Col cell prop="span6 span3@sm order0@md">four</Col>
+  </Row>
+</div>
+
+<p class="info">Enabled, <em>order</em> provides <strong>12 modifiers per screens</strong> which create <strong>36 CSS rules overall</strong> (considering sm, md, lg per default).</p>
+
+<h4 class="mt-30">Be specific, lighten your css</h4>
+<p>The number of created CSS rules can be quite a lot when its use on a project is minimum. Specify the needed position from the needed screens and generate only the necessary rules.</p>
+
+{@html highlight(`/* Specification for the above example (4 CSS rules) */
+$ooLoop: ooSet('column.order.screens', (
+  sm: 3,      // order3sm
+  md: 0,      // order0@md
+  lg: (0, 2), // order0@lg, order2@lg
+));
+
+/* Other situation */
+$ooLoop: ooSet('column.order.screens', (
+  sm: (),// from order0@sm to order11@sm
+  md: 0, // order0@md
+));
+
+/**/
+$ooLoop: ooSet('column.order.screens', 'sm'); // from order0@sm to order11@sm
+`, 'scss')}
+
+<hr>

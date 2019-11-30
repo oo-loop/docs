@@ -12,6 +12,7 @@ $ooLoop: ooAdd('headings', (
   classes: ('h3', 'h4'),
 ));
 
+// Column
 $ooLoop: ooPipe(
   _add('column.gutter.sizes', (
     'large': (
@@ -21,6 +22,14 @@ $ooLoop: ooPipe(
   )),
   _add('column.alignment.screens', 'lg'),
   _set('column.childAlignment.use', true),
+  _set('column.order', (
+    use: true,
+    screens: (
+      sm: 3,
+      md: 0,
+      lg: (0, 2),
+    )
+  )),
 );
 
 // Utilities
