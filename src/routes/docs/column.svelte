@@ -15,7 +15,7 @@
   let valignmentSelected = 'middle'
   let lgValignmentSelected = ''
 
-  $: alignmentProp = `align-${valignmentSelected}${alignmentSelected !== `left` ? ` align-${alignmentSelected}` : ''}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}${lgValignmentSelected ? ` align-${lgValignmentSelected}@lg` : ''}`
+  $: alignmentProp = `valign-${valignmentSelected}${lgValignmentSelected ? ` valign-${lgValignmentSelected}@lg` : ''} align-${alignmentSelected}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}`
 
 </script>
 
@@ -239,7 +239,7 @@ column: (
 
 <hr>
 <h2>Alignment</h2>
-<p>Align a group of columns <code>row="align..."</p>
+<p>Align a group of columns <code>row="align... valign..."</p>
 {@html highlight(`// default config 
 column: (
   alignment: (
