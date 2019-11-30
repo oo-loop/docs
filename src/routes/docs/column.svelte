@@ -20,6 +20,9 @@
   let selfAlignmentSelectedB = 'left'
   let selfValignmentSelectedB = 'middle'
 
+  let childAlignmentSelected = 'left'
+  let childValignmentSelected = 'top'
+
   $: alignmentProp = `valign-${valignmentSelected}${lgValignmentSelected ? ` valign-${lgValignmentSelected}@lg` : ''} align-${alignmentSelected}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}`
 
 </script>
@@ -266,29 +269,8 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 `, 'html', 'mb-30')}
 
 <Row>
-  <Col prop="span6 span3@sm">
-    <label class="color-body text-small float-left">Align</label>
-    <div data-oo-select>
-      <select class="text-small" bind:value={alignmentSelected}>
-      {#each alignment as val}
-      <option value={val}>{val}</option>
-      {/each}
-      </select>
-    </div>
-  </Col>
-  <Col prop="span6 span3@sm">
-    <label class="color-body text-small float-left">@lg</label>
-    <div data-oo-select>
-      <select class="text-small" bind:value={lgAlignmentSelected}>
-        <option value="{null}">none</option>
-        {#each alignment as val}
-        <option value={val}>{val}@lg</option>
-        {/each}
-      </select>
-    </div>
-  </Col>
   <Col>
-    <label class="color-body text-small float-left">Valign</label>
+    <label class="color-body text-small">Valign</label>
     <div data-oo-select>
       <select class="text-small" bind:value={valignmentSelected}>
       {#each valignment as val}
@@ -298,12 +280,33 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
     </div>
   </Col>
   <Col>
-    <label class="color-body text-small float-left">@lg</label>
+    <label class="color-body text-small">@lg</label>
     <div data-oo-select>
       <select class="text-small" bind:value={lgValignmentSelected}>
         <option value="{null}">none</option>
         {#each valignment as val}
           <option value={val}>{val}@lg</option>
+        {/each}
+      </select>
+    </div>
+  </Col>
+  <Col prop="span6 span3@sm">
+    <label class="color-body text-small">Align</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={alignmentSelected}>
+      {#each alignment as val}
+      <option value={val}>{val}</option>
+      {/each}
+      </select>
+    </div>
+  </Col>
+  <Col prop="span6 span3@sm">
+    <label class="color-body text-small">@lg</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={lgAlignmentSelected}>
+        <option value="{null}">none</option>
+        {#each alignment as val}
+        <option value={val}>{val}@lg</option>
         {/each}
       </select>
     </div>
@@ -336,7 +339,7 @@ column: (
 
 <Row>
   <Col prop="span12 span6@sm">
-    <label class="color-body text-small float-left">Self-align A</label>
+    <label class="color-body text-small">Self-align A</label>
     <div data-oo-select>
       <select class="text-small" bind:value={selfAlignmentSelectedA}>
       {#each alignment as val}
@@ -347,8 +350,18 @@ column: (
       </select>
     </div>
   </Col>
+  <Col>
+    <label class="color-body text-small">Self-valign B</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={selfValignmentSelectedB}>
+      {#each valignment as val}
+      <option value={val}>{val}</option>
+      {/each}
+      </select>
+    </div>
+  </Col>
   <Col prop="span6 span3@sm">
-    <label class="color-body text-small float-left">Self-align B</label>
+    <label class="color-body text-small">Self-align B</label>
     <div data-oo-select>
       <select class="text-small" bind:value={selfAlignmentSelectedB}>
       {#each alignment as val}
@@ -359,20 +372,68 @@ column: (
       </select>
     </div>
   </Col>
+</Row>
+<div class="ground mt-15">
+  <Row>
+    <Col cellLarge prop="span5 self-align-{selfAlignmentSelectedA}">A</Col>
+    <Col cell prop="span5 self-align-{selfAlignmentSelectedB} self-valign-{selfValignmentSelectedB}">B</Col>
+  </Row>
+</div>
+
+<hr>
+<h2>Children content alignment</h2>
+<p>Align content of a <strong>stretched</strong> child.</p>
+{@html highlight(`// default config 
+column: (
+  childAlignment: (
+    use: false, // Not included
+  ),
+),`, 'scss')}
+
+<p class="mt-30">Enable the property and get the  options <code>child-align-left</code><code>child-align-center</code><code>child-align-right</code><code>child-valign-top</code><code>child-valign-middle</code><code>child-valign-bottom</code>.</p>
+{@html highlight(
+`<div oo-row="stretch">
+  <div oo-col="span6">
+    <br><br><br><br>
+  </div>
+  <div oo-col="span6 child-valign-${childValignmentSelected} child-align-${childAlignmentSelected}">
+    <div class="child">B</div>
+  </div>
+</div>
+`, 'html', 'mb-30')}
+
+<Row>
   <Col>
-    <label class="color-body text-small float-left">Self-valign B</label>
+    <label class="color-body text-small">Child-valign B</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={selfValignmentSelectedB}>
+      <select class="text-small" bind:value={childValignmentSelected}>
       {#each valignment as val}
       <option value={val}>{val}</option>
       {/each}
       </select>
     </div>
   </Col>
+  <Col prop="span6">
+    <label class="color-body text-small">Child-align B</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={childAlignmentSelected}>
+      {#each alignment as val}
+        {#if ['between', 'evenly'].indexOf(val) === -1}
+        <option value={val}>{val}</option>
+        {/if}
+      {/each}
+      </select>
+    </div>
+  </Col>
 </Row>
+
 <div class="ground mt-15">
-  <Row>
-    <Col cellLarge prop="span5 self-align-{selfAlignmentSelectedA}">A</Col>
-    <Col cell prop="span5 self-align-{selfAlignmentSelectedB} self-valign-{selfValignmentSelectedB}">B</Col>
+  <Row prop="stretch">
+    <Col cell>
+      <br><br><br><br>
+    </Col>
+    <Col cell prop="child-align-{childAlignmentSelected} child-valign-{childValignmentSelected}">
+      <div class="child">B</div>
+    </Col>
   </Row>
 </div>

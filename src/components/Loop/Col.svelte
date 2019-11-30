@@ -13,7 +13,7 @@
   min-height: 2rem;
 }
 .cell-large {
-  padding: 1.25rem;
+  padding: 1.5rem;
 }
 </style>
 

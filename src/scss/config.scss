@@ -20,6 +20,7 @@ $ooLoop: ooPipe(
     )
   )),
   _add('column.alignment.screens', 'lg'),
+  _set('column.childAlignment.use', true),
 );
 
 // Utilities
