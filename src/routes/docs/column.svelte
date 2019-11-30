@@ -15,6 +15,11 @@
   let valignmentSelected = 'middle'
   let lgValignmentSelected = ''
 
+
+  let selfAlignmentSelectedA = 'left'
+  let selfAlignmentSelectedB = 'left'
+  let selfValignmentSelectedB = 'middle'
+
   $: alignmentProp = `valign-${valignmentSelected}${lgValignmentSelected ? ` valign-${lgValignmentSelected}@lg` : ''} align-${alignmentSelected}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}`
 
 </script>
@@ -23,6 +28,7 @@
   .child {
     padding: .5rem;
     margin: .5rem;
+    color:#1d3035;
     background-color: #459cb5;
   }
 
@@ -101,10 +107,10 @@ column: (
     </tr>
     <tr>
        <th class="text-left text-small">Sizes</th>
-      <td><code>span#</code></td>
-      <td><code>span#@sm</code></td>
-      <td><code>span#@md</code></td>
-      <td><code>span#@lg</code></td>
+      <td><code>span<i class="color-secondary">#</i></code></td>
+      <td><code>span<i class="color-secondary">#</i>@sm</code></td>
+      <td><code>span<i class="color-secondary">#</i>@md</code></td>
+      <td><code>span<i class="color-secondary">#</i>@lg</code></td>
     </tr>
   </tbody>
 </table>
@@ -132,7 +138,7 @@ column: (
 <hr>
 <h2>Fit column</h2>
 <p>Let the column fits to the size of the content.<code>col="fit"</code><br>
-The responsive screens config property is refering to the column component screens, giving you <code>fit@sm</code><code>fit@md</code><code>fit@lg</code> modifiers.</p>
+The config <em>screens</em> property is refering to the column component screens, giving you the reponsive variants <code>fit@sm</code><code>fit@md</code><code>fit@lg</code>.</p>
 
 {@html highlight(`// default config
 column: (
@@ -239,74 +245,134 @@ column: (
 
 <hr>
 <h2>Alignment</h2>
-<p>Align a group of columns <code>row="align... valign..."</p>
+<p>Align a group of columns from <code>row=""</code>, through the options <code>align-left</code><code>align-center</code><code>align-right</code><code>align-evenly</code><code>align-between</code><code>valign-top</code><code>valign-middle</code><code>valign-bottom</code></p>
 {@html highlight(`// default config 
 column: (
   alignment: (
     use: true, // included
-    screens: (), // no-reponsive available
+    screens: (), // none
   ),
 ),`, 'scss')}
-
+<p class="mt-30">Setting the config <strong>screens</strong> property will offer you the same options with the responsive variants <code><i class="color-secondary">alignment</i>@<i class="color-secondary">screenName</i></code>.</p>
 {@html highlight(`// set lg as available screen
-$ooLoop: ooSet('column.alignment.screens', 'lg');
+$ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 `, 'scss')}
 
 {@html highlight(
 `<div oo-row="${alignmentProp}">
-  <div oo-col="span5">1</div>
-  <div oo-col="span5">2</div>
+  <div oo-col="span5"></div>
+  <div oo-col="span5"></div>
 </div>
-`, 'html')}
+`, 'html', 'mb-30')}
 
-<div class="ground">
-  <Row>
-    <Col prop="span6 span3@sm">
-      <label class="color-body text-small float-left">Align</label>
-      <div data-oo-select>
-        <select class="text-small" bind:value={alignmentSelected}>
+<Row>
+  <Col prop="span6 span3@sm">
+    <label class="color-body text-small float-left">Align</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={alignmentSelected}>
+      {#each alignment as val}
+      <option value={val}>{val}</option>
+      {/each}
+      </select>
+    </div>
+  </Col>
+  <Col prop="span6 span3@sm">
+    <label class="color-body text-small float-left">@lg</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={lgAlignmentSelected}>
+        <option value="{null}">none</option>
         {#each alignment as val}
-        <option value={val}>{val}</option>
+        <option value={val}>{val}@lg</option>
         {/each}
-        </select>
-      </div>
-    </Col>
-    <Col prop="span6 span3@sm">
-      <label class="color-body text-small float-left">@lg</label>
-      <div data-oo-select>
-        <select class="text-small" bind:value={lgAlignmentSelected}>
-          <option value="{null}">none</option>
-          {#each alignment as val}
-          <option value={val}>{val}@lg</option>
-          {/each}
-        </select>
-      </div>
-    </Col>
-    <Col>
-      <label class="color-body text-small float-left">Valign</label>
-      <div data-oo-select>
-        <select class="text-small" bind:value={valignmentSelected}>
+      </select>
+    </div>
+  </Col>
+  <Col>
+    <label class="color-body text-small float-left">Valign</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={valignmentSelected}>
+      {#each valignment as val}
+      <option value={val}>{val}</option>
+      {/each}
+      </select>
+    </div>
+  </Col>
+  <Col>
+    <label class="color-body text-small float-left">@lg</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={lgValignmentSelected}>
+        <option value="{null}">none</option>
         {#each valignment as val}
-        <option value={val}>{val}</option>
+          <option value={val}>{val}@lg</option>
         {/each}
-        </select>
-      </div>
-    </Col>
-    <Col>
-      <label class="color-body text-small float-left">@lg</label>
-      <div data-oo-select>
-        <select class="text-small" bind:value={lgValignmentSelected}>
-          <option value="{null}">none</option>
-          {#each valignment as val}
-            <option value={val}>{val}@lg</option>
-          {/each}
-        </select>
-      </div>
-    </Col>
-  </Row>
-  <div class="hr mt-15 mb-30"></div>
+      </select>
+    </div>
+  </Col>
+</Row>
+<div class="ground mt-15">
   <Row prop={alignmentProp}>
-    <Col cellLarge prop="span5">1</Col>
-    <Col cell prop="span5">2</Col>
+    <Col cellLarge prop="span5"></Col>
+    <Col cell prop="span5"></Col>
+  </Row>
+</div>
+
+<hr>
+<h2>Self alignment</h2>
+<p>Align a single column from <code>col=""</code> through the options <code>self-align-left</code><code>self-align-center</code><code>self-align-right</code><code>self-valign-top</code><code>self-valign-middle</code><code>self-valign-bottom</code></p>
+{@html highlight(`// default config 
+column: (
+  selfAlignment: (
+    use: true, // included
+    screens: (), // none
+  ),
+),`, 'scss')}
+<p class="mt-30">Setting the config <strong>screens</strong> property will offer you the same options with the responsive variants <code>self-<i class="color-secondary">alignment</i>@<i class="color-secondary">screenName</i></code>.</p>
+{@html highlight(
+`<div oo-row>
+  <div oo-col="span5 self-align-${selfAlignmentSelectedA}"></div>
+  <div oo-col="span5 self-valign-${selfValignmentSelectedB} self-align-${selfAlignmentSelectedB}"></div>
+</div>
+`, 'html', 'mb-30')}
+
+<Row>
+  <Col prop="span12 span6@sm">
+    <label class="color-body text-small float-left">Self-align A</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={selfAlignmentSelectedA}>
+      {#each alignment as val}
+        {#if ['between', 'evenly'].indexOf(val) === -1}
+        <option value={val}>{val}</option>
+        {/if}
+      {/each}
+      </select>
+    </div>
+  </Col>
+  <Col prop="span6 span3@sm">
+    <label class="color-body text-small float-left">Self-align B</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={selfAlignmentSelectedB}>
+      {#each alignment as val}
+        {#if ['between', 'evenly'].indexOf(val) === -1}
+        <option value={val}>{val}</option>
+        {/if}
+      {/each}
+      </select>
+    </div>
+  </Col>
+  <Col>
+    <label class="color-body text-small float-left">Self-valign B</label>
+    <div data-oo-select>
+      <select class="text-small" bind:value={selfValignmentSelectedB}>
+      {#each valignment as val}
+      <option value={val}>{val}</option>
+      {/each}
+      </select>
+    </div>
+  </Col>
+</Row>
+<div class="ground mt-15">
+  <Row>
+    <Col cellLarge prop="span5 self-align-{selfAlignmentSelectedA}">A</Col>
+    <Col cell prop="span5 self-align-{selfAlignmentSelectedB} self-valign-{selfValignmentSelectedB}">B</Col>
   </Row>
 </div>

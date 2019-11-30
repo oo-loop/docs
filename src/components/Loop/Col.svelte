@@ -2,6 +2,8 @@
   export let prop = '';
   export let cell = false;
   export let cellLarge = false;
+
+  $: hasCellClass = cell || cellLarge
 </script>
 
 <style>
@@ -11,10 +13,10 @@
   min-height: 2rem;
 }
 .cell-large {
-  min-height: 4rem;
+  padding: 1.25rem;
 }
 </style>
 
-<div data-oo-col="{prop}" class="{cell || cellLarge ? 'cell': ''}{cellLarge ? ' cell-large' :''}">
+<div data-oo-col="{prop}" class="{hasCellClass ? 'cell': ''}{cellLarge ? ' cell-large' :''}">
   <slot></slot>
 </div>
