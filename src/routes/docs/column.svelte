@@ -30,22 +30,20 @@
 
 </script>
 
-<style>
+<style lang="scss">
   .child {
     padding: .5rem;
     margin: .5rem;
     color:#1d3035;
-    background-color: #459cb5;
+    background-color: oo('palette.sample.dark');
   }
 
   .square {
     display: block;
     width: 80px;
     height: 80px;
-    background-color: #87cadb;    
-  }
-  @media (min-width: 30em) {
-    .square {
+    background-color: oo('palette.sample.light');    
+    @include breakpoint(xs) {
       width: 100px;
       height: 100px;
     }
@@ -55,7 +53,7 @@
 <HeadTitle title="Column component"/>
 
 <h1>Column</h1>
-<p class="text-large">Component based on the 12 columns system to layout elements in a page.<br>
+<p class="text-large">Layout elements in page based on the 12 columns system.<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
 <ul class="text-small mb-30">

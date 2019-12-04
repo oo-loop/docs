@@ -67,6 +67,13 @@ $ooLoop: ooPipe(
 );
 
 @include ooInit((
+  palette: (
+    'sample': (
+      'light': #87cadb,
+      'dark': #459cb5,
+      'darker': #176d84,
+    ),
+  ),
   body: (
     props: (
       background-color: #f8f8f8,

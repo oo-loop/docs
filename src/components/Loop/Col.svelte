@@ -7,17 +7,17 @@
   $: hasCellClass = cell || cellLarge
 </script>
 
-<style>
+<style lang="scss">
 .cell {
   padding: .5rem;
-  background-color: #87cade;
+  background-color: oo('palette.sample.light');
   min-height: 2rem;
 }
 .cell-large {
   padding: 1.5rem;
 }
 .bordered {
-  border: 1px solid #459cb5;
+  border: 1px solid oo('palette.sample.dark');;
 }
 </style>
 
