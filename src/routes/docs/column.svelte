@@ -55,10 +55,22 @@
 <HeadTitle title="Column component"/>
 
 <h1>Column</h1>
-<p class="text-large">Component based on the 12 columns system.<br>
+<p class="text-large">Component based on the 12 columns system to layout elements in a page.<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
-<p>The size of each column is <strong>set as auto default</strong></p>
+<ul class="text-small mb-30">
+<li><a href="docs/column#responsive-screens" title="Responsive screens">Responsive screens</a></li>
+<li><a href="docs/column#fit" title="Fit column">Fit column</a></li>
+<li><a href="docs/column#clear" title="Clear column">Clear column</a></li>
+<li><a href="docs/column#gutter" title="Gutter control">Gutter control</a></li>
+<li><a href="docs/column#stretch" title="Stretch children height">Stretch children</a></li>
+<li><a href="docs/column#alignment" title="Alignment">Alignment</a></li>
+<li><a href="docs/column#self-alignment" title="Self alignment">Self alignment</a></li>
+<li><a href="docs/column#children-alignment" title="Children alignment">Children alignment</a></li>
+<li><a href="docs/column#order" title="Order column">Order column</a></li>
+</ul>
+
+<p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
 {@html highlight(
 `<!-- Auto column -->
 <div oo-row>
@@ -583,7 +595,7 @@ $ooLoop: ooSet('column.childAlignment.use', true);
 </div>
 
 <hr>
-<h2 id="order"><a href="docs/column#order">#</a> Order</h2>
+<h2 id="order"><a href="docs/column#order">#</a> Order column</h2>
 <p>Rearrange the order of the columns for responsive purposes <code>col="order<i class="color-secondary">#</i>@<i class="color-secondary">screenName</i>"</code><i>(from 0 to 11)</i>.</p>
 {@html highlight(`// default config 
 column: (
