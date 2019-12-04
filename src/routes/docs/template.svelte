@@ -1,6 +1,12 @@
 <script>
-  import HeadTitle from '../../components/HeadTitle.svelte';
-  import highlight from '../../utils/highlight.js';
+  import HeadTitle from '../../components/HeadTitle.svelte'
+  import highlight from '../../utils/highlight.js'
+
+  let gap = ['default', 'less', 'small']
+  let gapSelected = 'default'
+  $: gapProp = gapSelected === 'default' ? '' : ` gap-${gapSelected}`
+
+  let isVgapless = false
 </script>
 
 <style lang="scss">
@@ -14,12 +20,14 @@
   }
   .light { background-color: oo('palette.sample.light'); }
   
-  .header,
-  .footer {
+  .small {
     height: 45px;
   }
-  .main {
+  .high {
     height: 150px;
+  }
+  [data-oo-template] {
+    clear: both;
   }
   [data-oo-area] {
     display: flex;
@@ -43,6 +51,7 @@ template: (
 ),
 `, 'scss')}
 
+<p class="mt-30">Repeat the areas' name to set the proportional size between each location.</p>
 {@html highlight(
 `$ooLoop: ooSet('template.areas', ( 
   rt: (
@@ -52,9 +61,9 @@ template: (
     "footer"
   ),
   sm: (
-    "header header header header"
-    "main main main sidebar"
-    "footer footer footer footer"
+    "header header header header"// full width
+    "main main main sidebar"     // main 3/4 & sidebar 1/4
+    "footer footer footer footer"// full width
   ),
 ));`, 'scss')}
 
@@ -68,10 +77,137 @@ template: (
 `, 'html')}
 
 <div class="ground">
-  <div data-oo-template>
-    <div class="header light" data-oo-area="header">Header</div>
-    <div class="main dark" data-oo-area="main">Main</div>
+  <div data-oo-template="home gap-less">
+    <div class="small light" data-oo-area="header">Header</div>
+    <div class="high dark" data-oo-area="main">Main</div>
     <div class="darker" data-oo-area="sidebar">Sidebar</div>
-    <div class="footer light" data-oo-area="footer">Footer</div>
+    <div class="small light" data-oo-area="footer">Footer</div>
   </div>
 </div>
+
+<hr>
+<h2 id="multiple"><a href="docs/template#multiple" title="Multiple templates">#</a> Multiple templates</h2>
+<p>Pass a list of <strong>named templates</strong> to the <em>areas</em> property.</p>
+
+{@html highlight(
+`$ooLoop: ooSet('template.areas', (
+  'home': (
+    rt: (
+      "header"
+      "main"
+      "sidebar"
+      "footer"
+    ),
+    sm: (
+      "header header header header"
+      "main main main sidebar"
+      "footer footer footer footer"
+    ),
+  ),
+
+  'abc': (
+    rt: (
+      "a"
+      "b"
+      "c"
+    ),
+    sm: (
+      "a a"
+      "c b"
+      "c b"
+    ),
+    md: (
+      "a a a"
+      "b c c"
+      "b c c"
+    ),
+    lg: (
+      "a b b"
+      "a c c"
+      "a . ."
+    ),
+  )
+));`, 'scss')}
+
+{@html highlight(
+`<div oo-template="abc">
+  <div oo-area="a">A</div>
+  <div oo-area="b">B</div>
+  <div oo-area="c">C</div>
+</div>
+`, 'html')}
+
+<div class="ground">
+  <div data-oo-template="abc gap-less">
+    <div class="high light" data-oo-area="a">A</div>
+    <div class="small dark" data-oo-area="b">B</div>
+    <div class="small darker" data-oo-area="c">C</div>
+  </div>
+</div>
+
+<hr>
+<h2 id="gap"><a href="docs/template#gap" title="Gap">#</a> Gap</h2>
+<p>Change the space horizontally and vertically between the areas.<code>gap-<i>gapName</i> <code>vgap-<i>gapName</i></code></p>
+
+{@html highlight(
+`// default config
+template: (
+  gap: (
+    sizes: (),  // gap between columns and between rows
+    screens: (),// responsive screens for sizes
+    vsizes: (), // gap between rows only
+    vscreens:(),// responsive screens for vsizes
+  ),
+)`, 'scss')}
+
+{@html highlight(
+`$ooLoop: ooSet('template.gap', (
+  sizes: (
+    default: 1rem, // use default keyword to set main gap
+    'less': 0, // gap-less
+    'small': ( // responsive map
+      rt: .25rem,
+      sm: .5rem, 
+    ),
+  ),
+  vsizes: (
+    'less': 0, // vgap-less
+  ),
+));`, 'scss')}
+
+{@html highlight(
+`<div oo-template="home${gapProp}${isVgapless ? ' vgap-less' : ''}">
+ <div oo-area="header">Header</div>
+  <div oo-area="main">Main</div>
+  <div oo-area="sidebar">Sidebar</div>
+  <div oo-area="footer">Footer</div>
+</div>
+`, 'html')}
+<button data-oo-button class="text-small float-right"
+  on:click={() => isVgapless = !isVgapless}>toggle vgap-less</button>
+<div data-oo-select class="float-right mb-root" style="width:140px">
+  <select class="text-small font-bold" bind:value={gapSelected}>
+  {#each gap as val}
+    <option value={val}>gap {val}</option>
+  {/each}
+  </select>
+</div>
+<div class="ground">
+  <div data-oo-template="home{gapProp}{isVgapless ? ' vgap-less' : ''}">
+    <div class="small light" data-oo-area="header">Header</div>
+    <div class="high dark" data-oo-area="main">Main</div>
+    <div class="darker" data-oo-area="sidebar">Sidebar</div>
+    <div class="small light" data-oo-area="footer">Footer</div>
+  </div>
+</div>
+
+{@html highlight(
+`// default config
+template: (
+  gap: (
+    sizes: (),
+    screens: (),// responsive screens for sizes
+    vsizes: (),
+    vscreens:(),// responsive screens for vsizes
+  ),
+)`, 'scss')}
