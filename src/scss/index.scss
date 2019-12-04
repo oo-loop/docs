@@ -1,4 +1,7 @@
 @import 'config';
+
+@include ooCreate();
+
 @import 'code';
 @import 'info';
 @import 'table';

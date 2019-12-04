@@ -5,6 +5,7 @@ import sass from 'rollup-plugin-sass';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import postcss from 'postcss';
@@ -17,6 +18,16 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
+
+const preprocess = sveltePreprocess({
+	scss: {
+		data: `@import 'scss/config.scss';`,
+		includePaths: ['src'],
+	},
+	postcss: {
+		plugins: [autoprefixer],
+	},
+});
 
 export default {
 	client: {
@@ -51,7 +62,8 @@ export default {
 			svelte({
 				dev,
 				hydratable: true,
-				emitCss: true
+				emitCss: true,
+				preprocess
 			}),
 			resolve({
 				browser: true,
@@ -94,7 +106,8 @@ export default {
 			}),
 			svelte({
 				generate: 'ssr',
-				dev
+				dev,
+				preprocess
 			}),
 			resolve({
 				dedupe

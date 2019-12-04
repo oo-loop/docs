@@ -1,20 +1,5 @@
 @import '../../../../loop/scss/loop';
 
-$ooLoop: ooPipe(
-  _add('body.props', (
-    background-color: #f8f8f8,
-    word-break: break-word,
-  )),
-  _set('hr.props.margin', rem(45) auto),
-);
-
-$ooLoop: ooAdd('headings', (
-  props: (
-    fontWeight: 700,
-  ),
-  classes: ('h3', 'h4'),
-));
-
 // Column
 $ooLoop: ooPipe(
   _set('column.gutter.screens', ('sm', 'md')),
@@ -45,6 +30,21 @@ $ooLoop: ooPipe(
   )),
 );
 
+// Template
+$ooLoop: ooSet('template.areas', ( 
+  rt: (
+    "header"
+    "main"
+    "sidebar"
+    "footer"
+  ),
+  sm: (
+    "header header header header"
+    "main main main sidebar"
+    "footer footer footer footer"
+  ),
+));
+
 // Utilities
 $ooLoop: ooPipe(
   _add('color.font.values', (
@@ -66,4 +66,22 @@ $ooLoop: ooPipe(
   ))
 );
 
-@include ooCreate();
+@include ooInit((
+  body: (
+    props: (
+      background-color: #f8f8f8,
+      word-break: break-word,
+    )
+  ),
+  hr: (
+    props: (
+      margin: rem(45) auto,
+    )
+  ),
+  headings: (
+    props: (
+      font-weight: 700,
+    ),
+    classes:  ('h3', 'h4'),
+  )
+));
