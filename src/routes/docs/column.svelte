@@ -15,6 +15,7 @@
   let valignmentSelected = 'middle'
   let lgValignmentSelected = ''
 
+  $: alignmentProp = `valign-${valignmentSelected}${lgValignmentSelected ? ` valign-${lgValignmentSelected}@lg` : ''} align-${alignmentSelected}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}`
 
   let selfAlignmentSelectedA = 'left'
   let selfAlignmentSelectedB = 'left'
@@ -23,7 +24,9 @@
   let childAlignmentSelected = 'left'
   let childValignmentSelected = 'top'
 
-  $: alignmentProp = `valign-${valignmentSelected}${lgValignmentSelected ? ` valign-${lgValignmentSelected}@lg` : ''} align-${alignmentSelected}${lgAlignmentSelected ? ` align-${lgAlignmentSelected}@lg` : ''}`
+  let gutter = ['default', 'less', 'small', 'large']
+  let gutterSelected = 'small'
+  $: gutterProp = gutterSelected !== 'default' ? `gutter-${gutterSelected}` : ''
 
 </script>
 
@@ -52,7 +55,7 @@
 <HeadTitle title="Column component"/>
 
 <h1>Column</h1>
-<p class="text-large">Component based on Flexbox, using the 12 columns system.<br>
+<p class="text-large">Component based on the 12 columns system.<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
 <p>The size of each column is <strong>set as auto default</strong></p>
@@ -71,7 +74,7 @@
   </Row>
 </div>
 <hr>
-<h2 class="mt-45">Responsive screens</h2>
+<h2 class="mt-45" id="responsive-screens"><a href="docs/column#responsive-screens">#</a> Responsive screens</h2>
 <p>The column system is using the <a href="docs/config#global">global responsive screens</a> by default.</p>
 {@html highlight(
 `breakpoints: (
@@ -110,10 +113,10 @@ column: (
     </tr>
     <tr>
        <th class="text-left text-small">Sizes</th>
-      <td><code>span<i class="color-secondary">#</i></code></td>
-      <td><code>span<i class="color-secondary">#</i>@sm</code></td>
-      <td><code>span<i class="color-secondary">#</i>@md</code></td>
-      <td><code>span<i class="color-secondary">#</i>@lg</code></td>
+      <td><code>span<i>#</i></code></td>
+      <td><code>span<i>#</i>@sm</code></td>
+      <td><code>span<i>#</i>@md</code></td>
+      <td><code>span<i>#</i>@lg</code></td>
     </tr>
   </tbody>
 </table>
@@ -139,7 +142,7 @@ column: (
 </div>
 
 <hr>
-<h2>Fit column</h2>
+<h2 id="fit"><a href="docs/column#fit">#</a> Fit column</h2>
 <p>Let the column fits to the size of the content.<code>col="fit"</code><br>
 The config <em>screens</em> property is refering to the column component screens, giving you the reponsive variants <code>fit@sm</code><code>fit@md</code><code>fit@lg</code>.</p>
 
@@ -193,7 +196,7 @@ column: (
 </div>
 
 <hr>
-<h2>Clear column</h2>
+<h2 id="clear"><a href="docs/column#clear">#</a> Clear column</h2>
 <p>Start a new row within the flow of columns. <code>col="clear"</code></p>
 
 {@html highlight(
@@ -206,7 +209,7 @@ column: (
 </div>
 `, 'html')}
 
-<button data-oo-button class="float-right" on:click={() => isClear = !isClear}>toggle clear</button>
+<button data-oo-button class="float-right mb-root" on:click={() => isClear = !isClear}>toggle clear</button>
 <div class="ground">
   <Row>
     <Col cell prop="span2">1</Col>
@@ -220,8 +223,130 @@ column: (
 </div>
 
 <hr>
-<h2>Stretch children height</h2>
-<p>Match the eight of each column child elements. <code>row="stretch"</code></p>
+<h2 id="gutter"><a href="docs/column#gutter">#</a> Gutter Control</h2>
+<p>Change the gap between the columns. <code>row="gutter-<i class="color-secondary">gutterName</i>"</code></p>
+
+{@html highlight(`// default config
+column: (
+  gutter: (
+    screens: (), // not being used
+    sizes: (
+      default: this('container.gutter'), // match container's value
+      'less': 0, // gutter-less
+    ),
+  ),
+),`, 'scss')}
+<p class="mt-30">The <em>default</em> size does not require to be specified in the <code>row</code> attribute as it will be applied automatically.</p>
+
+{@html highlight(
+`<div oo-row>
+  <div oo-col></div>
+  <div oo-col></div>
+</div>
+<hr>
+<div oo-row="gutter-less">
+  <div oo-col></div>
+  <div oo-col></div>
+</div>
+`, 'html')}
+
+<div class="ground">
+  <Row>
+    <Col cell prop="span6"></Col>
+    <Col cell prop="span6"></Col>
+  </Row>
+  <div class="hr mt-15 mb-15"></div>
+  <Row prop="gutter-less">
+    <Col cell bordered prop="span6"></Col>
+    <Col cell bordered prop="span6"></Col>
+  </Row>
+</div>
+
+<h3 id="gutter-map"><a href="docs/column#gutter-map">#</a> Responsive gutter - <span class="font-regular">Map</span></h3>
+<p>Set responsive map to gutter sizes to manage gaps between screen devices.</p>
+{@html highlight(
+`// add 'small' & 'large' sizes
+$ooLoop: ooAdd('column.gutter.sizes', (
+  'small' : (
+    rt: 0.5rem, // root value
+    sm: 1rem,   // small device value
+  ),
+  'large': (
+    rt: rem(30),
+    md: rem(50),
+  ),
+))`, 'scss')}
+{@html highlight(
+`<div oo-row="${gutterProp}">
+  <div oo-col></div>
+  <div oo-col></div>
+</div>
+`, 'html')}
+<div data-oo-select class="float-right mb-root" style="width:140px">
+  <select class="text-small font-bold" bind:value={gutterSelected}>
+  {#each gutter as val}
+    <option value={val}>gutter {val}</option>
+  {/each}
+  </select>
+</div>
+<div class="ground">
+  <Row prop="{gutterProp}">
+    <Col cell prop="span6"></Col>
+    <Col cell prop="span6"></Col>
+  </Row>
+</div>
+
+<h3 id="gutter-screens"><a href="docs/column#gutter-screens">#</a> Responsive gutter - <span class="font-regular">Screens</span></h3>
+<p>Treat responsive gutter from the <em>screens</em> property to create <code>gutter-<i>gutterName</i>@<i>screenName</i></code> variants (<em>Variants with <strong>map value will be skipped</strong></em>).</p>
+{@html highlight(
+`$ooLoop: ooSet('column.gutter', (
+  screens : ('sm', 'md'), // list can be used
+  sizes: (
+    default: this('container.gutter'), // (rt: 1rem, sm: 1.5rem)
+    'less': 0,
+    'small': (
+      rt: 0.5rem,
+      sm: 1rem, 
+    ),
+    'medium': 2rem,
+    'large': (
+      rt: rem(30),
+      md: rem(50),
+    )
+  )
+));
+
+// Generating responsive variants:
+// gutter-less@sm gutter-less@md gutter-medium@sm gutter-medium@md
+`, 'scss')}
+{@html highlight(
+`<div oo-row="gutter-less@sm gutter-medium@md">
+  <div oo-col></div>
+  <div oo-col></div>
+</div>
+`, 'html')}
+
+<div class="ground">
+  <Row prop="gutter-less@sm gutter-medium@md">
+    <Col cell prop="span6"></Col>
+    <Col cell prop="span6"></Col>
+  </Row>
+</div>
+
+<h4>Vertical gutter</h4>
+<p>Target the vertical gap only by setting <em>vscreens</em> and <em>vsizes</em> the same way as <em>screens</em> and <em>sizes</em></p>
+
+{@html highlight(`// default config
+column: (
+  gutter: (
+    vscreens: (),
+    vsizes: (),
+  ),
+),`, 'scss')}
+
+<hr>
+<h2 id="stretch"><a href="docs/column#stretch">#</a> Stretch children height</h2>
+<p>Match the height of each column child elements. <code>row="stretch"</code></p>
 
 {@html highlight(
 `<div oo-row${isStretch ? '="stretch"' : ''}>
@@ -234,7 +359,7 @@ column: (
 </div>
 `, 'html')}
 
-<button data-oo-button class="float-right" on:click={() => isStretch = !isStretch}>toggle stretch</button>
+<button data-oo-button class="float-right mb-root" on:click={() => isStretch = !isStretch}>toggle stretch</button>
 <div class="ground">
   <Row prop="{isStretch ? 'stretch' : ''}">
     <Col cell>
@@ -247,8 +372,12 @@ column: (
 </div>
 
 <hr>
-<h2>Alignment</h2>
-<p>Align a group of columns from <code>row=""</code>, through the options <code>align-left</code><code>align-center</code><code>align-right</code><code>align-evenly</code><code>align-between</code><code>valign-top</code><code>valign-middle</code><code>valign-bottom</code></p>
+<h2 id="alignment"><a href="docs/column#alignment">#</a> Alignment</h2>
+<p>Align a group of columns horizontaly, vertically or both.<code>row="align-<i>option</i> valign-<i>option</i>"</code></p>
+<ul>
+  <li><strong>Valign options</strong>: <i>top, middle, bottom</i></li>
+  <li><strong>Align options</strong>: <i>left, center, right, evenly, between</i></li>
+</ul>
 {@html highlight(`// default config 
 column: (
   alignment: (
@@ -320,8 +449,14 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 </div>
 
 <hr>
-<h2>Self alignment</h2>
-<p>Align a single column from <code>col=""</code> through the options <code>self-align-left</code><code>self-align-center</code><code>self-align-right</code><code>self-valign-top</code><code>self-valign-middle</code><code>self-valign-bottom</code></p>
+<h2 id="self-alignment"><a href="docs/column#self-alignment">#</a> Self alignment</h2>
+<p>Align a single column horizontaly, vertically or both.<code>col="self-align-<i>option</i> self-valign-<i>option</i>"</code></p>
+
+<ul>
+  <li><strong>Valign options</strong>: <i>top, middle, bottom</i></li>
+  <li><strong>Align options</strong>: <i>left, center, right</i></li>
+</ul>
+
 {@html highlight(`// default config 
 column: (
   selfAlignment: (
@@ -381,8 +516,14 @@ column: (
 </div>
 
 <hr>
-<h2>Children content alignment</h2>
-<p>Align content of a <strong>stretched</strong> child by passing to <code>col=""</code> the options  <code>child-align-left</code><code>child-align-center</code><code>child-align-right</code><code>child-valign-top</code><code>child-valign-middle</code><code>child-valign-bottom</code>.</p>
+<h2 id="children-alignment"><a href="docs/column#children-alignment">#</a> Children content alignment</h2>
+<p>Align content of a <strong>stretched</strong> child horizontaly, vertically or both.<code>col="child-align-<i>option</i> child-valign-<i>option</i></code></p>
+
+<ul>
+  <li><strong>Valign options</strong>: <i>top, middle, bottom</i></li>
+  <li><strong>Align options</strong>: <i>left, center, right</i></li>
+</ul>
+
 {@html highlight(`// default config 
 column: (
   childAlignment: (
@@ -442,8 +583,8 @@ $ooLoop: ooSet('column.childAlignment.use', true);
 </div>
 
 <hr>
-<h2>Order</h2>
-<p>Rearrange the order <i>(from 0 to 11)</i> of the columns for responsive purposes <code>col="order<i class="color-secondary">#</i>@<i class="color-secondary">screenName</i>"</code>.</p>
+<h2 id="order"><a href="docs/column#order">#</a> Order</h2>
+<p>Rearrange the order of the columns for responsive purposes <code>col="order<i class="color-secondary">#</i>@<i class="color-secondary">screenName</i>"</code><i>(from 0 to 11)</i>.</p>
 {@html highlight(`// default config 
 column: (
   order: (
@@ -473,10 +614,9 @@ $ooLoop: ooSet('column.order.use', true);
   </Row>
 </div>
 
-<p class="info">Enabled, <em>order</em> provides <strong>12 modifiers per screens</strong> which create <strong>36 CSS rules overall</strong> (considering sm, md, lg per default).</p>
-
-<h4 class="mt-30">Be specific, lighten your css</h4>
+<h4 class="mt-45">Be specific, lighten your css</h4>
 <p>The number of created CSS rules can be quite a lot when its use on a project is minimum. Specify the needed position from the needed screens and generate only the necessary rules.</p>
+<p class="info">Enabled, <em>order</em> provides <strong>12 modifiers per screens</strong> which create <strong>36 CSS rules overall</strong> (considering sm, md, lg per default).</p>
 
 {@html highlight(`/* Specification for the above example (4 CSS rules) */
 $ooLoop: ooSet('column.order.screens', (
@@ -494,5 +634,3 @@ $ooLoop: ooSet('column.order.screens', (
 /**/
 $ooLoop: ooSet('column.order.screens', 'sm'); // from order0@sm to order11@sm
 `, 'scss')}
-
-<hr>

@@ -1,7 +1,10 @@
 @import '../../../../loop/scss/loop';
 
 $ooLoop: ooPipe(
-  _set('body.props.backgroundColor', #f8f8f8),
+  _add('body.props', (
+    background-color: #f8f8f8,
+    word-break: break-word,
+  )),
   _set('hr.props.margin', rem(45) auto),
 );
 
@@ -14,7 +17,13 @@ $ooLoop: ooAdd('headings', (
 
 // Column
 $ooLoop: ooPipe(
+  _set('column.gutter.screens', ('sm', 'md')),
   _add('column.gutter.sizes', (
+    'small': (
+      rt: 0.5rem,
+      sm: 1rem,
+    ),
+    'medium': 2rem,
     'large': (
       rt: rem(30),
       md: rem(50),
@@ -29,6 +38,10 @@ $ooLoop: ooPipe(
       md: 0,
       lg: (0, 2),
     )
+  )),
+  _set('column.offset', (
+    use: true,
+    screens: sm,
   )),
 );
 
@@ -47,6 +60,9 @@ $ooLoop: ooPipe(
   )),
   _add('spacing.top.values', (
     45: rem(45),
+  )),
+  _add('spacing.bottom.values', (
+    'root': this('container.gutter'),
   ))
 );
 

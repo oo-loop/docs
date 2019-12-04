@@ -1,5 +1,6 @@
 <script>
   export let prop = '';
+  export let bordered = false;
   export let cell = false;
   export let cellLarge = false;
 
@@ -15,8 +16,11 @@
 .cell-large {
   padding: 1.5rem;
 }
+.bordered {
+  border: 1px solid #459cb5;
+}
 </style>
 
-<div data-oo-col="{prop}" class="{hasCellClass ? 'cell': ''}{cellLarge ? ' cell-large' :''}">
+<div data-oo-col="{prop}" class="{hasCellClass ? 'cell': ''}{cellLarge ? ' cell-large' :''}{bordered ? ' bordered' :''}">
   <slot></slot>
 </div>

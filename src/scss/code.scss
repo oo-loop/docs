@@ -11,6 +11,9 @@ code {
   &:first-child {
     margin-left: 0;
   }
+  i {
+    color: oo('palette.secondary');
+  }
 }
 
 code.large,
