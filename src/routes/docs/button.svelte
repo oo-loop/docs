@@ -9,16 +9,16 @@
 
 </style>
 
-<HeadTitle title="Button"/>
+<HeadTitle title="Button component"/>
 
 <h1>Button</h1>
 <p class="text-large">Modular component and 100% customizable to fit your needs<br>
 <code class="ml-0">oo-button</code></p>
 
-<ul>
-  <li><a href="docs/button@colors" title="Colors">Colors</a></li>
-  <li><a href="docs/button@colors" title="Colors">Variants</a></li>
-  <li><a href="docs/button@colors" title="Colors">Outline</a></li>
+<ul class="text-small">
+  <li><a href="docs/button#colors" title="Button colors">Button Colors</a></li>
+  <li><a href="docs/button#variants" title="Button variants">Button Variants</a></li>
+  <li><a href="docs/button#sizes" title="Button sizes">Button Sizes</a></li>
 </ul>
 
 <p>The base style of the button is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you complete control on the appearance to make it the way you like.</p>
@@ -129,4 +129,48 @@ button: (
   <button data-oo-button="salmon outline">Salmon</button>
   <button data-oo-button="purple outline">Purple</button>
   <button data-oo-button="green-sea outline">Green sea</button>
+</div>
+<hr>
+
+<h2 id="variants"><a href="docs/button#variants" title="Button variants">#</a> Variants</h2>
+<p>Set button modifiers to the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
+{@html highlight(
+`//default config
+button: (
+  variants: (
+    'full': ( // full available as default
+      width: 100%,
+    ),
+  )
+),
+`, 'scss')}
+
+{@html highlight(
+`$ooLoop: ooAdd('button.variants', (
+  'baggy': (
+    padding: 1.2em 2em,
+    text-transform: uppercase,
+  ),
+  'large': (
+    font-size: 1.5rem,
+  ),
+  'tag': (
+    padding: 0.05em 0.5em,
+    font-weight: 500,
+    border-radius: 50em,
+  ),
+));`, 'scss')}
+
+{@html highlight(
+`<button oo-button="primary full">Primary full</button>
+<button oo-button="primary full large">Primary full large</button>
+<button oo-button="secondary tag">Secondary tag</button>
+<button oo-button="secondary baggy outline">Secondary baggy outline</button>
+`, 'html')}
+
+<div class="ground">
+  <button data-oo-button="primary full" class="mb-10">Primary full</button>
+  <button data-oo-button="primary full large" class="mb-10">Primary full large</button>
+  <button data-oo-button="secondary tag" class="mb-10">Secondary tag</button><br>
+  <button data-oo-button="secondary baggy outline">Secondary baggy outline</button>
 </div>

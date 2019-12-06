@@ -36,7 +36,7 @@
   }
 </style>
 
-<HeadTitle title="Template"/>
+<HeadTitle title="Template component"/>
 
 <h1>Template</h1>
 <p class="text-large"><i>Blueprint</i> semantically a page or elements in a page.<br>
