@@ -94,7 +94,7 @@ $ooLoop: ooAdd('button.colors', (
 $ooLoop: ooSet('button.outline', true);
 $ooLoop: ooAdd('button.variants', (
   'baggy': (
-    padding: 1.2em 2em,
+    padding: 1.5em 2em,
     text-transform: uppercase,
   ),
   'large': (
@@ -113,18 +113,28 @@ $ooLoop: ooPipe(
     'body': this('body.props.color'),
     'danger': #da3b3b,
   )),
-  _add('text.fontWeight.values', (
-    'regular': 400,
+
+  _add('text', (
+    fontSize: ('values': (
+      'tiny': rem(12),
+      'medium': rem(16),
+    )),
+    fontWeight: ('values': (
+      'regular': 400,
+    )),
+    fontFamily: ('values': (
+      'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
+      'monospace': monospace,
+    )),
   )),
-  _set('text.fontFamily.values', (
-    'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
-    'monospace': monospace,
-  )),
-  _add('spacing.top.values', (
-    45: rem(45),
-  )),
-  _add('spacing.bottom.values', (
-    'root': this('container.gutter'),
+
+  _add('spacing', (
+    top: ('values': (
+      45: rem(45),
+    )),
+    bottom: ('values': (
+      'root': this('container.gutter'),
+    ))
   ))
 );
 

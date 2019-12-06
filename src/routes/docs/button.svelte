@@ -63,7 +63,7 @@ button: (
   </Col>
 </Row>
 
-<h2 class="mt-45" id="colors"><a href="docs/button@colors" title="Colors">#</a> Colors</h2>
+<h2 class="mt-45" id="colors"><a href="docs/button#colors" title="Colors">#</a> Colors</h2>
 <p>Loop is giving you two colors by default, it's up to you to add more or less.<code>oo-button="<i>colorName</i>"</code></p>
 {@html highlight(
 `//default config
@@ -133,7 +133,7 @@ button: (
 <hr>
 
 <h2 id="variants"><a href="docs/button#variants" title="Button variants">#</a> Variants</h2>
-<p>Set button modifiers to the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
+<p>Change the size, the shape, the appearance for a button via the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
 {@html highlight(
 `//default config
 button: (
@@ -170,7 +170,26 @@ button: (
 
 <div class="ground">
   <button data-oo-button="primary full" class="mb-10">Primary full</button>
-  <button data-oo-button="primary full large" class="mb-10">Primary full large</button>
+  <button data-oo-button="primary large" class="mb-10">Primary large</button><br>
   <button data-oo-button="secondary tag" class="mb-10">Secondary tag</button><br>
   <button data-oo-button="secondary baggy outline">Secondary baggy outline</button>
+</div>
+
+<hr>
+<h2 class="mt-45" id="sizes"><a href="docs/button#sizes" title="Sizes">#</a> Sizes</h2>
+<p>While the size of the button can be modified from <a href="docs/button#variants" title="Button variants">variants</a>.
+It is also possible to <strong>use text-utilites to quickly achieve some adjustments</strong>.</p>
+
+{@html highlight(
+`<button oo-button="primary" class="text-tiny">Tiny</button>
+<button oo-button="primary">Default</button>
+<button oo-button="primary" class="text-medium">Medium</button>
+<button oo-button="primary" class="text-large">Large</button>
+`, 'html')}
+
+<div class="ground">
+  <button data-oo-button="primary" class="text-tiny">Tiny</button>
+  <button data-oo-button="primary">Default</button>
+  <button data-oo-button="primary" class="text-medium">Medium</button>
+  <button data-oo-button="primary" class="text-large">Large</button>
 </div>
