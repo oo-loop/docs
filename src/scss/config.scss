@@ -82,6 +82,17 @@ $ooLoop: ooSet('template.gap', (
   vscreens: this('template.gap.screens'),
 ));
 
+// Button
+$ooLoop: ooAdd('button.colors', (
+  'success': #8cc63f,
+  'nectarine': #ffbe76,
+  'yellow': #fffa65,
+  'salmon': #ffb8b8,
+  'purple': #8e44ad,
+  'green-sea': #16a085,
+));
+$ooLoop: ooSet('button.outline', true);
+
 // Utilities
 $ooLoop: ooPipe(
   _add('color.font.values', (
