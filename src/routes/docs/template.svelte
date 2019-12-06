@@ -147,7 +147,7 @@ template: (
 
 <hr>
 <h2 id="gap"><a href="docs/template#gap" title="Gap">#</a> Gap</h2>
-<p>Change the space horizontally and vertically between the areas.<code>gap-<i>gapName</i> <code>vgap-<i>gapName</i></code></p>
+<p>Change the horizontal and vertical space between the areas.<code>gap-<i>gapName</i> <code>vgap-<i>gapName</i></code></p>
 
 {@html highlight(
 `// default config
@@ -165,7 +165,7 @@ template: (
   sizes: (
     default: 1rem, // use default keyword to set main gap
     'less': 0, // gap-less
-    'small': ( // responsive map
+    'small': ( // gap-small has a responsive map
       rt: .25rem,
       sm: .5rem, 
     ),
@@ -201,13 +201,39 @@ template: (
   </div>
 </div>
 
+<h3>Responsive screens</h3>
+<p>Set reponsive gap from the <em>screens</em> & <em>vscreens</em> properties and get variants. <code>gap-<i>sizeName</i>@<i>screenName</i></code> <code>vgap-<i>sizeName</i>@<i>screenName</i></code>. <i>(Variants with <strong>map value will be skipped</strong>)</i>.</p>
 {@html highlight(
-`// default config
-template: (
-  gap: (
-    sizes: (),
-    screens: (),// responsive screens for sizes
-    vsizes: (),
-    vscreens:(),// responsive screens for vsizes
+`$ooLoop: ooSet('template.gap', (
+  sizes: (
+    default: 1rem,
+    'less': 0,
+    'small': (
+      sm: .5rem, 
+    ),
   ),
-)`, 'scss')}
+  vsizes: (
+    'less': 0,
+  ),
+  screens: ('sm', 'lg'),
+  vscreens: this('template.gap.screens'), //get screens value
+));
+
+/* Generating responsive variants */
+// - gap-default@sm gap-default@lg gap-less@sm gap-less@lg
+// - vgap-less@sm vgap-less@lg
+`, 'scss')}
+{@html highlight(
+`<div data-oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
+  <div data-oo-area="a">A</div>
+  <div data-oo-area="b">B</div>
+  <div data-oo-area="c">C</div>
+</div>`, 'html')}
+
+<div class="ground">
+  <div data-oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
+    <div class="high light" data-oo-area="a">A</div>
+    <div class="small dark" data-oo-area="b">B</div>
+    <div class="small darker" data-oo-area="c">C</div>
+  </div>
+</div>

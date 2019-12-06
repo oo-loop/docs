@@ -78,7 +78,8 @@ $ooLoop: ooSet('template.gap', (
   vsizes: (
     'less': 0,
   ),
-  screens: ('sm', 'md', 'lg'),
+  screens: ('sm', 'lg'),
+  vscreens: this('template.gap.screens'),
 ));
 
 // Utilities
