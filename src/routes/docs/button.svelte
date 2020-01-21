@@ -133,7 +133,7 @@ button: (
 <hr>
 
 <h2 id="variants"><a href="docs/button#variants" title="Button variants">#</a> Variants</h2>
-<p>Change the size, the shape, the appearance for a button via the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
+<p>Change the size, the shape, the appearance of the button via the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
 {@html highlight(
 `//default config
 button: (
@@ -163,7 +163,7 @@ button: (
 
 {@html highlight(
 `<button oo-button="primary full">Primary full</button>
-<button oo-button="primary full large">Primary full large</button>
+<button oo-button="primary large">Primary large</button>
 <button oo-button="secondary tag">Secondary tag</button>
 <button oo-button="secondary baggy outline">Secondary baggy outline</button>
 `, 'html')}
@@ -185,6 +185,7 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
 <button oo-button="primary">Default</button>
 <button oo-button="primary" class="text-medium">Medium</button>
 <button oo-button="primary" class="text-large">Large</button>
+<button oo-button="primary large">Variant large</button>
 `, 'html')}
 
 <div class="ground">
@@ -192,4 +193,5 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
   <button data-oo-button="primary">Default</button>
   <button data-oo-button="primary" class="text-medium">Medium</button>
   <button data-oo-button="primary" class="text-large">Large</button>
+  <button data-oo-button="primary large">Variant large</button>
 </div>

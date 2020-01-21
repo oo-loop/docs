@@ -107,6 +107,20 @@ $ooLoop: ooAdd('button.variants', (
   ),
 ));
 
+// Form
+$ooLoop: ooAdd('input.variants', (
+  'danger': (
+    border-color: #ca7878,
+    background-color: #f9e4e4,
+  ),
+  'large': (
+    padding: 1rem 1.25rem
+  ),
+  'rounded': (
+    border-radius: 50em,
+  ),
+));
+
 // Utilities
 $ooLoop: ooPipe(
   _add('color.font.values', (
@@ -128,13 +142,11 @@ $ooLoop: ooPipe(
     )),
   )),
 
-  _add('spacing', (
-    top: ('values': (
-      45: rem(45),
-    )),
-    bottom: ('values': (
-      'root': this('container.gutter'),
-    ))
+  _add('spacing.top.values', (
+    45: rem(45),
+  )),
+  _add('spacing.bottom.values', (
+    'root': this('container.gutter'),
   ))
 );
 
