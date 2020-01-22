@@ -108,18 +108,30 @@ $ooLoop: ooAdd('button.variants', (
 ));
 
 // Form
-$ooLoop: ooAdd('input.variants', (
-  'danger': (
-    border-color: #ca7878,
-    background-color: #f9e4e4,
-  ),
-  'large': (
-    padding: 1rem 1.25rem
-  ),
-  'rounded': (
-    border-radius: 50em,
-  ),
-));
+$ooLoop: ooPipe(
+  _add('input.variants', (
+    'danger': (
+      border-color: #ca7878,
+      background-color: #f9e4e4,
+    ),
+    'large': (
+      padding: 1rem 1.25rem
+    ),
+    'rounded': (
+      border-radius: 50em,
+    ),
+  )),
+  _add('select.variants', (
+    'secondary': (
+      borderColor: #222,
+      selector: (
+        color: #fff,
+        bgcolor: #222,
+        border: #222,
+      )
+    ),
+  ))
+);
 
 // Utilities
 $ooLoop: ooPipe(

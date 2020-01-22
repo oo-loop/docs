@@ -20,7 +20,7 @@
 
 <ul class="text-small">
   <li><a href="docs/form#input" title="Input fields">Input fields</a></li>
-  <li><a href="docs/form#select" title="Select dropdown">Select dropdown</a></li>
+  <li><a href="docs/form#select" title="Select">Select</a></li>
   <li><a href="docs/form#checkbox" title="Checkbox">Checkbox</a></li>
   <li><a href="docs/form#radio" title="Radio button">Radio button</a></li>
   <li><a href="docs/form#toggle" title="Toggle button">Toggle</a></li>
@@ -121,42 +121,37 @@ input: (
 </div>
 
 <hr>
-<h2 id="select"><a href="docs/form#select">#</a> Dropdown</h2>
+<h2 id="select"><a href="docs/form#select">#</a> Select</h2>
 <p>Use <code>oo-select</code> on a parent element having <code>{`<select>`}</code> as a child.</p>
 <p class="info">Loop config <strong>includes <em>input.select</em> by default</strong>. In manual mode add the mixin <strong>SelectField()</strong></p>
 
 {@html highlight(
 `//default config
 select: (
-  // inheriting from input
-  props: this('input.props'),
-  states: this('input.states'),
-  variants: this('input.variants'),
-
-  // selector options are not PROPS!
-  selector: (
-    default: (
-      size: 10px,
-      weight: 2px,
-      color: #4d4d4d,
-      bgcolor: #fff, 
-    ),
-    variants: (),
+  props: this('input.props'), // inherits from input
+  states: this('input.states'), // inherits from input
+  selector: ( // selector options are not PROPS!
+    size: 10px,
+    weight: 2px,
+    color: this('select.props.color'),
+    bgcolor: this('select.props.backgroundColor'),
+    border: this('select.props.border'),
   ),
+  variants: this('input.variants'), // inherits from input
 ),
 `, 'scss')}
 
 {@html highlight(
-`<label for="form-select">Dropdown</label>
+`<label for="form-select">Select</label>
 <div oo-select class="mb-15">
-  <select data-oo-select id="form-select">
+  <select id="form-select">
     <option value="1">Option 1</option>
     <option value="2">Option 2</option>
     <option value="3">Option 3</option>
   </select>
 </div>
 
-<label for="form-rounded">Dropdown rounded danger large</label>
+<label for="form-rounded">Select rounded danger large</label>
 <div oo-select="rounded danger large">
   <select id="form-rounded">
     <option value="1">Option 1</option>
@@ -166,17 +161,51 @@ select: (
 </div>
 `, 'html')}
 <div class="ground">
-  <label for="form-select">Dropdown</label>
+  <label for="form-select">Select</label>
   <div data-oo-select class="mb-15">
-    <select data-oo-select id="form-select">
+    <select id="form-select">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
       <option value="3">Option 3</option>
     </select>
   </div>
-  <label for="form-rounded">Dropdown rounded danger large</label>
+  <label for="form-rounded">Select rounded danger large</label>
   <div data-oo-select="rounded danger large">
     <select id="form-rounded">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+</div>
+
+<h3>Selector</h3>
+<p>The selector can be modified from the property <em>selector</em> or altered through a variant having <code>selector</code> data.</p>
+{@html highlight(
+`$ooLoop: ooAdd('select.variants', (
+  'secondary': (
+    borderColor: #222,
+    selector: (
+      color: #fff,
+      bgcolor: this('select.variants.dark.borderColor'),
+      border: this('select.variants.dark.borderColor'),
+    )
+  ),
+));`, 'scss')}
+{@html highlight(
+`<label for="form-select-secondary">Select</label>
+<div oo-select="secondary">
+  <select id="form-select-secondary">
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+</div>
+`, 'html')}
+<div class="ground">
+  <label for="form-select-secondary">Select secondary</label>
+  <div data-oo-select="secondary">
+    <select id="form-select-secondary">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
       <option value="3">Option 3</option>
