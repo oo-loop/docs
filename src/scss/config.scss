@@ -135,7 +135,11 @@ $ooLoop: ooPipe(
     'medium': 1.5rem,
     'large': 2rem,
   )),
-  _set('checkbox.screens', (sm, md))
+  _set('checkbox.screens', (sm, md)),
+  _add('radio.sizes', (
+    'large': 2rem,
+  )),
+  _set('radio.screens', (sm)),
 );
 
 // Utilities

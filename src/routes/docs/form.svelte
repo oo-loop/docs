@@ -283,27 +283,17 @@ checkbox: (
 ));`, 'scss')}
 
 {@html highlight(
-`<input oo-checkbox="medium" id="checkbox-medium-a" type="checkbox" value="a">
+`<input oo-checkbox="medium " id="checkbox-medium-a" type="checkbox" value="a">
 <label for="checkbox-medium-a">Checkbox Medium A</label>
-<input oo-checkbox="medium" id="checkbox-medium-b" type="checkbox" value="b">
-<label for="checkbox-medium-b">Checkbox Medium B</label>
 
-<input oo-checkbox="large" id="checkbox-large-a" type="checkbox" value="a">
-<label for="checkbox-large-a">Checkbox Large A</label>
-<input oo-checkbox="large" id="checkbox-large-b" type="checkbox" value="b">
+<input oo-checkbox="large " id="checkbox-large-b" type="checkbox" value="b">
 <label for="checkbox-large-b">Checkbox Large B</label>
 `, 'html')}
 <div class="ground">
-  <input data-oo-checkbox="medium" id="checkbox-medium-a" type="checkbox" value="a">
+  <input data-oo-checkbox="medium " id="checkbox-medium-a" type="checkbox" value="a">
   <label for="checkbox-medium-a">Checkbox Medium A</label>
-  <input data-oo-checkbox="medium" id="checkbox-medium-b" type="checkbox" value="b">
-  <label for="checkbox-medium-b">Checkbox Medium B</label>
-  
   <div class="hr mt-15 mb-15"></div>
-
-  <input data-oo-checkbox="large" id="checkbox-large-a" type="checkbox" value="a">
-  <label for="checkbox-large-a">Checkbox Large A</label>
-  <input data-oo-checkbox="large" id="checkbox-large-b" type="checkbox" value="b">
+  <input data-oo-checkbox="large " id="checkbox-large-b" type="checkbox" value="b">
   <label for="checkbox-large-b">Checkbox Large B</label> 
 </div>
 
@@ -321,4 +311,95 @@ checkbox: (
 <div class="ground">
   <input data-oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox" value="">
   <label for="checkbox-responsive">Responsive Checkbox</label>
+</div>
+
+<hr>
+<h2 id="radio"><a href="docs/form#radio">#</a> Radio</h2>
+<p>Use <code>oo-radio</code> on an <em>input radio element </em><strong>followed by</strong> a <em>label element</em> targetting that radio.</p>
+<p class="info">Loop config <strong>includes <em>input.radio</em> by default</strong>. In manual mode add the mixin <strong>Radio()</strong></p>
+
+{@html highlight(
+`//default config
+radio: (
+  props: (
+    backgroundColor: #fff,
+    border: 1px solid #d6d6d6,
+  ),
+  checked: (
+    markColor: #fff,
+    props: (
+      backgroundColor: #4d4d4d,
+      borderColor: #4d4d4d,
+      transition: background-color 250ms ease-out,
+    )
+  ),
+  sizes: (
+    default: rem(18),
+  ),
+  screens: (),
+),
+`, 'scss')}
+
+{@html highlight(
+`<input oo-radio id="radio-a" name="radio" type="radio" value="a">
+<label for="radio-a">radio A</label>
+
+<input oo-radio id="radio-b" name="radio" type="radio" value="b">
+<label for="radio-b">radio B</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-radio id="radio-a" name="radio" type="radio" value="a">
+  <label for="radio-a">Radio A</label>
+
+  <input data-oo-radio id="radio-b" name="radio" type="radio" value="b">
+  <label for="radio-b">Radio B</label>
+</div>
+<p>Set inline radios with <code>oo-radio="inline"</code> </p>
+{@html highlight(
+`<input oo-radio="inline" id="radio-inline-a" name="radio-inline" type="radio" value="a">
+<label for="radio-inline-a">Inline A</label>
+
+<input oo-radio="inline" id="radio-inline-b" name="radio-inline" type="radio" value="b">
+<label for="radio-inline-b">Inline B</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-radio="inline" id="radio-inline-a" name="radio-inline" type="radio" value="a">
+  <label for="radio-inline-a">Inline A</label>
+
+  <input data-oo-radio="inline" id="radio-inline-b" name="radio-inline" type="radio" value="b">
+  <label for="radio-inline-b">Inline B</label>
+</div>
+
+<h3>Sizes</h3>
+<p>Add more options to the property <em>sizes</em></p>
+{@html highlight(
+`$ooLoop: ooAdd('radio.sizes', (
+  'large': 2rem,
+));`, 'scss')}
+
+{@html highlight(
+`<input oo-radio="large" id="radio-large-a" type="radio" value="a">
+<label for="radio-large-a">radio Large A</label>
+`, 'html')}
+<div class="ground">
+  <input data-oo-radio="large" id="radio-large-a" type="radio" value="a">
+  <label for="radio-large-a">Radio Large A</label>
+</div>
+
+<h3>Responsive</h3>
+<p>Pass the breakpoint screens you wish to use for the radio and create variants such as <code>oo-radio="<i>sizeName</i>@<i>screenName</i>"</code></p>
+{@html highlight(
+`$ooLoop: ooSet('radio.screens', (md));
+// creating default@md large@md`, 'scss')}
+
+{@html highlight(
+`<input oo-radio="large default@md" id="radio-responsive" type="radio" value="">
+<label for="radio-responsive">Responsive radio</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-radio="large default@md" id="radio-responsive" type="radio" value="">
+  <label for="radio-responsive">Responsive Radio</label>
 </div>
