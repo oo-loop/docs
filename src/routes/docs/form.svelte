@@ -130,7 +130,7 @@ input: (
 select: (
   props: this('input.props'), // inherits from input
   states: this('input.states'), // inherits from input
-  selector: ( // selector options are not PROPS!
+  caret: ( // caret options are not PROPS!
     size: 10px,
     weight: 2px,
     color: this('select.props.color'),
@@ -179,16 +179,17 @@ select: (
   </div>
 </div>
 
-<h3>Selector</h3>
-<p>The selector can be modified from the property <em>selector</em> or altered through a variant having <code>selector</code> data.</p>
+<h3>Caret</h3>
+<p>The caret can be modified from the property <em>caret</em> or altered through a variant having <code>caret</code> data.
+<br><strong>Caret options are not CSS props!</strong>.</p>
 {@html highlight(
 `$ooLoop: ooAdd('select.variants', (
   'secondary': (
     borderColor: #222,
-    selector: (
+    caret: (
       color: #fff,
-      bgcolor: this('select.variants.dark.borderColor'),
-      border: this('select.variants.dark.borderColor'),
+      bgcolor: this('select.variants.secondary.borderColor'),
+      border: this('select.variants.secondary.borderColor'),
     )
   ),
 ));`, 'scss')}
@@ -211,4 +212,113 @@ select: (
       <option value="3">Option 3</option>
     </select>
   </div>
+</div>
+
+<hr>
+<h2 id="checkbox"><a href="docs/form#checkbox">#</a> Checkbox</h2>
+<p>Use <code>oo-checkbox</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
+<p class="info">Loop config <strong>includes <em>input.checkbox</em> by default</strong>. In manual mode add the mixin <strong>Checkbox()</strong></p>
+
+{@html highlight(
+`//default config
+checkbox: (
+  props: (
+    backgroundColor: #fff,
+    border: 1px solid #d6d6d6,
+    borderRadius: .2em,
+    transition: background-color 250ms ease-out,
+  ),
+  checked: (
+    markColor: #fff,
+    props: (
+      backgroundColor: #4d4d4d,
+      border: 1px solid #4d4d4d,
+    )
+  ),
+  sizes: (
+    default: rem(18),
+  ),
+  screens: (),
+)
+`, 'scss')}
+
+{@html highlight(
+`<input oo-checkbox id="checkbox-a" type="checkbox" value="a">
+<label for="checkbox-a">Checkbox A</label>
+
+<input oo-checkbox id="checkbox-b" type="checkbox" value="b">
+<label for="checkbox-b">Checkbox B</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-checkbox id="checkbox-a" type="checkbox" value="a">
+  <label for="checkbox-a">Checkbox A</label>
+
+  <input data-oo-checkbox id="checkbox-b" type="checkbox" value="b">
+  <label for="checkbox-b">Checkbox B</label>
+</div>
+<p>Set inline checkboxes with <code>oo-checkbox="inline"</code> </p>
+{@html highlight(
+`<input oo-checkbox="inline" id="checkbox-inline-a" type="checkbox" value="a">
+<label for="checkbox-inline-a">Inline A</label>
+
+<input oo-checkbox="inline" id="checkbox-inline-b" type="checkbox" value="b">
+<label for="checkbox-inline-b">Inline B</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-checkbox="inline" id="checkbox-inline-a" type="checkbox" value="a">
+  <label for="checkbox-inline-a">Inline A</label>
+
+  <input data-oo-checkbox="inline" id="checkbox-inline-b" type="checkbox" value="b">
+  <label for="checkbox-inline-b">Inline B</label>
+</div>
+
+<h3>Sizes</h3>
+<p>Add more options to the property <em>sizes</em></p>
+{@html highlight(
+`$ooLoop: ooAdd('checkbox.sizes', (
+  'medium': 1.5rem,
+  'large': 2rem,
+));`, 'scss')}
+
+{@html highlight(
+`<input oo-checkbox="medium" id="checkbox-medium-a" type="checkbox" value="a">
+<label for="checkbox-medium-a">Checkbox Medium A</label>
+<input oo-checkbox="medium" id="checkbox-medium-b" type="checkbox" value="b">
+<label for="checkbox-medium-b">Checkbox Medium B</label>
+
+<input oo-checkbox="large" id="checkbox-large-a" type="checkbox" value="a">
+<label for="checkbox-large-a">Checkbox Large A</label>
+<input oo-checkbox="large" id="checkbox-large-b" type="checkbox" value="b">
+<label for="checkbox-large-b">Checkbox Large B</label>
+`, 'html')}
+<div class="ground">
+  <input data-oo-checkbox="medium" id="checkbox-medium-a" type="checkbox" value="a">
+  <label for="checkbox-medium-a">Checkbox Medium A</label>
+  <input data-oo-checkbox="medium" id="checkbox-medium-b" type="checkbox" value="b">
+  <label for="checkbox-medium-b">Checkbox Medium B</label>
+  
+  <div class="hr mt-15 mb-15"></div>
+
+  <input data-oo-checkbox="large" id="checkbox-large-a" type="checkbox" value="a">
+  <label for="checkbox-large-a">Checkbox Large A</label>
+  <input data-oo-checkbox="large" id="checkbox-large-b" type="checkbox" value="b">
+  <label for="checkbox-large-b">Checkbox Large B</label> 
+</div>
+
+<h3>Responsive</h3>
+<p>Pass the breakpoint screens you wish to use for the checkbox and create variants such as <code>oo-checkbox="<i>sizeName</i>@<i>screenName</i>"</code></p>
+{@html highlight(
+`$ooLoop: ooSet('checkbox.screens', (sm, md));
+// creating default@sm default@md medium@sm medium@md large@sm large@md`, 'scss')}
+
+{@html highlight(
+`<input oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox" value="">
+<label for="checkbox-responsive">Responsive Checkbox</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox" value="">
+  <label for="checkbox-responsive">Responsive Checkbox</label>
 </div>

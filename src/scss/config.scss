@@ -124,13 +124,18 @@ $ooLoop: ooPipe(
   _add('select.variants', (
     'secondary': (
       borderColor: #222,
-      selector: (
+      caret: (
         color: #fff,
-        bgcolor: #222,
-        border: #222,
+        bgcolor: this('select.variants.secondary.borderColor'),
+        border: this('select.variants.secondary.borderColor'),
       )
     ),
-  ))
+  )),
+  _add('checkbox.sizes', (
+    'medium': 1.5rem,
+    'large': 2rem,
+  )),
+  _set('checkbox.screens', (sm, md))
 );
 
 // Utilities
