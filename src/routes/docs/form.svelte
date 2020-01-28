@@ -274,7 +274,7 @@ checkbox: (
   <label for="checkbox-inline-b">Inline B</label>
 </div>
 
-<h3>Sizes</h3>
+<h3>Checkbox Sizes</h3>
 <p>Add more options to the property <em>sizes</em></p>
 {@html highlight(
 `$ooLoop: ooAdd('checkbox.sizes', (
@@ -297,7 +297,7 @@ checkbox: (
   <label for="checkbox-large-b">Checkbox Large B</label> 
 </div>
 
-<h3>Responsive</h3>
+<h3>Responsive Checkbox</h3>
 <p>Pass the breakpoint screens you wish to use for the checkbox and create variants such as <code>oo-checkbox="<i>sizeName</i>@<i>screenName</i>"</code></p>
 {@html highlight(
 `$ooLoop: ooSet('checkbox.screens', (sm, md));
@@ -372,7 +372,7 @@ radio: (
   <label for="radio-inline-b">Inline B</label>
 </div>
 
-<h3>Sizes</h3>
+<h3>Radio Sizes</h3>
 <p>Add more options to the property <em>sizes</em></p>
 {@html highlight(
 `$ooLoop: ooAdd('radio.sizes', (
@@ -388,7 +388,7 @@ radio: (
   <label for="radio-large-a">Radio Large A</label>
 </div>
 
-<h3>Responsive</h3>
+<h3>Responsive Radio</h3>
 <p>Pass the breakpoint screens you wish to use for the radio and create variants such as <code>oo-radio="<i>sizeName</i>@<i>screenName</i>"</code></p>
 {@html highlight(
 `$ooLoop: ooSet('radio.screens', (md));
@@ -402,4 +402,63 @@ radio: (
 <div class="ground">
   <input data-oo-radio="large default@md" id="radio-responsive" type="radio" value="">
   <label for="radio-responsive">Responsive Radio</label>
+</div>
+
+
+<hr>
+<h2 id="toggle"><a href="docs/form#toggle">#</a> Toggle</h2>
+<p>Use <code>oo-toggle</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
+<p class="info">Loop config <strong>does <span class="color-primary">not</span> includes <em>input.toggle</em> by default</strong>. In manual mode add the mixin <strong>Toggle()</strong></p>
+
+{@html highlight(
+`//default config
+toggle: (
+  props: (
+    border: 1px solid #d6d6d6,
+    borderRadius: 50em,
+    backgroundColor: #d6d6d6,
+    transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out),
+  ),
+  toggler: ( // Props 
+    borderRadius: 50%,
+    backgroundColor: #fff,
+    boxShadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
+    transition: transform 300ms ease-out,
+  ),
+  checked: (
+    props: (
+      borderColor: #4d4d4d,
+      backgroundColor: this('toggle.checked.props.borderColor'),
+    )
+  ),
+  sizes: (
+    default: 1.5rem,
+  )
+),
+`, 'scss')}
+
+{@html highlight(
+`<input oo-toggle id="toggle-a" type="checkbox" value="a">
+<label for="toggle-a">Toggle A</label>
+`, 'html')}
+
+<div class="ground">
+  <input data-oo-toggle id="toggle-a" type="checkbox" value="a">
+  <label for="toggle-a">Toggle A</label>
+</div>
+
+<h3>Toggle Sizes</h3>
+<p>Add more options to the property <em>sizes</em></p>
+{@html highlight(
+`$ooLoop: ooAdd('toggle.sizes', (
+  'large': 2rem,
+));`, 'scss')}
+
+{@html highlight(
+`<input oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
+<label for="toggle-large-a">Toggle Large A</label>
+`, 'html')}
+<div class="ground">
+  <input data-oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
+  <label for="toggle-large-a">Toggle Large A</label>
 </div>

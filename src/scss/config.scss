@@ -140,6 +140,9 @@ $ooLoop: ooPipe(
     'large': 2rem,
   )),
   _set('radio.screens', (sm)),
+  _add('toggle.sizes', (
+    'large': 2rem,
+  )),
 );
 
 // Utilities
@@ -195,5 +198,10 @@ $ooLoop: ooPipe(
       font-weight: 700,
     ),
     classes:  ('h3', 'h4'),
-  )
+  ),
+  use: (
+    input: (
+      toggle: true,
+    ),
+  ),
 ));
