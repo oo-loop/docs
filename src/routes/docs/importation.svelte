@@ -26,7 +26,6 @@ use: (
   button: true,
   input: (
     textfield: true,
-    textarea: true,
     select: true,
     checkbox: true,
     radio: true,
