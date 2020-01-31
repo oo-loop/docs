@@ -151,6 +151,9 @@ $ooLoop: ooPipe(
     'body': this('body.props.color'),
     'danger': #da3b3b,
   )),
+  _add('color.border.values', (
+    'danger': #da3b3b,
+  )),
 
   _add('text', (
     fontSize: ('values': (

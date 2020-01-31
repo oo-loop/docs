@@ -24,6 +24,7 @@
   <li><a href="docs/form#checkbox" title="Checkbox">Checkbox</a></li>
   <li><a href="docs/form#radio" title="Radio button">Radio button</a></li>
   <li><a href="docs/form#toggle" title="Toggle button">Toggle</a></li>
+  <li><a href="docs/form#utilities" title="Utilities as modifers">Utilities as Modifiers</a></li>
 </ul>
 
 <p>The style of each form element is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you control on the components' look.</p>
@@ -462,3 +463,64 @@ toggle: (
   <input data-oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
   <label for="toggle-large-a">Toggle Large A</label>
 </div>
+
+<hr/>
+<h2 id="utilities"><a href="docs/form#utilities">#</a> Utilities as modifiers</h2>
+<p>Text or color utilities can help you alter the size or the appearance of your input elements depending of the situation.</p>
+
+<div class="ground mb-0">
+  <p class="mt-0"><strong>Example of form with required elements throwing an error<br><em>(use of border utility)</em></strong></p>
+  <label for="input-error">Text input with error</label>
+  <input class="border-danger" data-oo-input id="input-error" type="text">
+  <small class="color-danger">Input is required</small>
+
+  <br>
+  <label for="select-error" class="mt-15">Select with error</label>
+  <div class="border-danger" data-oo-select>
+    <select id="select-error">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <small class="color-danger">Select is required</small>
+
+  <br>
+  <input class="border-danger" data-oo-checkbox id="checkbox-error" type="checkbox">
+  <label for="checkbox-error" class="mt-15">checkbox with error</label>
+  <small class="color-danger">Checkbox is required</small>
+
+  <br>
+  <input class="border-danger" data-oo-radio id="radio-error" type="radio">
+  <label for="radio-error" class="mt-15">Radio with error</label>
+  <small class="color-danger">Radio is required</small>
+</div>
+{@html highlight(
+`<p><strong>Example of form with required elements throwing an error
+<br><em>(use of border utility)</em></strong></p>
+
+<label for="input-error">Text input with error</label>
+<input class="border-danger" oo-input id="input-error" type="text">
+<small class="color-danger">Input is required</small>
+
+<br>
+<label for="select-error" class="mt-15">Select with error</label>
+<div class="border-danger" oo-select>
+  <select id="select-error">
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+</div>
+<small class="color-danger">Select is required</small>
+
+<br>
+<input class="border-danger" oo-checkbox id="checkbox-error" type="checkbox">
+<label for="checkbox-error" class="mt-15">checkbox with error</label>
+<small class="color-danger">Checkbox is required</small>
+
+<br>
+<input class="border-danger" oo-radio id="radio-error" type="radio">
+<label for="radio-error" class="mt-15">Radio with error</label>
+<small class="color-danger">Radio is required</small>
+`, 'html', 'mt-5')}
