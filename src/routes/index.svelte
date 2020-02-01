@@ -1,7 +1,7 @@
 <script>
-	import HeadTitle from '../components/HeadTitle.svelte'
-	import Row from '../components/Loop/Row.svelte'
-	import Col from '../components/Loop/Col.svelte'
+	import HeadTitle from '@/components/HeadTitle.svelte'
+	import Row from '@/components/Loop/Row.svelte'
+	import Col from '@/components/Loop/Col.svelte'
 </script>
 
 <style>

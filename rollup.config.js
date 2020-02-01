@@ -8,12 +8,14 @@ import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
+import path from 'path';
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import postcss from 'postcss';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -30,6 +32,13 @@ const preprocess = sveltePreprocess({
 	postcss: {
 		plugins: [autoprefixer],
 	},
+});
+
+const aliases = alias({
+	resolve: ['.js', '.svelte'],
+	entries: [
+		{ find: '@', replacement: path.resolve(__dirname, 'src') },
+	]
 });
 
 export default {
@@ -68,6 +77,7 @@ export default {
 				emitCss: true,
 				preprocess
 			}),
+			aliases,
 			resolve({
 				browser: true,
 				dedupe
@@ -112,6 +122,7 @@ export default {
 				dev,
 				preprocess
 			}),
+			aliases,
 			resolve({
 				dedupe
 			}),

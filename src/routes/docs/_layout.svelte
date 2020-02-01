@@ -1,5 +1,5 @@
 <script>
-	import SideNav from '../../components/SideNav.svelte';
+	import SideNav from '@/components/SideNav.svelte';
   export let segment;
 </script>
 

@@ -1,6 +1,6 @@
 <script>
-  import HeadTitle from '../../components/HeadTitle.svelte'
-  import highlight from '../../utils/highlight.js'
+  import HeadTitle from '@/components/HeadTitle.svelte'
+  import highlight from '@/utils/highlight.js'
 
   let gap = ['default', 'less', 'small']
   let gapSelected = 'default'

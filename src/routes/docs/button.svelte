@@ -1,8 +1,8 @@
 <script>
-  import HeadTitle from '../../components/HeadTitle.svelte'
-  import Row from '../../components/Loop/Row.svelte';
-  import Col from '../../components/Loop/Col.svelte';
-  import highlight from '../../utils/highlight.js'
+  import HeadTitle from '@/components/HeadTitle.svelte'
+  import Row from '@/components/Loop/Row.svelte';
+  import Col from '@/components/Loop/Col.svelte';
+  import highlight from '@/utils/highlight.js'
 </script>
 
 <style lang="scss">

@@ -1,6 +1,6 @@
 <script>
-  import HeadTitle from '../../components/HeadTitle.svelte';
-  import highlight from '../../utils/highlight.js';
+  import HeadTitle from '@/components/HeadTitle.svelte';
+  import highlight from '@/utils/highlight.js';
 
   let html5 = false
   $: attr = html5 ? 'data-oo' : 'oo'
