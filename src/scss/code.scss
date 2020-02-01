@@ -71,13 +71,16 @@ pre[class*="language-"].line-numbers {
       color: #fff;
     }
     &.selector {
-      color: #ffd12b;
+      color: #ffd048;
     }
     &.boolean {
       color: #fff;
     }
     &.comment {
       color: oo('palette.secondary');
+    }
+    &.important {
+      color: #2fb9e2 !important;
     }
   }
 }

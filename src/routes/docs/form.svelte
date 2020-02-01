@@ -466,7 +466,7 @@ toggle: (
 
 <hr/>
 <h2 id="utilities"><a href="docs/form#utilities">#</a> Utilities as modifiers</h2>
-<p>Text or color utilities can help you alter the size or the appearance of your input elements depending of the situation.</p>
+<p>Text or color utilities can help you alter the size or the appearance of your input elements.</p>
 
 <div class="ground mb-0">
   <p class="mt-0"><strong>Example of form with required elements throwing an error<br><em>(use of border utility)</em></strong></p>
@@ -497,7 +497,7 @@ toggle: (
 </div>
 {@html highlight(
 `<p><strong>Example of form with required elements throwing an error
-<br><em>(use of border utility)</em></strong></p>
+<br><em>(use of border-danger utility)</em></strong></p>
 
 <label for="input-error">Text input with error</label>
 <input class="border-danger" oo-input id="input-error" type="text">

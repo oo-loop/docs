@@ -227,7 +227,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 `, 'scss')}
 
 <hr>
-<h2>Access Data</h2>
+<h2 id="access">Access Data</h2>
 <p>Access any data of the config map during your development.</p>
 
 <h3 class="h4 font-code" id="oo">oo(<span class="color-primary">$path</span>)</h3>

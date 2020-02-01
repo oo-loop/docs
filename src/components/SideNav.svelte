@@ -55,7 +55,7 @@
 			</ul>
 		</li>
 		<li>
-			<h4><a class="{segment === 'base' ? 'color-primary' : ''}" href="docs/html-elements">HTML elements</a></h4>
+			<h4><a class="{segment === 'html-elements' ? 'color-primary' : ''}" href="docs/html-elements">HTML elements</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/html-elements#base">Base</a></li>
 				<li><a href="docs/html-elements#type">Type</a></li>
@@ -69,6 +69,16 @@
 				<li><a class="{segment === 'template' ? 'color-primary' : ''}" href="docs/template">Template</a></li>
 				<li><a class="{segment === 'button' ? 'color-primary' : ''}" href="docs/button">Button</a></li>
 				<li><a class="{segment === 'form' ? 'color-primary' : ''}" href="docs/form">Form</a></li>
+			</ul>
+		</li>
+		<li>
+			<h4><a class="{segment === 'utilities' ? 'color-primary' : ''}" href="docs/utilities">Utilities</a></h4>
+			<ul class="list-unstyle">
+				<li><a href="docs/utilities#color">Color</a></li>
+				<li><a href="docs/utilities#text">Text</a></li>
+				<li><a href="docs/utilities#spacing">Spacing</a></li>
+				<li><a href="docs/utilities#float">Float</a></li>
+				<li><a href="docs/utilities#wrapper">Wrapper</a></li>
 			</ul>
 		</li>
 	</ul>
