@@ -1,10 +1,13 @@
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
+import alias from '@rollup/plugin-alias';
+
 import sass from 'rollup-plugin-sass';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
