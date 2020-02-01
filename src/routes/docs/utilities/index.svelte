@@ -1,6 +1,6 @@
 <script>
-  import HeadTitle from '../../components/HeadTitle.svelte';
-  import highlight from '../../utils/highlight.js';
+  import HeadTitle from '../../../components/HeadTitle.svelte';
+  import highlight from '../../../utils/highlight.js';
 </script>
 
 <style>
@@ -11,7 +11,7 @@
 
 <h1>Utilities</h1>
 <p class="text-large">A bunch of handy utility classes to customize elements on the fly.</p>
-<p>Loop provides recurring utilities to start with (<a href="docs/utilities#color">Color</a>, <a href="docs/utilities#text">Text</a>, <a href="docs/utilities#spacing">Spacing</a>, <a href="docs/utilities#float">Float</a>, <a href="docs/utilities#wrapper">Wrapper</a>).
+<p>Loop provides recurring utilities to start with (<a href="docs/utilities/color">Color</a>, <a href="docs/utilities/text">Text</a>, <a href="docs/utilities/spacing">Spacing</a>, <a href="docs/utilities/float">Float</a>, <a href="docs/utilities/wrapper">Wrapper</a>).
 Those are made flexible for you to set your own need on any projects by adjusting the Loop config.</p>
 
 <h3>Format</h3>

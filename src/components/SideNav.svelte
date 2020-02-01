@@ -74,11 +74,11 @@
 		<li>
 			<h4><a class="{segment === 'utilities' ? 'color-primary' : ''}" href="docs/utilities">Utilities</a></h4>
 			<ul class="list-unstyle">
-				<li><a href="docs/utilities#color">Color</a></li>
-				<li><a href="docs/utilities#text">Text</a></li>
-				<li><a href="docs/utilities#spacing">Spacing</a></li>
-				<li><a href="docs/utilities#float">Float</a></li>
-				<li><a href="docs/utilities#wrapper">Wrapper</a></li>
+				<li><a href="docs/utilities/color">Color</a></li>
+				<li><a href="docs/utilities/text">Text</a></li>
+				<li><a href="docs/utilities/spacing">Spacing</a></li>
+				<li><a href="docs/utilities/float">Float</a></li>
+				<li><a href="docs/utilities/wrapper">Wrapper</a></li>
 			</ul>
 		</li>
 	</ul>
