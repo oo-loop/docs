@@ -16,8 +16,11 @@
 .ground {
   padding: 1.25rem;
   margin-bottom: 30px;
-  color: #046886;
-  text-align: center;
   border: 1px solid #d5d6d6;
   background-color: #e7efef;
+
+  .hr {
+    margin-top: rem(25);
+    margin-bottom: rem(25);
+  }
 }

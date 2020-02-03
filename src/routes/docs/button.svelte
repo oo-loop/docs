@@ -6,7 +6,7 @@
 </script>
 
 <style lang="scss">
-
+  .ground { text-align: center; }
 </style>
 
 <HeadTitle title="Button component"/>

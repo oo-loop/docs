@@ -48,6 +48,10 @@
       height: 100px;
     }
   }
+  .ground {
+    color: #046886;
+    text-align: center;
+  }
 </style>
 
 <HeadTitle title="Column component"/>

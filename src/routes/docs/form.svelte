@@ -6,10 +6,6 @@
 </script>
 
 <style lang="scss">
-.ground {
-  color: oo('body.props.color');
-  text-align: left;
-}
 </style>
 
 <HeadTitle title="Form component"/>

@@ -34,6 +34,10 @@
     align-items: center;
     justify-content: center;
   }
+  .ground {
+    color: #046886;
+    text-align: center;
+  }
 </style>
 
 <HeadTitle title="Template component"/>
