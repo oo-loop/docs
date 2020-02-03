@@ -14,7 +14,7 @@
 <p>Loop provides recurring utilities to start with (<a href="docs/utilities/color">Color</a>, <a href="docs/utilities/text">Text</a>, <a href="docs/utilities/spacing">Spacing</a>, <a href="docs/utilities/float">Float</a>, <a href="docs/utilities/wrapper">Wrapper</a>).
 Those are made flexible for you to set your own need on any projects by adjusting the Loop config.</p>
 
-<h3>Format</h3>
+<h3 id="format">Format</h3>
 <p>A utility follows a specific map format being passed to the config.</p>
 <ul>
   <li class="mb-10"><code>prefix</code><em class="font-monospace">(string)</em><em class="font-monospace color-secondary">(optional)</em>
