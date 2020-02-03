@@ -1,18 +1,29 @@
 @import '../../../../loop/scss/loop';
 
+$ooLoop: ooAdd('palette', (
+  'danger': #da3b3b,
+  'sample': (
+    'light': #87cadb,
+    'dark': #459cb5,
+    'darker': #176d84,
+  ),
+));
+
 // Column
 $ooLoop: ooPipe(
-  _set('column.gutter.screens', ('sm', 'md')),
-  _add('column.gutter.sizes', (
-    'small': (
-      rt: 0.5rem,
-      sm: 1rem,
+  _add('column.gutter', (
+    sizes: (
+      'small': (
+        rt: 0.5rem,
+        sm: 1rem,
+      ),
+      'medium': 2rem,
+      'large': (
+        rt: rem(30),
+        md: rem(50),
+      )
     ),
-    'medium': 2rem,
-    'large': (
-      rt: rem(30),
-      md: rem(50),
-    )
+    screens: ('sm', 'md'),
   )),
   _add('column.alignment.screens', 'lg'),
   _set('column.childAlignment.use', true),
@@ -147,12 +158,15 @@ $ooLoop: ooPipe(
 
 // Utilities
 $ooLoop: ooPipe(
-  _add('color.font.values', (
-    'body': this('body.props.color'),
-    'danger': #da3b3b,
-  )),
-  _add('color.border.values', (
-    'danger': #da3b3b,
+  _add('color', (
+    font: ('values': (
+      'body': this('body.props.color'),
+      'warning': #ce8a0d,
+    )),
+    background: ('values': (
+      'danger': #f7c8c8
+    )),
+    border: ('values': this('palette')),
   )),
 
   _add('text', (
@@ -177,14 +191,7 @@ $ooLoop: ooPipe(
   ))
 );
 
-@include ooInit((
-  palette: (
-    'sample': (
-      'light': #87cadb,
-      'dark': #459cb5,
-      'darker': #176d84,
-    ),
-  ),
+$ooInit: (
   body: (
     props: (
       background-color: #f8f8f8,
@@ -202,9 +209,84 @@ $ooLoop: ooPipe(
     ),
     classes:  ('h3', 'h4'),
   ),
+
+  //Column
+  // column: (
+  //   gutter: (
+  //     sizes: (
+  //       'small': (
+  //         rt: 0.5rem,
+  //         sm: 1rem,
+  //       ),
+  //       'medium': 2rem,
+  //       'large': (
+  //         rt: rem(30),
+  //         md: rem(50),
+  //       )
+  //     ),
+  //     screens: ('sm', 'md'),
+  //   ),
+  //   alignment: ( screens: 'lg'),
+  //   childAlignment: ( use: true),
+  //   order: (
+  //     use: true,
+  //     screens: (
+  //       sm: 3,
+  //       md: 0,
+  //       lg: (0, 2),
+  //     )
+  //   ),
+  //   offset: (
+  //     use: true,
+  //     screens: sm,
+  //   ),
+  // ),
+
+  // Form
+  // input: ( variants: (
+  //   'danger': (
+  //     border-color: #ca7878,
+  //     background-color: #f9e4e4,
+  //   ),
+  //   'large': (
+  //     padding: 1rem 1.25rem
+  //   ),
+  //   'rounded': (
+  //     border-radius: 50em,
+  //   ),
+  // )),
+  // select: ( variants: (
+  //   'secondary': (
+  //     borderColor: #222,
+  //     caret: (
+  //       color: #fff,
+  //       bgcolor: this('select.variants.secondary.borderColor'),
+  //       border: this('select.variants.secondary.borderColor'),
+  //     )
+  //   ),
+  // )),
+  // checkbox: (
+  //   sizes: (
+  //     'medium': 1.5rem,
+  //     'large': 2rem,
+  //   )
+  //   screens: (sm, md),
+  // ),
+  // radio: (
+  //   sizes: (
+  //     'large': 2rem,
+  //   ),
+  //   screens: (sm)
+  // ),
+  // toggle: (
+  //   sizes: (
+  //     'large': 2rem,
+  //   ),
+  // ),
+
   use: (
     input: (
       toggle: true,
     ),
   ),
-));
+);
