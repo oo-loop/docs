@@ -10,5 +10,70 @@
 <HeadTitle title="Color utilities"/>
 
 <h1>Color utilities</h1>
-<p class="text-large">A bunch of handy utility classes to customize elements on the fly.</p>
-<p>Loop provides recurring utilities to start with.</p>
+<p class="text-large">Modify the color of any elements tagetting font, background and/or border.</p>
+<p>Loop gives you few colors by default to avoid overloading the CSS of rules you might not need.</p>
+
+<p class="info">In manual mode add the mixin <strong>Color()</strong></p>
+
+
+{@html highlight(
+`palette: (
+  'primary': #0ea7d6,
+  'secondary': #959595,
+),
+
+// default settings
+color: (
+  font: (
+    prefix: 'color',
+    property: 'color',
+    values: this('palette'),
+  ),
+  background: (
+    prefix: 'bg',
+    property: 'background-color',
+    values: this('palette'),
+  ),
+  border: (
+    property: 'border-color',
+    values: (), // no border utilities
+  ),
+),
+`, 'scss')}
+
+<div class="ground">
+  <p class="color-primary mb-0">This is a text with the class <em>.color-primary</em></p>
+  <p class="color-secondary">This is a text with the class <em>.color-secondary</em></p>
+  <div class="hr"></div>
+  <p class="wrapper-small bg-primary">this is a block with a the class <em>.bg-primary</em></p>
+  <p class="wrapper-small bg-secondary">this is a block with a the class <em>.bg-secondary</em></p>
+</div>
+
+<p><strong>Set your preferences by adding your necessary colors to config.</strong></p>
+
+{@html highlight(
+`$ooLoop: ooPipe(
+  _add('palette', (
+    'danger': #da3b3b // danger globally
+  )),
+  _add('color', (
+    font: ('values': (
+      'warning': #ce8a0d,
+    )),
+    background: ('values': (
+      'danger': #f7c8c8, //overwrite the danger value for background
+    )),
+    border: ('values': this('palette')), //add global values
+  )),
+);
+`, 'scss')}
+
+<div class="ground">
+  <p class="color-warning mb-0">This is a text with the class <em>.color-warning</em></p>
+  <p class="color-danger mb-0">This is a text with the class <em>.color-danger</em></p>
+  <div class="hr"></div>
+  <p class="wrapper-small bg-danger">this is a block with a the class <em>.bg-danger</em></p>
+  <p class="wrapper-small border-primary" style="border: 1px solid">this is a block with a the class <em>.border-primary</em></p>
+  <p class="wrapper-small border-secondary" style="border: 1px solid">this is a block with a the class <em>.border-secondary</em></p>
+  <p class="wrapper-small border-danger" style="border: 1px solid">this is a block with a the class <em>.border-danger</em></p>
+</div>
