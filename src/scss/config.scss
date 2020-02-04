@@ -175,12 +175,21 @@ $ooLoop: ooPipe(
       'medium': rem(16),
     )),
     fontWeight: ('values': (
+      'light': 300,
       'regular': 400,
     )),
     fontFamily: ('values': (
       'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
       'monospace': monospace,
+      'serif': (Georgia, "Times New Roman", Times),
     )),
+    letterSpacing: (
+      prefix: 'text',
+      values: (
+        'tight': -1px,
+        'wide': 1.5px,
+      )
+    )
   )),
 
   _add('spacing.top.values', (
