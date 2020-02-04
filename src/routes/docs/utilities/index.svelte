@@ -14,7 +14,8 @@
 <p>Loop provides recurring utilities to start with (<a href="docs/utilities/color">Color</a>, <a href="docs/utilities/text">Text</a>, <a href="docs/utilities/spacing">Spacing</a>, <a href="docs/utilities/float">Float</a>, <a href="docs/utilities/wrapper">Wrapper</a>).
 Those are made flexible for you to set your own need on any projects by adjusting the Loop config.</p>
 
-<h3 id="format">Format</h3>
+<div class="hr"></div>
+<h2 id="format"><a href="docs/utilities#format">#</a> Format</h2>
 <p>A utility follows a specific map format being passed to the config.</p>
 <ul>
   <li class="mb-10"><code>prefix</code><em class="font-monospace">(string)</em><em class="font-monospace color-secondary">(optional)</em>
@@ -30,9 +31,8 @@ Those are made flexible for you to set your own need on any projects by adjustin
   <li><code>screens</code><em class="font-monospace">(mixed)</em><em class="font-monospace color-secondary">(optional)</em>
   <br>Targetted responsive screens, global or specific - (defaulft empty)</li>
 </ul>
-
-<hr>
-<h2>Custom Utilities</h2>
+<div class="hr"></div>
+<h2 id="custom"><a href="docs/utilities#format">#</a> Custom Utilities</h2>
 <p>Following the appropriate map format create your own utitlies via the proterty <em>utilities</em> of the Loop config.</p>
 {@html highlight(
 `$ooLoop: ooAdd('utilities', (
@@ -84,7 +84,8 @@ Those are made flexible for you to set your own need on any projects by adjustin
 .valign-middle { vertical-align: middle }
 `, 'css')}
 
-<h3 class="mt-30">Responsive utilities</h3>
+<div class="hr"></div>
+<h2 id="responsive"><a href="docs/utilities#responsive">#</a> Responsive utilities</h2>
 <p>The <em>screens</em> propertity can be used to set global responsive rules to apply to all listed values.<code><i class="colo-secondary">prefix</i>-<i class="colo-secondary">valueName</i>@<i class="colo-secondary">screenName</i></code></p>
 
 {@html highlight(

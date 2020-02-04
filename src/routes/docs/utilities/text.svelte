@@ -97,3 +97,27 @@ text: (
   <p class="text-tight mb-0">This is a text with the class <em>.text-tight</em></p>
   <p class="text-wide mb-0">This is a text with the class <em>.text-wide</em></p>
 </div>
+
+
+<h4>Set responsive values <span class="font-regular text-medium">(<a href="docs/utilities#responsive" title="Check the options">Check the options</a>)</span></h4>
+
+{@html highlight(
+`$ooLoop: ooAdd('text', (
+  fontSize: ('values': (
+    'grow': (
+      rt: 1rem,
+      md: 1.25rem,
+      lg: 1.5rem,
+    )
+  )),
+  textAlign: (
+    screens: (md, ld), // text-left@md text-center@md text-right@md text-left@lg text-center@lg text-right@lg
+  ),
+));
+`, 'scss')}
+{@html highlight(
+`<p class="text-grow text-center text-left@md text-right@lg">This is a paragraph with a responsive font-size as well as a responsive alignment.</p>
+`, 'html')}
+<div class="ground">
+  <p class="text-grow text-center text-left@md text-right@lg mb-0">This is a paragraph with a responsive font-size<br>as well as a responsive alignment.</p>
+</div>
