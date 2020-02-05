@@ -198,8 +198,10 @@ $ooLoop: ooPipe(
     textAlign: ('screens': (md, lg))
   )),
 
-  _add('spacing.top.values', (
-    45: rem(45),
+  _add('spacing.top', (
+    values: (
+      '45': rem(45),
+    ),
   )),
   _add('spacing.bottom.values', (
     'root': this('container.gutter'),
