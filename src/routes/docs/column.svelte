@@ -52,6 +52,18 @@
     color: #046886;
     text-align: center;
   }
+
+  :global(.cell) {
+    padding: .5rem;
+    background-color: oo('palette.sample.light');
+    min-height: 2rem;
+  }
+  :global(.cell-large) {
+    padding: 1.5rem;
+  }
+  :global(.bordered) {
+    border: 1px solid oo('palette.sample.dark');;
+  }
 </style>
 
 <HeadTitle title="Column component"/>
@@ -83,8 +95,8 @@
 
 <div class="ground">
   <Row>
-    <Col cell></Col>
-    <Col cell></Col>
+    <Col class="cell"></Col>
+    <Col class="cell"></Col>
   </Row>
 </div>
 <hr>
@@ -148,10 +160,10 @@ column: (
 
 <div class="ground">
   <Row>
-    <Col cell prop="span12 span6@sm span4@md span3@lg"></Col>
-    <Col cell prop="span12 span6@sm span8@md span9@lg"></Col>
-    <Col cell prop="span6 span7@md auto@lg"></Col>
-    <Col cell></Col>
+    <Col class="cell" prop="span12 span6@sm span4@md span3@lg"></Col>
+    <Col class="cell" prop="span12 span6@sm span8@md span9@lg"></Col>
+    <Col class="cell" prop="span6 span7@md auto@lg"></Col>
+    <Col class="cell"></Col>
   </Row>
 </div>
 
@@ -178,9 +190,9 @@ column: (
 
 <div class="ground">
   <Row>
-    <Col cell prop="fit">fit</Col>
-    <Col cell>auto</Col>
-    <Col cell prop="span12 fit@md">fit@md</Col>
+    <Col class="cell" prop="fit">fit</Col>
+    <Col class="cell">auto</Col>
+    <Col class="cell" prop="span12 fit@md">fit@md</Col>
   </Row>
 </div>
 
@@ -226,13 +238,13 @@ column: (
 <button data-oo-button class="float-right mb-root" on:click={() => isClear = !isClear}>toggle clear</button>
 <div class="ground">
   <Row>
-    <Col cell prop="span2">1</Col>
-    <Col cell>2</Col>
+    <Col class="cell" prop="span2">1</Col>
+    <Col class="cell">2</Col>
     {#if isClear}
       <Col prop="clear"></Col>
     {/if}
-    <Col cell>3</Col>
-    <Col cell>4</Col>
+    <Col class="cell">3</Col>
+    <Col class="cell">4</Col>
   </Row>
 </div>
 
@@ -266,13 +278,13 @@ column: (
 
 <div class="ground">
   <Row>
-    <Col cell prop="span6"></Col>
-    <Col cell prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
   </Row>
   <div class="hr mt-15 mb-15"></div>
   <Row prop="gutter-less">
-    <Col cell bordered prop="span6"></Col>
-    <Col cell bordered prop="span6"></Col>
+    <Col class="cell bordered" prop="span6"></Col>
+    <Col class="cell bordered" prop="span6"></Col>
   </Row>
 </div>
 
@@ -305,8 +317,8 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 </div>
 <div class="ground">
   <Row prop="{gutterProp}">
-    <Col cell prop="span6"></Col>
-    <Col cell prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
   </Row>
 </div>
 
@@ -342,8 +354,8 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 
 <div class="ground">
   <Row prop="gutter-less@sm gutter-medium@md">
-    <Col cell prop="span6"></Col>
-    <Col cell prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
+    <Col class="cell" prop="span6"></Col>
   </Row>
 </div>
 
@@ -376,10 +388,10 @@ column: (
 <button data-oo-button class="float-right mb-root" on:click={() => isStretch = !isStretch}>toggle stretch</button>
 <div class="ground">
   <Row prop="{isStretch ? 'stretch' : ''}">
-    <Col cell>
+    <Col class="cell">
       <div class="child">More content<br>for that child</div>
     </Col>
-    <Col cell>
+    <Col class="cell">
       <div class="child">Less here</div>
     </Col>
   </Row>
@@ -457,8 +469,8 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 </Row>
 <div class="ground mt-15">
   <Row prop={alignmentProp}>
-    <Col cellLarge prop="span5"></Col>
-    <Col cell prop="span5"></Col>
+    <Col class="cell cell-large" prop="span5"></Col>
+    <Col class="cell" prop="span5"></Col>
   </Row>
 </div>
 
@@ -524,8 +536,8 @@ column: (
 </Row>
 <div class="ground mt-15">
   <Row>
-    <Col cellLarge prop="span5 self-align-{selfAlignmentSelectedA}">A</Col>
-    <Col cell prop="span5 self-align-{selfAlignmentSelectedB} self-valign-{selfValignmentSelectedB}">B</Col>
+    <Col class="cell cell-large" prop="span5 self-align-{selfAlignmentSelectedA}">A</Col>
+    <Col class="cell" prop="span5 self-align-{selfAlignmentSelectedB} self-valign-{selfValignmentSelectedB}">B</Col>
   </Row>
 </div>
 
@@ -587,10 +599,10 @@ $ooLoop: ooSet('column.childAlignment.use', true);
 
 <div class="ground mt-15">
   <Row prop="stretch">
-    <Col cell>
+    <Col class="cell">
       <br><br><br><br>
     </Col>
-    <Col cell prop="child-align-{childAlignmentSelected} child-valign-{childValignmentSelected}">
+    <Col class="cell" prop="child-align-{childAlignmentSelected} child-valign-{childValignmentSelected}">
       <div class="child">B</div>
     </Col>
   </Row>
@@ -621,10 +633,10 @@ $ooLoop: ooSet('column.order.use', true);
 `, 'html')}
 <div class="ground">
   <Row>
-    <Col cell prop="span6 span3@sm order2@lg">one</Col>
-    <Col cell prop="span6 span3@sm order0@lg">two</Col>
-    <Col cell prop="span6 span3@sm order3@sm">three</Col>
-    <Col cell prop="span6 span3@sm order0@md">four</Col>
+    <Col class="cell" prop="span6 span3@sm order2@lg">one</Col>
+    <Col class="cell" prop="span6 span3@sm order0@lg">two</Col>
+    <Col class="cell" prop="span6 span3@sm order3@sm">three</Col>
+    <Col class="cell" prop="span6 span3@sm order0@md">four</Col>
   </Row>
 </div>
 
