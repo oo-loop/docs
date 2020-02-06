@@ -73,15 +73,15 @@
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
 <ul class="text-small mb-30">
-<li><a href="docs/column#responsive-screens" title="Responsive screens">Responsive screens</a></li>
-<li><a href="docs/column#fit" title="Fit column">Fit column</a></li>
-<li><a href="docs/column#clear" title="Clear column">Clear column</a></li>
-<li><a href="docs/column#gutter" title="Gutter control">Gutter control</a></li>
-<li><a href="docs/column#stretch" title="Stretch children height">Stretch children</a></li>
-<li><a href="docs/column#alignment" title="Alignment">Alignment</a></li>
-<li><a href="docs/column#self-alignment" title="Self alignment">Self alignment</a></li>
-<li><a href="docs/column#children-alignment" title="Children alignment">Children alignment</a></li>
-<li><a href="docs/column#order" title="Order column">Order column</a></li>
+<li><a href="docs/components/column#responsive-screens" title="Responsive screens">Responsive screens</a></li>
+<li><a href="docs/components/column#fit" title="Fit column">Fit column</a></li>
+<li><a href="docs/components/column#clear" title="Clear column">Clear column</a></li>
+<li><a href="docs/components/column#gutter" title="Gutter control">Gutter control</a></li>
+<li><a href="docs/components/column#stretch" title="Stretch children height">Stretch children</a></li>
+<li><a href="docs/components/column#alignment" title="Alignment">Alignment</a></li>
+<li><a href="docs/components/column#self-alignment" title="Self alignment">Self alignment</a></li>
+<li><a href="docs/components/column#children-alignment" title="Children alignment">Children alignment</a></li>
+<li><a href="docs/components/column#order" title="Order column">Order column</a></li>
 </ul>
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
@@ -100,7 +100,7 @@
   </Row>
 </div>
 <hr>
-<h2 class="mt-45" id="responsive-screens"><a href="docs/column#responsive-screens">#</a> Responsive screens</h2>
+<h2 class="mt-45" id="responsive-screens"><a href="docs/components/column#responsive-screens">#</a> Responsive screens</h2>
 <p>The column system is using the <a href="docs/config#global">global responsive screens</a> by default.</p>
 {@html highlight(
 `breakpoints: (
@@ -168,7 +168,7 @@ column: (
 </div>
 
 <hr>
-<h2 id="fit"><a href="docs/column#fit">#</a> Fit column</h2>
+<h2 id="fit"><a href="docs/components/column#fit">#</a> Fit column</h2>
 <p>Let the column fits to the size of the content.<code>col="fit"</code><br>
 The config <em>screens</em> property is refering to the column component screens, giving you the reponsive variants <code>fit@sm</code><code>fit@md</code><code>fit@lg</code>.</p>
 
@@ -222,7 +222,7 @@ column: (
 </div>
 
 <hr>
-<h2 id="clear"><a href="docs/column#clear">#</a> Clear column</h2>
+<h2 id="clear"><a href="docs/components/column#clear">#</a> Clear column</h2>
 <p>Start a new row within the flow of columns. <code>col="clear"</code></p>
 
 {@html highlight(
@@ -249,7 +249,7 @@ column: (
 </div>
 
 <hr>
-<h2 id="gutter"><a href="docs/column#gutter">#</a> Gutter Control</h2>
+<h2 id="gutter"><a href="docs/components/column#gutter">#</a> Gutter Control</h2>
 <p>Change the gap between the columns. <code>row="gutter-<i class="color-secondary">gutterName</i>"</code></p>
 
 {@html highlight(`// default config
@@ -288,7 +288,7 @@ column: (
   </Row>
 </div>
 
-<h3 id="gutter-map"><a href="docs/column#gutter-map">#</a> Responsive gutter - <span class="font-regular">Map</span></h3>
+<h3 id="gutter-map"><a href="docs/components/column#gutter-map">#</a> Responsive gutter - <span class="font-regular">Map</span></h3>
 <p>Set responsive map to gutter sizes to manage gaps between screen devices.</p>
 {@html highlight(
 `// add 'small' & 'large' sizes
@@ -322,7 +322,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
   </Row>
 </div>
 
-<h3 id="gutter-screens"><a href="docs/column#gutter-screens">#</a> Responsive gutter - <span class="font-regular">Screens</span></h3>
+<h3 id="gutter-screens"><a href="docs/components/column#gutter-screens">#</a> Responsive gutter - <span class="font-regular">Screens</span></h3>
 <p>Treat responsive gutter from the <em>screens</em> property to create <code>gutter-<i>gutterName</i>@<i>screenName</i></code> variants (<em>Variants with <strong>map value will be skipped</strong></em>).</p>
 {@html highlight(
 `$ooLoop: ooSet('column.gutter', (
@@ -371,7 +371,7 @@ column: (
 ),`, 'scss')}
 
 <hr>
-<h2 id="stretch"><a href="docs/column#stretch">#</a> Stretch children height</h2>
+<h2 id="stretch"><a href="docs/components/column#stretch">#</a> Stretch children height</h2>
 <p>Match the height of each column child elements. <code>row="stretch"</code></p>
 
 {@html highlight(
@@ -398,7 +398,7 @@ column: (
 </div>
 
 <hr>
-<h2 id="alignment"><a href="docs/column#alignment">#</a> Alignment</h2>
+<h2 id="alignment"><a href="docs/components/column#alignment">#</a> Alignment</h2>
 <p>Align a group of columns horizontaly, vertically or both.<code>row="align-<i>option</i> valign-<i>option</i>"</code></p>
 <ul>
   <li><strong>Valign options</strong>: <i>top, middle, bottom</i></li>
@@ -475,7 +475,7 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 </div>
 
 <hr>
-<h2 id="self-alignment"><a href="docs/column#self-alignment">#</a> Self alignment</h2>
+<h2 id="self-alignment"><a href="docs/components/column#self-alignment">#</a> Self alignment</h2>
 <p>Align a single column horizontaly, vertically or both.<code>col="self-align-<i>option</i> self-valign-<i>option</i>"</code></p>
 
 <ul>
@@ -542,7 +542,7 @@ column: (
 </div>
 
 <hr>
-<h2 id="children-alignment"><a href="docs/column#children-alignment">#</a> Children content alignment</h2>
+<h2 id="children-alignment"><a href="docs/components/column#children-alignment">#</a> Children content alignment</h2>
 <p>Align content of a <strong>stretched</strong> child horizontaly, vertically or both.<code>col="child-align-<i>option</i> child-valign-<i>option</i></code></p>
 
 <ul>
@@ -609,7 +609,7 @@ $ooLoop: ooSet('column.childAlignment.use', true);
 </div>
 
 <hr>
-<h2 id="order"><a href="docs/column#order">#</a> Order column</h2>
+<h2 id="order"><a href="docs/components/column#order">#</a> Order column</h2>
 <p>Rearrange the order of the columns for responsive purposes <code>col="order<i class="color-secondary">#</i>@<i class="color-secondary">screenName</i>"</code><i>(from 0 to 11)</i>.</p>
 {@html highlight(`// default config 
 column: (

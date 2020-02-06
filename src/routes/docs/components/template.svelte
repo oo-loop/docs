@@ -90,7 +90,7 @@ template: (
 </div>
 
 <hr>
-<h2 id="multiple"><a href="docs/template#multiple" title="Multiple templates">#</a> Multiple templates</h2>
+<h2 id="multiple"><a href="docs/components/template#multiple" title="Multiple templates">#</a> Multiple templates</h2>
 <p>Pass a list of <strong>named templates</strong> to the <em>areas</em> property.</p>
 
 {@html highlight(
@@ -150,7 +150,7 @@ template: (
 </div>
 
 <hr>
-<h2 id="gap"><a href="docs/template#gap" title="Gap">#</a> Gap</h2>
+<h2 id="gap"><a href="docs/components/template#gap" title="Gap">#</a> Gap</h2>
 <p>Change the horizontal and vertical space between the areas.<code>gap-<i>gapName</i> <code>vgap-<i>gapName</i></code></p>
 
 {@html highlight(
