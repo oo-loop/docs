@@ -8,4 +8,5 @@
 </script>
 
 <div data-oo-col="{prop}" class="{classes}">
+  <slot></slot>
 </div>
