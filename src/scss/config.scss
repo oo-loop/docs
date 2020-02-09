@@ -205,6 +205,21 @@ $ooLoop: ooPipe(
   )),
   _add('spacing.bottom.values', (
     'root': this('container.gutter'),
+  )),
+
+  _add('wrapper.values', (
+    'tiny': .5rem,
+    'wide': (
+      rt: 1rem,
+      sm: 2rem,
+      md: 3rem,
+      lg: 4rem,
+    )
+  )),
+  _set('wrapper.screens', (
+    sm: (), // none specified
+    md: ('tiny', 'small'),
+    lg: ('small', 'medium')
   ))
 );
 
