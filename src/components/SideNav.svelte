@@ -75,7 +75,7 @@
 			<h4><a class="{segment === 'helpers' ? 'color-primary' : ''}" href="docs/helpers">Helpers</a></h4>
 			<ul class="list-unstyle">
 				<li><a href="docs/helpers/container">Container</a></li>
-				<li><a href="docs/helpers/visbility">Visbility</a></li>
+				<li><a href="docs/helpers/visibility">Visbility</a></li>
 				<li><a href="docs/helpers/misc">Miscellaneous</a></li>
 			</ul>
 		</li>
