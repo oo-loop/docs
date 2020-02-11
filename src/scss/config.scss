@@ -223,6 +223,18 @@ $ooLoop: ooPipe(
   ))
 );
 
+// Misc
+$ooLoop: ooAdd('misc', (
+  'thumbnail': (
+    props: (
+      padding: 5px,
+      border: 1px solid #d6d6d6,
+      border-radius: 5px,
+      background-color: #f7f7f7,
+    )
+  )
+));
+
 $ooInit: (
   body: (
     props: (
