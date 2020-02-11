@@ -1,7 +1,5 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
-  import Row from '@/components/Loop/Row.svelte';
-  import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -11,7 +9,7 @@
 <HeadTitle title="List"/>
 
 <h1>List</h1>
-<p class="text-large">Format list elements with recurring styles.<br>
+<p class="text-large">Format list elements.<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
 <h2 id="unstyle"><a href="docs/helpers/list#unstyle">#</a> Unstyle</h2>
