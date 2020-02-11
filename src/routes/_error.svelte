@@ -1,40 +1,36 @@
 <script>
-	export let status;
-	export let error;
+  import HeadTitle from '@/components/HeadTitle.svelte';
+  import Col from '@/components/Loop/Col.svelte';
+  import highlight from '@/utils/highlight.js';
 
-	const dev = process.env.NODE_ENV === 'development';
+  export let status;
+  export let error;
+
+  const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <style>
-	h1, p {
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
 </style>
 
-<svelte:head>
-	<title>{status}</title>
-</svelte:head>
+<HeadTitle title="{status}"/>
 
-<h1>{status}</h1>
-
-<p>{error.message}</p>
-
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+<Col prop="span10@sm span8@md self-align-center">
+  <div class="ground">
+    <h1>Oops!</h1>
+    <p class="text-large">{status}: {error.message}</p>
+    {#if dev && error.stack}
+      <pre>{error.stack}</pre>
+    {/if}
+  </div>
+  <p class="text-center">Check the <a href="docs" title="documentation">documentation</a></p>
+  <hr>
+{@html highlight(
+`<div data-oo-column="span10@sm span8@md self-align-center">
+  <div class="ground">
+    <h1>Oops!</h1>
+    <p class="text-large">${status}: ${error.message}</p>
+  </div>
+  <p class="text-center">Check the <a href="docs" title="documentation">documentation</a></p>
+</div>
+`, 'html')}
+</Col>
