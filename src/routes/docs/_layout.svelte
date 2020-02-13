@@ -3,7 +3,7 @@
   export let segment;
 </script>
 
-<div data-oo-row="gutter-large">
+<div data-oo-row="gutter-large vgutter-less">
   <aside data-oo-col="span12 fit@md">
     <SideNav {segment}/>
   </aside>
