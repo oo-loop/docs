@@ -8,7 +8,7 @@ $ooLoop: ooPipe(
   )),
   _set('hr.props.margin', rem(45) auto),
   _set('headings.props.fontWeight', 700),
-  _set('headings.props.classes', ('h3', 'h4')),
+  _set('headings.classes', ('h3', 'h4')),
 
   _set('use.input.toggle', true)
 );
