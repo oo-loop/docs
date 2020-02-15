@@ -8,6 +8,7 @@
 <HeadTitle title="Importation"/>
 
 <h1>Importation</h1>
+<p class="text-large">A single import for the entire framework</p>
 <p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a> including the selection of the part of the framework. This makes the loop main file <strong>the only needed</strong> import.</p>
 
 {@html highlight(`@import 'loop/scss'; // that's all`, 'scss')}
@@ -78,7 +79,7 @@ use: (
 ));
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update one property at the time</h3>
+<h3 class="h4 mt-45">Update one property at a time</h3>
 <p>Use the functions <code>ooSet()</code> or <code>ooPipe()</code> to set individual properties.</p>
 {@html highlight(
 `@import '~loop/scss';
@@ -117,7 +118,7 @@ $ooLoop: ooUse((
 <hr>
 <h2 id="mixin">Use of mixin</h2>
 <p>Instead of using the autobuild of <code>ooCreate()</code>, you can include one by one the desired elements from Loop framework.</p>
-<p>In any case, and before doing so, <strong>the instatation of $ooLoop is necessary</strong> and will be done via <code>ooInit()</code>.
+<p>In any case, and before doing so, <strong>the initialization of $ooLoop is necessary</strong> and will be done via <code>ooInit()</code>.
 That will also give you the opportunity to set some global settings.</p>
 
 <p>For the rest of the elements, keep their default style or customize them by passing new parameters.</p>
@@ -129,7 +130,7 @@ That will also give you the opportunity to set some global settings.</p>
 
 @import '~loop/scss';
 
-// Instatiate Loop
+// Initialize Loop
 @include ooInit((
   palette: (
     'dark-gray': #555,
@@ -168,7 +169,7 @@ That will also give you the opportunity to set some global settings.</p>
 // Add Column component
 @include Column();
 
-// Add visibility utility
+// Add visibility classes helper
 @include Visibility();
 `, 'scss')}
 
@@ -190,7 +191,7 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the properties <code>props</code> and <code>smoothing</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
+  <Col prop="span12 fit@sm self-valign-middle">
     <a data-oo-button href="docs/html-elements" title="Base documentation">Learn more</a>
   </Col>
 </Row>
@@ -205,7 +206,7 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the properties <code>paragraph</code> <code>anchor</code> <code>list</code> <code>hr</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
+  <Col prop="span12 fit@sm self-valign-middle">
     <a data-oo-button href="docs/html-elements#type" title="Type documentation">Learn more</a>
   </Col>
 </Row>
@@ -220,7 +221,7 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the properties <code>headings</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
+  <Col prop="span12 fit@sm self-valign-middle">
     <a data-oo-button href="docs/html-elements#headings" title="Headings documentation">Learn more</a>
   </Col>
 </Row>
@@ -235,8 +236,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>column</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/column" title="Column documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/column" title="Column documentation">Use Column</a>
   </Col>
 </Row>
 
@@ -250,8 +251,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>template</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/template" title="Template documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/template" title="Template documentation">Use Template</a>
   </Col>
 </Row>
 
@@ -265,8 +266,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>button</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/button" title="Button documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/button" title="Button documentation">Use Button</a>
   </Col>
 </Row>
 
@@ -280,8 +281,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set css properties of <code>label</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#label" title="Label documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#input" title="Label documentation">Set Label</a>
   </Col>
 </Row>
 
@@ -295,8 +296,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>input</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#input" title="Input documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#input" title="Input documentation">Use Input</a>
   </Col>
 </Row>
 
@@ -310,8 +311,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>select</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#select" title="Select documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#select" title="Select documentation">Use Select</a>
   </Col>
 </Row>
 
@@ -325,8 +326,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>checkbox</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#checkbox" title="Checkbox documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#checkbox" title="Checkbox documentation">Use Checkbox</a>
   </Col>
 </Row>
 
@@ -340,8 +341,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>radio</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#radio" title="Radio documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#radio" title="Radio documentation">Use Radio</a>
   </Col>
 </Row>
 
@@ -355,8 +356,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>toggle</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/form#radio" title="Toggle documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/components/form#toggle" title="Toggle documentation">Use Toggle</a>
   </Col>
 </Row>
 
@@ -364,14 +365,14 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Container(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the container utility.</p>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the container classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>container</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/container" title="Container documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/helpers/container" title="Container documentation">Use Container</a>
   </Col>
 </Row>
 
@@ -379,14 +380,14 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Visibility(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the visiblity utility.</p>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the visiblity classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>visibility</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/visibility" title="Visibility documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/helpers/visibility" title="Visibility documentation">Use Visibility</a>
   </Col>
 </Row>
 
@@ -394,14 +395,14 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Misc(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the miscellaneous utilities.</p>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the miscellaneous classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>misc</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/misc" title="Miscellaneous documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/helpers/misc" title="Miscellaneous documentation">Use Misc</a>
   </Col>
 </Row>
 
@@ -415,8 +416,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the map properties of <code>float</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/float" title="Float documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/utilities/float" title="Float documentation">Use Float</a>
   </Col>
 </Row>
 
@@ -430,8 +431,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the properties of <code>spacing</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/spacing" title="Spacing documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/utilities/spacing" title="Spacing documentation">Use Spacing</a>
   </Col>
 </Row>
 
@@ -445,8 +446,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the property <code>color</code> in an utility format.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/color" title="Color documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/utilities/color" title="Color documentation">Use Color utilites</a>
   </Col>
 </Row>
 
@@ -460,8 +461,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the property <code>text</code> in an utility format.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/color" title="Color documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/utilities/text" title="Color documentation">Use Text utilities</a>
   </Col>
 </Row>
 
@@ -469,14 +470,14 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">List(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the list utilities.</p>
+    <p><em class="text-uppercase text-small">Mixin</em> - Include the list classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties of <code>list</code>.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/list" title="List documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/helpers/list" title="List documentation">Use List</a>
   </Col>
 </Row>
 
@@ -490,8 +491,8 @@ That will also give you the opportunity to set some global settings.</p>
       <br>Set the property <code>wrapper</code> in an utility format.</li>
     </ul>
   </Col>
-  <Col prop="s12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/wrapper" title="Spacing documentation">Learn more</a>
+  <Col prop="span12 fit@sm self-valign-middle">
+    <a data-oo-button href="docs/utilities/wrapper" title="Spacing documentation">Use Wrapper</a>
   </Col>
 </Row>
 
