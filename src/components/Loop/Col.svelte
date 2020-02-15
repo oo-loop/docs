@@ -1,5 +1,6 @@
 <script>
   export let prop = '';
+
   let classes = undefined;
   export {classes as class};
 </script>
