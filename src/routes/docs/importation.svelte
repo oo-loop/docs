@@ -192,7 +192,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements" title="Base documentation">Learn more</a>
+    <a data-oo-button href="docs/html-elements" title="Base documentation">Use Base</a>
   </Col>
 </Row>
 
@@ -207,7 +207,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements#type" title="Type documentation">Learn more</a>
+    <a data-oo-button href="docs/html-elements#type" title="Type documentation">Use Type</a>
   </Col>
 </Row>
 
@@ -222,7 +222,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements#headings" title="Headings documentation">Learn more</a>
+    <a data-oo-button href="docs/html-elements#headings" title="Headings documentation">Use Headings</a>
   </Col>
 </Row>
 
@@ -447,7 +447,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/color" title="Color documentation">Use Color utilites</a>
+    <a data-oo-button href="docs/utilities/color" title="Color documentation">Use Color utilities</a>
   </Col>
 </Row>
 
