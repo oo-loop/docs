@@ -36,8 +36,13 @@
     margin-right: -1rem;
     max-height: 10px;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
     transition: max-height ease-in-out 300ms;
+
+    @include breakpoint(sm) {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
 
     @include breakpoint(md) {
       position: sticky;
@@ -47,8 +52,13 @@
       
       margin-right: auto;
       margin-left: auto;
-      width: 180px;
+      width: 200px;
       max-height: calc(100vh - 2rem);
+
+      background-color: #fff;
+      border-right: oo('hr.props.borderBottom');
+      border-radius: 10% / 50%;
+
       transition: none;
     }
   }

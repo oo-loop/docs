@@ -1,5 +1,18 @@
 @import '../../../../loop/scss/loop';
 
+
+$ooLoop: ooPipe(
+  _add('body.props', (
+    background-color: #fff,
+    word-break: break-word,
+  )),
+  _set('hr.props.margin', rem(45) auto),
+  _set('headings.props.fontWeight', 700),
+  _set('headings.props.classes', ('h3', 'h4')),
+
+  _set('use.input.toggle', true)
+);
+
 $ooLoop: ooAdd('palette', (
   'danger': #da3b3b,
   'sample': (
@@ -43,81 +56,86 @@ $ooLoop: ooPipe(
 );
 
 // Template
-$ooLoop: ooSet('template.areas', (
-  'home': (
-    rt: (
-      "header"
-      "main"
-      "sidebar"
-      "footer"
+$ooLoop: ooPipe(
+  _set('template.areas', (
+    'home': (
+      rt: (
+        "header"
+        "main"
+        "sidebar"
+        "footer"
+      ),
+      sm: (
+        "header header header header"
+        "main main main sidebar"
+        "footer footer footer footer"
+      ),
     ),
-    sm: (
-      "header header header header"
-      "main main main sidebar"
-      "footer footer footer footer"
+    'abc': (
+      rt: (
+        "a" "b" "c"
+      ),
+      sm: (
+        "a a"
+        "c b"
+        "c b"
+      ),
+      md: (
+        "a a a"
+        "b c c"
+        "b c c"
+      ),
+      lg: (
+        "a b b"
+        "a c c"
+        "a . ."
+      ),
+    )
+  )),
+  _set('template.gap', (
+    sizes: (
+      default: 1rem,
+      'less': 0,
+      'small': (
+        rt: .25rem,
+        sm: .5rem,
+      ),
     ),
-  ),
-  'abc': (
-    rt: (
-      "a" "b" "c"
+    vsizes: (
+      'less': 0,
     ),
-    sm: (
-      "a a"
-      "c b"
-      "c b"
-    ),
-    md: (
-      "a a a"
-      "b c c"
-      "b c c"
-    ),
-    lg: (
-      "a b b"
-      "a c c"
-      "a . ."
-    ),
-  )
-));
-$ooLoop: ooSet('template.gap', (
-  sizes: (
-    default: 1rem,
-    'less': 0,
-    'small': (
-      rt: .25rem,
-      sm: .5rem,
-    ),
-  ),
-  vsizes: (
-    'less': 0,
-  ),
-  screens: ('sm', 'lg'),
-  vscreens: this('template.gap.screens'),
-));
+    screens: ('sm', 'lg'),
+    vscreens: this('template.gap.screens'),
+  ))
+);
+
 
 // Button
-$ooLoop: ooAdd('button.colors', (
-  'success': #8cc63f,
-  'nectarine': #ffbe76,
-  'yellow': #fffa65,
-  'salmon': #ffb8b8,
-  'purple': #8e44ad,
-  'green-sea': #16a085,
-));
-$ooLoop: ooSet('button.outline', true);
-$ooLoop: ooAdd('button.variants', (
-  'baggy': (
-    padding: 1.5em 2em,
-    text-transform: uppercase,
-  ),
-  'large': (
-    font-size: 1.5rem,
-  ),
-  'tag': (
-    padding: 0.05em 0.5em,
-    font-weight: 500,
-    border-radius: 50em,
-  ),
-));
+$ooLoop: ooPipe(
+  _add('button.colors', (
+    'success': #8cc63f,
+    'nectarine': #ffbe76,
+    'yellow': #fffa65,
+    'salmon': #ffb8b8,
+    'purple': #8e44ad,
+    'green-sea': #16a085,
+  )),
+  _set('button.outline', true),
+  _add('button.variants', (
+    'baggy': (
+      padding: 1.5em 2em,
+      text-transform: uppercase,
+    ),
+    'large': (
+      font-size: 1.5rem,
+    ),
+    'tag': (
+      padding: 0.05em 0.5em,
+      font-weight: 500,
+      border-radius: 50em,
+    ),
+  ))
+);
 
 // Form
 $ooLoop: ooPipe(
@@ -148,66 +166,59 @@ $ooLoop: ooPipe(
     'large': 2rem,
   )),
   _set('checkbox.screens', (sm, md)),
-  _add('radio.sizes', (
-    'large': 2rem,
-  )),
+  _set('radio.sizes.large', 2rem),
   _set('radio.screens', (sm)),
-  _add('toggle.sizes', (
-    'large': 2rem,
-  )),
+  _set('toggle.sizes.large', 2rem),
 );
 
 // Utilities
 $ooLoop: ooPipe(
-  _add('color', (
-    font: ('values': (
-      'body': this('body.props.color'),
-      'warning': #ce8a0d,
-    )),
-    background: ('values': (
-      'danger': #f7c8c8
-    )),
-    border: ('values': this('palette')),
+  _add('color.font.values', (
+    'body': this('body.props.color'),
+    'warning': #ce8a0d,
   )),
+  _add('color.background.values', (
+    'danger': #f7c8c8
+  )),
+  _set('color.border.values', this('palette')),
 
-  _add('text', (
-    fontSize: ('values': (
-      'tiny': rem(12),
-      'medium': rem(16),
-      'grow': (
-        rt: 1rem,
-        md: 1.25rem,
-        lg: 1.5rem,
-      ),
-    )),
-    fontWeight: ('values': (
-      'light': 300,
-      'regular': 400,
-    )),
-    fontFamily: ('values': (
-      'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
-      'monospace': monospace,
-      'serif': (Georgia, "Times New Roman", Times),
-    )),
-    letterSpacing: (
-      prefix: 'text',
-      values: (
-        'tight': -1px,
-        'wide': 1.5px,
-      )
+  /* Text */
+  _add('text.fontSize.values', (
+    'tiny': rem(12),
+    'medium': rem(16),
+    'grow': (
+      rt: 1rem,
+      md: 1.25rem,
+      lg: 1.5rem,
     ),
-    textAlign: ('screens': (md, lg))
   )),
-
-  _add('spacing.top', (
+  _add('text.fontWeight.values', (
+    'light': 300,
+    'regular': 400,
+  )),
+  _set('text.fontFamily.values', (
+    'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
+    'monospace': monospace,
+    'serif': (Georgia, "Times New Roman", Times),
+  )),
+  _set('text.letterSpacing', (
+    prefix: 'text',
     values: (
-      '45': rem(45),
-    ),
+      'tight': -1px,
+      'wide': 1.5px,
+    )
+  )),
+  _set('text.textAlign.screens', (md, lg)),
+
+  /* spacing */
+  _add('spacing.top.values', (
+    '45': rem(45),
   )),
   _add('spacing.bottom.values', (
     'root': this('container.gutter'),
   )),
 
+  /* wrapper */
   _add('wrapper.values', (
     'tiny': .5rem,
     'wide': (
@@ -225,113 +236,9 @@ $ooLoop: ooPipe(
 );
 
 // Misc
-$ooLoop: ooAdd('misc', (
-  'thumbnail': (
-    props: (
-      padding: 5px,
-      border: 1px solid #d6d6d6,
-      border-radius: 5px,
-      background-color: #f7f7f7,
-    )
-  )
+$ooLoop: ooSet('misc.thumbnail.props', (
+  padding: 5px,
+  border: 1px solid #d6d6d6,
+  border-radius: 5px,
+  background-color: #f7f7f7,
 ));
-
-$ooInit: (
-  body: (
-    props: (
-      background-color: #f8f8f8,
-      word-break: break-word,
-    )
-  ),
-  hr: (
-    props: (
-      margin: rem(45) auto,
-    )
-  ),
-  headings: (
-    props: (
-      font-weight: 700,
-    ),
-    classes:  ('h3', 'h4'),
-  ),
-
-  //Column
-  // column: (
-  //   gutter: (
-  //     sizes: (
-  //       'small': (
-  //         rt: 0.5rem,
-  //         sm: 1rem,
-  //       ),
-  //       'medium': 2rem,
-  //       'large': (
-  //         rt: rem(30),
-  //         md: rem(50),
-  //       )
-  //     ),
-  //     screens: ('sm', 'md'),
-  //   ),
-  //   alignment: ( screens: 'lg'),
-  //   childAlignment: ( use: true),
-  //   order: (
-  //     use: true,
-  //     screens: (
-  //       sm: 3,
-  //       md: 0,
-  //       lg: (0, 2),
-  //     )
-  //   ),
-  //   offset: (
-  //     use: true,
-  //     screens: sm,
-  //   ),
-  // ),
-
-  // Form
-  // input: ( variants: (
-  //   'danger': (
-  //     border-color: #ca7878,
-  //     background-color: #f9e4e4,
-  //   ),
-  //   'large': (
-  //     padding: 1rem 1.25rem
-  //   ),
-  //   'rounded': (
-  //     border-radius: 50em,
-  //   ),
-  // )),
-  // select: ( variants: (
-  //   'secondary': (
-  //     borderColor: #222,
-  //     caret: (
-  //       color: #fff,
-  //       bgcolor: this('select.variants.secondary.borderColor'),
-  //       border: this('select.variants.secondary.borderColor'),
-  //     )
-  //   ),
-  // )),
-  // checkbox: (
-  //   sizes: (
-  //     'medium': 1.5rem,
-  //     'large': 2rem,
-  //   )
-  //   screens: (sm, md),
-  // ),
-  // radio: (
-  //   sizes: (
-  //     'large': 2rem,
-  //   ),
-  //   screens: (sm)
-  // ),
-  // toggle: (
-  //   sizes: (
-  //     'large': 2rem,
-  //   ),
-  // ),
-
-  use: (
-    input: (
-      toggle: true,
-    ),
-  ),
-);

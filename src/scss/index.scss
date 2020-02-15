@@ -1,6 +1,6 @@
 @import 'config';
 
-@include ooCreate($ooInit);
+@include ooCreate();
 
 @import 'code';
 @import 'info';
