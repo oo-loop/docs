@@ -1,10 +1,13 @@
+<script context="module">
+  import { stores } from '@sapper/app'
+
+</script>
 <script>
   import { onMount } from 'svelte'
-  import { stores } from '@sapper/app'
   export let segment
+  let pathname = undefined
 
   const { page } = stores()
-  let pathname = undefined
 
   let el
   let elHeight
@@ -22,9 +25,6 @@
   })
 
   function isActive(parent, slug, pathname) {
-    if (segment !== parent) {
-      return false
-    }
     return pathname.indexOf(`${parent}/${slug}`) !== -1
   }
 </script>
