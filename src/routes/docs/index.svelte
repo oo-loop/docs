@@ -10,17 +10,17 @@
 
 <h1>Start with Loop</h1>
 <p class="text-large">Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
-<ul class="text-small">
+<ul>
 	<li><a href="docs/html-elements" title="HTML elements">HTML formatting</a></li>
-	<li><a href="#">Layout container</a></li>
-	<li><a href="#">Column component</a></li>
-	<li><a href="#">Button component</a></li>
-	<li><a href="#">Form element components</a></li>
-	<li><a href="#">Color utilities</a></li>
-	<li><a href="#">Text utilities</a></li>
-	<li><a href="#">Spacing utilities</a></li>
-	<li><a href="#">Float utilities</a></li>
-	<li><a href="#">Visibility utilities</a></li>
+	<li><a href="docs/components/column">Column component</a></li>
+	<li><a href="docs/components/button">Button component</a></li>
+	<li><a href="docs/components/form">Form components</a></li>
+	<li><a href="docs/helpers/container">Container</a></li>
+	<li><a href="docs/helpers/visibility">Visibility helper</a></li>
+	<li><a href="docs/utilities/color">Color utilities</a></li>
+	<li><a href="docs/utilities/text">Text utilities</a></li>
+	<li><a href="docs/utilities/spacing">Spacing utilities</a></li>
+	<li><a href="docs/utilities/float">Float utilities</a></li>
 </ul>
 <p>Import <strong>Loop framework</strong> into your sass file and <strong>launch it</strong> to start with.</p>
 
