@@ -6,11 +6,12 @@
 <HeadTitle title="Config map"/>
 
 <h1>Loop Config Map</h1>
-<p>Having a single <i>variables.scss</i> file listing all the available customization can be tedious to find what we are looking for; and remembering every name is almost impossible.</p>
+<p class="text-large">Simplify the use of variables and the configuration of the framework.</p>
 
-<p>The single map is there to simplify the use of variables and the configuration of the framework.</p>
+<p>Because going through a single <i>variables.scss</i> file can be tedious and remembering every names is becoming a challenge,
+Loop offers a single config map.</p>
 
-<p>Every data is being set <strong>inside</strong> the variable <code>$ooLoop</code></p>
+<p>Every data are set <strong>inside</strong> the variable <code>$ooLoop</code></p>
 {@html highlight(`$ooLoop: (
   // properties
 );
@@ -203,7 +204,7 @@ They are however working with regular values.</p>
 );
 `, 'scss')}
 
-<p class="mt-30">Aliases will help you overcome this problem and avoid you repeating values already set.
+<p class="mt-30">Aliases will help you overcome this problem and avoid repeating values already set.
 At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</code>.</p>
 
 {@html highlight(`$ooLoop: (
