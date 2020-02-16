@@ -6,32 +6,28 @@
   $: attr = html5 ? 'data-oo' : 'oo'
 </script>
 
-<style>
-  .notification {
+<style lang="scss">
+  @include ooComponent('notification') {
     padding: 1rem;
     border-left-width: 5px;
     border-left-style: solid;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);
   }
-
-  .notification-success {
+  @include ooComponentVariant('notification', 'success') {
     color: #015a31;
     border-color: #83cca9;
     background-color: #c8f7e1;
   }
-
-  .notification-danger {
+  @include ooComponentVariant('notification', 'danger') {
     color: #5a0101;
     border-color: #ca7878;
     background-color: #f7c8c8;
   }
-
-  .notification-large {
+  @include ooComponentVariant('notification', 'large') {
     padding: 1.75rem 2rem;
     font-size: 1.5rem;
   }
-
-  .notification-centered {
+  @include ooComponentVariant('notification', 'centered') {
     text-align: center;
     border-left: 0;
     border-top-width: 5px;
@@ -42,7 +38,7 @@
 <HeadTitle title="Components"/>
 
 <h1>Components</h1>
-<p class="text-large">Use recurring elements as components and create their own attribute syntax for development purposes.</p>
+<p class="text-large">Use recurring styles as components with a specific attribute syntax for development purposes.</p>
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
@@ -65,7 +61,7 @@ You could turn off the html5 validity and have a shorter name for speed purposes
 </div>
 `, 'html')}
 
-<h4 class="mt-30 mb-15">Loop components available</h4>
+<h4 class="mt-30 mb-15">Loop components</h4>
 <ul>
   <li><a href="docs/column" title="Column component">Column</a><code>oo-row</code><code>oo-col</code></li>
   <li><a href="docs/template" title="Template component">Template</a><code>oo-template</code><code>oo-area</code></li>
@@ -118,7 +114,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 `, 'html')}
 
 <h3 class="mt-45">Component creation</h3>
-<p>Combine the two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the instantiation of the Loop config</strong>.</p>
+<p>Combine the two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
 
 <h4 class="font-code mt-30">ooComponent(<span class="color-primary">$name</span>){'{ '}<span class="color-secondary">@content</span>{' }'}</h4>
 <p><em class="text-uppercase text-small">Mixin</em> - Create a base component</p>
@@ -128,7 +124,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 </ul>
 {@html highlight(
 `/* From class Notification component */
-.navigation {
+.notification {
   padding: 1rem;
   border-left-width: 5px;
   border-left-style: solid;
@@ -136,7 +132,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 }
 
 /* To Loop Notification component */
-@include ooComponent('navigation') {
+@include ooComponent('notification') {
   padding: 1rem;
   border-left-width: 5px;
   border-left-style: solid;
@@ -176,21 +172,21 @@ I sometimes get confused between the modifiers and the utilities.</p>
 }
 
 /* To Loop Notification modifiers */
-@include ooComponentVariant('navigation', 'success') {
+@include ooComponentVariant('notification', 'success') {
   color: #015a31;
   border-color: #83cca9;
   background-color: #c8f7e1;
 }
-@include ooComponentVariant('navigation', 'danger') {
+@include ooComponentVariant('notification', 'danger') {
   color: #5a0101;
   border-color: #ca7878;
   background-color: #f7c8c8;
 }
-@include ooComponentVariant('navigation', 'large') {
+@include ooComponentVariant('notification', 'large') {
   padding: 1.75rem 2rem;
   font-size: 1.5rem;
 }
-@include ooComponentVariant('navigation', 'centered') {
+@include ooComponentVariant('notification', 'centered') {
   text-align: center;
   border-left: 0;
   border-top-width: 5px;
@@ -203,7 +199,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 `<div oo-notification="success large centered">
   <strong>Hey, well done!</strong><br>You've created a <i>success</i> notification component
 </div>`, 'html')}
-<div class="notification notification-success notification-large notification-centered mb-30">
+<div data-oo-notification="success large centered" class="mb-30">
   <strong>Hey, well done!</strong><br>You've created a <i>success</i> notification component.
 </div>
 
@@ -211,7 +207,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 `<div oo-notification="danger">
   <strong>Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>`, 'html')}
-<div class="notification notification-danger mb-30">
+<div data-oo-notification="danger" class="mb-30">
   <strong>Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>
 <div class="hr"></div>
