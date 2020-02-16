@@ -263,7 +263,7 @@ column: (
     ),
   ),
 ),`, 'scss')}
-<p class="mt-30">The <em>default</em> size does not require to be specified in the <code>row</code> attribute as it will be applied automatically.</p>
+<p class="mt-30">The gutter <em>default</em> size does not require to be specified inside the <code>row</code> attribute as it will be applied automatically.</p>
 
 <Html5Toggler content={
 `<div oo-row>
