@@ -177,7 +177,7 @@ a {
 
 <h3 class="mt-45">Aliases</h3>
 <p>The config map not being initialized,
-the use of sass functions <strong>along with</strong> the keyword <code>this</code> <strong>cannot be performed</strong>.
+<em class="color-danger">the use of sass functions <strong>along with</strong> the keyword <code>this</code> <strong>cannot be performed</strong></em>.
 They are however working with regular values.</p>
 
 {@html highlight(`$ooLoop: (

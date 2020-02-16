@@ -12,14 +12,14 @@
 <h1>HTML elements</h1>
 <p class="text-large">Set default styles and format css elements to act the same accross browsers.</p>
 
-<h2 id="base">Base</h2>
-<p>The Base is <strong>highly recommended</strong> as it sets the global styling of the page rendering html elements more consistently. It includes:</p>
+<h2 id="base"><a href="docs/html-elemennts#base">#</a> Base</h2>
+<p>The Base is <strong>highly recommended</strong> as it sets global styling and renders html elements more consistently. It includes:</p>
 
 <ul class="mb-30">
  <li><a href="https://necolas.github.io/normalize.css/" title="normalize" target="_blank">Normalize.css</a> (render all elements in line with modern standards)</li>
  <li><code>box-sizing: border-box;</code> (remove uneeded mathematics when setting sizes).</li>
  <li>Font smoothing (render to antialiasing for better readibilty)</li>
- <li>Global properties (set the body your application)</li>
+ <li>Global properties (set the body of your application)</li>
 </ul>
 
 <p class="info">Loop config <strong>includes <em>base</em> by default</strong>. In manual mode add the mixin <strong>Base()</strong></p>
@@ -36,7 +36,7 @@
     fontFamily: ('Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
     fontSize: 1em, // 16px
     lineHeight: 1.375,
-    color: #2c444c,
+    color: #444,
   ),
   smoothing: true,
 ),
@@ -109,7 +109,7 @@ body {
 
 <hr>
 
-<h2 id="type">Type</h2>
+<h2 id="type"><a href="docs/html-elements#type">#</a> Type</h2>
 <p>Sets global text elements such as paragraph, anchor and list as well as the hr tag</p>
 <p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Type()</strong></p>
 
@@ -171,19 +171,19 @@ body {
 
 <hr>
 
-<h2 id="headings">Headings</h2>
+<h2 id="headings"><a href="docs/html-elements#headings">#</a> Headings</h2>
 <p>Sets HTML headings from <code>{`<h1>`}</code> through <code>{`<h6>`}</code>. Unlike <a href="v04" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilitate the conversion from pixel to rem unit.</p>
-<p class="info">Loop config <strong>includes <em>headings</em> by default</strong>. In manual mode add the mixin <strong>Headings()</strong></p>
-<section class="section color-secondary">
+<div class="ground">
   <h1>H1 heading</h1>
   <h2>H2 heading</h2>
   <h3>H3 heading</h3>
   <h4>H4 heading</h4>
   <h5>H5 heading</h5>
   <h6>H6 heading</h6>
-</section>
+</div>
+<p class="info">Loop config <strong>includes <em>headings</em> by default</strong>. In manual mode add the mixin <strong>Headings()</strong></p>
 
-<h3><em class="font-regular">headings</em> Config</h3>
+<h3 class="mt-30"><em class="font-regular">headings</em> Config</h3>
 <ul>
   <li><code>props</code> CSS properties</li>
   <li><code>sizes</code> H1 to H6 sizes</li>
@@ -196,14 +196,15 @@ body {
     marginTop: .67em,
     marginBottom: .45em,
     lineHeight: 1.125,
+    color: #333
   ),
   sizes: (
     h1: 2rem,    // equivalent to 32px
-    h2: rem(26), // from 26px will generate 1.625rem
-    h3: rem(22), // from 22px will generate 1.375rem
-    h4: rem(18), // from 18px will generate 1.125rem
+    h2: rem(26), // 26px will generate 1.625rem
+    h3: rem(22), // 22px will generate 1.375rem
+    h4: rem(18), // 18px will generate 1.125rem
     h5: 1rem,    // equivalent to 16px
-    h6: rem(14), // from 14px generate 0.875rem
+    h6: rem(14), // 14px will generate 0.875rem
   ),
 )`, 'scss')}
 
@@ -263,3 +264,7 @@ h6 { font-size: 0.875rem; }
 `<h2 class="h3">A h2 heading with the look of an h3</h2>
 <span class="h2">A text with the style of an h2</span>
 `, 'html')}
+<div class="ground">
+  <h2 class="h3">A h2 heading with the look of an h3</h2>
+  <span class="h2">A text with the style of an h2</span>
+</div>
