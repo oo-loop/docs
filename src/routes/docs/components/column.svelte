@@ -75,6 +75,7 @@
 
 <ul class="mb-30">
 <li><a href="docs/components/column#responsive-screens" title="Responsive screens">Responsive screens</a></li>
+<li><a href="docs/components/column#single" title="Single column">Single column</a></li>
 <li><a href="docs/components/column#fit" title="Fit column">Fit column</a></li>
 <li><a href="docs/components/column#clear" title="Clear column">Clear column</a></li>
 <li><a href="docs/components/column#gutter" title="Gutter control">Gutter control</a></li>
@@ -166,6 +167,23 @@ column: (
     <Col class="cell" prop="span6 span7@md auto@lg"></Col>
     <Col class="cell"></Col>
   </Row>
+</div>
+
+<hr>
+<h2 id="single"><a href="docs/components/column#single">#</a> Single column</h2>
+<p>Set a specific size for the content of the page or center it with a single html element.
+<br>(<strong>no need for an extra div</strong> with the <code>oo-row</code> atttribute).</p>
+<Html5Toggler content={
+`<div oo-col="span10 span9@sm span7@md self-align-center">
+  <h3>Consectetur adipisicing elit.</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error laudantium totam ab expedita necessitatibus!</p>
+</div>
+`} />
+<div class="ground">
+  <div data-oo-col="span10 span9@sm span7@md self-align-center" class="cell">
+    <h3>Consectetur adipisicing elit.</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error laudantium totam ab expedita necessitatibus!</p>
+  </div>
 </div>
 
 <hr>

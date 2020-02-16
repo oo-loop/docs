@@ -196,7 +196,6 @@ body {
     marginTop: .67em,
     marginBottom: .45em,
     lineHeight: 1.125,
-    color: #333
   ),
   sizes: (
     h1: 2rem,    // equivalent to 32px
