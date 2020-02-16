@@ -290,7 +290,7 @@ column: (
 </div>
 
 <h3 id="gutter-map"><a href="docs/components/column#gutter-map">#</a> Responsive gutter - <span class="font-regular">Map</span></h3>
-<p>Set responsive map to gutter sizes to manage gaps between screen devices.</p>
+<p>Set a responsive map to gutter sizes to update gaps between screen devices.</p>
 {@html highlight(
 `// add 'small' & 'large' sizes
 $ooLoop: ooAdd('column.gutter.sizes', (
