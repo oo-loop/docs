@@ -1,10 +1,10 @@
 <script>
-	import Nav from '@/components/Nav.svelte';
-	export let segment;
+  import Nav from '@/components/Nav.svelte';
+  export let segment;
 </script>
 
 <Nav {segment}/>
 
 <main class="container">
-	<slot></slot>
+  <slot></slot>
 </main>

@@ -1,8 +1,9 @@
 <script>
-  import HeadTitle from '@/components/HeadTitle.svelte';
-  import Row from '@/components/Loop/Row.svelte';
-  import Col from '@/components/Loop/Col.svelte';
-  import highlight from '@/utils/highlight.js';
+  import HeadTitle from '@/components/HeadTitle.svelte'
+  import Html5Toggler from '@/components/Html5Toggler.svelte'
+  import Row from '@/components/Loop/Row.svelte'
+  import Col from '@/components/Loop/Col.svelte'
+  import highlight from '@/utils/highlight.js'
 
   let isClear = true
   let isStretch = true
@@ -69,10 +70,10 @@
 <HeadTitle title="Column component"/>
 
 <h1>Column</h1>
-<p class="text-large">Layout elements in page based on the 12 columns system.<br>
+<p class="text-large">Layout elements in a page based on the 12 columns system.<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
-<ul class="text-small mb-30">
+<ul class="mb-30">
 <li><a href="docs/components/column#responsive-screens" title="Responsive screens">Responsive screens</a></li>
 <li><a href="docs/components/column#fit" title="Fit column">Fit column</a></li>
 <li><a href="docs/components/column#clear" title="Clear column">Clear column</a></li>
@@ -85,13 +86,14 @@
 </ul>
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
-{@html highlight(
+
+<Html5Toggler content={
 `<!-- Auto column -->
 <div oo-row>
   <div oo-col></div>
   <div oo-col></div>
 </div>
-`, 'html')}
+`} />
 
 <div class="ground">
   <Row>
@@ -148,15 +150,14 @@ column: (
 </table>
 
 <p>Remember that Loop is taking the <strong>mobile first approach</strong>. Set the main sizes for root (mobile) and adjust them going towards bigger devices.</p>
-
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="span12 span6@sm span4@md span3@lg"></div>
   <div oo-col="span12 span6@sm span8@md span9@lg"></div>
   <div oo-col="span6 span7@md auto@lg"></div>
   <div oo-col></div>
 </div>
-`, 'html')}
+`} />
 
 <div class="ground">
   <Row>
@@ -180,13 +181,13 @@ column: (
   ),
 ),`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="fit">fit</div>
   <div oo-col>auto</div>
   <div oo-col="span12 fit@md">fit@md</div>
 </div>
-`, 'html')}
+`} />
 
 <div class="ground">
   <Row>
@@ -198,7 +199,7 @@ column: (
 
 <h4 class="mt-45">Use it to create a media component</h4>
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="fit">
     <img src="blue-square.jpg" width="100" height="100"/>
@@ -208,7 +209,7 @@ column: (
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error laudantium totam ab expedita necessitatibus!</p>
   </div>
 </div>
-`, 'html')}
+`} />
 <div class="ground text-left">
   <Row>
     <Col prop="fit">
@@ -225,7 +226,7 @@ column: (
 <h2 id="clear"><a href="docs/components/column#clear">#</a> Clear column</h2>
 <p>Start a new row within the flow of columns. <code>col="clear"</code></p>
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="span2">1</div>
   <div oo-col>2</div>
@@ -233,7 +234,7 @@ column: (
   <div oo-col>3</div>
   <div oo-col>4</div>
 </div>
-`, 'html')}
+`} />
 
 <button data-oo-button class="float-right mb-root" on:click={() => isClear = !isClear}>toggle clear</button>
 <div class="ground">
@@ -264,7 +265,7 @@ column: (
 ),`, 'scss')}
 <p class="mt-30">The <em>default</em> size does not require to be specified in the <code>row</code> attribute as it will be applied automatically.</p>
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col></div>
   <div oo-col></div>
@@ -274,7 +275,7 @@ column: (
   <div oo-col></div>
   <div oo-col></div>
 </div>
-`, 'html')}
+`} />
 
 <div class="ground">
   <Row>
@@ -302,12 +303,12 @@ $ooLoop: ooAdd('column.gutter.sizes', (
     md: rem(50),
   ),
 ))`, 'scss')}
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row="${gutterProp}">
   <div oo-col></div>
   <div oo-col></div>
 </div>
-`, 'html')}
+`} />
 <div data-oo-select class="float-right mb-root" style="width:140px">
   <select class="text-small font-bold" bind:value={gutterSelected}>
   {#each gutter as val}
@@ -345,12 +346,12 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 // Generating responsive variants:
 // gutter-less@sm gutter-less@md gutter-medium@sm gutter-medium@md
 `, 'scss')}
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row="gutter-less@sm gutter-medium@md">
   <div oo-col></div>
   <div oo-col></div>
 </div>
-`, 'html')}
+`} />
 
 <div class="ground">
   <Row prop="gutter-less@sm gutter-medium@md">
@@ -374,7 +375,7 @@ column: (
 <h2 id="stretch"><a href="docs/components/column#stretch">#</a> Stretch children height</h2>
 <p>Match the height of each column child elements. <code>row="stretch"</code></p>
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row${isStretch ? '="stretch"' : ''}>
   <div oo-col>
     <div class="child">More content<br>in<br>that column</div>
@@ -383,7 +384,7 @@ column: (
     <div class="child">Less content</div>
   </div>
 </div>
-`, 'html')}
+`} />
 
 <button data-oo-button class="float-right mb-root" on:click={() => isStretch = !isStretch}>toggle stretch</button>
 <div class="ground">
@@ -416,12 +417,12 @@ column: (
 $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row="${alignmentProp}">
   <div oo-col="span5"></div>
   <div oo-col="span5"></div>
 </div>
-`, 'html', 'mb-30')}
+`} />
 
 <Row>
   <Col>
@@ -491,12 +492,12 @@ column: (
   ),
 ),`, 'scss')}
 <p class="mt-30">Setting the config <strong>screens</strong> property will offer you the same options with the responsive variants <code>self-<i class="color-secondary">alignment</i>@<i class="color-secondary">screenName</i></code>.</p>
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="span5 self-align-${selfAlignmentSelectedA}"></div>
   <div oo-col="span5 self-valign-${selfValignmentSelectedB} self-align-${selfAlignmentSelectedB}"></div>
 </div>
-`, 'html', 'mb-30')}
+`} class="mb-30" />
 
 <Row>
   <Col prop="span12 span6@sm">
@@ -561,7 +562,7 @@ column: (
 $ooLoop: ooSet('column.childAlignment.use', true);
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row="stretch">
   <div oo-col="span6">
     <br><br><br><br>
@@ -570,7 +571,7 @@ $ooLoop: ooSet('column.childAlignment.use', true);
     <div class="child">B</div>
   </div>
 </div>
-`, 'html', 'mb-30')}
+`} class="mb-30" />
 
 <Row>
   <Col>
@@ -623,14 +624,14 @@ column: (
 $ooLoop: ooSet('column.order.use', true);
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-row>
   <div oo-col="span6 span3@sm order2@lg">one</div>
   <div oo-col="span6 span3@sm order0@lg">two</div>
   <div oo-col="span6 span3@sm order3@sm">three</div>
   <div oo-col="span6 span3@sm order0@md">four</div>
 </div>
-`, 'html')}
+`} />
 <div class="ground">
   <Row>
     <Col class="cell" prop="span6 span3@sm order2@lg">one</Col>
