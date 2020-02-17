@@ -9,7 +9,7 @@
   let code
   let isChecked = false
   $: htmlContent = isChecked
-    ? highlight(content.replace(/oo/g, 'data-oo'), 'html')
+    ? highlight(content.replace(/oo-/g, 'data-oo-'), 'html')
     : highlight(content, 'html')
 
   afterUpdate(() => {

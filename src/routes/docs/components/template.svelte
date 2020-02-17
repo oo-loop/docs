@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Html5Toggler from '@/components/Html5Toggler.svelte'
   import highlight from '@/utils/highlight.js'
 
   let gap = ['default', 'less', 'small']
@@ -71,14 +72,14 @@ template: (
   ),
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<section oo-template>
   <header oo-area="header">Header</header>
   <main oo-area="main">Main</main>
   <aside oo-area="sidebar">Sidebar</aside>
   <footer oo-area="footer">Footer</footer>
 </section>
-`, 'html')}
+`} />
 
 <div class="ground">
   <div data-oo-template="home gap-less">
@@ -133,14 +134,13 @@ template: (
   )
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-template="abc">
   <div oo-area="a">A</div>
   <div oo-area="b">B</div>
   <div oo-area="c">C</div>
 </div>
-`, 'html')}
-
+`} />
 <div class="ground">
   <div data-oo-template="abc gap-less">
     <div class="high light" data-oo-area="a">A</div>
@@ -179,14 +179,14 @@ template: (
   ),
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<div oo-template="home${gapProp}${isVgapless ? ' vgap-less' : ''}">
  <div oo-area="header">Header</div>
   <div oo-area="main">Main</div>
   <div oo-area="sidebar">Sidebar</div>
   <div oo-area="footer">Footer</div>
 </div>
-`, 'html')}
+`} />
 <button data-oo-button class="text-small float-right"
   on:click={() => isVgapless = !isVgapless}>toggle vgap-less</button>
 <div data-oo-select class="float-right mb-root" style="width:140px">
@@ -227,13 +227,14 @@ template: (
 // - gap-default@sm gap-default@lg gap-less@sm gap-less@lg
 // - vgap-less@sm vgap-less@lg
 `, 'scss')}
-{@html highlight(
-`<div data-oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
-  <div data-oo-area="a">A</div>
-  <div data-oo-area="b">B</div>
-  <div data-oo-area="c">C</div>
-</div>`, 'html')}
 
+<Html5Toggler content={
+`<div oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
+  <div oo-area="a">A</div>
+  <div oo-area="b">B</div>
+  <div oo-area="c">C</div>
+</div>
+`} />
 <div class="ground">
   <div data-oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
     <div class="high light" data-oo-area="a">A</div>
