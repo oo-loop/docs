@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Html5Toggler from '@/components/Html5Toggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js'
@@ -15,7 +16,7 @@
 <p class="text-large">Modular component and 100% customizable to fit your needs<br>
 <code class="ml-0">oo-button</code></p>
 
-<ul class="text-small">
+<ul>
   <li><a href="docs/components/button#colors" title="Button colors">Button Colors</a></li>
   <li><a href="docs/components/button#variants" title="Button variants">Button Variants</a></li>
   <li><a href="docs/components/button#sizes" title="Button sizes">Button Sizes</a></li>
@@ -52,10 +53,10 @@ button: (
 `, 'scss')}
 
 <Row prop="stretch">
-  <Col>{@html highlight(
+  <Col><Html5Toggler content={
 `<!-- basic button -->
 <button oo-button>Button</button>
-`, 'html', 'mt-0 mb-0')}</Col>
+`} class="mt-0 mb-0"/></Col>
   <Col>
     <div class="ground mb-0">
       <button data-oo-button>Button</button>
@@ -78,18 +79,18 @@ button: (
   outline: false,
 ),
 `, 'scss')}
-{@html highlight(
+<Html5Toggler content={
 `<button oo-button>Base</button>
 <a oo-button="primary" href="#">Primary</a>
 <input oo-button="secondary" type="button" value="Secondary">
-`, 'html')}
+`} />
 <div class="ground">
   <button data-oo-button>Base</button>
   <a data-oo-button="primary" href="docs/components/button#colors">Primary</a>
   <input data-oo-button="secondary" type="button" value="Secondary">
 </div>
 
-<p class="info">While settings <strong>custom colors</strong>, Loop will <strong>automatically determine the color of the text to be constrated </strong>from the background color.</p>
+<p class="info">While settings <strong>custom colors</strong>, Loop will <strong>automatically determine the constrate</strong> of the text from the background color.</p>
 {@html highlight(
 `$ooLoop: ooAdd('button.colors', (
   'success': #8cc63f,
@@ -111,7 +112,7 @@ button: (
 <h3>Outline</h3>
 <p>An outline version of each color available. <code>oo-button="<i>colorName</i> outline"</code></p>
 {@html highlight(`$ooLoop: ooSet('button.outline', true);`, 'scss')}
-{@html highlight(
+<Html5Toggler content={
 `<button oo-button="primary outline">Success</button>
 <button oo-button="success outline">Success</button>
 <button oo-button="nectarine outline">Nectarine</button>
@@ -119,7 +120,7 @@ button: (
 <button oo-button="salmon outline">Salmon</button>
 <button oo-button="purple outline">Purple</button>
 <button oo-button="green-sea outline">Green sea</button>
-`, 'html')}
+`} />
 
 <div class="ground">
   <button data-oo-button="primary outline">Primary</button>
@@ -161,13 +162,12 @@ button: (
   ),
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<button oo-button="primary full">Primary full</button>
 <button oo-button="primary large">Primary large</button>
 <button oo-button="secondary tag">Secondary tag</button>
 <button oo-button="secondary baggy outline">Secondary baggy outline</button>
-`, 'html')}
-
+`} />
 <div class="ground">
   <button data-oo-button="primary full" class="mb-10">Primary full</button>
   <button data-oo-button="primary large" class="mb-10">Primary large</button><br>
@@ -180,14 +180,13 @@ button: (
 <p>While the size of the button can be modified from <a href="docs/components/button#variants" title="Button variants">variants</a>.
 It is also possible to <strong>use text-utilites to quickly achieve some adjustments</strong>.</p>
 
-{@html highlight(
+<Html5Toggler content={
 `<button oo-button="primary" class="text-tiny">Tiny</button>
 <button oo-button="primary">Default</button>
 <button oo-button="primary" class="text-medium">Medium</button>
 <button oo-button="primary" class="text-large">Large</button>
 <button oo-button="primary large">Variant large</button>
-`, 'html')}
-
+`} />
 <div class="ground">
   <button data-oo-button="primary" class="text-tiny">Tiny</button>
   <button data-oo-button="primary">Default</button>
