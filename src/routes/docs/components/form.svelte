@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Html5Toggler from '@/components/Html5Toggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js'
@@ -14,7 +15,7 @@
 <p class="text-large">Component for form elements<br>
 <code>oo-input</code><code>oo-select</code><code>oo-checkbox</code><code>oo-radio</code><code>oo-toggle</code></p>
 
-<ul class="text-small">
+<ul>
   <li><a href="docs/components/form#input" title="Input fields">Input fields</a></li>
   <li><a href="docs/components/form#select" title="Select">Select</a></li>
   <li><a href="docs/components/form#checkbox" title="Checkbox">Checkbox</a></li>
@@ -23,12 +24,11 @@
   <li><a href="docs/components/form#utilities" title="Utilities as modifers">Utilities as Modifiers</a></li>
 </ul>
 
-<p>The style of each form element is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you control on the components' look.</p>
+<p>The style of each form element is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you control on the component looks.</p>
 
 <hr>
 <h2 id="input"><a href="docs/components/form#input">#</a> Input fields</h2>
 <p>Use <code>oo-input</code> for any textfield elements.</p>
-<p class="info">Loop config <strong>includes <em>input.textfield</em> by default</strong>. In manual mode add the mixins <strong>Label()</strong> and <strong>TextField()</strong></p>
 
 {@html highlight(
 `//default config
@@ -62,13 +62,13 @@ input: (
 ),
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<label for="form-input">Input</label>
 <input oo-input id="form-input" class="mb-15" type="text">
 
 <label for="form-textarea">Textarea</label>
 <textarea oo-input id="form-textarea" rows="3"></textarea>
-`, 'html')}
+`} />
 <div class="ground">
   <label for="form-input">Input</label>
   <input data-oo-input id="form-input" class="mb-15" type="text">
@@ -102,13 +102,13 @@ input: (
   )
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<label for="form-input-rounded">Input rounded large</label>
 <input oo-input="rounded large" class="mb-15" id="form-input-rounded" type="text">
 
 <label for="form-textarea-danger">Textarea danger</label>
 <textarea oo-input="danger" id="form-textarea-danger" rows="4"></textarea>
-`, 'html')}
+`} />
 <div class="ground">
   <label for="form-input-rouded">Input rouded large</label>
   <input data-oo-input="rounded large" class="mb-15" id="form-input-rouded" type="text">
@@ -116,11 +116,11 @@ input: (
   <label for="form-textarea-danger">Textarea danger</label>
   <textarea data-oo-input="danger" id="form-textarea-danger" rows="4"></textarea>
 </div>
+<p class="info">Loop config <strong>includes <em>input.textfield</em> by default</strong>. In manual mode add the mixins <strong>Label()</strong> and <strong>TextField()</strong></p>
 
 <hr>
 <h2 id="select"><a href="docs/components/form#select">#</a> Select</h2>
 <p>Use <code>oo-select</code> on a parent element having <code>{`<select>`}</code> as a child.</p>
-<p class="info">Loop config <strong>includes <em>input.select</em> by default</strong>. In manual mode add the mixin <strong>SelectField()</strong></p>
 
 {@html highlight(
 `//default config
@@ -138,7 +138,7 @@ select: (
 ),
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<label for="form-select">Select</label>
 <div oo-select class="mb-15">
   <select id="form-select">
@@ -156,7 +156,7 @@ select: (
     <option value="3">Option 3</option>
   </select>
 </div>
-`, 'html')}
+`} />
 <div class="ground">
   <label for="form-select">Select</label>
   <div data-oo-select class="mb-15">
@@ -177,8 +177,8 @@ select: (
 </div>
 
 <h3>Caret</h3>
-<p>The caret can be modified from the property <em>caret</em> or altered through a variant having <code>caret</code> data.
-<br><strong>Caret options are not CSS props!</strong>.</p>
+<p>The caret can be modified from the property <em>caret</em> or altered through a variant having also <code>caret</code> as a property.
+<strong class="color-danger">Caret options are not CSS props!</strong>.</p>
 {@html highlight(
 `$ooLoop: ooAdd('select.variants', (
   'secondary': (
@@ -190,7 +190,7 @@ select: (
     )
   ),
 ));`, 'scss')}
-{@html highlight(
+<Html5Toggler content={
 `<label for="form-select-secondary">Select</label>
 <div oo-select="secondary">
   <select id="form-select-secondary">
@@ -199,7 +199,7 @@ select: (
     <option value="3">Option 3</option>
   </select>
 </div>
-`, 'html')}
+`} />
 <div class="ground">
   <label for="form-select-secondary">Select secondary</label>
   <div data-oo-select="secondary">
@@ -210,11 +210,11 @@ select: (
     </select>
   </div>
 </div>
+<p class="info">Loop config <strong>includes <em>input.select</em> by default</strong>. In manual mode add the mixin <strong>SelectField()</strong></p>
 
 <hr>
 <h2 id="checkbox"><a href="docs/components/form#checkbox">#</a> Checkbox</h2>
 <p>Use <code>oo-checkbox</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
-<p class="info">Loop config <strong>includes <em>input.checkbox</em> by default</strong>. In manual mode add the mixin <strong>Checkbox()</strong></p>
 
 {@html highlight(
 `//default config
@@ -239,13 +239,13 @@ checkbox: (
 )
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<input oo-checkbox id="checkbox-a" type="checkbox" value="a">
 <label for="checkbox-a">Checkbox A</label>
 
 <input oo-checkbox id="checkbox-b" type="checkbox" value="b">
 <label for="checkbox-b">Checkbox B</label>
-`, 'html')}
+`} />
 
 <div class="ground">
   <input data-oo-checkbox id="checkbox-a" type="checkbox" value="a">
@@ -255,13 +255,13 @@ checkbox: (
   <label for="checkbox-b">Checkbox B</label>
 </div>
 <p>Set inline checkboxes with <code>oo-checkbox="inline"</code> </p>
-{@html highlight(
+<Html5Toggler content={
 `<input oo-checkbox="inline" id="checkbox-inline-a" type="checkbox" value="a">
 <label for="checkbox-inline-a">Inline A</label>
 
 <input oo-checkbox="inline" id="checkbox-inline-b" type="checkbox" value="b">
 <label for="checkbox-inline-b">Inline B</label>
-`, 'html')}
+`} />
 
 <div class="ground">
   <input data-oo-checkbox="inline" id="checkbox-inline-a" type="checkbox" value="a">
@@ -279,13 +279,13 @@ checkbox: (
   'large': 2rem,
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler  content={
 `<input oo-checkbox="medium " id="checkbox-medium-a" type="checkbox" value="a">
 <label for="checkbox-medium-a">Checkbox Medium A</label>
 
 <input oo-checkbox="large " id="checkbox-large-b" type="checkbox" value="b">
 <label for="checkbox-large-b">Checkbox Large B</label>
-`, 'html')}
+`} />
 <div class="ground">
   <input data-oo-checkbox="medium " id="checkbox-medium-a" type="checkbox" value="a">
   <label for="checkbox-medium-a">Checkbox Medium A</label>
@@ -300,20 +300,19 @@ checkbox: (
 `$ooLoop: ooSet('checkbox.screens', (sm, md));
 // creating default@sm default@md medium@sm medium@md large@sm large@md`, 'scss')}
 
-{@html highlight(
-`<input oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox" value="">
+<Html5Toggler content={
+`<input oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox">
 <label for="checkbox-responsive">Responsive Checkbox</label>
-`, 'html')}
-
+`} />
 <div class="ground">
-  <input data-oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox" value="">
+  <input data-oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox">
   <label for="checkbox-responsive">Responsive Checkbox</label>
 </div>
+<p class="info">Loop config <strong>includes <em>input.checkbox</em> by default</strong>. In manual mode add the mixin <strong>Checkbox()</strong></p>
 
 <hr>
 <h2 id="radio"><a href="docs/components/form#radio">#</a> Radio</h2>
 <p>Use <code>oo-radio</code> on an <em>input radio element </em><strong>followed by</strong> a <em>label element</em> targetting that radio.</p>
-<p class="info">Loop config <strong>includes <em>input.radio</em> by default</strong>. In manual mode add the mixin <strong>Radio()</strong></p>
 
 {@html highlight(
 `//default config
@@ -337,13 +336,13 @@ radio: (
 ),
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<input oo-radio id="radio-a" name="radio" type="radio" value="a">
 <label for="radio-a">radio A</label>
 
 <input oo-radio id="radio-b" name="radio" type="radio" value="b">
 <label for="radio-b">radio B</label>
-`, 'html')}
+`} />
 
 <div class="ground">
   <input data-oo-radio id="radio-a" name="radio" type="radio" value="a">
@@ -353,14 +352,13 @@ radio: (
   <label for="radio-b">Radio B</label>
 </div>
 <p>Set inline radios with <code>oo-radio="inline"</code> </p>
-{@html highlight(
+<Html5Toggler content={
 `<input oo-radio="inline" id="radio-inline-a" name="radio-inline" type="radio" value="a">
 <label for="radio-inline-a">Inline A</label>
 
 <input oo-radio="inline" id="radio-inline-b" name="radio-inline" type="radio" value="b">
 <label for="radio-inline-b">Inline B</label>
-`, 'html')}
-
+`} />
 <div class="ground">
   <input data-oo-radio="inline" id="radio-inline-a" name="radio-inline" type="radio" value="a">
   <label for="radio-inline-a">Inline A</label>
@@ -376,10 +374,10 @@ radio: (
   'large': 2rem,
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler  content={
 `<input oo-radio="large" id="radio-large-a" type="radio" value="a">
 <label for="radio-large-a">radio Large A</label>
-`, 'html')}
+`} />
 <div class="ground">
   <input data-oo-radio="large" id="radio-large-a" type="radio" value="a">
   <label for="radio-large-a">Radio Large A</label>
@@ -391,21 +389,19 @@ radio: (
 `$ooLoop: ooSet('radio.screens', (md));
 // creating default@md large@md`, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<input oo-radio="large default@md" id="radio-responsive" type="radio" value="">
 <label for="radio-responsive">Responsive radio</label>
-`, 'html')}
-
+`} />
 <div class="ground">
   <input data-oo-radio="large default@md" id="radio-responsive" type="radio" value="">
   <label for="radio-responsive">Responsive Radio</label>
 </div>
-
+<p class="info">Loop config <strong>includes <em>input.radio</em> by default</strong>. In manual mode add the mixin <strong>Radio()</strong></p>
 
 <hr>
 <h2 id="toggle"><a href="docs/components/form#toggle">#</a> Toggle</h2>
 <p>Use <code>oo-toggle</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
-<p class="info">Loop config <strong>does <span class="color-primary">not</span> includes <em>input.toggle</em> by default</strong>. In manual mode add the mixin <strong>Toggle()</strong></p>
 
 {@html highlight(
 `//default config
@@ -434,11 +430,10 @@ toggle: (
 ),
 `, 'scss')}
 
-{@html highlight(
+<Html5Toggler content={
 `<input oo-toggle id="toggle-a" type="checkbox" value="a">
 <label for="toggle-a">Toggle A</label>
-`, 'html')}
-
+`} />
 <div class="ground">
   <input data-oo-toggle id="toggle-a" type="checkbox" value="a">
   <label for="toggle-a">Toggle A</label>
@@ -451,14 +446,15 @@ toggle: (
   'large': 2rem,
 ));`, 'scss')}
 
-{@html highlight(
+<Html5Toggler  content={
 `<input oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
 <label for="toggle-large-a">Toggle Large A</label>
-`, 'html')}
+`} />
 <div class="ground">
   <input data-oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
   <label for="toggle-large-a">Toggle Large A</label>
 </div>
+<p class="info">Loop config <strong>does <span class="color-primary">not</span> includes <em>input.toggle</em> by default</strong>. In manual mode add the mixin <strong>Toggle()</strong></p>
 
 <hr/>
 <h2 id="utilities"><a href="docs/components/form#utilities">#</a> Utilities as modifiers</h2>
@@ -491,7 +487,7 @@ toggle: (
   <label for="radio-error" class="mt-15">Radio with error</label>
   <small class="color-danger">Radio is required</small>
 </div>
-{@html highlight(
+<Html5Toggler content={
 `<p><strong>Example of form with required elements throwing an error
 <br><em>(use of border-danger utility)</em></strong></p>
 
@@ -519,4 +515,4 @@ toggle: (
 <input class="border-danger" oo-radio id="radio-error" type="radio">
 <label for="radio-error" class="mt-15">Radio with error</label>
 <small class="color-danger">Radio is required</small>
-`, 'html', 'mt-5')}
+`} class="mt-5" />
