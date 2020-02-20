@@ -25,7 +25,6 @@
 <h1>Float utilities</h1>
 <p class="text-large">Set a floating element on the fly.</p>
 <p>The two standard float options are available as well as a clearfix, <code>.float-left</code> <code>.float-right</code> <code>.clearfix</code> and <code>.clear</code>.</p>
-<p class="info">In manual mode add the mixin <strong>Float()</strong></p>
 
 {@html highlight(
 `// default config
@@ -88,3 +87,6 @@ $ooLoop: ooAdd('float.values', 'none');
 // set .float-left@sm .float-right@sm and float-none@sm
 $ooLoop: ooSet('float.screens', 'sm');
 `, 'scss')}
+
+<hr>
+<p class="info">In manual mode add the mixin <strong>Float()</strong></p>

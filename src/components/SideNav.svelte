@@ -55,7 +55,7 @@
       width: 200px;
       max-height: calc(100vh - 2rem);
 
-      background-color: #fff;
+      background-color: transparent;
       border-right: oo('hr.props.borderBottom');
       border-radius: 10% / 50%;
 

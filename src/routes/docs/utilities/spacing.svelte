@@ -12,7 +12,6 @@
 <h1>Spacing utilities</h1>
 <p class="text-large">Space out elements from each others.</p>
 <p>Four types of classes are available, <code>.mt-<em class="color-secondary">keyName</em></code> <code>.mb-<em class="color-secondary">keyName</em></code> <code>.ml-<em class="color-secondary">keyName</em></code> and <code>.mr-<em class="color-secondary">keyName</em></code>. Loop chose to name the values by pixel numbers to give a better understanding of the space representation. The generated values are on the contrary in rem units.</p>
-<p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>
 
 {@html highlight(
 `// default config
@@ -79,8 +78,7 @@ spacing: (
 
 <h4 class="mt-45">Add more, update data, set responsive values <span class="font-regular text-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
 {@html highlight(
-`
-// config.scss
+`// config.scss
 $ooLoop: (
   ...
   container: (
@@ -123,3 +121,5 @@ $ooLoop: ooAdd('spacing', (
   .mb-gutter { margin-bottom: 1.5rem !important; }
 }
 `, 'css')}
+<hr>
+<p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>

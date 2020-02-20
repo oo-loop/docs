@@ -11,8 +11,8 @@
 
 <h1>Utilities</h1>
 <p class="text-large">A bunch of handy classes doing one job to customize elements on the fly.</p>
-<p>Loop provides flexible utilities to assist you during your developement. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">config</a> following the right <a href="docs/utilities#format" title="Utility format">format</a>.
-Common utilities are available from start:</p>
+<p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">config</a> following the right <a href="docs/utilities#format" title="Utility format">format</a>.
+Here are utilities available from start:</p>
 <ul>
   <li><a href="docs/utilities/color">Color</a></li>
   <li><a href="docs/utilities/text">Text</a></li>

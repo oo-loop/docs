@@ -17,7 +17,6 @@
 <h1>Wrapper utilities</h1>
 <p class="text-large">Wrap elements with padding around them.</p>
 <p>Two classes available from start <code>.wrapper-small</code> and <code>.wrapper-medium</code>.</p>
-<p class="info">In manual mode add the mixin <strong>Wrapper()</strong></p>
 
 {@html highlight(
 `// default config
@@ -80,3 +79,5 @@ $ooLoop: ooSet('wrapper.screens', (
     <div class="cell">responsive</div>
   </div>
 </div>
+<hr>
+<p class="info">In manual mode add the mixin <strong>Wrapper()</strong></p>

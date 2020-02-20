@@ -14,7 +14,6 @@
 <h1>Text utilities</h1>
 <p class="text-large">Modify the appearance of any text elements.</p>
 <p>Loop gives you some recurring text utilities by default. Adjust the rest to your need (<a href="docs/utilities#format" title="Check the options">Check the options</a>).</p>
-<p class="info">In manual mode add the mixin <strong>Text()</strong></p>
 
 {@html highlight(
 `// default config
@@ -65,26 +64,26 @@ text: (
 <h4>Add more or update data <span class="font-regular text-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
 
 {@html highlight(
-`$ooLoop: ooAdd('text', (
-  fontSize: ('values': (
+`$ooLoop: ooPipe(
+  _add('text.fontSize.values', (
     'tiny': rem(12), // add .text-tiny
     'large': rem(18), // update .text-large
   )),
-  fontWeight: ('values': (
+  _add('text.fontWeight.values', (
     'light': 300,  // add .font-light
   )),
-  fontFamily: ('values': (
+  _add('text.fontFamily.values', (
     'monospace': monospace, // add .font-monospace
     'serif': (Georgia, "Times New Roman", Times), //add .font-serif
   )),
-  letterSpacing: (
+  _set('text.letterSpacing', (
     prefix: 'text',
     values: (
       'tight': -1px, // add .text-tight
       'wide': 1.5px,  // add .text-wide
     )
-  )
-));
+  ))
+);
 `, 'scss')}
 
 <div class="ground">
@@ -121,3 +120,5 @@ text: (
 <div class="ground">
   <p class="text-grow text-center text-left@md text-right@lg mb-0">This is a paragraph with a responsive font-size<br>as well as a responsive alignment.</p>
 </div>
+<hr>
+<p class="info">In manual mode add the mixin <strong>Text()</strong></p>

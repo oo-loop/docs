@@ -13,9 +13,6 @@
 <p class="text-large">Modify the color of any elements tagetting font, background and/or border.</p>
 <p>Loop gives you few colors by default to avoid overloading the CSS of rules you might not need.</p>
 
-<p class="info">In manual mode add the mixin <strong>Color()</strong></p>
-
-
 {@html highlight(
 `palette: (
   'primary': #0ea7d6,
@@ -56,15 +53,13 @@ color: (
   _add('palette', (
     'danger': #da3b3b // danger globally
   )),
-  _add('color', (
-    font: ('values': (
-      'warning': #ce8a0d,
-    )),
-    background: ('values': (
-      'danger': #f7c8c8, //overwrite the danger value for background
-    )),
-    border: ('values': this('palette')), //add global values
+  _add('color.font.values', (
+    'warning': #ce8a0d,
   )),
+  _add('color.background.values', (
+    'danger': #f7c8c8, //overwrite the danger value for background
+  )),
+  _set('color.border.values', this('palette')), //add global values
 );
 `, 'scss')}
 
@@ -77,3 +72,5 @@ color: (
   <p class="wrapper-small border-secondary" style="border: 1px solid">this is a block with a the class <em>.border-secondary</em></p>
   <p class="wrapper-small border-danger" style="border: 1px solid">this is a block with a the class <em>.border-danger</em></p>
 </div>
+<hr>
+<p class="info">In manual mode add the mixin <strong>Color()</strong></p>
