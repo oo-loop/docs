@@ -7,12 +7,19 @@
 
 </style>
 
-<HeadTitle title="Utilities"/>
+<HeadTitle title="Utility classes"/>
 
 <h1>Utilities</h1>
-<p class="text-large">A bunch of handy utility classes to customize elements on the fly.</p>
-<p>Loop provides recurring utilities to start with (<a href="docs/utilities/color">Color</a>, <a href="docs/utilities/text">Text</a>, <a href="docs/utilities/spacing">Spacing</a>, <a href="docs/utilities/float">Float</a>, <a href="docs/utilities/wrapper">Wrapper</a>).
-Those are made flexible for you to set your own need on any projects by adjusting the Loop config.</p>
+<p class="text-large">A bunch of handy classes doing one job to customize elements on the fly.</p>
+<p>Loop provides flexible utilities to assist you during your developement. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">config</a> following the right <a href="docs/utilities#format" title="Utility format">format</a>.
+Common utilities are available from start:</p>
+<ul>
+  <li><a href="docs/utilities/color">Color</a></li>
+  <li><a href="docs/utilities/text">Text</a></li>
+  <li><a href="docs/utilities/spacing">Spacing</a></li>
+  <li><a href="docs/utilities/float">Float</a></li>
+  <li><a href="docs/utilities/wrapper">Wrapper</a></li>
+</ul>
 
 <div class="hr"></div>
 <h2 id="format"><a href="docs/utilities#format">#</a> Format</h2>
