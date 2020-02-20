@@ -148,7 +148,7 @@
       </ul>
     </li>
     <li>
-      <h4><a class:color-primary={segment === 'helpers'} href="docs/helpers">Helpers</a></h4>
+      <h4><a class:color-primary={segment === 'helpers'} href="docs/helpers">Helper Classes</a></h4>
       <ul class="list-unstyle">
         <li><a  class:color-primary={isActive('helpers', 'container', pathname)} href="docs/helpers/container">Container</a></li>
         <li><a  class:color-primary={isActive('helpers', 'visibility', pathname)} href="docs/helpers/visibility">Visibility</a></li>
