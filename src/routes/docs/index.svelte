@@ -36,7 +36,7 @@
 <ul>
   <li>By passing your preferences to the mixin <code>ooCreate</code> when launching loop</li>
   <li>By setting/adding values one at the time with the functions <code>ooSet</code><code>ooAdd</code><code>ooPipe</code></li>
-  <li>By Coping and pasting the full config file</li>
+  <li>By coping and pasting the full config file</li>
 </ul>
 
 <h3 class="h4 font-code mt-45">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
@@ -149,11 +149,12 @@ $ooLoop: ooPipe(
 <hr>
 
 <h3>Copy/past</h3>
-<p>If you like to see everything at once, you can copy/past the <strong>entire</strong> default config map and ovewrite its values.</p>
+<p>If you like to see everything at once, you can copy/past the <strong>entire</strong> default config map, ovewrite its values and add new ones.
+<strong class="color-danger">Make sure not to remove referred properties!</strong></p>
 {@html highlight(`@import '~loop/scss';
 
 $ooLoop: (
-  /** All configs **/
+  /** the ENTIRE configuration **/
 );
 @include ooCreate();
 `, 'scss')}
