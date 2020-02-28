@@ -2,20 +2,24 @@
 	import HeadTitle from '@/components/HeadTitle.svelte'
 	import Row from '@/components/Loop/Row.svelte'
 	import Col from '@/components/Loop/Col.svelte'
+	import Demo from '@/components/Demo.svelte'
 </script>
 
-<style>
+<style lang="scss">
 h1 {
-	margin-top: 20px;
+	margin-top: 2rem;
 	margin-bottom: 0;
 	font-size: 3em;
 }
 h2 {
-	margin-bottom: 30px;
 	font-weight: 400;
 }
+
+h3 {
+	margin-top: rem(40);
+}
 .brand {
-	margin: -75px auto 50px;
+	margin: -75px auto 0;
   max-width: 960px;
 }
 
@@ -23,6 +27,93 @@ img {
 	margin-right: -430px;
   margin-left: -70px;
 }
+
+.hr {
+	// border-color: oo('palette.primary');
+  border-radius: 50%;
+  height: 20px;
+}
+
+.demo {
+	position: relative;
+	padding: 5rem 1.5rem;
+	margin-left: -#{oo('container.gutter.rt')};
+	margin-right: -#{oo('container.gutter.rt')};
+	@include breakpoint(sm) {
+		margin-left: -#{oo('container.gutter.sm')};
+		margin-right: -#{oo('container.gutter.sm')};
+	}
+	@include breakpoint(lg) {
+		margin-left: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
+		margin-right: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
+	}
+
+	min-height: 680px;
+	background-color: #263943;
+
+	&::before {
+    position: absolute;
+		top: -90px;
+		left: 0;
+		right: 0;
+		content: '';
+		display: block;
+    height: 90px;
+    border-radius: 10% 140%/40% 160%;
+		// box-shadow:
+		// 	0 1px 0 #f8f8f8,
+		// 	0 5px 0px #fff,
+		// 	0 10px 0px #f8f8f8,
+		// 	-10px 15px 0px #fff,
+		// 	-10px 25px 0 #f8f8f8,
+		// 	-10px 35px 0 #fff,
+		// 	-10px 45px 0 #F8F8F8;
+		box-shadow: -70px 45px 0 #fff, -30px 51px 0 oo('palette.primary');
+	}
+}
+[data-oo-button] {
+	position: relative;
+	z-index: 2;
+	margin: -40px auto -100px;
+	display: block;
+	width: 180px;
+	font-size: 1.3rem;
+	line-height: 60px;
+	text-transform: uppercase;
+	box-shadow: inset 2px 1px 0px #fff, inset -2px -1px 0px #fff, inset 4px 2px 0px #6cd7f8, inset -4px -2px 0px #6cd7f8;
+	border-radius: 40%/50% 80%;
+	border-color: oo('palette.primary');
+	animation: bubble 5s infinite, bubble2 10s infinite;
+
+	&:not(:hover) {
+		color: #f5f5f5;
+		background-color: #263940;
+	}
+}
+
+@keyframes bubble {
+	0% {
+		border-radius: 40%/50% 80%;
+	}
+	50% {
+		border-radius: 30%/50% 40%;
+	}
+	100% {
+		border-radius: 40%/50% 80%;
+	}
+}
+@keyframes bubble2 {
+	0% {
+		box-shadow: inset 2px 1px 0px #fff, inset -2px -1px 0px #fff, inset 4px 2px 0px #6cd7f8, inset -4px -2px 0px #6cd7f8;
+	}
+	50% {
+		box-shadow: inset -2px -1px 0px #fff, inset 2px 1px 0px #fff, inset -4px -2px 0px #6cd7f8, inset 4px 2px 0px #6cd7f8;
+	}
+	100% {
+		box-shadow: inset 2px 1px 0px #fff, inset -2px -1px 0px #fff, inset 4px 2px 0px #6cd7f8, inset -4px -2px 0px #6cd7f8;
+	}
+}
+
 </style>
 
 <HeadTitle />
@@ -34,48 +125,41 @@ img {
 		</Col>
 		<Col prop="self-valign-middle">
 			<h1>Loop CSS</h1>
-			<h2>Sass Framework for Flexible Development</h2>
+			<h2>Flexible and Expressive Development</h2>
+			<p class="text-large mb-30">Aiming to create a more maintainable and readable CSS</p>
 			<code class="large">npm install oo-loop</code>
 		</Col>
 	</Row>
 </div>
+<Col prop="span8@md self-align-center">
+	<a data-oo-button="primary outline" href="/docs">Start</a>
+	<div class="hr"></div>
+	<h3>Fully customizable</h3>
+	<p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.<br>
+	It offers easy management and access to all your variables in a single config map.</p>
 
-<Col prop="self-align-center span8">
-	<section class="section">
-		<h3>Fully customizable</h3>
-		<p>Loop is a Sass (scss) framework aiming to create a more maintainable and readable CSS. Fully customizable, It gives you complete control on your project to let you create and match your styles with your design needs.</p>
-		<p>Loop offers easy management and access to all your variables in a single config map.</p>
-	</section>
-
-	<pre><code>
-<span class="color-pink">@import</span> <span class="color-orange">'~loop/scss'</span>;
-
-<span class="color-blue">$config</span>: (
-  <span class="color-green">html5</span>: true,
-  <span class="color-secondary">...</span>
-);
-<span class="color-pink">@include</span> <span class="color-yellow">ooCreate</span>(<span class="color-blue">$config</span>);
-	</code></pre>
-
-	<section class="section">
-		<h3>Semantic</h3>
-		<p>Loop differentiates components and utilities with semantic for more clarity</p>
-
-		<ul>
-			<li>`data-oo-componentName` or `oo-componentName` attribute for components</li>
-			<li>`.utilityName` class for utilities</li>
-		</ul>
-	</section>
-
-	<section class="section">
-		<h3>Why Loop ?</h3>
-		<p>Have you ever worked on a project with your go-to css framework realizing that you were only using 10% of it. You had to add your own utilities, your own components and when trying to reuse something from its library, you actually had to overwrite some rules, tweak it, in order to reproduce what you wish for.</p>  
-		<p>Have you ever wonder if the framework you were using was a real fit?.</p>
-		<p>Loop has been developed out of that feeling to overcome this problem.</p>
-	</section>
-
-	<section class="section">
-		<h3>Philosophy</h3>
-		<p>Loop is not a framework providing any possible existing components. It's more like a companion for CSS development, encouraging the use and creation of utilities while considering recurring components. Loop works towards flexibility and expressive CSS.</p>
-	</section>
+	<h3>Semantic</h3>
+	<p>Loop differentiates components and utilities for more clarity</p>
+	<ul>
+	<li><a href="docs/components" title="Components documentation">data-oo-componentName</a> / <a href="docs/components" title="Components documentation">oo-componentName</a> for component attributes</li>
+	<li><a href="docs/utilities" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
 </Col>
+
+<section class="demo">
+	<Demo />
+</section>
+
+<Col prop="span8@md self-align-center">
+	<h3>Why Loop ?</h3>
+	<p>Have you ever worked on a project with your go-to css framework realizing that you were only using 10% of it. You had to add your own utilities, your own components and when trying to reuse something from its library, you actually had to overwrite some rules, tweak it, in order to reproduce what you wish for.</p>  
+	<p>Have you ever wonder if the framework you were using was a real fit?.</p>
+	<p>Loop has been developed out of that feeling to overcome this problem.</p>
+	
+	<div class="hr"></div>
+	<h3>Philosophy</h3>
+	<p>Loop is not a framework providing any possible existing components. It's more like a companion for CSS development, encouraging the use and creation of utilities while considering recurring components. Loop works towards flexibility and expressive CSS.</p>
+</Col>
+
+
+
+

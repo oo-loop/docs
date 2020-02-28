@@ -22,7 +22,10 @@
   page.subscribe(({ path, params, query }) => {
     pathname = path
     isOn = false
-    hash = location.hash
+
+    if (typeof location !== 'undefined') {
+      hash = location.hash
+    }
   })
 
   function onHashChange() {

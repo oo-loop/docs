@@ -29,7 +29,12 @@ color: (
   background: (
     prefix: 'bg',
     property: 'background-color',
-    values: this('palette'),
+    values: (
+      _this('palette'),
+      (
+        'secondary': #f8f8f8,
+      )
+    )
   ),
   border: (
     property: 'border-color',
