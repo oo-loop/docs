@@ -58,35 +58,35 @@ visibility: (
 <p>Use the values from the property <em class="font-bold">breakpoints</em> of <em>Visibility</em> <code class="ml-0">.hidden</code><code>.hidden@<i class="color-secondary">screenName</i></code></p>
 
 <div class="display">
-  <Row prop="gutter-small" class="text-small mb-0">
+  <Row prop="gutter-tiny" class="text-small mb-0">
     <Col></Col>
     <Col><strong>Root</strong><br>0</Col>
     <Col><strong>Small</strong><br>600px</Col>
     <Col><strong>Medium</strong><br>960px</Col>
     <Col><strong>Large</strong><br>1280px</Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">h<span class="!hidden@sm">idden</span></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">h<span class="!hidden@sm">idden</span>@sm</Col>
     <Col class="visible-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">h<span class="!hidden@sm">idden</span>@md</Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
-  <Row prop="gutter-small">
+  <Row prop="gutter-tiny">
     <Col class="font-bold text-small">h<span class="!hidden@sm">idden</span>@lg</Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
@@ -101,35 +101,35 @@ visibility: (
 <p>Use the values from the property <em class="font-bold">pointbreaks</em> of <em>Visibility</em> <code>.!hidden@<i class="color-secondary">screenName</i></code></p>
 
 <div class="display">
-  <Row prop="gutter-small" class="text-small mb-0">
+  <Row prop="gutter-tiny" class="text-small mb-0">
     <Col></Col>
     <Col><strong>Root</strong><br>0</Col>
     <Col><strong>Small</strong><br>600px</Col>
     <Col><strong>Medium</strong><br>960px</Col>
     <Col><strong>Large</strong><br>1280px</Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">-</Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">!h<span class="!hidden@sm">idden</span>@sm</Col>
     <Col class="hidden-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
   </Row>
-  <Row prop="gutter-small" class="mb-0">
+  <Row prop="gutter-tiny" class="mb-0">
     <Col class="font-bold text-small">!h<span class="!hidden@sm">idden</span>@md</Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
   </Row>
-  <Row prop="gutter-small">
+  <Row prop="gutter-tiny">
     <Col class="font-bold text-small">!h<span class="!hidden@sm">idden</span>@lg</Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>

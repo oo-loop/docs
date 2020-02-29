@@ -34,43 +34,6 @@ img {
   height: 20px;
 }
 
-.demo {
-	position: relative;
-	padding: 5rem 1.5rem;
-	margin-left: -#{oo('container.gutter.rt')};
-	margin-right: -#{oo('container.gutter.rt')};
-	@include breakpoint(sm) {
-		margin-left: -#{oo('container.gutter.sm')};
-		margin-right: -#{oo('container.gutter.sm')};
-	}
-	@include breakpoint(lg) {
-		margin-left: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
-		margin-right: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
-	}
-
-	min-height: 680px;
-	background-color: #263943;
-
-	&::before {
-    position: absolute;
-		top: -90px;
-		left: 0;
-		right: 0;
-		content: '';
-		display: block;
-    height: 90px;
-    border-radius: 10% 140%/40% 160%;
-		// box-shadow:
-		// 	0 1px 0 #f8f8f8,
-		// 	0 5px 0px #fff,
-		// 	0 10px 0px #f8f8f8,
-		// 	-10px 15px 0px #fff,
-		// 	-10px 25px 0 #f8f8f8,
-		// 	-10px 35px 0 #fff,
-		// 	-10px 45px 0 #F8F8F8;
-		box-shadow: -70px 45px 0 #fff, -30px 51px 0 oo('palette.primary');
-	}
-}
 [data-oo-button] {
 	position: relative;
 	z-index: 2;
@@ -145,9 +108,7 @@ img {
 	<li><a href="docs/utilities" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
 </Col>
 
-<section class="demo">
-	<Demo />
-</section>
+<Demo />
 
 <Col prop="span8@md self-align-center">
 	<h3>Why Loop ?</h3>

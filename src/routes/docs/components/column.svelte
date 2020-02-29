@@ -25,8 +25,8 @@
   let childAlignmentSelected = 'left'
   let childValignmentSelected = 'top'
 
-  let gutter = ['default', 'less', 'small', 'large']
-  let gutterSelected = 'small'
+  let gutter = ['default', 'less', 'tiny', 'large']
+  let gutterSelected = 'tiny'
   $: gutterProp = gutterSelected !== 'default' ? `gutter-${gutterSelected}` : ''
 
 </script>
@@ -312,7 +312,7 @@ column: (
 {@html highlight(
 `// add 'small' & 'large' sizes
 $ooLoop: ooAdd('column.gutter.sizes', (
-  'small' : (
+  'tiny' : (
     rt: 0.5rem, // root value
     sm: 1rem,   // small device value
   ),
@@ -349,7 +349,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
   sizes: (
     default: this('container.gutter'), // (rt: 1rem, sm: 1.5rem)
     'less': 0,
-    'small': (
+    'tiny': (
       rt: 0.5rem,
       sm: 1rem, 
     ),

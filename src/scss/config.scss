@@ -14,6 +14,7 @@ $ooLoop: ooPipe(
 
 $ooLoop: ooAdd('palette', (
   'danger': #da3b3b,
+  'white': #fff,
   'sample': (
     'light': #87cadb,
     'dark': #459cb5,
@@ -25,10 +26,11 @@ $ooLoop: ooAdd('palette', (
 $ooLoop: ooPipe(
   _add('column.gutter', (
     sizes: (
-      'small': (
+      'tiny': (
         rt: 0.5rem,
         sm: 1rem,
       ),
+      'small': 1rem,
       'medium': 2rem,
       'large': (
         rt: rem(30),
@@ -219,6 +221,7 @@ $ooLoop: ooPipe(
 
   /* wrapper */
   _add('wrapper.values', (
+    'less': 0,
     'tiny': .5rem,
     'wide': (
       rt: 1rem,
