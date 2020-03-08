@@ -6,9 +6,13 @@
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
   
+  const screens = ['rt', 'sm', 'md']
+  let activeScreenIndex = 0, direction = 1
+  let autoAnimation = null
   let template = undefined
-  let screen = 'rt'
   let areas = []
+  
+  $: screen = screens[activeScreenIndex]
 
   beforeUpdate(() => {
     if (template !== undefined) {
@@ -35,6 +39,17 @@
     }
   })
 
+  onMount(() => {
+    autoAnimation = setInterval(() => {
+      if (direction === 1 && activeScreenIndex === (screens.length -1)) {
+        direction = -1
+      } else if (direction === -1 && activeScreenIndex === 0) {
+        direction = 1
+      }
+      activeScreenIndex += direction
+    }, 3000)
+  })
+
   const relocate = (node, { from }, params) => {
     const distanceX = from.x - params.to.x;
     const distanceY = from.y - params.to.y;
@@ -52,6 +67,14 @@
       // transform: translate3d(${u * distanceX}px, ${u * distanceY}px, 0);\n
       `,
     }
+  }
+
+  function setActiveScreen(screenName) {
+    if (autoAnimation !== null) {
+      clearInterval(autoAnimation)
+      autoAnimation = null
+    }
+    activeScreenIndex = screens.indexOf(screenName)
   }
 
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -231,8 +254,8 @@
   .rt {
     position: relative;
     display: inline-block;
-    width: 30px;
-    height: 50px;
+    width: 28px;
+    height: 45px;
     border : 1px solid;
     border-radius: 4px;
     &::before {
@@ -250,7 +273,7 @@
   .sm {
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 48px;
     height: 60px;
     border: 1px solid;
     border-radius: 4px;
@@ -270,7 +293,7 @@
     position: relative;
     margin-bottom: 4px;
     display: inline-block;
-    width: 95px;
+    width: 96px;
     height: 65px;
     border: 1px solid;
     border-top-right-radius: 4px;
@@ -410,9 +433,9 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
       </Col>
       <Col prop="span12 span5@md order0@md" class="mt-45">
         <div class="switchers">
-          <a class:active={screen === 'rt'} class="rt" on:click|preventDefault={() => screen = 'rt'}>rt</a>
-          <a class:active={screen === 'sm'} class="sm" on:click|preventDefault={() => screen = 'sm'}>sm</a>
-          <a class:active={screen === 'md'} class="md" on:click|preventDefault={() => screen = 'md'}>md</a>
+          <a class:active={screen === 'rt'} class="rt" on:click|preventDefault={() => setActiveScreen('rt')}>rt</a>
+          <a class:active={screen === 'sm'} class="sm" on:click|preventDefault={() => setActiveScreen('sm')}>sm</a>
+          <a class:active={screen === 'md'} class="md" on:click|preventDefault={() => setActiveScreen('md')}>md</a>
         </div>
         <div class="preview-template template-{screen} clear mt-5">
           <div bind:this={template}>
