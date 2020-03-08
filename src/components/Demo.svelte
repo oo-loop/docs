@@ -76,15 +76,6 @@
     }
     activeScreenIndex = screens.indexOf(screenName)
   }
-
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-  const typewriter = async (string, target) => {
-    for (let i = 0; i < string.length; i++) {
-      content[target] += string.charAt(i)
-      await delay(50)
-    }
-  }
 </script>
 
 <style lang="scss">
