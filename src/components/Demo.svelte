@@ -59,7 +59,8 @@
       delay: 0,
       duration: 600,
       easing: cubicOut,
-      css: (t, u) => `position:absolute;\n
+      css: (t, u) => `
+      position:absolute;\n
       top: ${(from.y - (t * distanceY)) - template.getBoundingClientRect().y + 16}px;\n
       left: ${(from.x - (t * distanceX)) - template.getBoundingClientRect().x + 16}px;\n
       width: ${from.width - (t * distanceW)}px;\n
@@ -163,28 +164,38 @@
 
   .preview-template {
     transition: min-height 450ms ease-out;
+    overflow-x: hidden;
     > div {
       display:grid;
       grid-gap: 1rem;
+
+      > div {
+        padding: 10px;
+        align-items: center;
+        will-change: top, left, height, width;
+        transition: all ease-out 300ms;
+      }
     }
   }
   .template-rt {
-    min-height: 367px;
+    min-height: 428px;
     > div {
       grid-template-areas:
       "header"
       "nav"
       "main"
+      "widgets"
       "footer";
       grid-template-columns: repeat(1, 1fr);
     }
   }
   .template-sm {
-    min-height: 306px;
+    min-height: 367px;
     > div {
       grid-template-areas:
-        "header nav nav"
-        "main main main"
+        "header header header"
+        "nav main main"
+        "nav widgets widgets"
         "footer footer footer";
       grid-template-columns: repeat(3, 1fr);
     }
@@ -193,16 +204,17 @@
     min-height: 306px;
     > div {
       grid-template-areas:
-        "header header header header"
-        "nav main main main"
-        "nav footer footer footer";
-      grid-template-columns: repeat(4, 1fr);
+        "header nav nav"
+        "main main widgets"
+        "footer footer widgets";
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   .template-header { grid-area: header; }
   .template-nav { grid-area: nav; }
   .template-main { grid-area: main; }
+  .template-widgets { grid-area: widgets; }
   .template-footer { grid-area: footer;}
   .dark {
     color: #c8e2e8;
@@ -231,6 +243,7 @@
       font-size: 10px;
       cursor: pointer;
       vertical-align: bottom;
+      transition: all ease-out 300ms;
       &:not(:first-child) {
         margin-left: 10px;
       }
@@ -393,17 +406,19 @@ $ooLoop: ooSet('template.areas', (
       "header"
       "nav"
       "main"
+      "widgets"
       "footer"
     ),
     sm: (
-      "header nav nav"
-      "main main main"
+      "header header header"
+      "nav main main"
+      "nav widgets widgets"
       "footer footer footer"
     ),
     md: (
-      "header header header header"
-      "nav main main main"
-      "nav footer footer footer"
+      "header nav nav"
+      "main main widgets"
+      "footer footer widgets"
     ),
   )
 ));
@@ -416,8 +431,9 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 `\n<!-- App -->
 <div oo-template="home">
   <div oo-area="header">Header</div>
+  <div oo-area="nav">Nav</div>
   <div oo-area="main">Main</div>
-  <div oo-area="sidebar">Sidebar</div>
+  <div oo-area="widgets">Widgets</div>
   <div oo-area="footer">Footer</div>
 </div>
 `, 'html', 'mt-0 mb-0 wrapper-less')}
@@ -430,9 +446,10 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
         </div>
         <div class="preview-template template-{screen} clear mt-5">
           <div bind:this={template}>
-            <div class="small light template-header">header</div>
+            <div class="small light template-header">Header</div>
             <div class="small dark template-nav">Nav</div>
             <div class="high darker template-main">Main</div>
+            <div class="small dark template-widgets">Widgets</div>
             <div class="small light template-footer">Footer</div>
           </div>
         </div>
