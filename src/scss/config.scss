@@ -15,6 +15,7 @@ $ooLoop: ooPipe(
 $ooLoop: ooAdd('palette', (
   'danger': #da3b3b,
   'white': #fff,
+  'lavender': #a172bf,
   'sample': (
     'light': #87cadb,
     'dark': #459cb5,
@@ -45,7 +46,7 @@ $ooLoop: ooPipe(
   _set('column.order', (
     use: true,
     screens: (
-      sm: 3,
+      sm: (0, 3),
       md: 0,
       lg: (0, 2),
     )
@@ -131,7 +132,7 @@ $ooLoop: ooPipe(
       font-size: 1.5rem,
     ),
     'tag': (
-      padding: 0.05em 0.5em,
+      padding: 0.1em 0.5em,
       font-weight: 500,
       border-radius: 50em,
     ),
@@ -206,7 +207,8 @@ $ooLoop: ooPipe(
     prefix: 'text',
     values: (
       'tight': -1px,
-      'wide': 1.5px,
+      'wide': .5px,
+      'wider': 1.5px,
     )
   )),
   _set('text.textAlign.screens', (md, lg)),
@@ -220,21 +222,31 @@ $ooLoop: ooPipe(
   )),
 
   /* wrapper */
-  _add('wrapper.values', (
-    'less': 0,
-    'tiny': .5rem,
-    'wide': (
-      rt: 1rem,
-      sm: 2rem,
-      md: 3rem,
-      lg: 4rem,
+  _add('wrapper', (
+    values: (
+      'less': 0,
+      'tiny': .5rem,
+      'wide': (
+        rt: 1rem,
+        sm: 2rem,
+        md: 3rem,
+        lg: 4rem,
+      )
+    ),
+    screens: (
+      sm: (), // none specified
+      md: ('tiny', 'small', 'medium'),
+      lg: ('small', 'medium')
     )
   )),
-  _set('wrapper.screens', (
-    sm: (), // none specified
-    md: ('tiny', 'small'),
-    lg: ('small', 'medium')
-  ))
+
+  /* extras */
+  _add('utilities', (
+    display: (
+      prefix: 'd',
+      values: 'block'
+    )
+  )),
 );
 
 // Misc

@@ -80,7 +80,8 @@ text: (
     prefix: 'text',
     values: (
       'tight': -1px, // add .text-tight
-      'wide': 1.5px,  // add .text-wide
+      'wide': .5px,  // add .text-wide
+      'wider': 1.5px,  // add .text-wider
     )
   ))
 );
@@ -95,6 +96,7 @@ text: (
   <p class="font-serif">This is a text with the class <em>.font-serif</em></p>
   <p class="text-tight mb-0">This is a text with the class <em>.text-tight</em></p>
   <p class="text-wide mb-0">This is a text with the class <em>.text-wide</em></p>
+  <p class="text-wider mb-0">This is a text with the class <em>.text-wider</em></p>
 </div>
 
 

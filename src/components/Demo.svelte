@@ -6,12 +6,14 @@
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
   
+  const date = new Date();
   const screens = ['rt', 'sm', 'md']
   let activeScreenIndex = 0, direction = 1
   let autoAnimation = null
   let template = undefined
   let areas = []
-  
+
+  $: datetime = `${date.getFullYear()}-09-07 10:00`
   $: screen = screens[activeScreenIndex]
 
   beforeUpdate(() => {
@@ -57,7 +59,7 @@
     const distanceH = from.height - params.to.height;
     return {
       delay: 0,
-      duration: 600,
+      duration: 800,
       easing: cubicOut,
       css: (t, u) => `
       position:absolute;\n
@@ -80,10 +82,18 @@
 </script>
 
 <style lang="scss">
+   h2 {
+     padding-top: 35px;
+     margin-top: 0;
+     margin-bottom: 35px;
+     font-weight: 300;
+     color: #fff;
+     text-align: center;
+   }
   .demo {
     position: relative;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
     margin-left: -#{oo('container.gutter.rt')};
     margin-right: -#{oo('container.gutter.rt')};
     @include breakpoint(sm) {
@@ -93,6 +103,10 @@
     @include breakpoint(lg) {
       margin-left: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
       margin-right: calc(-50vw + #{oo('container.maxWidth') / 2} - #{oo('container.gutter.sm')});
+    }
+
+    :global(code), :global(pre) {
+      background-color: inherit;
     }
 
     &-top {
@@ -112,6 +126,9 @@
         will-change: box-shadow;   
         animation: wave 5s infinite;
       }
+      .preview {
+         box-shadow: 5px 5px 0 0px #1d2d35;
+      }
 
       @keyframes wave {
         0% {
@@ -126,11 +143,11 @@
       }
     }
 
-    &-bottom {
+    &-middle {
       background-color: #1d2d35;
 
-      :global(code), :global(pre) {
-        background-color: inherit;
+      .preview-template {
+         box-shadow: 5px 5px 0 0px #162429;
       }
 
       &::before {
@@ -143,13 +160,26 @@
         box-shadow: 10px 40px 0 35px #263943;
       }
     }
+    &-bottom {
+      padding-bottom: 4rem;
+      background-color: #1a2529;
+
+      &::before {
+        margin-top: -180px;
+        margin-bottom: 90px;
+        content: '';
+        display: block;
+        height: 90px;
+        border-radius: 100% 70%/130% 30%;
+        box-shadow: 10px 40px 0 35px #1d2d35;
+      }
+    }
   }
   [class*="preview"] {
     position: relative;
     padding: 16px;
     border: 1px solid oo('palette.primary');
     border-radius: 8px;
-    box-shadow: 5px 5px 0 0px #1d2d35;
 
     &::before {
       position: absolute;
@@ -162,8 +192,11 @@
     }
   }
 
+  .template-canvas {
+    height: 450px;
+  }
   .preview-template {
-    transition: min-height 450ms ease-out;
+    transition: min-height 550ms ease-out;
     overflow-x: hidden;
     > div {
       display:grid;
@@ -343,10 +376,18 @@
       border-top: 1px solid;
     }
   }
+  [data-oo-button] {
+    position: relative;
+    z-index: 5;
+  }
+  [data-oo-button~=lavender] {
+    border-radius: 50em;
+  }
 </style>
 
 <section class="demo demo-top">
   <div class="container">
+    <h2>Layout Elements With Column</h2>
     <Row>
       <Col prop="span5@md order0@md">
 {@html highlight(
@@ -378,7 +419,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 </div>`, 'html', 'mt-0 mb-0 wrapper-less')}
       </Col>
       <Col prop="self-valign-middle order0@md">
-        <div class="preview mt-30">
+        <div class="preview mt-30  mb-30">
           <Row prop="gutter-small">
             <Col prop="fit"><img src="orange.jpg" width="100" alt="oranges" /></Col>
             <Col class="color-white">
@@ -388,14 +429,19 @@ $ooLoop: ooAdd('column.gutter.sizes', (
           </Row>
         </div>
       </Col>
+      <Col prop="span12" class="text-center">
+        <a class="text-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
+      </Col>
     </Row>
   </div>
 </section>
 
-<section class="demo demo-bottom">
+<section class="demo demo-middle">
   <div class="container">
+    <h2 class="">Make Responsive Template Easy</h2>
     <Row prop="align-between">
-      <Col prop="span6@md">
+      <Col></Col>
+      <Col prop="span6@md" class="mt-15">
 {@html highlight(
 `// config.scss
 @import '~loop/scss';
@@ -426,7 +472,7 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 
 @include ooCreate((
   html5: false,
-));`, 'scss', 'mt-30 mb-5 wrapper-less')}
+));`, 'scss', 'mt-0 mb-5 wrapper-less')}
 {@html highlight(
 `\n<!-- App -->
 <div oo-template="home">
@@ -444,15 +490,102 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
           <a class:active={screen === 'sm'} class="sm" on:click|preventDefault={() => setActiveScreen('sm')}>sm</a>
           <a class:active={screen === 'md'} class="md" on:click|preventDefault={() => setActiveScreen('md')}>md</a>
         </div>
-        <div class="preview-template template-{screen} clear mt-5">
-          <div bind:this={template}>
-            <div class="small light template-header">Header</div>
-            <div class="small dark template-nav">Nav</div>
-            <div class="high darker template-main">Main</div>
-            <div class="small dark template-widgets">Widgets</div>
-            <div class="small light template-footer">Footer</div>
+        <div class="template-canvas">
+          <div class="preview-template template-{screen} clear mt-5">
+            <div bind:this={template}>
+              <div class="small light template-header">Header</div>
+              <div class="small dark template-nav">Nav</div>
+              <div class="high darker template-main">Main</div>
+              <div class="small dark template-widgets">Widgets</div>
+              <div class="small light template-footer">Footer</div>
+            </div>
           </div>
         </div>
+        <div class="text-center mt-30">
+          <a class="text-medium" data-oo-button="primary" href="docs/components/template" title="Start creating Templates">Start creating Templates</a>
+        </div>
+      </Col>
+    </Row>
+  </div>
+</section>
+
+<section class="demo demo-bottom">
+  <h2>Create your own set of Utilities</h2>
+  <div class="container">
+    <Row>
+      <Col prop="span6@sm span5@md order0@sm">
+{@html highlight(
+`// config.scss
+@import '~loop/scss';
+
+$ooLoop: ooPipe(
+  _add('palette', (
+    'lavender': #a172bf,
+    'white': #fff,
+  ),
+  _add('wrapper', (
+    values: (
+      'tiny': .5rem
+    ),
+    screens: 'sm'
+  )),
+);
+
+$ooLoop: ooAdd('utilities', (
+  display: (
+    prefix: 'd',
+    values: 'block'
+  ),
+  letterSpacing: (
+    prefix: 'text',
+    values: (
+      'wide': .5px,
+    ),
+  )
+))
+
+$ooLoop: ooPipe(
+  _set('button.outline', true),
+  _add('button.props', (
+    border-radius: 50em,
+  )
+);
+
+@include ooCreate();\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="span12">
+{@html highlight(
+`\n<!-- App -->
+<div class="bg-white text-center">
+  <time datetime="${datetime}"
+    class="d-block wrapper-tiny bg-lavender color-white text-small text-uppercase">
+    September 7th, 10am
+  </time>
+  <div class="wrapper-small wrapper-medium@md">
+    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+    <p>Tokyo, Odaiba, Big sight</p>
+    <button data-oo-button="lavender outline">Join</button>
+  </div>
+</div>
+`, 'html', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="self-valign-middle order0@sm">
+        <div class="preview">
+          <div class="bg-white text-center">
+            <time datetime={datetime}
+              class="d-block wrapper-tiny bg-lavender color-white text-center text-small text-uppercase">
+              September 7th, 10am
+            </time>
+            <div class="wrapper-small wrapper-medium@md">
+              <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+              <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+              <button data-oo-button="lavender outline">Join</button>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col prop="span12" class="text-center">
+        <a class="text-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
       </Col>
     </Row>
   </div>

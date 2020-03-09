@@ -31,7 +31,7 @@ button: (
     padding: .438em 1.2em,
     fontSize: rem(14),
     fontWeight: bold,
-    lineHeight: 1.5,
+    lineHeight: 1.45,
     color: #333,
     backgroundColor: #fff,
     border: 1px solid #cecece,
@@ -156,7 +156,7 @@ button: (
     font-size: 1.5rem,
   ),
   'tag': (
-    padding: 0.05em 0.5em,
+    padding: 0.1em 0.5em,
     font-weight: 500,
     border-radius: 50em,
   ),
