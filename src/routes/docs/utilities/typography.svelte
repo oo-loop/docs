@@ -64,27 +64,33 @@ typo: (
 <h4>Add more or update data <span class="font-regular font-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
 
 {@html highlight(
-`$ooLoop: ooPipe(
-  _add('typo.fontSize.values', (
-    'tiny': rem(12), // add .font-tiny
-    'large': rem(18), // update .font-large
-  )),
-  _add('typo.fontWeight.values', (
-    'light': 300,  // add .font-light
-  )),
-  _add('typo.fontFamily.values', (
-    'monospace': monospace, // add .font-monospace
-    'serif': (Georgia, "Times New Roman", Times), //add .font-serif
-  )),
-  _set('typo.letterSpacing', (
+`$ooLoop: ooAdd('typo', (
+  fontSize: (
+    values: (
+      'tiny': rem(12), // add .font-tiny
+      'large': rem(18), // update .font-large
+    )
+  ),
+  fontWeight: (
+    values: (
+      'light': 300,  // add .font-light
+    )
+  ),
+  fontFamily: (
+    values: (
+      'monospace': monospace, // add .font-monospace
+      'serif': (Georgia, "Times New Roman", Times), //add .font-serif
+    )
+  ),
+  letterSpacing: (
     prefix: 'text',
     values: (
       'tight': -1px, // add .text-tight
       'wide': .5px,  // add .text-wide
       'wider': 1.5px,  // add .text-wider
     )
-  ))
-);
+  )
+));
 `, 'scss')}
 
 <div class="ground">
