@@ -43,20 +43,20 @@
 <p>Following the appropriate map format create your own utitlies via the proterty <em>utilities</em> of the Loop config.</p>
 {@html highlight(
 `$ooLoop: ooAdd('utilities', (
-  'borderRadius': (
+  borderRadius: (
     prefix: 'radius',
     values: (
       'small': .5rem,
       'large': 1.5rem,
     )
   ),
-  'textDecoration': (
+  textDecoration: (
     values: (
       'underline',
       'overline',
     )
   ),
-  'display': (
+  display: (
     prefix: 'd',
     values: (
       'block': block
@@ -64,7 +64,7 @@
       'iflex': inline-flex,
     )
   ),
-  'valign': (
+  valign: (
     property: 'vertical-align',
     values: (
       'top',

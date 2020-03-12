@@ -12,7 +12,7 @@
 <h1>HTML elements</h1>
 <p class="font-large">Set default styles and format css elements to act the same accross browsers.</p>
 
-<h2 id="base"><a href="docs/html-elemennts#base">#</a> Base</h2>
+<h2 id="base"><a href="docs/html-elements#base">#</a> Base</h2>
 <p>The Base is <strong>highly recommended</strong> as it sets global styling and renders html elements more consistently. It includes:</p>
 
 <ul class="mb-30">
@@ -109,9 +109,9 @@ body {
 
 <hr>
 
-<h2 id="type"><a href="docs/html-elements#type">#</a> Type</h2>
-<p>Sets global text elements such as paragraph, anchor and list as well as the hr tag</p>
-<p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Type()</strong></p>
+<h2 id="content"><a href="docs/html-elements#content">#</a> Content</h2>
+<p>Sets global content elements such as paragraph, anchor and list as well as the hr tag</p>
+<p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
 
 <h3 class="mt-30"><em class="font-regular">paragraph</em> Config</h3>
 <ul>
