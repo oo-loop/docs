@@ -170,7 +170,7 @@
         content: '';
         display: block;
         height: 90px;
-        border-radius: 100% 70%/130% 30%;
+        border-radius: 100% 100%/150% 70%;
         box-shadow: 10px 40px 0 35px #1d2d35;
       }
     }
@@ -188,7 +188,7 @@
       z-index: 1;
       content: 'Preview';
       color: oo('palette.primary');
-      font-family: oo('text.fontFamily.values.monospace');
+      font-family: oo('typo.fontFamily.values.monospace');
     }
   }
 
