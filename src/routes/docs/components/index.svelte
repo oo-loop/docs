@@ -38,7 +38,7 @@
 <HeadTitle title="Components"/>
 
 <h1>Components</h1>
-<p class="text-large">Use recurring styles as components with a specific attribute syntax for development purposes.</p>
+<p class="font-large">Use recurring styles as components with a specific attribute syntax for development purposes.</p>
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
@@ -54,7 +54,7 @@ You could turn off the html5 validity and have a shorter name for speed purposes
 
 {@html highlight(
 `<!-- Column component -->
-<div ${attr}-row="align-center gutter-less" class="text-small text-center">
+<div ${attr}-row="align-center gutter-less" class="font-small text-center">
   <div ${attr}-col="span12 span3@sm"></div>
   <div ${attr}-col="span3@sm"></div>
   <div ${attr}-col="span3@sm"></div>
@@ -117,7 +117,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 <p>Combine the two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
 
 <h4 class="font-code mt-30">ooComponent(<span class="color-primary">$name</span>){'{ '}<span class="color-secondary">@content</span>{' }'}</h4>
-<p><em class="text-uppercase text-small">Mixin</em> - Create a base component</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Create a base component</p>
 <ul>
   <li><strong>$name</strong> <em class="font-monospace">(string)</em> The name of the component</li>
   <li><strong>@content</strong> CSS rules</li>
@@ -141,7 +141,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 `, 'css')}
 
 <h4 class="font-code mt-45">ooComponentVariant(<span class="color-primary">$componentName</span>, <span class="color-primary">$variantName</span>){'{ '}<span class="color-secondary">@content</span>{' }'}</h4>
-<p><em class="text-uppercase text-small">Mixin</em> - Create a component variation</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Create a component variation</p>
 <ul>
   <li><strong>$componentName</strong> <em class="font-monospace">(string)</em> The name of the component</li>
   <li><strong>$variantName</strong> <em class="font-monospace">(string)</em> The name of the variant</li>

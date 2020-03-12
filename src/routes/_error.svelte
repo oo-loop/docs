@@ -17,7 +17,7 @@
 <Col prop="span10@sm span8@md self-align-center">
   <div class="ground">
     <h1>Oops!</h1>
-    <p class="text-large">{status}: {error.message}</p>
+    <p class="font-large">{status}: {error.message}</p>
     {#if dev && error.stack}
       <pre>{error.stack}</pre>
     {/if}
@@ -28,7 +28,7 @@
 `<div data-oo-column="span10@sm span8@md self-align-center">
   <div class="ground">
     <h1>Oops!</h1>
-    <p class="text-large">${status}: ${error.message}</p>
+    <p class="font-large">${status}: ${error.message}</p>
   </div>
   <p class="text-center">Check the <a href="docs" title="documentation">documentation</a></p>
 </div>

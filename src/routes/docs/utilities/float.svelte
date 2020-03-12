@@ -23,7 +23,7 @@
 <HeadTitle title="Float utilities"/>
 
 <h1>Float utilities</h1>
-<p class="text-large">Set a floating element on the fly.</p>
+<p class="font-large">Set a floating element on the fly.</p>
 <p>The two standard float options are available as well as a clearfix, <code>.float-left</code> <code>.float-right</code> <code>.clearfix</code> and <code>.clear</code>.</p>
 
 {@html highlight(
@@ -79,7 +79,7 @@ float: (
 </div>
 
 
-<h4 class="mt-45">Add more, update data, set responsive values <span class="font-regular text-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
+<h4 class="mt-45">Add more, update data, set responsive values <span class="font-regular font-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
 {@html highlight(
 `// add .float-none
 $ooLoop: ooAdd('float.values', 'none');

@@ -13,7 +13,7 @@
 <HeadTitle title="Button component"/>
 
 <h1>Button</h1>
-<p class="text-large">Modular component and 100% customizable to fit your needs<br>
+<p class="font-large">Modular component and 100% customizable to fit your needs<br>
 <code class="ml-0">oo-button</code></p>
 
 <ul>
@@ -181,16 +181,16 @@ button: (
 It is also possible to <strong>use text-utilites to quickly achieve some adjustments</strong>.</p>
 
 <Html5Toggler content={
-`<button oo-button="primary" class="text-tiny">Tiny</button>
+`<button oo-button="primary" class="font-tiny">Tiny</button>
 <button oo-button="primary">Default</button>
-<button oo-button="primary" class="text-medium">Medium</button>
-<button oo-button="primary" class="text-large">Large</button>
+<button oo-button="primary" class="font-medium">Medium</button>
+<button oo-button="primary" class="font-large">Large</button>
 <button oo-button="primary large">Variant large</button>
 `} />
 <div class="ground">
-  <button data-oo-button="primary" class="text-tiny">Tiny</button>
+  <button data-oo-button="primary" class="font-tiny">Tiny</button>
   <button data-oo-button="primary">Default</button>
-  <button data-oo-button="primary" class="text-medium">Medium</button>
-  <button data-oo-button="primary" class="text-large">Large</button>
+  <button data-oo-button="primary" class="font-medium">Medium</button>
+  <button data-oo-button="primary" class="font-large">Large</button>
   <button data-oo-button="primary large">Variant large</button>
 </div>

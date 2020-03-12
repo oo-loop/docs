@@ -10,7 +10,7 @@
 <HeadTitle title="Helper classes"/>
 
 <h1>Helper classes</h1>
-<p class="text-large">A set of classes to help you deal with common styling.</p>
+<p class="font-large">A set of classes to help you deal with common styling.</p>
 <p>Unlike utilities classes, helpers classes does not follow any specific format and can achieve multiple things. They are global classes.</p>
 
 <ul>

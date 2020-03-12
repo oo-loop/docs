@@ -147,7 +147,7 @@
       <h4><a class:color-primary={segment === 'html-elements'} href="docs/html-elements">HTML elements</a></h4>
       <ul class="list-unstyle">
         <li><a class:color-primary={isHashActive('#base', hash)} href="docs/html-elements#base">Base</a></li>
-        <li><a class:color-primary={isHashActive('#type', hash)} href="docs/html-elements#type">Type</a></li>
+        <li><a class:color-primary={isHashActive('#content', hash)} href="docs/html-elements#content">Content</a></li>
         <li><a class:color-primary={isHashActive('#headings', hash)} href="docs/html-elements#headings">Headings</a></li>
       </ul>
     </li>
@@ -173,7 +173,7 @@
       <h4><a class:color-primary={segment === 'utilities'} href="docs/utilities">Utilities</a></h4>
       <ul class="list-unstyle">
         <li><a class:color-primary={isActive('utilities/color', pathname)} href="docs/utilities/color">Color</a></li>
-        <li><a class:color-primary={isActive('utilities/text', pathname)} href="docs/utilities/text">Text</a></li>
+        <li><a class:color-primary={isActive('utilities/typography', pathname)} href="docs/utilities/typography">Typography</a></li>
         <li><a class:color-primary={isActive('utilities/spacing', pathname)} href="docs/utilities/spacing">Spacing</a></li>
         <li><a class:color-primary={isActive('utilities/float', pathname)} href="docs/utilities/float">Float</a></li>
         <li><a class:color-primary={isActive('utilities/wrapper', pathname)} href="docs/utilities/wrapper">Wrapper</a></li>

@@ -9,7 +9,7 @@
 <HeadTitle title="Getting Started"/>
 
 <h1>Start with Loop</h1>
-<p class="text-large">Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
+<p class="font-large">Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
 <ul>
 	<li><a href="docs/html-elements" title="HTML elements">HTML formatting</a></li>
 	<li><a href="docs/components/column">Column component</a></li>
@@ -40,7 +40,7 @@
 </ul>
 
 <h3 class="h4 font-code mt-45">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
-<p><em class="text-uppercase text-small">Mixin</em> - Launch framework by initializing <a href="docs/config" title="Loop Map">$ooLoop</a> and generate styling.</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Launch framework by initializing <a href="docs/config" title="Loop Map">$ooLoop</a> and generate styling.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
@@ -80,7 +80,7 @@ $ooLoop: (
 <hr>
 
 <h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Set new values to Loop config. To be used with <code>$ooLoop</code>.</p>
+<p><em class="text-uppercase font-small">Function</em> - Set new values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
   <br>Concatenated path to a Loop config attribute</li>
@@ -106,7 +106,7 @@ $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 <hr>
 
 <h3 class="font-code h4" id="ooadd">ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Add values to Loop config. To be used with <code>$ooLoop</code>.</p>
+<p><em class="text-uppercase font-small">Function</em> - Add values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
   <br>Concatenated path to a Loop config attribute</li>
@@ -129,7 +129,7 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 <hr>
 
 <h3 class="font-code h4" id="oopipe">ooPipe(<span class="color-primary">$rules...</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code>$ooLoop</code>.</p>
+<p><em class="text-uppercase font-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li><strong>$rules</strong> <em class="font-monospace">(list)</em>
   <br>List of setter <code>_set(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code> and adder<code>_add(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code></li>

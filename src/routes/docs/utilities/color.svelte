@@ -10,7 +10,7 @@
 <HeadTitle title="Color utilities"/>
 
 <h1>Color utilities</h1>
-<p class="text-large">Modify the color of any elements tagetting font, background and/or border.</p>
+<p class="font-large">Modify the color of any elements tagetting font, background and/or border.</p>
 <p>Loop gives you few colors by default to avoid overloading the CSS of rules you might not need.</p>
 
 {@html highlight(

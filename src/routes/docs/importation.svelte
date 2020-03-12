@@ -8,7 +8,7 @@
 <HeadTitle title="Importation"/>
 
 <h1>Importation</h1>
-<p class="text-large">A single import for the entire framework</p>
+<p class="font-large">A single import for the entire framework</p>
 <p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a> including the selection of the part of the framework. This makes the loop main file <strong>the only needed</strong> import.</p>
 
 {@html highlight(`@import 'loop/scss'; // that's all`, 'scss')}
@@ -20,7 +20,7 @@
 use: (
   base: true,
   headings: true,
-  type: true,
+  content: true,
 
   column: true,
   template: true,
@@ -42,7 +42,7 @@ use: (
     float: true,
     list: true,
     spacing: true,
-    text: true,
+    typo: true,
     wrapper: true,
   ),
 ),
@@ -175,7 +175,7 @@ That will also give you the opportunity to set some global settings.</p>
 
 <hr>
 <h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-<p><em class="text-uppercase text-small">Mixin</em> - Instantiate <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Instantiate <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
@@ -185,7 +185,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Base(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Format your css to act the same accross all browers and set your body element. <strong>This is highly recommended!</strong></p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Format your css to act the same accross all browers and set your body element. <strong>This is highly recommended!</strong></p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties <code>props</code> and <code>smoothing</code>.</li>
@@ -199,15 +199,15 @@ That will also give you the opportunity to set some global settings.</p>
 <hr>
 <Row>
   <Col>
-    <h4 class="font-code">Type(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Set your base typography.</p>
+    <h4 class="font-code">Content(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase font-small">Mixin</em> - Set your html content elements.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties <code>paragraph</code> <code>anchor</code> <code>list</code> <code>hr</code>.</li>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements#type" title="Type documentation">Use Type</a>
+    <a data-oo-button href="docs/html-elements#content" title="Content documentation">Use Content</a>
   </Col>
 </Row>
 
@@ -215,7 +215,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Headings(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Set your css headings.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Set your css headings.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties <code>headings</code>.</li>
@@ -230,7 +230,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Column(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the column component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the column component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>column</code>.</li>
@@ -245,7 +245,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Template(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the template component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the template component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>template</code>.</li>
@@ -260,7 +260,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Button(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the button component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the button component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>button</code>.</li>
@@ -275,7 +275,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Label(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include css for input label.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include css for input label.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set css properties of <code>label</code>.</li>
@@ -290,7 +290,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">TextField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the input component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the input component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>input</code>.</li>
@@ -305,7 +305,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">SelectField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the select component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the select component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>select</code>.</li>
@@ -320,7 +320,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Checkbox(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the checkbox component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the checkbox component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>checkbox</code>.</li>
@@ -335,7 +335,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Radio(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the radio component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the radio component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>radio</code>.</li>
@@ -350,7 +350,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Toggle(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the toggle component.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the toggle component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>toggle</code>.</li>
@@ -365,7 +365,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Container(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the container classes.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the container classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>container</code>.</li>
@@ -380,7 +380,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Visibility(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the visiblity classes.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the visiblity classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>visibility</code>.</li>
@@ -395,7 +395,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Misc(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the miscellaneous classes.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the miscellaneous classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>misc</code>.</li>
@@ -410,7 +410,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Float(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the float utilities.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the float utilities.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the map properties of <code>float</code>.</li>
@@ -425,7 +425,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Spacing(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the spacing utilities.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the spacing utilities.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties of <code>spacing</code>.</li>
@@ -440,7 +440,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Color(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the color utilities.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the color utilities.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the property <code>color</code> in an utility format.</li>
@@ -454,15 +454,15 @@ That will also give you the opportunity to set some global settings.</p>
 <hr>
 <Row>
   <Col>
-    <h4 class="font-code">Text(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the text utilities.</p>
+    <h4 class="font-code">Typography(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the typography utilities.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
-      <br>Set the property <code>text</code> in an utility format.</li>
+      <br>Set the property <code>typo</code> in an utility format.</li>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/text" title="Color documentation">Use Text utilities</a>
+    <a data-oo-button href="docs/utilities/typography" title="Typography documentation">Use Typo utilities</a>
   </Col>
 </Row>
 
@@ -470,7 +470,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">List(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the list classes.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the list classes.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the properties of <code>list</code>.</li>
@@ -485,7 +485,7 @@ That will also give you the opportunity to set some global settings.</p>
 <Row>
   <Col>
     <h4 class="font-code">Wrapper(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-    <p><em class="text-uppercase text-small">Mixin</em> - Include the wrapper utilities.</p>
+    <p><em class="text-uppercase font-small">Mixin</em> - Include the wrapper utilities.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
       <br>Set the property <code>wrapper</code> in an utility format.</li>

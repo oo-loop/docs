@@ -10,7 +10,7 @@
 <HeadTitle title="HTML elements"/>
 
 <h1>HTML elements</h1>
-<p class="text-large">Set default styles and format css elements to act the same accross browsers.</p>
+<p class="font-large">Set default styles and format css elements to act the same accross browsers.</p>
 
 <h2 id="base"><a href="docs/html-elemennts#base">#</a> Base</h2>
 <p>The Base is <strong>highly recommended</strong> as it sets global styling and renders html elements more consistently. It includes:</p>

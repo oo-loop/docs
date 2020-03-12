@@ -6,7 +6,7 @@
 <HeadTitle title="Micellaneous"/>
 
 <h1>Miscellaneous</h1>
-<p class="text-large">Recurring handy classes.</p>
+<p class="font-large">Recurring handy classes.</p>
 <p>Those styles are generated from the property <em>misc</em> of the config map.</p>
 {@html highlight(
 `//default config

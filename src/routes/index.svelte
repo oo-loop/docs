@@ -89,7 +89,7 @@ img {
 		<Col prop="self-valign-middle">
 			<h1>Loop CSS</h1>
 			<h2>Flexible and Expressive Development</h2>
-			<p class="text-large mb-30">Aiming to create a more maintainable and readable CSS</p>
+			<p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
 			<code class="large">npm install oo-loop</code>
 		</Col>
 	</Row>

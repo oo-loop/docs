@@ -9,7 +9,7 @@
 <HeadTitle title="List"/>
 
 <h1>List</h1>
-<p class="text-large">Format list elements.<br>
+<p class="font-large">Format list elements.<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
 <h2 id="unstyle"><a href="docs/helpers/list#unstyle">#</a> Unstyle</h2>

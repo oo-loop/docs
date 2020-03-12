@@ -70,7 +70,7 @@
 <HeadTitle title="Column component"/>
 
 <h1>Column</h1>
-<p class="text-large">Layout elements in a page based on the 12 columns system.<br>
+<p class="font-large">Layout elements in a page based on the 12 columns system.<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
 <ul class="mb-30">
@@ -124,7 +124,7 @@ column: (
 
 <table class="mt-30 mb-45">
   <thead>
-    <tr class="text-small">
+    <tr class="font-small">
       <th></th>
       <th>Root<br><span class="font-regular">>0</span></th>
       <th>Small<br><span class="font-regular">>600px</span></th>
@@ -134,14 +134,14 @@ column: (
   </thead>
   <tbody class="text-center">
     <tr>
-      <th class="text-left text-small">Auto</th>
+      <th class="text-left font-small">Auto</th>
       <td><small>none</small></td>
       <td><code>auto@sm</code></td>
       <td><code>auto@md</code></td>
       <td><code>auto@lg</code></td>
     </tr>
     <tr>
-       <th class="text-left text-small">Sizes</th>
+       <th class="text-left font-small">Sizes</th>
       <td><code>span<i>#</i></code></td>
       <td><code>span<i>#</i>@sm</code></td>
       <td><code>span<i>#</i>@md</code></td>
@@ -328,7 +328,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 </div>
 `} />
 <div data-oo-select class="float-right mb-root" style="width:140px">
-  <select class="text-small font-bold" bind:value={gutterSelected}>
+  <select class="font-small font-bold" bind:value={gutterSelected}>
   {#each gutter as val}
     <option value={val}>gutter {val}</option>
   {/each}
@@ -444,9 +444,9 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 
 <Row>
   <Col>
-    <label class="color-body text-small">Valign</label>
+    <label class="color-body font-small">Valign</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={valignmentSelected}>
+      <select class="font-small" bind:value={valignmentSelected}>
       {#each valignment as val}
       <option value={val}>{val}</option>
       {/each}
@@ -454,9 +454,9 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
     </div>
   </Col>
   <Col>
-    <label class="color-body text-small">@lg</label>
+    <label class="color-body font-small">@lg</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={lgValignmentSelected}>
+      <select class="font-small" bind:value={lgValignmentSelected}>
         <option value="{null}">none</option>
         {#each valignment as val}
           <option value={val}>{val}@lg</option>
@@ -465,9 +465,9 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
     </div>
   </Col>
   <Col prop="span6 span3@sm">
-    <label class="color-body text-small">Align</label>
+    <label class="color-body font-small">Align</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={alignmentSelected}>
+      <select class="font-small" bind:value={alignmentSelected}>
       {#each alignment as val}
       <option value={val}>{val}</option>
       {/each}
@@ -475,9 +475,9 @@ $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
     </div>
   </Col>
   <Col prop="span6 span3@sm">
-    <label class="color-body text-small">@lg</label>
+    <label class="color-body font-small">@lg</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={lgAlignmentSelected}>
+      <select class="font-small" bind:value={lgAlignmentSelected}>
         <option value="{null}">none</option>
         {#each alignment as val}
         <option value={val}>{val}@lg</option>
@@ -519,9 +519,9 @@ column: (
 
 <Row>
   <Col prop="span12 span6@sm">
-    <label class="color-body text-small">Self-align A</label>
+    <label class="color-body font-small">Self-align A</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={selfAlignmentSelectedA}>
+      <select class="font-small" bind:value={selfAlignmentSelectedA}>
       {#each alignment as val}
         {#if ['between', 'evenly'].indexOf(val) === -1}
         <option value={val}>{val}</option>
@@ -531,9 +531,9 @@ column: (
     </div>
   </Col>
   <Col>
-    <label class="color-body text-small">Self-valign B</label>
+    <label class="color-body font-small">Self-valign B</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={selfValignmentSelectedB}>
+      <select class="font-small" bind:value={selfValignmentSelectedB}>
       {#each valignment as val}
       <option value={val}>{val}</option>
       {/each}
@@ -541,9 +541,9 @@ column: (
     </div>
   </Col>
   <Col prop="span6 span3@sm">
-    <label class="color-body text-small">Self-align B</label>
+    <label class="color-body font-small">Self-align B</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={selfAlignmentSelectedB}>
+      <select class="font-small" bind:value={selfAlignmentSelectedB}>
       {#each alignment as val}
         {#if ['between', 'evenly'].indexOf(val) === -1}
         <option value={val}>{val}</option>
@@ -593,9 +593,9 @@ $ooLoop: ooSet('column.childAlignment.use', true);
 
 <Row>
   <Col>
-    <label class="color-body text-small">Child-valign B</label>
+    <label class="color-body font-small">Child-valign B</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={childValignmentSelected}>
+      <select class="font-small" bind:value={childValignmentSelected}>
       {#each valignment as val}
       <option value={val}>{val}</option>
       {/each}
@@ -603,9 +603,9 @@ $ooLoop: ooSet('column.childAlignment.use', true);
     </div>
   </Col>
   <Col prop="span6">
-    <label class="color-body text-small">Child-align B</label>
+    <label class="color-body font-small">Child-align B</label>
     <div data-oo-select>
-      <select class="text-small" bind:value={childAlignmentSelected}>
+      <select class="font-small" bind:value={childAlignmentSelected}>
       {#each alignment as val}
         {#if ['between', 'evenly'].indexOf(val) === -1}
         <option value={val}>{val}</option>

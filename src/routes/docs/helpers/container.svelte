@@ -7,7 +7,7 @@
 <HeadTitle title="Container"/>
 
 <h1>Container</h1>
-<p class="text-large">Set the main container of the page with proper spacing on the sides.<br>
+<p class="font-large">Set the main container of the page with proper spacing on the sides.<br>
 <code class="ml-0">.container</code> <code>.container-fluid</code></p>
 {@html highlight(
 `// default config

@@ -175,6 +175,7 @@ $ooLoop: ooPipe(
 
 // Utilities
 $ooLoop: ooPipe(
+  /* Color */
   _add('color.font.values', (
     'body': this('body.props.color'),
     'warning': #ce8a0d,
@@ -184,8 +185,8 @@ $ooLoop: ooPipe(
   )),
   _set('color.border.values', this('palette')),
 
-  /* Text */
-  _add('text.fontSize.values', (
+  /* Typography */
+  _add('typo.fontSize.values', (
     'tiny': rem(12),
     'medium': rem(16),
     'grow': (
@@ -194,16 +195,16 @@ $ooLoop: ooPipe(
       lg: 1.5rem,
     ),
   )),
-  _add('text.fontWeight.values', (
+  _add('typo.fontWeight.values', (
     'light': 300,
     'regular': 400,
   )),
-  _set('text.fontFamily.values', (
+  _set('typo.fontFamily.values', (
     'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
     'monospace': monospace,
     'serif': (Georgia, "Times New Roman", Times),
   )),
-  _set('text.letterSpacing', (
+  _set('typo.letterSpacing', (
     prefix: 'text',
     values: (
       'tight': -1px,
@@ -211,7 +212,7 @@ $ooLoop: ooPipe(
       'wider': 1.5px,
     )
   )),
-  _set('text.textAlign.screens', (md, lg)),
+  _set('typo.textAlign.screens', (md, lg)),
 
   /* spacing */
   _add('spacing.top.values', (

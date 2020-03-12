@@ -44,7 +44,7 @@
 <HeadTitle title="Template component"/>
 
 <h1>Template</h1>
-<p class="text-large"><i>Blueprint</i> semantically a page or elements in a page.<br>
+<p class="font-large"><i>Blueprint</i> semantically a page or elements in a page.<br>
 <code class="ml-0">oo-template</code><code>oo-area</code></p>
 
 <p>The component is included by default but requires you to <strong>pass your own design plan</strong> to the <em>areas</em> property. Use a responsive map to modify the layout between screens sizes.</p>
@@ -187,10 +187,10 @@ template: (
   <div oo-area="footer">Footer</div>
 </div>
 `} />
-<button data-oo-button class="text-small float-right"
+<button data-oo-button class="font-small float-right"
   on:click={() => isVgapless = !isVgapless}>toggle vgap-less</button>
 <div data-oo-select class="float-right mb-root" style="width:140px">
-  <select class="text-small font-bold" bind:value={gapSelected}>
+  <select class="font-small font-bold" bind:value={gapSelected}>
   {#each gap as val}
     <option value={val}>gap {val}</option>
   {/each}

@@ -10,11 +10,11 @@
 <HeadTitle title="Utility classes"/>
 
 <h1>Utilities</h1>
-<p class="text-large">A bunch of handy classes doing one job to customize elements on the fly.</p>
-<p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">Loop config</a> with the right <a href="docs/utilities#format" title="Utility format">format</a>.</p>
+<p class="font-large">A bunch of handy classes doing one job to customize elements on the fly.</p>
+<p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">Loop config</a> with the correct <a href="docs/utilities#format" title="Utility format">format</a>.</p>
 <ul>
   <li><a href="docs/utilities/color">Color</a></li>
-  <li><a href="docs/utilities/text">Text</a></li>
+  <li><a href="docs/utilities/typography">Typography</a></li>
   <li><a href="docs/utilities/spacing">Spacing</a></li>
   <li><a href="docs/utilities/float">Float</a></li>
   <li><a href="docs/utilities/wrapper">Wrapper</a></li>

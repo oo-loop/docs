@@ -12,7 +12,7 @@
 <HeadTitle title="Form component"/>
 
 <h1>Form</h1>
-<p class="text-large">Component for form elements<br>
+<p class="font-large">Component for form elements<br>
 <code>oo-input</code><code>oo-select</code><code>oo-checkbox</code><code>oo-radio</code><code>oo-toggle</code></p>
 
 <ul>

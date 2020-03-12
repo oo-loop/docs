@@ -6,7 +6,7 @@
 <HeadTitle title="Config map"/>
 
 <h1>Loop Config Map</h1>
-<p class="text-large">Simplify the use of variables and the configuration of the framework.</p>
+<p class="font-large">Simplify the use of variables and the configuration of the framework.</p>
 
 <p>Because going through a single <i>variables.scss</i> file can be tedious and remembering every names is becoming a challenge,
 Loop offers a single config map.</p>
@@ -21,7 +21,7 @@ Loop offers a single config map.</p>
 <p>The global properties are data to be refered to within your configuration to avoid duplicating them.</p>
 
 <h3 class="h4 mt-30 font-code">breakpoints</h3>
-<p><em class="text-uppercase text-small">Map</em> - Available breakpoints in your project.</p>
+<p><em class="text-uppercase font-small">Map</em> - Available breakpoints in your project.</p>
 {@html highlight(`breakpoints: (
   xs: 30em,     // 480px
   sm: 37.500em, // 600px
@@ -31,11 +31,11 @@ Loop offers a single config map.</p>
 ),`, 'scss')}
 
 <h3 class="h4 mt-30 font-code">screens</h3>
-<p><em class="text-uppercase text-small">List</em> - Set of responsive screens being globally used.</p>
+<p><em class="text-uppercase font-small">List</em> - Set of responsive screens being globally used.</p>
 {@html highlight(`screens: (sm, md, lg),`, 'scss')}
 
 <h3 class="h4 mt-30 font-code">palette</h3>
-<p><em class="text-uppercase text-small">Map</em> - Available colors in your project.</p>
+<p><em class="text-uppercase font-small">Map</em> - Available colors in your project.</p>
 {@html highlight(`palette: (
   'primary': #0ea7d6,
   'secondary': #959595,
@@ -232,7 +232,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 <p>Access any data of the config map during your development.</p>
 
 <h3 class="h4 font-code" id="oo">oo(<span class="color-primary">$path</span>)</h3>
-<p><em class="text-uppercase text-small">Function</em> - Get values from Loop config.</p>
+<p><em class="text-uppercase font-small">Function</em> - Get values from Loop config.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
   <br>Concatenated path to a Loop config attribute.

@@ -387,7 +387,7 @@
 
 <section class="demo demo-top">
   <div class="container">
-    <h2>Layout Elements With Column</h2>
+    <h2>Layout Elements with Column</h2>
     <Row>
       <Col prop="span5@md order0@md">
 {@html highlight(
@@ -430,7 +430,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="text-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
+        <a class="font-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
       </Col>
     </Row>
   </div>
@@ -502,7 +502,7 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
           </div>
         </div>
         <div class="text-center mt-30">
-          <a class="text-medium" data-oo-button="primary" href="docs/components/template" title="Start creating Templates">Start creating Templates</a>
+          <a class="font-medium" data-oo-button="primary" href="docs/components/template" title="Create Templates">Create Templates</a>
         </div>
       </Col>
     </Row>
@@ -558,12 +558,12 @@ $ooLoop: ooPipe(
 `\n<!-- App -->
 <div class="bg-white text-center">
   <time datetime="${datetime}"
-    class="d-block wrapper-tiny bg-lavender color-white text-small text-uppercase">
+    class="d-block wrapper-tiny bg-lavender color-white font-small text-uppercase">
     September 7th, 10am
   </time>
-  <div class="wrapper-small wrapper-medium@md">
+  <div class="wrapper-small wrapper-medium@sm">
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
-    <p>Tokyo, Odaiba, Big sight</p>
+    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
     <button data-oo-button="lavender outline">Join</button>
   </div>
 </div>
@@ -573,7 +573,7 @@ $ooLoop: ooPipe(
         <div class="preview">
           <div class="bg-white text-center">
             <time datetime={datetime}
-              class="d-block wrapper-tiny bg-lavender color-white text-center text-small text-uppercase">
+              class="d-block wrapper-tiny bg-lavender color-white text-center font-small text-uppercase">
               September 7th, 10am
             </time>
             <div class="wrapper-small wrapper-medium@md">
@@ -585,7 +585,7 @@ $ooLoop: ooPipe(
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="text-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
+        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make Utilities">Make Utilities</a>
       </Col>
     </Row>
   </div>
