@@ -32,7 +32,7 @@
 
 <h1>Visibility</h1>
 <p class="font-large">Hide elements on the page.<br>
-<code class="ml-0">.hidden</code> <code>.hidden@<i class="color-secondary">screenName</i></code> <code>.!hidden@<i class="color-secondary">screenName</i></code></p>
+<code class="ml-0">.hidden</code> <code>.hidden@<i class="color-secondary">screenName</i></code> <code>.hidden!@<i class="color-secondary">screenName</i></code></p>
 <p>Based on hidden status, hide elements <strong>from a breakpoint</strong> or <strong>up to a breakpoint</strong> without worrying about its original display.</p>
 
 {@html highlight(
@@ -67,28 +67,28 @@ visibility: (
     <Col><strong>Large</strong><br>1280px</Col>
   </Row>
   <Row prop="gutter-tiny" class="mb-0">
-    <Col class="font-bold font-small">h<span class="!hidden@sm">idden</span></Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
   <Row prop="gutter-tiny" class="mb-0">
-    <Col class="font-bold font-small">h<span class="!hidden@sm">idden</span>@sm</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>@sm</Col>
     <Col class="visible-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
   <Row prop="gutter-tiny" class="mb-0">
-    <Col class="font-bold font-small">h<span class="!hidden@sm">idden</span>@md</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>@md</Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
   </Row>
   <Row prop="gutter-tiny">
-    <Col class="font-bold font-small">h<span class="!hidden@sm">idden</span>@lg</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>@lg</Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
@@ -99,7 +99,7 @@ visibility: (
 <div class="hr"></div>
 
 <h2 id="hide-upto"><a href="docs/helpers/visibility#hide-upto">#</a> Hide up to</h2>
-<p>Use the values from the property <em class="font-bold">pointbreaks</em> of <em>Visibility</em> <code>.!hidden@<i class="color-secondary">screenName</i></code></p>
+<p>Use the values from the property <em class="font-bold">pointbreaks</em> of <em>Visibility</em> <code>.hidden!@<i class="color-secondary">screenName</i></code></p>
 
 <div class="display">
   <Row prop="gutter-tiny" class="font-small mb-0">
@@ -117,21 +117,21 @@ visibility: (
     <Col class="visible-cell"></Col>
   </Row>
   <Row prop="gutter-tiny" class="mb-0">
-    <Col class="font-bold font-small">!h<span class="!hidden@sm">idden</span>@sm</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>!@sm</Col>
     <Col class="hidden-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
   </Row>
   <Row prop="gutter-tiny" class="mb-0">
-    <Col class="font-bold font-small">!h<span class="!hidden@sm">idden</span>@md</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>!@md</Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="visible-cell"></Col>
     <Col class="visible-cell"></Col>
   </Row>
   <Row prop="gutter-tiny">
-    <Col class="font-bold font-small">!h<span class="!hidden@sm">idden</span>@lg</Col>
+    <Col class="font-bold font-small">h<span class="hidden!@sm">idden</span>!@lg</Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>
     <Col class="hidden-cell"></Col>

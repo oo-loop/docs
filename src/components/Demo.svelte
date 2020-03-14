@@ -496,7 +496,7 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 </section>
 
 <section class="demo demo-bottom">
-  <h2>Take Advantages of Utilities</h2>
+  <h2>Take Advantage of Utilities</h2>
   <div class="container">
     <Row>
       <Col prop="span6@sm span5@md order0@sm">
