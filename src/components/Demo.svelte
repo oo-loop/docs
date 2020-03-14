@@ -578,7 +578,7 @@ $ooLoop: ooPipe(
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make Utilities">Make Utilities</a>
+        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
       </Col>
     </Row>
   </div>
