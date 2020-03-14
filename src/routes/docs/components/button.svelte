@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Pagination from '@/components/Pagination.svelte'
   import Html5Toggler from '@/components/Html5Toggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
@@ -194,3 +195,5 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
   <button data-oo-button="primary" class="font-large">Large</button>
   <button data-oo-button="primary large">Variant large</button>
 </div>
+
+<Pagination href="docs/components/form" label="Use Form" />

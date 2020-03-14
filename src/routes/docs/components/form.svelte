@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Pagination from '@/components/Pagination.svelte'
   import Html5Toggler from '@/components/Html5Toggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
@@ -185,8 +186,7 @@ select: (
     borderColor: #222,
     caret: (
       color: #fff,
-      bgcolor: this('select.variants.secondary.borderColor'),
-      border: this('select.variants.secondary.borderColor'),
+      bgcolor: #222,
     )
   ),
 ));`, 'scss')}
@@ -516,3 +516,5 @@ toggle: (
 <label for="radio-error" class="mt-15">Radio with error</label>
 <small class="color-danger">Radio is required</small>
 `} class="mt-5" />
+
+<Pagination href="docs/helpers" label="Use Helper classes" />

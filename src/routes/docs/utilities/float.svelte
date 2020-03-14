@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -90,3 +91,5 @@ $ooLoop: ooSet('float.screens', 'sm');
 
 <hr>
 <p class="info">In manual mode add the mixin <strong>Float()</strong></p>
+
+<Pagination href="docs/utilities/wrapper" label="Use Wrapper utilities" />

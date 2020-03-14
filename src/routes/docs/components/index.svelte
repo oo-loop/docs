@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 
   let html5 = false
@@ -248,3 +249,5 @@ I sometimes get confused between the modifiers and the utilities.</p>
   ),
 ));
 `, 'scss')}
+
+<Pagination href="docs/components/column" label="Use Column" />

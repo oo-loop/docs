@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Pagination from '@/components/Pagination.svelte'
   import Html5Toggler from '@/components/Html5Toggler.svelte'
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
@@ -679,3 +680,5 @@ $ooLoop: ooSet('column.order.screens', (
 /**/
 $ooLoop: ooSet('column.order.screens', 'sm'); // from order0@sm to order11@sm
 `, 'scss')}
+
+<Pagination href="docs/components/template" label="Use Template" />

@@ -1,5 +1,6 @@
 <script>
 	import HeadTitle from '@/components/HeadTitle.svelte';
+	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -13,12 +14,13 @@
 <ul>
 	<li><a href="docs/html-elements" title="HTML elements">HTML formatting</a></li>
 	<li><a href="docs/components/column">Column component</a></li>
+	<li><a href="docs/components/template">Template component</a></li>
 	<li><a href="docs/components/button">Button component</a></li>
 	<li><a href="docs/components/form">Form components</a></li>
 	<li><a href="docs/helpers/container">Container</a></li>
 	<li><a href="docs/helpers/visibility">Visibility helper</a></li>
 	<li><a href="docs/utilities/color">Color utilities</a></li>
-	<li><a href="docs/utilities/text">Text utilities</a></li>
+	<li><a href="docs/utilities/typography">Typography utilities</a></li>
 	<li><a href="docs/utilities/spacing">Spacing utilities</a></li>
 	<li><a href="docs/utilities/float">Float utilities</a></li>
 </ul>
@@ -149,7 +151,7 @@ $ooLoop: ooPipe(
 <hr>
 
 <h3>Copy/past</h3>
-<p>If you like to see everything at once, you can copy/past the <strong>entire</strong> default config map, ovewrite its values and add new ones.
+<p>If you like to see everything at once, you can copy/past the <strong>entire</strong> default config map, override its values and add new ones.
 <strong class="color-danger">Make sure not to remove referred properties!</strong></p>
 {@html highlight(`@import '~loop/scss';
 
@@ -158,3 +160,5 @@ $ooLoop: (
 );
 @include ooCreate();
 `, 'scss')}
+
+<Pagination href="docs/config" title="Read about the Loop config map" label="The Loop config map" />

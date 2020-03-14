@@ -1,5 +1,6 @@
 <script>
 	import HeadTitle from '@/components/HeadTitle.svelte';
+	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -265,4 +266,5 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 } `, 'css')}
 
 <p class="info mt-15">Make sure to <strong>use <span class="color-primary">oo()</span> after the initialization </strong>of the config map to have all the updated data.</p>
-<hr>
+
+<Pagination href="docs/importation" title="Customize your Loop import" label="Use what you need" />

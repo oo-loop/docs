@@ -56,13 +56,13 @@ img {
 
 @keyframes bubble {
 	0% {
-		border-radius: 40%/50% 80%;
-	}
-	50% {
 		border-radius: 30%/50% 40%;
 	}
-	100% {
+	50% {
 		border-radius: 40%/50% 80%;
+	}
+	100% {
+		border-radius: 30%/50% 40%;
 	}
 }
 @keyframes bubble2 {
@@ -88,7 +88,7 @@ img {
 		</Col>
 		<Col prop="self-valign-middle">
 			<h1>Loop CSS</h1>
-			<h2>Flexible and Expressive Development</h2>
+			<h2>Companion for Expressive Development</h2>
 			<p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
 			<code class="large">npm install oo-loop</code>
 		</Col>

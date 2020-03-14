@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
@@ -149,3 +150,5 @@ visibility: (
 
 <hr>
 <p class="info">In manual mode add the mixin <strong>Visibility()</strong></p>
+
+<Pagination href="docs/helpers/list" label="Use List classes" />

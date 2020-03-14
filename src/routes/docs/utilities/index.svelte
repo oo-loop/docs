@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -176,3 +177,5 @@
 
 .radius-large { border-radius: 1.5rem !important }
 `, 'css')}
+
+<Pagination href="docs/utilities/color" label="Use Color utilities" />

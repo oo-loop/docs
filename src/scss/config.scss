@@ -158,8 +158,7 @@ $ooLoop: ooPipe(
       borderColor: #222,
       caret: (
         color: #fff,
-        bgcolor: this('select.variants.secondary.borderColor'),
-        border: this('select.variants.secondary.borderColor'),
+        bgcolor: #222,
       )
     ),
   )),

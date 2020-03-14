@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -53,3 +54,5 @@ $ooLoop: ooAdd('misc', (
 
 <hr>
 <p class="info">In manual mode add the mixin <strong>Misc()</strong></p>
+
+<Pagination href="docs/utilities" label="Make Utilities" />

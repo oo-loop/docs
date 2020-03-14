@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -267,3 +268,5 @@ h6 { font-size: 0.875rem; }
   <h2 class="h3">A h2 heading with the look of an h3</h2>
   <span class="h2">A text with the style of an h2</span>
 </div>
+
+<Pagination href="docs/components" label="Set Components" />

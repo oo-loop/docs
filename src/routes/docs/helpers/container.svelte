@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -39,3 +40,5 @@ The side gutters are also applied.</p>
 
 <hr>
 <p class="info">In manual mode add the mixin <strong>Container()</strong></p>
+
+<Pagination href="docs/helpers/visibility" label="Use Visibility classes" />

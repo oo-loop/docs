@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -100,3 +101,5 @@ list: (
 </div>
 <hr>
 <p class="info">In manual mode add the mixin <strong>List()</strong></p>
+
+<Pagination href="docs/helpers/misc" label="Use Miscellaneous classes" />

@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
+  import Pagination from '@/components/Pagination.svelte'
   import Html5Toggler from '@/components/Html5Toggler.svelte'
   import highlight from '@/utils/highlight.js'
 
@@ -242,3 +243,5 @@ template: (
     <div class="small darker" data-oo-area="c">C</div>
   </div>
 </div>
+
+<Pagination href="docs/components/button" label="Use Button" />

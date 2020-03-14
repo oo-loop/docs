@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -123,3 +124,5 @@ $ooLoop: ooAdd('spacing', (
 `, 'css')}
 <hr>
 <p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>
+
+<Pagination href="docs/utilities/float" label="Use Float utilities" />

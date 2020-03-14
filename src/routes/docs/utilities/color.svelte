@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -79,3 +80,5 @@ color: (
 </div>
 <hr>
 <p class="info">In manual mode add the mixin <strong>Color()</strong></p>
+
+<Pagination href="docs/utilities/typography" label="Use Typography utilities" />

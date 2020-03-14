@@ -1,5 +1,6 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
+  import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -43,3 +44,5 @@
   @copyright
 </footer>
 `, 'html')}
+
+<Pagination href="docs/helpers/container" label="Use Container classes" />

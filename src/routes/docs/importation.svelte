@@ -1,5 +1,6 @@
 <script>
 	import HeadTitle from '@/components/HeadTitle.svelte';
+	import Pagination from '@/components/Pagination.svelte';
 	import Row from '@/components/Loop/Row.svelte';
 	import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
@@ -496,4 +497,4 @@ That will also give you the opportunity to set some global settings.</p>
   </Col>
 </Row>
 
-<hr>
+<Pagination href="docs/html-elements" label="Adjust Html elements" />
