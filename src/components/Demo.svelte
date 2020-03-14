@@ -373,7 +373,7 @@
 
 <section class="demo demo-top">
   <div class="container">
-    <h2>Layout Elements with Column</h2>
+    <h2>Layout Elements Quickly</h2>
     <Row>
       <Col prop="span5@md order0@md">
 {@html highlight(
@@ -496,7 +496,7 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 </section>
 
 <section class="demo demo-bottom">
-  <h2>Create your own set of Utilities</h2>
+  <h2>Take Advantages of Utilities</h2>
   <div class="container">
     <Row>
       <Col prop="span6@sm span5@md order0@sm">

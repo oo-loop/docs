@@ -101,8 +101,8 @@ img {
 	<p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.<br>
 	It offers easy management and access to all your variables in a single config map.</p>
 
-	<h3>Semantic</h3>
-	<p>Loop differentiates components and utilities for more clarity</p>
+	<h3>Separation of concerns</h3>
+	<p>Loop differentiates components and utilities with semantic for more clarity</p>
 	<ul>
 	<li><a href="docs/components" title="Components documentation">data-oo-componentName</a> / <a href="docs/components" title="Components documentation">oo-componentName</a> for component attributes</li>
 	<li><a href="docs/utilities" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>

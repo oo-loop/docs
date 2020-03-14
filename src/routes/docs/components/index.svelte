@@ -39,7 +39,7 @@
 <HeadTitle title="Components"/>
 
 <h1>Components</h1>
-<p class="font-large">Use recurring styles as components with a specific attribute syntax for development purposes.</p>
+<p class="font-large">Use components for a group of recurring styles providing their own attribute.</p>
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 

@@ -5,5 +5,5 @@
 </script>
 
 <svelte:head>
-	<title>{headTitle}Loop CSS • Flexible and expressive development</title>
+	<title>{headTitle}Loop CSS • Companion for Expressive development</title>
 </svelte:head>
