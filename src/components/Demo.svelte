@@ -121,25 +121,11 @@
         display: block;
         height: 40px;
         border-radius: 30% 50%/0% 80%;
-        box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 5px oo('palette.primary');
+        box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 8px oo('palette.primary');
         transform: rotate(1deg);
-        will-change: box-shadow;   
-        animation: wave 5s infinite;
       }
       .preview {
-         box-shadow: 5px 5px 0 0px #1d2d35;
-      }
-
-      @keyframes wave {
-        0% {
-          box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 5px oo('palette.primary');
-        }
-        50% {
-          box-shadow: 10px 40px 0 35px #FFF, 0px 67px 0 12px oo('palette.primary');
-        }
-        100% {
-          box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 5px oo('palette.primary');
-        }
+        box-shadow: 5px 5px 0 0px #1d2d35;
       }
     }
 
@@ -147,7 +133,7 @@
       background-color: #1d2d35;
 
       .preview-template {
-         box-shadow: 5px 5px 0 0px #162429;
+        box-shadow: 5px 5px 0 0px #162429;
       }
 
       &::before {
