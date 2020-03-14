@@ -10,13 +10,18 @@
 
   let el
   let elHeight
+  let elOffsetHeight
   let hash
   let isOn = false
 
   $: label = isOn ? '[–]' : '[+]'
+  $: if (elOffsetHeight === 30 && !isOn) {
+    el.scrollTop = 0
+  }
 
   onMount(() => {
     elHeight = el.scrollHeight
+    elOffsetHeight = el.offsetHeight
   })
 
   page.subscribe(({ path, params, query }) => {
@@ -30,6 +35,9 @@
 
   function onHashChange() {
     hash = location.hash
+  }
+  function onResize() {
+    elOffsetHeight = el.offsetHeight
   }
 
   function isActive(current, pathname) {
@@ -112,7 +120,9 @@
   }
 </style>
 
-<svelte:window on:hashchange={onHashChange} />
+<svelte:window
+  on:resize={onResize}
+  on:hashchange={onHashChange} />
 
 <nav bind:this={el} style={isOn ? `max-height:${elHeight}px` : ''}>
   <span class="trigger" on:click={() => isOn = !isOn}>{label}</span>
