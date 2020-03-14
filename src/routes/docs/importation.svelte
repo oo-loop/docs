@@ -49,6 +49,26 @@ use: (
 ),
 `, 'scss')}
 
+<h3 class="h4 mt-45">Update with ooUse()</h3>
+<p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
+This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
+
+{@html highlight(`@import '~loop/scss';
+
+$ooLoop: ooUse((
+  input: (
+    select: false,
+    checkbox: false,
+    radio: false,
+  ),
+  utilities: (
+    wrapper: false,
+  )
+));
+
+@include ooCreate();
+`, 'scss')}
+
 <h3 class="h4 mt-45">Update with ooCreate</h3>
 <p>Use the <code>ooCreate()</code> config to pass some preferences.</p>
 {@html highlight(
@@ -92,26 +112,6 @@ $ooLoop: ooPipe(
   _set('use.input.checkbox', false),
   _set('use.input.radio', false)
 );
-
-@include ooCreate();
-`, 'scss')}
-
-<h3 class="h4 mt-45">Update with ooUse()</h3>
-<p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
-This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
-
-{@html highlight(`@import '~loop/scss';
-
-$ooLoop: ooUse((
-  input: (
-    select: false,
-    checkbox: false,
-    radio: false,
-  ),
-  utilities: (
-    wrapper: false,
-  )
-));
 
 @include ooCreate();
 `, 'scss')}
