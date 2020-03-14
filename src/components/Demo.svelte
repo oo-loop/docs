@@ -163,9 +163,17 @@
   }
   [class*="preview"] {
     position: relative;
-    padding: 16px;
+    padding: .8rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
     border: 1px solid oo('palette.primary');
     border-radius: 8px;
+
+    @include breakpoint(sm) {
+      padding: 1rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     &::before {
       position: absolute;
@@ -426,7 +434,6 @@ $ooLoop: ooAdd('column.gutter.sizes', (
   <div class="container">
     <h2 class="">Make Responsive Template Easy</h2>
     <Row prop="align-between">
-      <Col></Col>
       <Col prop="span6@md" class="mt-15">
 {@html highlight(
 `// config.scss
@@ -553,10 +560,10 @@ $ooLoop: ooPipe(
     <button data-oo-button="lavender outline">Join</button>
   </div>
 </div>
-`, 'html', 'mt-0 mb-0 wrapper-less')}
+`, 'html', 'mt-0 mb-30 wrapper-less')}
       </Col>
       <Col prop="self-valign-middle order0@sm">
-        <div class="preview">
+        <div class="preview mb-30">
           <div class="bg-white text-center">
             <time datetime={datetime}
               class="d-block wrapper-tiny bg-lavender color-white text-center font-small text-uppercase">
