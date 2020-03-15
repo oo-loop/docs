@@ -176,7 +176,7 @@ That will also give you the opportunity to set some global settings.</p>
 
 <hr>
 <h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-<p><em class="text-uppercase font-small">Mixin</em> - Instantiate <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
