@@ -128,6 +128,9 @@
   <span class="trigger" on:click={() => isOn = !isOn}>{label}</span>
   <ul class="list-unstyle">
     <li>
+      <h4><a class:color-primary={segment === 'installation'} href="docs/installation">Installation</a></h4>
+    </li>
+    <li>
       <h4><a class:color-primary={segment === undefined} href="docs">Getting started</a></h4>
       <ul class="list-unstyle">
         <li><a class:color-primary={isHashActive('#oocreate', hash)} href="docs#oocreate">ooCreate</a></li>
