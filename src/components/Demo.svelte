@@ -388,21 +388,21 @@
 `// config.scss
 @import '~loop/scss';
 
-$ooLoop: ooAdd('palette', (
-  'white': #fff,
-));
-$ooLoop: ooAdd('column.gutter.sizes', (
-  'small': 1rem,
-))
-
 @include ooCreate((
   html5: false,
+
+  palette: (
+    'white': #fff,
+  ),
+  column: (
+    gutter: 1rem,
+  ),
 ));\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
       </Col>
       <Col prop="span12">
 {@html highlight(
 `<!-- App -->
-<div oo-row="gutter-small">
+<div oo-row>
   <div oo-col="fit">
     <img src="orange.jpg" width="100" alt="oranges" />
   </div>

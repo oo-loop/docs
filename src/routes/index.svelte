@@ -31,6 +31,7 @@ h3 {
   align-items: center;
   max-width: 960px;
   min-height: 540px;
+
   img {
     position: absolute;
     top: -110px;
@@ -43,6 +44,10 @@ h3 {
     margin: -35px -#{oo('container.gutter.sm')} 0;
     overflow: visible;
     justify-content: center;
+
+    > div {
+      padding-left: 50px;
+    }
 
     img {
       top: -50px;
@@ -117,8 +122,8 @@ h3 {
 <section class="brand">
   <img alt="" src="logo.svg" height="637">
   <div>
-    <h1>Loop CSS</h1>
-    <h2>Companion for Expressive Development</h2>
+    <h1>Loop</h1>
+    <h2>Dev Companion for<br>Flexible and Expressive CSS</h2>
     <p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
     <code class="large">npm install oo-loop</code>
   </div>
@@ -127,8 +132,10 @@ h3 {
   <a data-oo-button="primary outline" href="/docs">Start</a>
   <div class="hr"></div>
   <h3>Fully customizable</h3>
-  <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.<br>
-  It offers easy management and access to all your variables in a single config map.</p>
+  <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
+  
+  <h3>Single Configuration</h3>
+  <p>No endless variables file, Loop offers easy management and access to all configuration in a single map.</p>
 
   <h3>Separation of concerns</h3>
   <p>Loop differentiates components and utilities with semantic for more clarity</p>

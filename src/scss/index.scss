@@ -1,5 +1,10 @@
 @import 'config';
 
+$ooLoop: ooUse((
+  input: (
+    toggle: true,
+  )
+));
 @include ooCreate();
 
 @import 'code';

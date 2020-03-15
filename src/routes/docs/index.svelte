@@ -24,6 +24,7 @@
 	<li><a href="docs/utilities/spacing">Spacing utilities</a></li>
 	<li><a href="docs/utilities/float">Float utilities</a></li>
 </ul>
+
 <p>Import <strong>Loop framework</strong> into your sass file and <strong>launch it</strong> to start with.</p>
 
 {@html highlight(`@import '~loop/scss'; // Import loop
@@ -31,7 +32,7 @@
 `, 'scss')}
 
 <div class="hr"></div>
-<h2 class="mt-45" id="oocreate">Adjust to your need</h2>
+<h2 class="mt-45" id="adjust">Adjust to your need</h2>
 <p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/config" title="Config Map">config map</a>, modify its properties to match your needs.</p>
 
 <p>It can be done in various ways</p>
@@ -41,7 +42,7 @@
   <li>By coping and pasting the full config file</li>
 </ul>
 
-<h3 class="h4 font-code mt-45">ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
+<h3 class="h4 font-code mt-45" id="oocreate"><a href="docs#oocreate" title="ooCreate() Mixin">#</a> ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
 <p><em class="text-uppercase font-small">Mixin</em> - Launch framework by initializing <a href="docs/config" title="Loop Map">$ooLoop</a> and generate styling.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
@@ -81,7 +82,7 @@ $ooLoop: (
 <section class="info">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration being passed to <strong class="color-primary">ooCreate()</strong>.</section>
 <hr>
 
-<h3 class="h4 font-code" id="ooset">ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
+<h3 class="h4 font-code" id="ooset"><a href="docs#ooset" title="ooSet() Function">#</a> ooSet(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>, <span class="color-primary">$hard</span>:<span class="color-secondary">true</span>)</h3>
 <p><em class="text-uppercase font-small">Function</em> - Set new values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
@@ -107,7 +108,7 @@ $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 
 <hr>
 
-<h3 class="font-code h4" id="ooadd">ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</h3>
+<h3 class="font-code h4" id="ooadd"><a href="docs#ooadd" title="ooAdd() Function">#</a> ooAdd(<span class="color-primary">$path</span>, <span class="color-primary">$value</span>)</h3>
 <p><em class="text-uppercase font-small">Function</em> - Add values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
@@ -130,7 +131,7 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
 <section class="info">When targetting a single value with <strong class="color-primary">ooAdd()</strong>, the string will <strong>become a list</strong>.</section>
 <hr>
 
-<h3 class="font-code h4" id="oopipe">ooPipe(<span class="color-primary">$rules...</span>)</h3>
+<h3 class="font-code h4" id="oopipe"><a href="docs#oopipe" title="ooPipe() Function">#</a> ooPipe(<span class="color-primary">$rules...</span>)</h3>
 <p><em class="text-uppercase font-small">Function</em> - Chain rules of setter and adder to update Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li><strong>$rules</strong> <em class="font-monospace">(list)</em>
@@ -150,8 +151,8 @@ $ooLoop: ooPipe(
 
 <hr>
 
-<h3>Copy/past</h3>
-<p>If you like to see everything at once, you can copy/past the <strong>entire</strong> default config map, override its values and add new ones.
+<h3 id="copy-paste"><a href="docs#copy-paste" title="Copy/paste config">#</a> Copy/paste</h3>
+<p>If you like to see everything at once, you can copy/paste the <strong>entire</strong> default config map, override its values and add new ones.
 <strong class="color-danger">Make sure not to remove referred properties!</strong></p>
 {@html highlight(`@import '~loop/scss';
 
