@@ -147,6 +147,7 @@
         <li><a class:color-primary={isHashActive('#states', hash)} href="docs/config#states"><i>States</i> attribute</a></li>
         <li><a class:color-primary={isHashActive('#this', hash)} href="docs/config#this"><i>This</i> referer</a></li>
         <li><a class:color-primary={isHashActive('#access', hash)} href="docs/config#access">Access data</a></li>
+        <li><a class:color-primary={isHashActive('#store', hash)} href="docs/config#store">Store</a></li>
       </ul>
     </li>
     <li>

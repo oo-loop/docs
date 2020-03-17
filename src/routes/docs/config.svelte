@@ -267,4 +267,64 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 
 <p class="info mt-15">Make sure to <strong>use <span class="color-primary">oo()</span> after the initialization </strong>of the config map to have all the updated data.</p>
 
+<hr>
+<h2 id="store"><a href="docs/config#store">#</a> Store</h2>
+<p>Add your own data to the property <code>store</code> to reuse them anywhere in your project.</p>
+<p>Those data <strong>will not generate any CSS rules</strong>, It's just a way to set and access your project global values during your development.</p>
+
+{@html highlight(
+`$ooLoop: ooSet('store', (
+  fontFamily: (
+    serif: (Georgia, serif)
+  ),
+));
+@include ooCreate();
+`, 'scss')}
+
+{@html highlight(
+`.hero {
+  display: flex;
+  height: 400px;
+  font-family: oo('store.fontFamily.serif');
+}
+`, 'scss')}
+{@html highlight(
+`/* Will generate */
+.hero {
+  display: flex;
+  height: 400px;
+  font-family: Georgia, serif;
+}
+`, 'css')}
+<p>On the contrary <strong>not passing by store may generate extra rules</strong>.</p>
+
+{@html highlight(
+`$ooLoop: ooAdd('typo', (
+  fontFamily: (
+    serif: (Georgia, serif)
+  ),
+));
+@include ooCreate();
+`, 'scss')}
+
+{@html highlight(
+`.hero {
+  display: flex;
+  height: 400px;
+  font-family: oo('typo.fontFamily.serif');
+}
+`, 'scss')}
+{@html highlight(
+`/* Will generate */
+.font-serif { font-family: Georgia, serif; !important }
+
+.hero {
+  display: flex;
+  height: 400px;
+  font-family: Georgia, serif;
+}
+`, 'css')}
+
+
+
 <Pagination href="docs/importation" title="Customize your Loop import" label="Use what you need" />
