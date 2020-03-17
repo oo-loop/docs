@@ -299,8 +299,8 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 <p>On the contrary <strong>not passing by store may generate extra rules</strong>.</p>
 
 {@html highlight(
-`$ooLoop: ooAdd('typo', (
-  fontFamily: (
+`$ooLoop: ooSet('typo.fontFamily', (
+  values: (
     serif: (Georgia, serif)
   ),
 ));
@@ -311,7 +311,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 `.hero {
   display: flex;
   height: 400px;
-  font-family: oo('typo.fontFamily.serif');
+  font-family: oo('typo.fontFamily.values.serif');
 }
 `, 'scss')}
 {@html highlight(
