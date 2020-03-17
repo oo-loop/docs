@@ -1,7 +1,7 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
-  import Html5Toggler from '@/components/Html5Toggler.svelte'
+  import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js'
@@ -63,7 +63,7 @@ input: (
 ),
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<label for="form-input">Input</label>
 <input oo-input id="form-input" class="mb-15" type="text">
 
@@ -103,7 +103,7 @@ input: (
   )
 ));`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<label for="form-input-rounded">Input rounded large</label>
 <input oo-input="rounded large" class="mb-15" id="form-input-rounded" type="text">
 
@@ -139,7 +139,7 @@ select: (
 ),
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<label for="form-select">Select</label>
 <div oo-select class="mb-15">
   <select id="form-select">
@@ -190,7 +190,7 @@ select: (
     )
   ),
 ));`, 'scss')}
-<Html5Toggler content={
+<DataAttrToggler content={
 `<label for="form-select-secondary">Select</label>
 <div oo-select="secondary">
   <select id="form-select-secondary">
@@ -239,7 +239,7 @@ checkbox: (
 )
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-checkbox id="checkbox-a" type="checkbox" value="a">
 <label for="checkbox-a">Checkbox A</label>
 
@@ -255,7 +255,7 @@ checkbox: (
   <label for="checkbox-b">Checkbox B</label>
 </div>
 <p>Set inline checkboxes with <code>oo-checkbox="inline"</code> </p>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-checkbox="inline" id="checkbox-inline-a" type="checkbox" value="a">
 <label for="checkbox-inline-a">Inline A</label>
 
@@ -279,7 +279,7 @@ checkbox: (
   'large': 2rem,
 ));`, 'scss')}
 
-<Html5Toggler  content={
+<DataAttrToggler  content={
 `<input oo-checkbox="medium " id="checkbox-medium-a" type="checkbox" value="a">
 <label for="checkbox-medium-a">Checkbox Medium A</label>
 
@@ -300,7 +300,7 @@ checkbox: (
 `$ooLoop: ooSet('checkbox.screens', (sm, md));
 // creating default@sm default@md medium@sm medium@md large@sm large@md`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox">
 <label for="checkbox-responsive">Responsive Checkbox</label>
 `} />
@@ -336,7 +336,7 @@ radio: (
 ),
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-radio id="radio-a" name="radio" type="radio" value="a">
 <label for="radio-a">radio A</label>
 
@@ -352,7 +352,7 @@ radio: (
   <label for="radio-b">Radio B</label>
 </div>
 <p>Set inline radios with <code>oo-radio="inline"</code> </p>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-radio="inline" id="radio-inline-a" name="radio-inline" type="radio" value="a">
 <label for="radio-inline-a">Inline A</label>
 
@@ -374,7 +374,7 @@ radio: (
   'large': 2rem,
 ));`, 'scss')}
 
-<Html5Toggler  content={
+<DataAttrToggler  content={
 `<input oo-radio="large" id="radio-large-a" type="radio" value="a">
 <label for="radio-large-a">radio Large A</label>
 `} />
@@ -389,7 +389,7 @@ radio: (
 `$ooLoop: ooSet('radio.screens', (md));
 // creating default@md large@md`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-radio="large default@md" id="radio-responsive" type="radio" value="">
 <label for="radio-responsive">Responsive radio</label>
 `} />
@@ -430,7 +430,7 @@ toggle: (
 ),
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<input oo-toggle id="toggle-a" type="checkbox" value="a">
 <label for="toggle-a">Toggle A</label>
 `} />
@@ -446,7 +446,7 @@ toggle: (
   'large': 2rem,
 ));`, 'scss')}
 
-<Html5Toggler  content={
+<DataAttrToggler  content={
 `<input oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
 <label for="toggle-large-a">Toggle Large A</label>
 `} />
@@ -487,7 +487,7 @@ toggle: (
   <label for="radio-error" class="mt-15">Radio with error</label>
   <small class="color-danger">Radio is required</small>
 </div>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<p><strong>Example of form with required elements throwing an error
 <br><em>(use of border-danger utility)</em></strong></p>
 

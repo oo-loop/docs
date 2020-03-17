@@ -43,7 +43,7 @@
 <section class="{classes}">
   <div class="toggler"> 
     <input data-oo-checkbox="small" type="checkbox" bind:checked={isChecked}>
-    <label on:click={() => isChecked = !isChecked}>html5</label>
+    <label on:click={() => isChecked = !isChecked}>dataAttr</label>
   </div>
   <div bind:this={code}></div>
 </section>

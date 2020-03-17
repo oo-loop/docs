@@ -1,7 +1,7 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
-  import Html5Toggler from '@/components/Html5Toggler.svelte'
+  import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
   import highlight from '@/utils/highlight.js'
@@ -89,7 +89,7 @@
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<!-- Auto column -->
 <div oo-row>
   <div oo-col></div>
@@ -152,7 +152,7 @@ column: (
 </table>
 
 <p>Remember that Loop is taking the <strong>mobile first approach</strong>. Set the main sizes for root (mobile) and adjust them going towards bigger devices.</p>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="span12 span6@sm span4@md span3@lg"></div>
   <div oo-col="span12 span6@sm span8@md span9@lg"></div>
@@ -174,7 +174,7 @@ column: (
 <h2 id="single"><a href="docs/components/column#single">#</a> Single column</h2>
 <p>Set a specific size for the content of the page or center it with a single html element.
 <br>(<strong>no need for an extra div</strong> with the <code>oo-row</code> atttribute).</p>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-col="span10 span9@sm span7@md self-align-center">
   <h3>Consectetur adipisicing elit.</h3>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error laudantium totam ab expedita necessitatibus!</p>
@@ -200,7 +200,7 @@ column: (
   ),
 ),`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="fit">fit</div>
   <div oo-col>auto</div>
@@ -218,7 +218,7 @@ column: (
 
 <h4 class="mt-45">Use it to create a media component</h4>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="fit">
     <img src="blue-square.jpg" width="100" height="100"/>
@@ -245,7 +245,7 @@ column: (
 <h2 id="clear"><a href="docs/components/column#clear">#</a> Clear column</h2>
 <p>Start a new row within the flow of columns. <code>col="clear"</code></p>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="span2">1</div>
   <div oo-col>2</div>
@@ -284,7 +284,7 @@ column: (
 ),`, 'scss')}
 <p class="mt-30">The gutter <em>default</em> size does not require to be specified inside the <code>row</code> attribute as it will be applied automatically.</p>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col></div>
   <div oo-col></div>
@@ -322,7 +322,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
     md: rem(50),
   ),
 ))`, 'scss')}
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row="${gutterProp}">
   <div oo-col></div>
   <div oo-col></div>
@@ -365,7 +365,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 // Generating responsive variants:
 // gutter-less@sm gutter-less@md gutter-medium@sm gutter-medium@md
 `, 'scss')}
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row="gutter-less@sm gutter-medium@md">
   <div oo-col></div>
   <div oo-col></div>
@@ -394,7 +394,7 @@ column: (
 <h2 id="stretch"><a href="docs/components/column#stretch">#</a> Stretch children height</h2>
 <p>Match the height of each column child elements. <code>row="stretch"</code></p>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row${isStretch ? '="stretch"' : ''}>
   <div oo-col>
     <div class="child">More content<br>in<br>that column</div>
@@ -436,7 +436,7 @@ column: (
 $ooLoop: ooSet('column.alignment.screens', 'lg'); // list can be passed
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row="${alignmentProp}">
   <div oo-col="span5"></div>
   <div oo-col="span5"></div>
@@ -511,7 +511,7 @@ column: (
   ),
 ),`, 'scss')}
 <p class="mt-30">Setting the config <strong>screens</strong> property will offer you the same options with the responsive variants <code>self-<i class="color-secondary">alignment</i>@<i class="color-secondary">screenName</i></code>.</p>
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="span5 self-align-${selfAlignmentSelectedA}"></div>
   <div oo-col="span5 self-valign-${selfValignmentSelectedB} self-align-${selfAlignmentSelectedB}"></div>
@@ -581,7 +581,7 @@ column: (
 $ooLoop: ooSet('column.childAlignment.use', true);
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row="stretch">
   <div oo-col="span6">
     <br><br><br><br>
@@ -643,7 +643,7 @@ column: (
 $ooLoop: ooSet('column.order.use', true);
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-row>
   <div oo-col="span6 span3@sm order2@lg">one</div>
   <div oo-col="span6 span3@sm order0@lg">two</div>

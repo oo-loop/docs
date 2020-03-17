@@ -1,7 +1,7 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
-  import Html5Toggler from '@/components/Html5Toggler.svelte'
+  import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import highlight from '@/utils/highlight.js'
 
   let gap = ['default', 'less', 'small']
@@ -73,7 +73,7 @@ template: (
   ),
 ));`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<section oo-template>
   <header oo-area="header">Header</header>
   <main oo-area="main">Main</main>
@@ -135,7 +135,7 @@ template: (
   )
 ));`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-template="abc">
   <div oo-area="a">A</div>
   <div oo-area="b">B</div>
@@ -180,7 +180,7 @@ template: (
   ),
 ));`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-template="home${gapProp}${isVgapless ? ' vgap-less' : ''}">
  <div oo-area="header">Header</div>
   <div oo-area="main">Main</div>
@@ -229,7 +229,7 @@ template: (
 // - vgap-less@sm vgap-less@lg
 `, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<div oo-template="abc gap-less@sm gap-default@lg vgap-less@lg">
   <div oo-area="a">A</div>
   <div oo-area="b">B</div>

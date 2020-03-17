@@ -389,7 +389,7 @@
 @import '~loop/scss';
 
 @include ooCreate((
-  html5: false,
+  dataAttr: false,
 
   palette: (
     'white': #fff,
@@ -464,7 +464,7 @@ $ooLoop: ooSet('template.areas', (
 $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 
 @include ooCreate((
-  html5: false,
+  dataAttr: false,
 ));`, 'scss', 'mt-0 mb-5 wrapper-less')}
 {@html highlight(
 `\n<!-- App -->

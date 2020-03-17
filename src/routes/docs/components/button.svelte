@@ -1,7 +1,7 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
-  import Html5Toggler from '@/components/Html5Toggler.svelte'
+  import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js'
@@ -54,7 +54,7 @@ button: (
 `, 'scss')}
 
 <Row prop="stretch">
-  <Col><Html5Toggler content={
+  <Col><DataAttrToggler content={
 `<!-- basic button -->
 <button oo-button>Button</button>
 `} class="mt-0 mb-0"/></Col>
@@ -80,7 +80,7 @@ button: (
   outline: false,
 ),
 `, 'scss')}
-<Html5Toggler content={
+<DataAttrToggler content={
 `<button oo-button>Base</button>
 <a oo-button="primary" href="#">Primary</a>
 <input oo-button="secondary" type="button" value="Secondary">
@@ -113,7 +113,7 @@ button: (
 <h3>Outline</h3>
 <p>An outline version of each color available. <code>oo-button="<i>colorName</i> outline"</code></p>
 {@html highlight(`$ooLoop: ooSet('button.outline', true);`, 'scss')}
-<Html5Toggler content={
+<DataAttrToggler content={
 `<button oo-button="primary outline">Success</button>
 <button oo-button="success outline">Success</button>
 <button oo-button="nectarine outline">Nectarine</button>
@@ -163,7 +163,7 @@ button: (
   ),
 ));`, 'scss')}
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<button oo-button="primary full">Primary full</button>
 <button oo-button="primary large">Primary large</button>
 <button oo-button="secondary tag">Secondary tag</button>
@@ -181,7 +181,7 @@ button: (
 <p>While the size of the button can be modified from <a href="docs/components/button#variants" title="Button variants">variants</a>.
 It is also possible to <strong>use text-utilites to quickly achieve some adjustments</strong>.</p>
 
-<Html5Toggler content={
+<DataAttrToggler content={
 `<button oo-button="primary" class="font-tiny">Tiny</button>
 <button oo-button="primary">Default</button>
 <button oo-button="primary" class="font-medium">Medium</button>

@@ -3,8 +3,8 @@
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 
-  let html5 = false
-  $: attr = html5 ? 'data-oo' : 'oo'
+  let dataAttr = false
+  $: attr = dataAttr ? 'data-oo' : 'oo'
 </script>
 
 <style lang="scss">
@@ -43,13 +43,13 @@
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
-<p>By default, Loop components are used along with the <em>data attribute</em> <code>data-oo-componentName</code> to be a valid html5 attribute.
-You could turn off the html5 validity and have a shorter name for speed purposes<code>oo-componentName</code> <i>(Which was the case in Loop v0.4)</i></p>
+<p>By default, Loop components are used along with the <em>data</em> attribute <code>data-oo-componentName</code> to be a fully-valid HTML attribute.
+You may still turn off the option to remove verbosity and get a shorter name for speed purposes <code>oo-componentName</code> <i>(Which was the case in Loop v0.4)</i></p>
 
-<button class="float-right mb-5" data-oo-button on:click="{() => html5 = !html5}">Toggle Html5</button>
+<button class="float-right mb-5" data-oo-button on:click="{() => dataAttr = !dataAttr}">Toggle dataAttr</button>
 {@html highlight(
 `@include ooCreate((
-  html5: ${html5}, // ${html5 ? 'default': 'setting'} ${attr}-componentName
+  dataAttr: ${dataAttr}, // ${dataAttr ? 'default': 'setting'} ${attr}-componentName
 ));
 `, 'scss')}
 

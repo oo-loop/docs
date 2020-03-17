@@ -52,7 +52,6 @@
 {@html highlight(`// Loop default config
 
 $ooLoop: (
-  html5: true,
   breakpoints: (
     xs: 30em,     // 480px
     sm: 37.500em, // 600px
