@@ -269,7 +269,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 
 <hr>
 <h2 id="store"><a href="docs/config#store">#</a> Store</h2>
-<p>Add your own data to the property <code>store</code> to reuse them anywhere in your project.</p>
+<p>Add your own data to the config map through the property <code>store</code> to reuse them anywhere in your project.</p>
 <p>Those data <strong>will not generate any CSS rules</strong>, It's just a way to set and access your project global values during your development.</p>
 
 {@html highlight(

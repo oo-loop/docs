@@ -109,6 +109,15 @@
       background-color: inherit;
     }
 
+    &::before {
+      margin-top: -180px;
+      margin-bottom: 90px;
+      content: '';
+      display: block;
+      height: 90px;
+      border-radius: 100% 100%/150% 70%;
+    }
+
     &-top {
       margin-top: 90px;
       background-color: #263943;
@@ -117,6 +126,8 @@
         top: -70px;
         left: 0;
         right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         content: '';
         display: block;
         height: 40px;
@@ -131,33 +142,25 @@
 
     &-middle {
       background-color: #1d2d35;
-
       .preview-template {
         box-shadow: 5px 5px 0 0px #162429;
       }
-
       &::before {
-        margin-top: -180px;
-        margin-bottom: 90px;
-        content: '';
-        display: block;
-        height: 90px;
         border-radius: 100% 70%/130% 30%;
         box-shadow: 10px 40px 0 35px #263943;
       }
     }
+    &-middle2 {
+      background-color: #1a2529;
+      &::before {
+        box-shadow: 10px 40px 0 35px #1d2d35;
+      }
+    }
     &-bottom {
       padding-bottom: 4rem;
-      background-color: #1a2529;
-
+      background-color: #141e21;
       &::before {
-        margin-top: -180px;
-        margin-bottom: 90px;
-        content: '';
-        display: block;
-        height: 90px;
-        border-radius: 100% 100%/150% 70%;
-        box-shadow: 10px 40px 0 35px #1d2d35;
+        box-shadow: 10px 40px 0 35px #1a2529;
       }
     }
   }
@@ -385,7 +388,7 @@
     <Row>
       <Col prop="span5@md order0@md">
 {@html highlight(
-`// config.scss
+`// _config.scss
 @import '~loop/scss';
 
 @include ooCreate((
@@ -436,7 +439,7 @@
     <Row prop="align-between">
       <Col prop="span6@md" class="mt-15">
 {@html highlight(
-`// config.scss
+`// _config.scss
 @import '~loop/scss';
 
 $ooLoop: ooSet('template.areas', (
@@ -502,13 +505,13 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
   </div>
 </section>
 
-<section class="demo demo-bottom">
+<section class="demo demo-middle2">
   <h2>Take Advantage of Utilities</h2>
   <div class="container">
     <Row>
       <Col prop="span6@sm span5@md order0@sm">
 {@html highlight(
-`// config.scss
+`// _config.scss
 @import '~loop/scss';
 
 $ooLoop: ooPipe(
@@ -535,14 +538,14 @@ $ooLoop: ooAdd('utilities', (
       'wide': .5px,
     ),
   )
-))
+));
 
-$ooLoop: ooPipe(
-  _set('button.outline', true),
-  _add('button.props', (
+$ooLoop: ooAdd('button', (
+  props: (
     border-radius: 50em,
-  )
-);
+  ),
+  outline: true,
+));
 
 @include ooCreate();\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
       </Col>
@@ -581,5 +584,52 @@ $ooLoop: ooPipe(
         <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
       </Col>
     </Row>
+  </div>
+</section>
+
+<section class="demo demo-bottom">
+  <h2>Simple Data Access</h2>
+  <div class="container">
+    <Col prop="span6@sm span5@md self-align-center">
+{@html highlight(
+`// style.scss
+.hero {
+  padding: oo('container.gutter.rt');
+  display: flex;
+  min-height: 300px; 
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: oo('palette.primary');
+
+  @include breakpoint(sm) {
+    padding: oo('container.gutter.sm');
+    text-align: left;
+  }
+}
+`, 'scss', 'mt-0 mb-0 wrapper-less')}
+{@html highlight(
+`/** Generating style.css **/
+.hero {
+  padding: 1rem;
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: #28a6c7;
+}
+@media (min-width: 37.5em) {
+  .hero {
+    padding: 1.5rem;
+    text-align: left;
+  }
+}
+`, 'css', 'wrapper-less')}
+
+      <p class="text-center mt-45">
+        <a class="font-medium" data-oo-button="primary" href="docs/config" title="Learn about Loop config">Learn about Loop config</a>
+      </p>
+    </Col>
   </div>
 </section>

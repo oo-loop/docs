@@ -156,7 +156,3 @@ h3 {
   <h3>Philosophy</h3>
   <p>Loop is not a framework providing any possible existing components. It's more like a companion for CSS development, encouraging the use and creation of utilities while considering recurring components. Loop works towards flexibility and expressive CSS.</p>
 </Col>
-
-
-
-

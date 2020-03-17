@@ -4,9 +4,6 @@
   import highlight from '@/utils/highlight.js';
 </script>
 
-<style>
-</style>
-
 <HeadTitle title="Getting Started"/>
 
 <h1>Start with Loop</h1>
