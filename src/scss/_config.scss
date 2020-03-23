@@ -247,7 +247,17 @@ $ooLoop: ooPipe(
     display: (
       prefix: 'd',
       values: 'block'
-    )
+    ),
+    overflow: (
+      values: 'hidden',
+    ),
+    shape: (
+      property: 'border-radius',
+      values: (
+        'squircle': 1em,
+        'stadium': 50em,
+      ),
+    ),
   )),
 );
 

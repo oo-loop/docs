@@ -1,0 +1,71 @@
+
+@include ooComponent('event') {
+  $color: oo('palette.primary');
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  @include breakpoint(sm) {
+    padding: 1.5rem;
+  }
+
+  time {
+    padding: .5rem;
+    margin: -1rem -1rem 1rem;
+    display: block;
+    color: #fff;
+    font-size: rem(14);
+    text-transform: uppercase;
+    background-color: $color;
+    @include breakpoint(sm) {
+      margin: -1.5rem -1.5rem 1.5rem;
+    }
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
+    letter-spacing: .5px;
+  }
+  button {
+    @extend [data-oo-button];
+    color: $color;
+    border-color: inherit;
+    border-radius: 50em;
+
+    &:hover, &:focus {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+@include ooComponentVariant('event', 'past') {
+  $color: oo('palette.secondary');
+  time { background-color: $color; }
+  button {
+    color: $color;
+    &:hover, &:focus {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+@include ooComponentVariant('event', 'cancel') {
+  $color: #f15f63;
+  time { background-color: $color; }
+  h3::before {
+    margin-bottom: 4px;
+    display: block;
+    content: '!!!Cancelled!!!';
+    font-size: 1rem;
+    color: $color;
+  }
+  button {
+    color: $color;
+    &:hover, &:focus {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}

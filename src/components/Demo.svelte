@@ -90,6 +90,12 @@
      color: #fff;
      text-align: center;
    }
+
+   .hr {
+    // border-color: oo('palette.primary');
+    border-radius: 50%;
+    height: 20px;
+  }
   .demo {
     position: relative;
     padding-top: 5rem;
@@ -138,6 +144,10 @@
       .preview {
         box-shadow: 5px 5px 0 0px #1d2d35;
       }
+      & + .demo::before {
+        border-radius: 100% 70%/130% 30%;
+        box-shadow: 10px 40px 0 35px #263943;
+      }
     }
 
     &-middle {
@@ -145,22 +155,31 @@
       .preview-template {
         box-shadow: 5px 5px 0 0px #162429;
       }
-      &::before {
-        border-radius: 100% 70%/130% 30%;
-        box-shadow: 10px 40px 0 35px #263943;
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #1d2d35;
       }
     }
     &-middle2 {
       background-color: #1a2529;
-      &::before {
-        box-shadow: 10px 40px 0 35px #1d2d35;
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #1a2529;
+      }
+    }
+    &-text {
+      background-color: #fff;
+      p {
+        position: relative;
+        z-index: 1;
+      }
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #fff;
       }
     }
     &-bottom {
       padding-bottom: 4rem;
       background-color: #141e21;
-      &::before {
-        box-shadow: 10px 40px 0 35px #1a2529;
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #141e21;
       }
     }
   }
@@ -377,16 +396,13 @@
     position: relative;
     z-index: 5;
   }
-  [data-oo-button~=lavender] {
-    border-radius: 50em;
-  }
 </style>
 
 <section class="demo demo-top">
   <div class="container">
-    <h2>Layout Elements Quickly</h2>
-    <Row>
-      <Col prop="span5@md order0@md">
+    <h2>Quick Element Layout</h2>
+    <Row prop="align-center">
+      <Col prop="span4@md order0@md">
 {@html highlight(
 `// _config.scss
 @import '~loop/scss';
@@ -402,7 +418,7 @@
   ),
 ));\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
       </Col>
-      <Col prop="span12">
+      <Col prop="span12 span10@md">
 {@html highlight(
 `<!-- App -->
 <div oo-row>
@@ -415,13 +431,13 @@
   </div>
 </div>`, 'html', 'mt-0 mb-0 wrapper-less')}
       </Col>
-      <Col prop="self-valign-middle order0@md">
+      <Col prop="span6@md self-valign-middle order0@md">
         <div class="preview mt-30  mb-30">
           <Row prop="gutter-small">
             <Col prop="fit"><img src="orange.jpg" width="100" alt="oranges" /></Col>
             <Col class="color-white">
               <h3 class="mt-10">Orange <small class="color-secondary">/ˈɒrɪn(d)ʒ/</small></h3>
-              <p class="mb-0">A large round juicy citrus fruit with a tough bright reddish-yellow rind.</p>
+              <p class="mb-0">A large round juicy citrus fruit with a tough bright reddish-yellow{@html '&nbsp;'}rind.</p>
             </Col>
           </Row>
         </div>
@@ -435,7 +451,7 @@
 
 <section class="demo demo-middle">
   <div class="container">
-    <h2 class="">Make Responsive Template Easy</h2>
+    <h2 class="">Simple Responsive Template Design</h2>
     <Row prop="align-between">
       <Col prop="span6@md" class="mt-15">
 {@html highlight(
@@ -464,7 +480,7 @@ $ooLoop: ooSet('template.areas', (
     ),
   )
 ));
-$ooLoop: ooSet('template.gap.sizes.default', 1rem);
+$ooLoop: ooSet('template.gap', 1rem);
 
 @include ooCreate((
   dataAttr: false,
@@ -506,91 +522,10 @@ $ooLoop: ooSet('template.gap.sizes.default', 1rem);
 </section>
 
 <section class="demo demo-middle2">
-  <h2>Take Advantage of Utilities</h2>
+  <h2>Easy Use of Config Data</h2>
   <div class="container">
-    <Row>
-      <Col prop="span6@sm span5@md order0@sm">
-{@html highlight(
-`// _config.scss
-@import '~loop/scss';
-
-$ooLoop: ooPipe(
-  _add('palette', (
-    'lavender': #a172bf,
-    'white': #fff,
-  ),
-  _add('wrapper', (
-    values: (
-      'tiny': .5rem
-    ),
-    screens: 'sm'
-  )),
-);
-
-$ooLoop: ooAdd('utilities', (
-  display: (
-    prefix: 'd',
-    values: 'block'
-  ),
-  letterSpacing: (
-    prefix: 'text',
-    values: (
-      'wide': .5px,
-    ),
-  )
-));
-
-$ooLoop: ooAdd('button', (
-  props: (
-    border-radius: 50em,
-  ),
-  outline: true,
-));
-
-@include ooCreate();\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
-      </Col>
-      <Col prop="span12">
-{@html highlight(
-`\n<!-- App -->
-<div class="bg-white text-center">
-  <time datetime="${datetime}"
-    class="d-block wrapper-tiny bg-lavender color-white font-small text-uppercase">
-    September 7th, 10am
-  </time>
-  <div class="wrapper-small wrapper-medium@sm">
-    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
-    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-    <button data-oo-button="lavender outline">Join</button>
-  </div>
-</div>
-`, 'html', 'mt-0 mb-30 wrapper-less')}
-      </Col>
-      <Col prop="self-valign-middle order0@sm">
-        <div class="preview mb-30">
-          <div class="bg-white text-center">
-            <time datetime={datetime}
-              class="d-block wrapper-tiny bg-lavender color-white text-center font-small text-uppercase">
-              September 7th, 10am
-            </time>
-            <div class="wrapper-small wrapper-medium@md">
-              <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
-              <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-              <button data-oo-button="lavender outline">Join</button>
-            </div>
-          </div>
-        </div>
-      </Col>
-      <Col prop="span12" class="text-center">
-        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
-      </Col>
-    </Row>
-  </div>
-</section>
-
-<section class="demo demo-bottom">
-  <h2>Simple Data Access</h2>
-  <div class="container">
-    <Col prop="span6@sm span5@md self-align-center">
+    <Row prop="align-center">
+      <Col prop="span12 fit@sm self-valign-middle">
 {@html highlight(
 `// style.scss
 .hero {
@@ -607,7 +542,12 @@ $ooLoop: ooAdd('button', (
     text-align: left;
   }
 }
-`, 'scss', 'mt-0 mb-0 wrapper-less')}
+`, 'scss', 'mt-0 wrapper-less')}
+      </Col>
+      <Col prop="span2 self-valign-middle" class="hidden!@md text-center">
+        <span class="color-secondary h2 font-light">=></span>
+      </Col>
+      <Col prop="span12 span4@sm span3@md">
 {@html highlight(
 `/** Generating style.css **/
 .hero {
@@ -625,11 +565,109 @@ $ooLoop: ooAdd('button', (
     text-align: left;
   }
 }
-`, 'css', 'wrapper-less')}
-
-      <p class="text-center mt-45">
-        <a class="font-medium" data-oo-button="primary" href="docs/config" title="Learn about Loop config">Learn about Loop config</a>
-      </p>
+`, 'css', 'mt-0 wrapper-less')}
+      </Col>
+      <Col prop="span12">
+        <p class="text-center mt-45">
+          <a class="font-medium" data-oo-button="primary" href="docs/config" title="Learn about Loop config">Learn about Loop config</a>
+        </p>
+      </Col>
+    </Row>
+  </div>
+</section>
+<section class="demo demo-text">
+  <div class="container">
+    <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
+      <p class="font-large mt-45 mb-0">
+        Loop is not a framework providing any possible existing components. It's more like a companion for CSS development.<br><br>
+        Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a> while considering <a href="docs/components" title="Create your own components">recurring components</a>.</p>
     </Col>
   </div>
+</section>
+<section class="demo demo-middle2">
+  <br>
+  <h2>Take Advantage Utilities</h2>
+  <div class="container">
+    <Row prop="align-evenly">
+      <Col prop="fit@sm">
+{@html highlight(
+`// _config.scss
+@import '~loop/scss';
+
+$ooLoop: ooPipe(
+  _add('palette', (
+    'lavender': #a172bf,
+    'white': #fff,
+  ),
+
+  _add('wrapper', (
+    values: (
+      'tiny': .5rem
+    ),
+    screens: 'sm'
+  )),
+
+  _set('utilities', (
+    display: (
+      prefix: 'd',
+      values: 'block'
+    ),
+    letterSpacing: (
+      prefix: 'text',
+      values: (
+        'wide': .5px,
+      ),
+    ),
+    overflow: (
+      values: (
+        'hidden',
+      )
+    ),
+    shape: (
+      property: 'border-radius',
+      values: (
+        'squircle': 1em,
+        'stadium': 50em,
+      ),
+    ),
+  ))
+);
+@include ooCreate();\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="span7@sm span6@md">
+{@html highlight(
+`<!-- App -->
+<div class="bg-white text-center shape-squircle overflow-hidden">
+  <time datetime="${datetime}"
+    class="d-block wrapper-tiny bg-lavender color-white font-small text-uppercase">
+    September 7th, 10am
+  </time>
+  <div class="wrapper-small wrapper-medium@sm">
+    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+    <button class="shape-stadium" data-oo-button="lavender outline">Join</button>
+  </div>
+</div>\n
+`, 'html', 'mt-0 mb-45 wrapper-less')}
+        <div class="preview mb-30">
+          <div class="bg-white text-center shape-squircle overflow-hidden">
+            <time datetime={datetime}
+              class="d-block wrapper-tiny bg-lavender color-white text-center font-small text-uppercase">
+              September 7th, 10am
+            </time>
+            <div class="wrapper-small wrapper-medium@md">
+              <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+              <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+              <button class="shape-stadium" data-oo-button="lavender outline">Join</button>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col prop="span12" class="text-center">
+        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
+      </Col>
+    </Row>
+</section>
+<section class="demo demo-bottom">
+  <h2>Turn recurring Style into Component</h2>
 </section>

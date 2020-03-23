@@ -58,9 +58,7 @@ h3 {
   }
 }
 
-
 .hr {
-  // border-color: oo('palette.primary');
   border-radius: 50%;
   height: 20px;
 }
@@ -73,15 +71,17 @@ h3 {
   width: 180px;
   font-size: 1.3rem;
   line-height: 60px;
+  color: #f5f5f5;
   text-transform: uppercase;
-  box-shadow: inset 2px 1px 0px #fff, inset -2px -1px 0px #fff, inset 4px 2px 0px #6cd7f8, inset -4px -2px 0px #6cd7f8;
+  background-color: #263940;
   border-radius: 40%/50% 80%;
   border-color: oo('palette.primary');
+  box-shadow: inset 2px 1px 0px #fff, inset -2px -1px 0px #fff, inset 4px 2px 0px #6cd7f8, inset -4px -2px 0px #6cd7f8;
   animation: bubble 5s infinite, bubble2 10s infinite;
 
-  &:not(:hover) {
-    color: #f5f5f5;
-    background-color: #263940;
+  &:hover, &:focus {
+    color: #fff;
+    background-color: oo('palette.primary');
   }
 
   @include breakpoint(sm) {
@@ -129,7 +129,7 @@ h3 {
   </div>
 </section>
 <Col prop="span8@md self-align-center">
-  <a data-oo-button="primary outline" href="/docs">Start</a>
+  <a data-oo-button href="/docs">Start</a>
   <div class="hr"></div>
   <h3>Fully customizable</h3>
   <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
