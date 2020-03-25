@@ -580,13 +580,13 @@ $ooLoop: ooSet('template.gap', 1rem);
     <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
       <p class="font-large mt-45 mb-0">
         Loop is not a framework providing any possible existing components. It's more like a companion for CSS development.<br><br>
-        Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a> while considering <a href="docs/components" title="Create your own components">recurring components</a>.</p>
+        Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a> while <a href="docs/components" title="Create your own components">considering components</a> for recurring usage.</p>
     </Col>
   </div>
 </section>
 <section class="demo demo-middle2">
   <br>
-  <h2>Take Advantage Utilities</h2>
+  <h2>Take Advantage of Utilities<br><small>(Less css, More html)</small></h2>
   <div class="container">
     <Row prop="align-evenly">
       <Col prop="fit@sm">
@@ -669,5 +669,166 @@ $ooLoop: ooPipe(
     </Row>
 </section>
 <section class="demo demo-bottom">
-  <h2>Turn recurring Style into Component</h2>
+  <div class="container">
+    <h2>Turn recurring style into Component<br><small>(More css, Less html)</small></h2>
+    <Row prop="align-evenly">
+      <Col prop="fit@sm">
+      <h3 class="text-center color-white font-light">From the config</h3>
+{@html highlight(
+`// _config.scss
+@import '~loop/scss';
+
+$ooLoop: ooSet('palette.alert': #f15f63);
+$ooLoop: ooSet('button.outline', true);
+$ooLoop: ooSet('button.variants.stadium', (
+  border-radius: 50em,
+);
+
+$ooLoop: ooSet('components', ('event': (
+  props: (
+    padding: (
+      rt: 1rem,
+      sm: 1.5rem,
+    ),
+    overflow: hidden,
+    text-align: center,
+    background-color: #fff,
+    border-radius: 1em,
+    '>': (
+      'time': (
+        padding: .5rem,
+        margin: (
+          rt: -1rem -1rem 1rem,
+          sm: -1.5rem -1.5rem 1.5rem,
+        ),
+        display: block,
+        color:#fff,
+        font-size: rem(14),
+        text-transform: uppercase,
+        background-color: this('palette.primary'),
+      ),
+      'h3': (
+        margin: 0,
+      ),
+      'p': (
+        letter-spacing: .5px,
+      ),
+    ),
+  ),
+  variants: (
+    'alert': (
+      '>': (
+        'time': (
+          background-color: this('palette.alert')
+        ),
+        'h3::before': (
+          margin-bottom: 4px,
+          display: block,
+          content: '!!!Cancelled!!!',
+          font-size: 1rem,
+          color: this('palette.alert')
+        )
+      )
+    )
+  ),
+)));
+
+@include ooCreate((dataAttr: false));\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="fit@sm">
+         <h3 class="text-center color-white font-light">From the mixin</h3>
+{@html highlight(`// _config.scss
+@import '~loop/scss';
+
+$ooLoop: ooSet('palette.alert': #f15f63);
+$ooLoop: ooSet('button.outline', true);
+$ooLoop: ooSet('button.variants.stadium', (
+  border-radius: 50em,
+);
+
+@include ooCreate((dataAttr: false));
+
+// ----
+// component/_event.scss
+@include ooComponent('event') {
+  padding: 1rem;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 1em;
+
+  @include breakpoint(sm) {
+    padding: 1.5rem;
+  }
+
+  time {
+    padding: .5rem;
+    margin: -1rem -1rem 1rem;
+    display: block;
+    color: #fff;
+    font-size: rem(14);
+    text-transform: uppercase;
+    background-color: oo('palette.primary');
+
+    @include breakpoint(sm) {
+      margin: -1.5rem -1.5rem 1.5rem;
+    }
+  }
+
+  h3 { margin: 0; }
+  p { letter-spacing: .5px; }
+}
+
+@include ooComponentVariant('event', 'alert') {
+  time {
+    background-color: oo('palette.alert');
+  }
+  h3::before {
+    margin-bottom: 4px;
+    display: block;
+    content: '!!!Cancelled!!!';
+    font-size: 1rem;
+    color: oo('palette.alert');
+  }
+}
+
+// ----
+// index.scss
+@import 'config';
+@import 'components/event';`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="clear"></Col>
+      <Col prop="span7@sm span6@md">
+{@html highlight(
+`<!-- App -->
+<div oo-event>
+  <time datetime="${datetime}">September 7th, 10am</time>
+  <h3>Frontend Developer Festival</h3>
+  <p>Tokyo, Odaiba, Big Sight</p>
+  <button oo-button="primary stadium outline">Join</button>
+</div>\n
+<div oo-event="alert">
+  <time datetime="${datetime}">September 8th, 10am</time>
+  <h3>Frontend Developer Festival</h3>
+  <p>Tokyo, Odaiba, Big Sight</p>
+  <button oo-button="alert stadium outline">Join</button>
+</div>\n
+`, 'html', 'mt-0 mb-45 wrapper-less')}
+        <div class="preview mb-30">
+          <div data-oo-event class="mb-30">
+            <time datetime={datetime}>September 8th, 10am</time>
+            <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+            <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+            <button data-oo-button="primary stadium outline">Join</button>
+          </div>
+          <div data-oo-event="alert">
+            <time datetime={datetime}>September 8th, 10am</time>
+            <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+            <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+            <button data-oo-button="alert stadium outline">Get Refund</button>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </div>
 </section>

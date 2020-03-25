@@ -14,6 +14,7 @@ $ooLoop: ooAdd('palette', (
   'danger': #da3b3b,
   'white': #fff,
   'lavender': #a172bf,
+  'alert': #f15f63, 
   'sample': (
     'light': #87cadb,
     'dark': #459cb5,
@@ -134,6 +135,9 @@ $ooLoop: ooPipe(
       font-weight: 500,
       border-radius: 50em,
     ),
+    'stadium': (
+      border-radius: 50em,
+    ),
   ))
 );
 
@@ -196,6 +200,7 @@ $ooLoop: ooPipe(
     fontWeight: (values: (
       'light': 300,
       'regular': 400,
+      'heavy': 800,
     )),
     fontFamily: (values: (
       'code': (Consolas, Monaco, "Andale Mono", "Ubuntu Mono"),
@@ -267,4 +272,56 @@ $ooLoop: ooSet('misc.thumbnail.props', (
   border: 1px solid #d6d6d6,
   border-radius: 5px,
   background-color: #f7f7f7,
+));
+
+// Components
+$ooLoop: ooSet('components', (
+  'event': (
+    props: (
+      padding: (
+        rt: 1rem,
+        sm: 1.5rem,
+      ),
+      overflow: hidden,
+      text-align: center,
+      background-color: #fff,
+      border-radius: 1em,
+      '>': (
+        'time': (
+          padding: .5rem,
+          margin: (
+            rt: -1rem -1rem 1rem,
+            sm: -1.5rem -1.5rem 1.5rem,
+          ),
+          display: block,
+          color:#fff,
+          font-size: rem(14),
+          text-transform: uppercase,
+          background-color: this('palette.primary'),
+        ),
+        'h3': (
+          margin: 0,
+        ),
+        'p': (
+          letter-spacing: .5px,
+        ),
+      ),
+    ),
+    variants: (
+      'alert': (
+        '>': (
+          'time': (
+            background-color: this('palette.alert')
+          ),
+          'h3::before': (
+            margin-bottom: 4px,
+            display: block,
+            content: '!!!Cancelled!!!',
+            font-size: 1rem,
+            color: this('palette.alert')
+          )
+        )
+      )
+    ),
+  )
 ));

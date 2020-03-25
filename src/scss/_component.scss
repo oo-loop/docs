@@ -1,9 +1,10 @@
 
 @include ooComponent('event') {
-  $color: oo('palette.primary');
   padding: 1rem;
+  overflow: hidden;
   text-align: center;
   background-color: #fff;
+  border-radius: 1em;
   @include breakpoint(sm) {
     padding: 1.5rem;
   }
@@ -15,7 +16,7 @@
     color: #fff;
     font-size: rem(14);
     text-transform: uppercase;
-    background-color: $color;
+    background-color: oo('palette.primary');
     @include breakpoint(sm) {
       margin: -1.5rem -1.5rem 1.5rem;
     }
@@ -26,46 +27,15 @@
   p {
     letter-spacing: .5px;
   }
-  button {
-    @extend [data-oo-button];
-    color: $color;
-    border-color: inherit;
-    border-radius: 50em;
-
-    &:hover, &:focus {
-      color: #fff;
-      background-color: $color;
-      border-color: $color;
-    }
-  }
 }
 
-@include ooComponentVariant('event', 'past') {
-  $color: oo('palette.secondary');
-  time { background-color: $color; }
-  button {
-    color: $color;
-    &:hover, &:focus {
-      background-color: $color;
-      border-color: $color;
-    }
-  }
-}
-@include ooComponentVariant('event', 'cancel') {
-  $color: #f15f63;
-  time { background-color: $color; }
+@include ooComponentVariant('event', 'alert') {
+  time { background-color: oo('palette.alert'); }
   h3::before {
     margin-bottom: 4px;
     display: block;
     content: '!!!Cancelled!!!';
     font-size: 1rem;
-    color: $color;
-  }
-  button {
-    color: $color;
-    &:hover, &:focus {
-      background-color: $color;
-      border-color: $color;
-    }
+    color: oo('palette.alert');
   }
 }
