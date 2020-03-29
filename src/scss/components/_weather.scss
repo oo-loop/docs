@@ -1,0 +1,90 @@
+@include ooComponent('weather') {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #fff;
+
+  &::before {
+    margin-right: 15px;
+    content: '';
+    width: 45px;
+    height: 45px;
+  }
+  &::after {
+    margin-left: auto;
+    content: attr(data-degree)'\00B0';
+    font-size: 3rem;
+    font-weight: 200;
+    white-space: nowrap;
+  }
+  + [#{ooPrefix()}-weather] {
+    margin-top: 15px
+  }
+}
+
+@include ooComponentVariant('weather', 'celsius') {
+  &::after {
+    content: attr(data-degree)'\2103';
+  }
+}
+@include ooComponentVariant('weather', 'fahrenheit') {
+  &::after {
+    content: attr(data-degree)'\2109';
+  }
+}
+
+@include ooComponentVariant('weather', 'sunny') {
+  background-color: #36c2dd;
+  &::before {
+    background-color: #fff789;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 yellow, 0 0 0 1px #ffdd40;
+  }
+}
+
+@include ooComponentVariant('weather', 'rainy') {
+  background-color: #84a4cc;
+  &::before {
+    background:
+      linear-gradient(-60deg, transparent 7px, #64e9fd 9px, transparent 10px) 2px 32px repeat-x,
+      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, transparent 100%) 2px -11px no-repeat,
+      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+    ;
+    background-size: 11px 7px, 23px, 45px 48px, 24px;
+  }
+}
+
+@include ooComponentVariant('weather', 'snowy') {
+  background-color: #92bace;
+  &::before {
+    background:
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 31px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px no-repeat,
+      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, transparent 100%) -2px -10px no-repeat,
+      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+    ;
+    background-size: 11px 7px, 22px 20px, 44px 20px, 23px, 48px, 24px;
+  }
+}
+
+@include ooComponentVariant('weather', 'night') {
+  background-color: #212240;
+}
+@include ooComponentVariant('weather', 'clear') {
+  background-color: #212240;
+  &::before {
+    border-radius: 50%;
+    box-shadow:
+      inset -10px -10px 0 0 #fffbc2,
+      inset -10px -10px 0 1px #ffdd40,
+      1px 1px 0 0 #ffdd40,
+      inset -12px -12px 6px -3px yellow,
+      4px 4px 6px -5px yellow
+    ;
+  }
+}

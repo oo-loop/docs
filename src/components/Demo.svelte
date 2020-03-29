@@ -6,12 +6,14 @@
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
   
-  const date = new Date();
+  const date = new Date()
   const screens = ['rt', 'sm', 'md']
   let activeScreenIndex = 0, direction = 1
   let autoAnimation = null
   let template = undefined
   let areas = []
+  let showRainCode = false
+  let showSnowCode = false
 
   $: datetime = `${date.getFullYear()}-09-07 10:00`
   $: screen = screens[activeScreenIndex]
@@ -139,7 +141,6 @@
         height: 40px;
         border-radius: 30% 50%/0% 80%;
         box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 8px oo('palette.primary');
-        transform: rotate(1deg);
       }
       .preview {
         box-shadow: 5px 5px 0 0px #1d2d35;
@@ -167,12 +168,34 @@
     }
     &-text {
       background-color: #fff;
+      &::before {
+        position: absolute;
+        top: -70px;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        content: '';
+        height: 40px;
+        border-radius: 50% 30%/80% 0%;
+        box-shadow: 10px 40px 0 35px #192529, 0px 70px 0 8px oo('palette.primary') !important;
+      }
+
       p {
         position: relative;
         z-index: 1;
       }
       & + .demo::before {
-        box-shadow: 10px 40px 0 35px #fff;
+        position: absolute;
+        top: -70px;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        content: '';
+        height: 40px;
+        border-radius: 30% 50%/0 80%;
+        box-shadow: 10px 40px 0 35px #fff, 0px 70px 0 8px oo('palette.primary') !important;
       }
     }
     &-bottom {
@@ -525,7 +548,7 @@ $ooLoop: ooSet('template.gap', 1rem);
   <h2>Easy Use of Config Data</h2>
   <div class="container">
     <Row prop="align-center">
-      <Col prop="span12 fit@sm self-valign-middle">
+      <Col prop="span12 fit@sm" class="mt-5">
 {@html highlight(
 `// style.scss
 .hero {
@@ -547,7 +570,7 @@ $ooLoop: ooSet('template.gap', 1rem);
       <Col prop="span2 self-valign-middle" class="hidden!@md text-center">
         <span class="color-secondary h2 font-light">=></span>
       </Col>
-      <Col prop="span12 span4@sm span3@md">
+      <Col prop="span12 span4@sm span3@md" class="mt-5">
 {@html highlight(
 `/** Generating style.css **/
 .hero {
@@ -578,7 +601,7 @@ $ooLoop: ooSet('template.gap', 1rem);
 <section class="demo demo-text">
   <div class="container">
     <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
-      <p class="font-large mt-45 mb-0">
+      <p class="font-large mb-0">
         Loop is not a framework providing any possible existing components. It's more like a companion for CSS development.<br><br>
         Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a> while <a href="docs/components" title="Create your own components">considering components</a> for recurring usage.</p>
     </Col>
@@ -586,10 +609,10 @@ $ooLoop: ooSet('template.gap', 1rem);
 </section>
 <section class="demo demo-middle2">
   <br>
-  <h2>Take Advantage of Utilities<br><small>(Less css, More html)</small></h2>
+  <h2>Take Advantage of Utilities</h2>
   <div class="container">
     <Row prop="align-evenly">
-      <Col prop="fit@sm">
+      <Col prop="fit self-align-center">
 {@html highlight(
 `// _config.scss
 @import '~loop/scss';
@@ -604,7 +627,7 @@ $ooLoop: ooPipe(
     values: (
       'tiny': .5rem
     ),
-    screens: 'sm'
+    screens: 'md'
   )),
 
   _set('utilities', (
@@ -632,9 +655,10 @@ $ooLoop: ooPipe(
     ),
   ))
 );
-@include ooCreate();\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
+
+@include ooCreate();\n`, 'scss', 'mt-0 wrapper-less')}
       </Col>
-      <Col prop="span7@sm span6@md">
+      <Col prop="span12 span8@md span7@lg self-valign-middle">
 {@html highlight(
 `<!-- App -->
 <div class="bg-white text-center shape-squircle overflow-hidden">
@@ -642,13 +666,13 @@ $ooLoop: ooPipe(
     class="d-block wrapper-tiny bg-lavender color-white font-small text-uppercase">
     September 7th, 10am
   </time>
-  <div class="wrapper-small wrapper-medium@sm">
+  <div class="wrapper-small wrapper-medium@md">
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
     <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
     <button class="shape-stadium" data-oo-button="lavender outline">Join</button>
   </div>
 </div>\n
-`, 'html', 'mt-0 mb-45 wrapper-less')}
+`, 'html', 'mt-0 mb-30 wrapper-less')}
         <div class="preview mb-30">
           <div class="bg-white text-center shape-squircle overflow-hidden">
             <time datetime={datetime}
@@ -664,168 +688,252 @@ $ooLoop: ooPipe(
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
+        <a class="font-medium mb-10 ml-10 mr-10" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
+        <a class="font-medium mb-10" data-oo-button="primary outline" href="docs/components#turn-utility-into-component" title="Turn utility first component into Loop component">Turn event into Loop component</a>
       </Col>
     </Row>
 </section>
 <section class="demo demo-bottom">
   <div class="container">
-    <h2>Turn recurring style into Component<br><small>(More css, Less html)</small></h2>
+    <h2>Turn recurring style into Component<br><small>(From Config)</small></h2>
     <Row prop="align-evenly">
-      <Col prop="fit@sm">
-      <h3 class="text-center color-white font-light">From the config</h3>
+      <Col prop="span6@sm span5@md" class="mt-10">
 {@html highlight(
 `// _config.scss
 @import '~loop/scss';
 
-$ooLoop: ooSet('palette.alert': #f15f63);
-$ooLoop: ooSet('button.outline', true);
-$ooLoop: ooSet('button.variants.stadium', (
-  border-radius: 50em,
-);
-
-$ooLoop: ooSet('components', ('event': (
-  props: (
-    padding: (
-      rt: 1rem,
-      sm: 1.5rem,
+$ooLoop: ooAdd('components', (
+  'notification': (
+    props: (
+      padding: 1rem,
+      border-left-width: 5px,
+      border-left-style: solid,
     ),
-    overflow: hidden,
-    text-align: center,
-    background-color: #fff,
-    border-radius: 1em,
-    '>': (
-      'time': (
-        padding: .5rem,
-        margin: (
-          rt: -1rem -1rem 1rem,
-          sm: -1.5rem -1.5rem 1.5rem,
-        ),
-        display: block,
-        color:#fff,
-        font-size: rem(14),
-        text-transform: uppercase,
-        background-color: this('palette.primary'),
+    variants: (
+      'success': (
+        color: #015a31,
+        border-color: #83cca9,
+        background-color: #c8f7e1,
+      )
+      'danger': (
+        color: #5a0101,
+        border-color: #ca7878,
+        background-color: #f7c8c8,
       ),
-      'h3': (
-        margin: 0,
+      'warning': (
+        color: #77490b,
+        border-color: #d69d50,
+        background-color: #f7f3c8,
       ),
-      'p': (
-        letter-spacing: .5px,
+      'centered': (
+        text-align: center,
+        border-left: 0,
+        border-top-width: 5px,
+        border-top-style: solid,
       ),
-    ),
-  ),
-  variants: (
-    'alert': (
-      '>': (
-        'time': (
-          background-color: this('palette.alert')
-        ),
-        'h3::before': (
-          margin-bottom: 4px,
-          display: block,
-          content: '!!!Cancelled!!!',
-          font-size: 1rem,
-          color: this('palette.alert')
-        )
+      'right': (
+        text-align: right,
+        border-left: 0,
+        border-right-width: 5px,
+        border-right-style: solid,
       )
     )
   ),
-)));
-
-@include ooCreate((dataAttr: false));\n`, 'scss', 'mt-0 mb-0 wrapper-less')}
-      </Col>
-      <Col prop="fit@sm">
-         <h3 class="text-center color-white font-light">From the mixin</h3>
-{@html highlight(`// _config.scss
-@import '~loop/scss';
-
-$ooLoop: ooSet('palette.alert': #f15f63);
-$ooLoop: ooSet('button.outline', true);
-$ooLoop: ooSet('button.variants.stadium', (
-  border-radius: 50em,
-);
+));
 
 @include ooCreate((dataAttr: false));
-
-// ----
-// component/_event.scss
-@include ooComponent('event') {
-  padding: 1rem;
-  overflow: hidden;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 1em;
-
-  @include breakpoint(sm) {
-    padding: 1.5rem;
-  }
-
-  time {
-    padding: .5rem;
-    margin: -1rem -1rem 1rem;
-    display: block;
-    color: #fff;
-    font-size: rem(14);
-    text-transform: uppercase;
-    background-color: oo('palette.primary');
-
-    @include breakpoint(sm) {
-      margin: -1.5rem -1.5rem 1.5rem;
-    }
-  }
-
-  h3 { margin: 0; }
-  p { letter-spacing: .5px; }
-}
-
-@include ooComponentVariant('event', 'alert') {
-  time {
-    background-color: oo('palette.alert');
-  }
-  h3::before {
-    margin-bottom: 4px;
-    display: block;
-    content: '!!!Cancelled!!!';
-    font-size: 1rem;
-    color: oo('palette.alert');
-  }
-}
-
-// ----
-// index.scss
-@import 'config';
-@import 'components/event';`, 'scss', 'mt-0 mb-0 wrapper-less')}
+`, 'scss', 'mt-0 wrapper-less')}
       </Col>
-      <Col prop="clear"></Col>
-      <Col prop="span7@sm span6@md">
+      <Col prop="span12 span6@sm span5@md order0@md" class="mt-10">
 {@html highlight(
 `<!-- App -->
-<div oo-event>
-  <time datetime="${datetime}">September 7th, 10am</time>
-  <h3>Frontend Developer Festival</h3>
-  <p>Tokyo, Odaiba, Big Sight</p>
-  <button oo-button="primary stadium outline">Join</button>
-</div>\n
-<div oo-event="alert">
-  <time datetime="${datetime}">September 8th, 10am</time>
-  <h3>Frontend Developer Festival</h3>
-  <p>Tokyo, Odaiba, Big Sight</p>
-  <button oo-button="alert stadium outline">Join</button>
-</div>\n
-`, 'html', 'mt-0 mb-45 wrapper-less')}
-        <div class="preview mb-30">
-          <div data-oo-event class="mb-30">
-            <time datetime={datetime}>September 8th, 10am</time>
-            <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
-            <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-            <button data-oo-button="primary stadium outline">Join</button>
+<div oo-notification="success centered">
+  <strong>Hey, well done!</strong><br>
+  You've created a notification component.
+</div>
+<div oo-notification="danger">
+  <strong>Oops!</strong><br>
+  You've created a notification component.
+</div>
+<div oo-notification="warning right">
+  <strong>Beware!</strong><br>
+  You've created a notification component.
+</div>
+\n
+`, 'html', 'mt-0 wrapper-less')}
+        <div class="preview">
+          <div data-oo-notification="success centered" class="mb-15">
+            <strong>Hey, well done!</strong><br>
+            You've created a notification component.
           </div>
-          <div data-oo-event="alert">
-            <time datetime={datetime}>September 8th, 10am</time>
-            <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
-            <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-            <button data-oo-button="alert stadium outline">Get Refund</button>
+          <div data-oo-notification="danger" class="mb-15">
+            <strong>Oops!</strong><br>
+            You've created a notification component.
+          </div>
+          <div data-oo-notification="warning right">
+            <strong>Beware!</strong><br>
+            You've created a notification component.
+          </div>
+        </div>
+        <div class="text-center mt-45">
+          <a data-oo-button="primary" href="docs/components" title="Learn about Loop Component">Develop Loop Component</a>
+        </div>
+      </Col>
+    </Row>
+    <h3 class="text-center color-white font-light mt-45 mb-45">(From Mixins)</h3>
+    <Row prop="align-center">
+      <Col prop="span11@sm span5@md order0@md">
+{@html highlight(
+`// index.scss
+@import 'config';
+
+@include ooComponent('weather') {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #fff;
+
+  &::before {
+    margin-right: 15px;
+    content: '';
+    width: 45px;
+    height: 45px;
+  }
+  &::after {
+    margin-left: auto;
+    content: attr(data-degree)'\\00B0';
+    font-size: 3rem;
+    font-weight: 200;
+    white-space: nowrap;
+  }
+  + [#{ooPrefix()}-weather] {
+    margin-top: 15px
+  }
+}
+
+@include ooComponentVariant('weather', 'celsius') {
+  &::after {
+    content: attr(data-degree)'\\2103';
+  }
+}
+@include ooComponentVariant('weather', 'fahrenheit') {
+  &::after {
+    content: attr(data-degree)'\\2109';
+  }
+}
+
+@include ooComponentVariant('weather', 'sunny') {
+  background-color: #36c2dd;
+  &::before {
+    background-color: #fff789;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 yellow, 0 0 0 1px #ffdd40;
+  }
+}
+
+@include ooComponentVariant('weather', 'clear') {
+  background-color: #212240;
+  &::before {
+    border-radius: 50%;
+    box-shadow:
+      inset -10px -10px 0 0 #fff789,
+      inset -10px -10px 0 1px #ffdd40,
+      1px 1px 0 0 #ffdd40,
+      inset -12px -12px 6px -3px yellow,
+      4px 4px 6px -5px yellow
+    ;
+  }
+}
+`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="span12 span11@sm">
+{@html highlight(
+`@include ooComponentVariant('weather', 'rainy') {
+  background-color: #84a4cc;`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {#if showRainCode}
+    {@html highlight(
+`  &::before {
+    background:
+      linear-gradient(-60deg, transparent 7px, #64e9fd 9px, transparent 10px) 2px 32px repeat-x,
+      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, transparent 100%) 2px -11px no-repeat,
+      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+    ;
+    background-size: 11px 7px, 23px, 45px 48px, 24px;
+  }`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {:else}
+    <span on:click={() => showRainCode = !showRainCode} role="button">
+      {@html highlight(`  [...]`, 'scss', 'mt-0 mb-0 wrapper-less')}
+    </span>
+  {/if}
+{@html highlight(
+`}
+
+@include ooComponentVariant('weather', 'snowy') {
+  background-color: #92bace;`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {#if showSnowCode}
+    {@html highlight(
+`  &::before {
+    background:
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 31px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px no-repeat,
+      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, transparent 100%) -2px -10px no-repeat,
+      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+    ;
+    background-size: 11px 7px, 22px 20px, 44px 20px, 23px, 48px, 24px;
+  }`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {:else}
+    <span on:click={() => showSnowCode = !showSnowCode} role="button">
+      {@html highlight(`  [...]`, 'scss', 'mt-0 mb-0 wrapper-less')}
+    </span>
+  {/if}
+{@html highlight(
+`}
+
+@include ooComponentVariant('weather', 'night') {
+  background-color: #212240;
+}
+`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="span7@sm span6@md order0@md">
+{@html highlight(
+`<!-- App -->
+<div data-oo-weather="sunny" data-degree="28">
+  <span>Marseille<br><small>Sunny</small></span>
+</div>
+<div data-oo-weather="rainy" data-degree="8">
+  <span>Edinburgh<br><small>Rainy</small></span>
+</div>
+<div data-oo-weather="clear celsius" data-degree="14">
+  <span>Tokyo<br><small>Clear Night</small></span>
+</div>
+<div data-oo-weather="rainy night celsius" data-degree="5">
+  <span>Sapporo<br><small>Rainy</small></span>
+</div>
+<div data-oo-weather="snowy fahrenheit" data-degree="32">
+  <span>La Crosse<br><small>Snowy</small></span>
+</div>
+\n
+`, 'html', 'mt-0 mb-30 wrapper-less')}
+        <div class="preview mb-30">
+          <div data-oo-weather="sunny" data-degree="28">
+            <span>Marseille<br><small>Sunny</small></span>
+          </div>
+          <div data-oo-weather="rainy" data-degree="8">
+            <span>Edinburgh<br><small>Rainy</small></span>
+          </div>
+          <div data-oo-weather="clear celsius" data-degree="14">
+            <span>Tokyo<br><small>Clear Night</small></span>
+          </div>
+          <div data-oo-weather="rainy night celsius" data-degree="5">
+            <span>Sapporo<br><small>Rainy</small></span>
+          </div>
+          <div data-oo-weather="snowy fahrenheit" data-degree="32">
+            <span>La Crosse<br><small>Snowy</small></span>
           </div>
         </div>
       </Col>
