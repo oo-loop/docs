@@ -1,0 +1,37 @@
+@include ooComponent('notification') {
+  padding: 1rem;
+  border-left-width: 5px;
+  border-left-style: solid;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);
+}
+@include ooComponentVariant('notification', 'success') {
+  color: #015a31;
+  border-color: #83cca9;
+  background-color: #c8f7e1;
+}
+@include ooComponentVariant('notification', 'danger') {
+  color: #5a0101;
+  border-color: #ca7878;
+  background-color: #f7c8c8;
+}
+@include ooComponentVariant('notification', 'warning') {
+  color: #77490b;
+  border-color: #d69d50;
+  background-color: #f7f3c8;
+}
+@include ooComponentVariant('notification', 'large') {
+  padding: 1.75rem 2rem;
+  font-size: 1.5rem;
+}
+@include ooComponentVariant('notification', 'centered') {
+  text-align: center;
+  border-left: 0;
+  border-top-width: 5px;
+  border-top-style: solid;
+}
+@include ooComponentVariant('notification', 'right') {
+  text-align: right;
+  border-left: 0;
+  border-right-width: 5px;
+  border-right-style: solid;
+}

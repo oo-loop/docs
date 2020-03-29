@@ -3,37 +3,15 @@
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 
+  const date = new Date()
+  let ooEvent = 'config'
   let dataAttr = false
   $: attr = dataAttr ? 'data-oo' : 'oo'
+  $: datetime = `${date.getFullYear()}-09-07 10:00`
 </script>
 
 <style lang="scss">
-  @include ooComponent('notification') {
-    padding: 1rem;
-    border-left-width: 5px;
-    border-left-style: solid;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, .15);
-  }
-  @include ooComponentVariant('notification', 'success') {
-    color: #015a31;
-    border-color: #83cca9;
-    background-color: #c8f7e1;
-  }
-  @include ooComponentVariant('notification', 'danger') {
-    color: #5a0101;
-    border-color: #ca7878;
-    background-color: #f7c8c8;
-  }
-  @include ooComponentVariant('notification', 'large') {
-    padding: 1.75rem 2rem;
-    font-size: 1.5rem;
-  }
-  @include ooComponentVariant('notification', 'centered') {
-    text-align: center;
-    border-left: 0;
-    border-top-width: 5px;
-    border-top-style: solid;
-  }
+
 </style>
 
 <HeadTitle title="Components"/>
@@ -261,23 +239,200 @@ I sometimes get confused between the modifiers and the utilities.</p>
 </div>
 <div class="hr"></div>
 
-<!-- <div data-oo-event="past" class="mb-15">
-  <time>September 6th, 10am</time>
-  <h3>UX/UI Designer Festival</h3>
-  <p>Tokyo, Odaiba, Big Sight</p>
-  <button>See Archive</button>
+<h2 id="turn-utility-into-component"><a href="docs/components#turn-utility-into-component">#</a> Turn Utility First Component into Loop Component</h2>
+<p>Developing with utilities increases speed and help us prototyping rapidly custom components.
+Still, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
+While making reusable modular code and repeating common style paterns, it might be time to think of turning the <em>utility-first-component</em> into a <em>loop-component</em>. Write less HTML with more CSS</p>
+
+<strong>Example with the Event utility-first</strong>
+
+{@html highlight(
+`<div class="bg-white text-center shape-squircle overflow-hidden">
+  <time datetime="${datetime}"
+    class="d-block wrapper-tiny bg-primary color-white font-small text-uppercase">
+    September 7th, 10am
+  </time>
+  <div class="wrapper-small wrapper-medium@md">
+    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+    <button class="shape-stadium" data-oo-button="primary outline">Join</button>
+  </div>
 </div>
-<div data-oo-event class="mb-15">
-  <time datetime={datetime}>September 7th, 10am</time>
+`, 'html')}
+<div class="ground">
+  <div class="bg-white text-center shape-squircle overflow-hidden">
+    <time datetime={datetime}
+      class="d-block wrapper-tiny bg-primary color-white text-center font-small text-uppercase">
+      September 7th, 10am
+    </time>
+    <div class="wrapper-small wrapper-medium@md">
+      <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+      <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+      <button class="shape-stadium" data-oo-button="primary outline">Join</button>
+    </div>
+  </div>
+</div>
+
+<strong>Make Event loop-component</strong>
+<p class="wrapper-small bg-secondary mt-15 mb-0">
+  <input data-oo-radio="large inline" id="event-config" name="oo-event" type="radio"
+    bind:group={ooEvent} value='config'>
+  <label for="event-config">From Config</label>
+  <input data-oo-radio="large inline" id="event-mixin" name="oo-event" type="radio"
+    bind:group={ooEvent} value="mixin">
+  <label for="event-mixin" class="mt-0">From Mixin</label>
+</p>
+{#if ooEvent === 'config'}
+  {@html highlight(
+`// _config.scss
+@import '~loop/scss';
+
+$ooLoop: ooSet('palette.alert': #f15f63);
+$ooLoop: ooSet('button.outline', true);
+$ooLoop: ooSet('button.variants.stadium', (
+  border-radius: 50em,
+);
+
+$ooLoop: ooSet('components', ('event': (
+  props: (
+    padding: (
+      rt: 1rem,
+      sm: 1.5rem,
+    ),
+    overflow: hidden,
+    text-align: center,
+    background-color: #fff,
+    border-radius: 1em,
+    '>': (
+      'time': (
+        padding: .5rem,
+        margin: (
+          rt: -1rem -1rem 1rem,
+          sm: -1.5rem -1.5rem 1.5rem,
+        ),
+        display: block,
+        color:#fff,
+        font-size: rem(14),
+        text-transform: uppercase,
+        background-color: this('palette.primary'),
+      ),
+      'h3': (
+        margin: 0,
+      ),
+      'p': (
+        letter-spacing: .5px,
+      ),
+    ),
+  ),
+  variants: (
+    'alert': (
+      '>': (
+        'time': (
+          background-color: this('palette.alert')
+        ),
+        'h3::before': (
+          margin-bottom: 4px,
+          display: block,
+          content: '!!!Cancelled!!!',
+          font-size: 1rem,
+          color: this('palette.alert')
+        )
+      )
+    )
+  ),
+)));
+
+@include ooCreate((dataAttr: false));
+`, 'scss')}
+
+{:else}
+  {@html highlight(`// _config.scss
+@import '~loop/scss';
+
+$ooLoop: ooSet('palette.alert': #f15f63);
+$ooLoop: ooSet('button.outline', true);
+$ooLoop: ooSet('button.variants.stadium', (
+  border-radius: 50em,
+);
+
+@include ooCreate((dataAttr: false));
+
+// ----
+// component/_event.scss
+@include ooComponent('event') {
+  padding: 1rem;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 1em;
+
+  @include breakpoint(sm) {
+    padding: 1.5rem;
+  }
+
+  time {
+    padding: .5rem;
+    margin: -1rem -1rem 1rem;
+    display: block;
+    color: #fff;
+    font-size: rem(14);
+    text-transform: uppercase;
+    background-color: oo('palette.primary');
+
+    @include breakpoint(sm) {
+      margin: -1.5rem -1.5rem 1.5rem;
+    }
+  }
+
+  h3 { margin: 0; }
+  p { letter-spacing: .5px; }
+}
+
+@include ooComponentVariant('event', 'alert') {
+  time {
+    background-color: oo('palette.alert');
+  }
+  h3::before {
+    margin-bottom: 4px;
+    display: block;
+    content: '!!!Cancelled!!!';
+    font-size: 1rem;
+    color: oo('palette.alert');
+  }
+}
+
+// ----
+// index.scss
+@import 'config';
+@import 'components/event';`, 'scss')}
+{/if}
+{@html highlight(
+`<div oo-event>
+  <time datetime="${datetime}">September 7th, 10am</time>
   <h3>Frontend Developer Festival</h3>
   <p>Tokyo, Odaiba, Big Sight</p>
-  <button>Join</button>
-</div>
-<div data-oo-event="cancel">
-  <time>September 8th, 10am</time>
-  <h3>Backend Developer Festival</h3>
+  <button oo-button="primary stadium outline">Join</button>
+</div>\n
+<div oo-event="alert">
+  <time datetime="${datetime}">September 8th, 10am</time>
+  <h3>Frontend Developer Festival</h3>
   <p>Tokyo, Odaiba, Big Sight</p>
-  <button>Get Refund</button>
-</div> -->
+  <button oo-button="alert stadium outline">Join</button>
+</div>
+`, 'html')}
+<div class="ground">
+  <div data-oo-event class="mb-30">
+    <time datetime={datetime}>September 8th, 10am</time>
+    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+    <button data-oo-button="primary stadium outline">Join</button>
+  </div>
+  <div data-oo-event="alert">
+    <time datetime={datetime}>September 8th, 10am</time>
+    <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
+    <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
+    <button data-oo-button="alert stadium outline">Get Refund</button>
+  </div>
+</div>
 
 <Pagination href="docs/components/column" label="Use Column" />
