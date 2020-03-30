@@ -9,6 +9,19 @@
   border-color: #83cca9;
   background-color: #c8f7e1;
 }
+@include ooComponentVariant('notification', 'check') {
+  &::before {
+    margin-left: 10px;
+    float: right;
+    width: 22px;
+    height: 22px;
+    content: '\2713';
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #015a31;
+  }
+}
 @include ooComponentVariant('notification', 'danger') {
   color: #5a0101;
   border-color: #ca7878;

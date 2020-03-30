@@ -167,6 +167,44 @@ I sometimes get confused between the modifiers and the utilities.</p>
 <div data-oo-notification="danger centered">
   <strong class="text-uppercase" style="font-size:1.1em">Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>
+<h4 class="mt-30">Target pseudo-elements</h4>
+<p>Use <code>before</code> and <code>after</code> as property name and assign a map of CSS properties as value.</p>
+{@html highlight(
+`$ooLoop: ooAdd('components', (
+  'notification': (
+    props: (
+      ...,
+      'before' : (
+        margin-left: 10px,
+        float: right,
+        width: 22px,
+        height: 22px,
+        color: #fff,
+        text-align: center,
+        border-radius: 50%,
+      ),
+    ),
+    variants: (
+      'success': (
+        color: #015a31,
+        border-color: #83cca9,
+        background-color: #c8f7e1,
+        'before': (
+          content: '\\2713',
+          background-color: #015a31,
+        )
+      )
+    )
+  ),
+));
+`, 'scss')}
+{@html highlight(
+`<div oo-notification="success">
+  <strong>Hey, well done!</strong><br>You've created a <i>success</i> notification component.
+</div>`, 'html')}
+<div data-oo-notification="success check">
+  <strong>Hey, well done!</strong><br>You've created a <i>success</i> notification component.
+</div>
 
 <h3 class="mt-45" id="from-mixin"><a href="docs/components#from-mixin" title="Create from mixin">#</a> Creation from mixin</h3>
 <p>Combine two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
