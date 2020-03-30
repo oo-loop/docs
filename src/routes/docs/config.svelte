@@ -70,6 +70,42 @@ Loop offers a single config map.</p>
 <p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> attributes to provide default styling.
 Check the <a href="docs/html-elements" title="HTML elements documentation">HTML elements documentation</a> to know what they are and change them at your own will.</p>
 
+<h3>Pseudo-elements</h3>
+<p>Style pseudo-elements <code>before</code> and <code>after</code> by using them as property names with a map of CSS properties as value.</p>
+{@html highlight(`
+... : (
+  props: (
+    font-size: 1rem,
+    'before': (
+      content: 'Tokyo –',
+      font-size: .8rem,
+    )
+  )
+),
+`, 'scss')}
+
+<h3 class="mt-30">Child elements</h3>
+<p>Target nested elements from the key property <code>></code> having as value a <strong>map of CSS selectors</strong> with CSS properties.</p>
+{@html highlight(`
+... : (
+  props: (
+    font-size: 1rem,
+    '>': (
+      'li': ( // targetting <li>
+        margin-bottom: 10px,
+      ),
+      'li:last-child': ( // pseudo selector
+        border-bottom: 1px solid #ccc,
+      ),
+      '.active': ( // classname
+        font-weight: 700,
+      ),
+    )
+  )
+),
+`, 'scss')}
+
+<p class="info">Styling <strong>pseudo-elements</strong> and <strong>child-elements</strong> are mainly used when developing components from the Loop config.</p>
 <hr>
 <h2 id="states"><a href="docs/config#states">#</a> <em class="font-regular">States</em> Attribute</h2>
 <p>The <em>states</em> attribute is reserved to pass a map of Element states containing CSS properties.
@@ -324,7 +360,6 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
   font-family: Georgia, serif;
 }
 `, 'css')}
-
 
 
 <Pagination href="docs/importation" title="Customize your Loop import" label="Use what you need" />
