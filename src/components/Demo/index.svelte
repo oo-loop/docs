@@ -329,7 +329,9 @@ $ooLoop: ooSet('template.gap', 1rem);
 </section>
 <section class="demo demo-top bg-300">
   <br>
-  <h2>Take Advantage of Utilities</h2>
+  <h2>Take Advantage of Utilities<br>
+    <small>Prototype Rapidly</small>
+  </h2>
   <div class="container">
     <Row prop="align-evenly">
       <Col prop="fit self-align-center">
@@ -415,7 +417,9 @@ $ooLoop: ooPipe(
 </section>
 <section class="demo bg-400">
   <div class="container">
-    <h2>Turn recurring style into Component</h2>
+    <h2>Turn recurring style into Component<br>
+      <small>Get more readable HTML</small>
+    </h2>
     <Row prop="align-evenly">
       <Col prop="span6@sm span5@md" class="mt-10">
 {@html highlight(
@@ -504,7 +508,7 @@ $ooLoop: ooAdd('components', (
 </section>
 <section class="demo demo-bottom bg-500">
   <div class="container">
-    <h2>Develop Component with more Freedom<br><small>(Mixins)</small></h2>
+    <h2>Develop Component with more Freedom<br><small>Use Mixins after the initialization</small></h2>
     <Row prop="align-center">
       <Col prop="span11@sm span6@md order0@md">
 {@html highlight(
