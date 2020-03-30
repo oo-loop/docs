@@ -525,6 +525,7 @@ $ooLoop: ooAdd('components', (
     width: 45px;
     height: 45px;
   }
+
   &::after {
     margin-left: auto;
     content: attr(data-degree)'\\00B0';
@@ -532,6 +533,7 @@ $ooLoop: ooAdd('components', (
     font-weight: 200;
     white-space: nowrap;
   }
+
   + [#{ooPrefix()}-weather] {
     margin-top: 15px
   }
@@ -648,7 +650,7 @@ $ooLoop: ooAdd('components', (
 \n
 `, 'html', 'mt-0 mb-20 wrapper-less')}
         <Col prop="span11@sm span10@md span11@lg"> 
-        <div class="preview">
+        <div class="preview mb-45">
           <div data-oo-weather="sunny" data-degree="28">
             <span>Marseille<br><small>Sunny</small></span>
           </div>
@@ -664,6 +666,9 @@ $ooLoop: ooAdd('components', (
           <div data-oo-weather="snowy fahrenheit" data-degree="32">
             <span>La Crosse<br><small>Snowy</small></span>
           </div>
+        </div>
+        <div class="text-center">
+          <a class="font-medium mt-10" data-oo-button="primary" href="docs/components#from-mixin" title="Develop Custom Component">Develop Custom Component</a>
         </div>
         </Col>
       </Col>
