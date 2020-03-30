@@ -87,20 +87,21 @@
 </script>
 
 <style lang="scss">
-   h2 {
-     padding-top: 35px;
-     margin-top: 0;
-     margin-bottom: 35px;
-     font-weight: 300;
-     color: #fff;
-     text-align: center;
-   }
+  h2 {
+    padding-top: 35px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+  }
 
-   .hr {
+  .hr {
     // border-color: oo('palette.primary');
     border-radius: 50%;
     height: 20px;
   }
+
   .demo {
     position: relative;
     padding-top: 5rem;
@@ -129,9 +130,39 @@
       border-radius: 100% 100%/150% 70%;
     }
 
-    &-top {
-      margin-top: 90px;
+    &-bg-100 {
       background-color: #263943;
+      .preview {
+        box-shadow: 5px 5px 0 0px #1d2d35;
+      }
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #263943;
+      }
+    }
+    &-bg-200 {
+      background-color: #1d2d35;
+      .preview-template {
+        box-shadow: 5px 5px 0 0px #162429;
+      }
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #1d2d35;
+      }
+    }
+    &-bg-300 {
+      background-color: #1a2529;
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #1a2529;
+      }
+    }
+    &-bg-400 {
+      background-color: #141e21;
+      & + .demo::before {
+        box-shadow: 10px 40px 0 35px #141e21;
+      }
+    }
+
+    &-top {
+      margin-top: 60px;
       &::before {
         position: absolute;
         top: -70px;
@@ -145,67 +176,26 @@
         border-radius: 30% 50%/0% 80%;
         box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 8px oo('palette.primary');
       }
-      .preview {
-        box-shadow: 5px 5px 0 0px #1d2d35;
-      }
-      & + .demo::before {
-        border-radius: 100% 70%/130% 30%;
-        box-shadow: 10px 40px 0 35px #263943;
-      }
     }
-
-    &-middle {
-      background-color: #1d2d35;
-      .preview-template {
-        box-shadow: 5px 5px 0 0px #162429;
-      }
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #1d2d35;
-      }
-    }
-    &-middle2 {
-      background-color: #1a2529;
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #1a2529;
+    &-bottom {
+      margin-bottom: 100px;
+      &::after {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        right: 0;
+        height: 40px;
+        content: '';
+        background-color: inherit;
+        border-radius: 0 0 80%/75% 0;
+        box-shadow: 0px 5px 0 0px oo('palette.primary');
       }
     }
     &-text {
       background-color: #fff;
-      &::before {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        content: '';
-        height: 40px;
-        border-radius: 50% 30%/80% 0%;
-        box-shadow: 10px 40px 0 35px #192529, 0px 70px 0 8px oo('palette.primary') !important;
-      }
-
       p {
         position: relative;
         z-index: 1;
-      }
-      & + .demo::before {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        content: '';
-        height: 40px;
-        border-radius: 30% 50%/0 80%;
-        box-shadow: 10px 40px 0 35px #fff, 0px 70px 0 8px oo('palette.primary') !important;
-      }
-    }
-    &-bottom {
-      padding-bottom: 4rem;
-      background-color: #141e21;
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #141e21;
       }
     }
   }
@@ -330,101 +320,14 @@
       }
     }
   }
-  .rt {
-    position: relative;
-    display: inline-block;
-    width: 28px;
-    height: 45px;
-    border : 1px solid;
-    border-radius: 4px;
-    &::before {
-      position: absolute;
-      bottom: 5px;
-      left: calc(50% - 4px);
-      display: inline-block;
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: 1px solid;
-    }
-  }
-  .sm {
-    position: relative;
-    display: inline-block;
-    width: 48px;
-    height: 60px;
-    border: 1px solid;
-    border-radius: 4px;
-    &::before {
-      position: absolute;
-      bottom: 5px;
-      left: calc(50% - 4px);
-      display: inline-block;
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: 1px solid;
-    }
-  }
-  .md {
-    position: relative;
-    margin-bottom: 4px;
-    display: inline-block;
-    width: 96px;
-    height: 65px;
-    border: 1px solid;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    &::before{
-      position: absolute;
-      bottom: -5px;
-      left: -6px;
-      display: inline-block;
-      content: '';
-      width: 106px;
-      height: 5px;
-      border-bottom-right-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border: 1px solid;
-    }
-  }
-  .lg {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 70px;
-    border : 1px solid;
-    border-radius: 4px;
-    &::before {
-      position: absolute;
-      bottom: -8px;
-      left: calc(50% - 3px);
-      display: inline-block;
-      content: '';
-      width: 6px;
-      height: 8px;
-      border: 1px solid;
-    }
-    &::after {
-      position: absolute;
-      bottom: -8px;
-      left: calc(50% - 12px);
-      display: inline-block;
-      content: '';
-      width: 24px;
-      height: 0;
-      border-top: 1px solid;
-    }
-  }
+
   [data-oo-button] {
     position: relative;
     z-index: 5;
   }
 </style>
 
-<section class="demo demo-top">
+<section class="demo demo-bg-100 demo-top">
   <div class="container">
     <h2>Quick Element Layout</h2>
     <Row prop="align-center">
@@ -475,7 +378,7 @@
   </div>
 </section>
 
-<section class="demo demo-middle">
+<section class="demo demo-bg-200">
   <div class="container">
     <h2 class="">Simple Responsive Template Design</h2>
     <Row prop="align-between">
@@ -524,9 +427,9 @@ $ooLoop: ooSet('template.gap', 1rem);
       </Col>
       <Col prop="span12 span5@md order0@md" class="mt-45">
         <div class="switchers">
-          <a class:active={screen === 'rt'} class="rt" on:click|preventDefault={() => setActiveScreen('rt')}>rt</a>
-          <a class:active={screen === 'sm'} class="sm" on:click|preventDefault={() => setActiveScreen('sm')}>sm</a>
-          <a class:active={screen === 'md'} class="md" on:click|preventDefault={() => setActiveScreen('md')}>md</a>
+          <a class:active={screen === 'rt'} class="screen-rt" on:click|preventDefault={() => setActiveScreen('rt')}>rt</a>
+          <a class:active={screen === 'sm'} class="screen-sm" on:click|preventDefault={() => setActiveScreen('sm')}>sm</a>
+          <a class:active={screen === 'md'} class="screen-md" on:click|preventDefault={() => setActiveScreen('md')}>md</a>
         </div>
         <div class="template-canvas">
           <div class="preview-template template-{screen} clear mt-5">
@@ -547,7 +450,7 @@ $ooLoop: ooSet('template.gap', 1rem);
   </div>
 </section>
 
-<section class="demo demo-middle2">
+<section class="demo demo-bottom demo-bg-300">
   <h2>Easy Use of Config Data</h2>
   <div class="container">
     <Row prop="align-center">
@@ -601,7 +504,7 @@ $ooLoop: ooSet('template.gap', 1rem);
     </Row>
   </div>
 </section>
-<section class="demo demo-text">
+<section class="demo-text">
   <div class="container">
     <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
       <p class="font-large mb-0">
@@ -610,7 +513,7 @@ $ooLoop: ooSet('template.gap', 1rem);
     </Col>
   </div>
 </section>
-<section class="demo demo-middle2">
+<section class="demo demo-top demo-bg-300">
   <br>
   <h2>Take Advantage of Utilities</h2>
   <div class="container">
@@ -696,7 +599,7 @@ $ooLoop: ooPipe(
       </Col>
     </Row>
 </section>
-<section class="demo demo-bottom">
+<section class="demo demo-bottom demo-bg-400">
   <div class="container">
     <h2>Turn recurring style into Component<br><small>(From Config)</small></h2>
     <Row prop="align-evenly">
