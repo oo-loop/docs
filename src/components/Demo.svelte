@@ -12,8 +12,11 @@
   let autoAnimation = null
   let template = undefined
   let areas = []
-  let showRainCode = false
-  let showSnowCode = false
+  let showWeatherCode = {
+    clear: false,
+    rain: false,
+    snow: false,
+  }
 
   $: datetime = `${date.getFullYear()}-09-07 10:00`
   $: screen = screens[activeScreenIndex]
@@ -776,13 +779,13 @@ $ooLoop: ooAdd('components', (
           </div>
         </div>
         <div class="text-center mt-45">
-          <a data-oo-button="primary" href="docs/components" title="Learn about Loop Component">Develop Loop Component</a>
+          <a data-oo-button="primary" class="mt-15" href="docs/components" title="Learn about Loop Component">Develop Loop Component</a>
         </div>
       </Col>
     </Row>
     <h3 class="text-center color-white font-light mt-45 mb-45">(From Mixins)</h3>
     <Row prop="align-center">
-      <Col prop="span11@sm span5@md order0@md">
+      <Col prop="span11@sm span6@md order0@md">
 {@html highlight(
 `// index.scss
 @import 'config';
@@ -818,6 +821,7 @@ $ooLoop: ooAdd('components', (
     content: attr(data-degree)'\\2103';
   }
 }
+
 @include ooComponentVariant('weather', 'fahrenheit') {
   &::after {
     content: attr(data-degree)'\\2109';
@@ -829,13 +833,19 @@ $ooLoop: ooAdd('components', (
   &::before {
     background-color: #fff789;
     border-radius: 50%;
-    box-shadow: 0 0 10px 0 yellow, 0 0 0 1px #ffdd40;
+    box-shadow:
+      0 0 10px 0 yellow,
+      0 0 0 1px #ffdd40;
   }
-}
-
-@include ooComponentVariant('weather', 'clear') {
-  background-color: #212240;
-  &::before {
+}`, 'scss', 'mt-0 mb-0 wrapper-less')}
+      </Col>
+      <Col prop="span12 span11@lg">
+{@html highlight(
+`@include ooComponentVariant('weather', 'clear') {
+  background-color: #212240;`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {#if showWeatherCode.clear}
+    {@html highlight(
+`  &::before {
     border-radius: 50%;
     box-shadow:
       inset -10px -10px 0 0 #fff789,
@@ -844,15 +854,16 @@ $ooLoop: ooAdd('components', (
       inset -12px -12px 6px -3px yellow,
       4px 4px 6px -5px yellow
     ;
-  }
-}
-`, 'scss', 'mt-0 mb-0 wrapper-less')}
-      </Col>
-      <Col prop="span12 span11@sm">
+  }`, 'scss', 'mt-0 mb-0 wrapper-less')}
+  {:else}
+    <code class="color-white" on:click={() => showWeatherCode.clear = !showWeatherCode.clear} role="button">...</code>
+  {/if}
 {@html highlight(
-`@include ooComponentVariant('weather', 'rainy') {
+`}
+
+@include ooComponentVariant('weather', 'rainy') {
   background-color: #84a4cc;`, 'scss', 'mt-0 mb-0 wrapper-less')}
-  {#if showRainCode}
+  {#if showWeatherCode.rain}
     {@html highlight(
 `  &::before {
     background:
@@ -864,16 +875,14 @@ $ooLoop: ooAdd('components', (
     background-size: 11px 7px, 23px, 45px 48px, 24px;
   }`, 'scss', 'mt-0 mb-0 wrapper-less')}
   {:else}
-    <span on:click={() => showRainCode = !showRainCode} role="button">
-      {@html highlight(`  [...]`, 'scss', 'mt-0 mb-0 wrapper-less')}
-    </span>
+    <code class="color-white" on:click={() => showWeatherCode.rain = !showWeatherCode.rain} role="button">...</code>
   {/if}
 {@html highlight(
 `}
 
 @include ooComponentVariant('weather', 'snowy') {
   background-color: #92bace;`, 'scss', 'mt-0 mb-0 wrapper-less')}
-  {#if showSnowCode}
+  {#if showWeatherCode.snow}
     {@html highlight(
 `  &::before {
     background:
@@ -887,9 +896,7 @@ $ooLoop: ooAdd('components', (
     background-size: 11px 7px, 22px 20px, 44px 20px, 23px, 48px, 24px;
   }`, 'scss', 'mt-0 mb-0 wrapper-less')}
   {:else}
-    <span on:click={() => showSnowCode = !showSnowCode} role="button">
-      {@html highlight(`  [...]`, 'scss', 'mt-0 mb-0 wrapper-less')}
-    </span>
+    <code class="color-white" on:click={() => showWeatherCode.snow = !showWeatherCode.snow} role="button">...</code>
   {/if}
 {@html highlight(
 `}
@@ -899,27 +906,28 @@ $ooLoop: ooAdd('components', (
 }
 `, 'scss', 'mt-0 mb-0 wrapper-less')}
       </Col>
-      <Col prop="span7@sm span6@md order0@md">
+      <Col prop="span8@sm auto@md span5@lg order0@md">
 {@html highlight(
 `<!-- App -->
-<div data-oo-weather="sunny" data-degree="28">
+<div oo-weather="sunny" data-degree="28">
   <span>Marseille<br><small>Sunny</small></span>
 </div>
-<div data-oo-weather="rainy" data-degree="8">
+<div oo-weather="rainy" data-degree="8">
   <span>Edinburgh<br><small>Rainy</small></span>
 </div>
-<div data-oo-weather="clear celsius" data-degree="14">
+<div oo-weather="clear celsius" data-degree="14">
   <span>Tokyo<br><small>Clear Night</small></span>
 </div>
-<div data-oo-weather="rainy night celsius" data-degree="5">
+<div oo-weather="rainy night celsius" data-degree="5">
   <span>Sapporo<br><small>Rainy</small></span>
 </div>
-<div data-oo-weather="snowy fahrenheit" data-degree="32">
+<div oo-weather="snowy fahrenheit" data-degree="32">
   <span>La Crosse<br><small>Snowy</small></span>
 </div>
 \n
-`, 'html', 'mt-0 mb-30 wrapper-less')}
-        <div class="preview mb-30">
+`, 'html', 'mt-0 mb-20 wrapper-less')}
+        <Col prop="span11@sm span10@md span11@lg"> 
+        <div class="preview">
           <div data-oo-weather="sunny" data-degree="28">
             <span>Marseille<br><small>Sunny</small></span>
           </div>
@@ -936,6 +944,7 @@ $ooLoop: ooAdd('components', (
             <span>La Crosse<br><small>Snowy</small></span>
           </div>
         </div>
+        </Col>
       </Col>
     </Row>
   </div>
