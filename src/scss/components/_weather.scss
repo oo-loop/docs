@@ -73,10 +73,10 @@
 }
 
 @include ooComponentVariant('weather', 'night') {
-  background-color: #212240;
+  background-color: #1b1c33;
 }
 @include ooComponentVariant('weather', 'clear') {
-  background-color: #212240;
+  background-color: #1b1c33;
   &::before {
     border-radius: 50%;
     box-shadow:

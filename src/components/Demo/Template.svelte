@@ -185,7 +185,7 @@
   <span class:active={screen === 'md'} class="screen-md" on:click|preventDefault={() => setActiveScreen('md')}>md</span>
 </div>
 <div class="template-canvas">
-  <div class="preview-template template-{screen} clear mt-5">
+  <div class="preview preview-template template-{screen} clear mt-5">
     <div bind:this={template}>
       <div class="small light template-header">Header</div>
       <div class="small dark template-nav">Nav</div>

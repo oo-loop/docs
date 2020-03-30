@@ -24,12 +24,6 @@
     text-align: center;
   }
 
-  .hr {
-    // border-color: oo('palette.primary');
-    border-radius: 50%;
-    height: 20px;
-  }
-
   .demo {
     position: relative;
     padding-top: 5rem;
@@ -48,6 +42,30 @@
     :global(code), :global(pre) {
       background-color: inherit;
     }
+    :global(.preview) {
+      position: relative;
+      padding: .8rem;
+      margin-left: -.5rem;
+      margin-right: -.5rem;
+      border: 1px solid oo('palette.primary');
+      border-radius: 8px;
+
+      @include breakpoint(sm) {
+        padding: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &::before {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: 1;
+        content: 'Preview';
+        color: oo('palette.primary');
+        font-family: oo('typo.fontFamily.values.monospace');
+      }
+    }
 
     &::before {
       margin-top: -180px;
@@ -57,91 +75,78 @@
       height: 90px;
       border-radius: 100% 100%/150% 70%;
     }
-
-    &-bg-100 {
-      background-color: #263943;
-      .preview {
-        box-shadow: 5px 5px 0 0px #1d2d35;
-      }
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #263943;
-      }
-    }
-    &-bg-200 {
-      background-color: #1d2d35;
-      .preview-template {
-        box-shadow: 5px 5px 0 0px #162429;
-      }
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #1d2d35;
-      }
-    }
-    &-bg-300 {
-      background-color: #1a2529;
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #1a2529;
-      }
-    }
-    &-bg-400 {
-      background-color: #141e21;
-      & + .demo::before {
-        box-shadow: 10px 40px 0 35px #141e21;
-      }
-    }
-
-    &-top {
-      margin-top: 60px;
-      &::before {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        content: '';
-        display: block;
-        height: 40px;
-        border-radius: 30% 50%/0% 80%;
-        box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 8px oo('palette.primary');
-      }
-    }
-    &-bottom {
-      margin-bottom: 100px;
-      &::after {
-        position: absolute;
-        bottom: -40px;
-        left: 0;
-        right: 0;
-        height: 40px;
-        content: '';
-        background-color: inherit;
-        border-radius: 0 0 80%/75% 0;
-        box-shadow: 0px 5px 0 0px oo('palette.primary');
-      }
-    }
   }
-  :global([class*="preview"]) {
-    position: relative;
-    padding: .8rem;
-    margin-left: -.5rem;
-    margin-right: -.5rem;
-    border: 1px solid oo('palette.primary');
-    border-radius: 8px;
-
-    @include breakpoint(sm) {
-      padding: 1rem;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
+  .demo-top {
+    margin-top: 60px;
     &::before {
       position: absolute;
-      top: -20px;
+      top: -70px;
       left: 0;
-      z-index: 1;
-      content: 'Preview';
-      color: oo('palette.primary');
-      font-family: oo('typo.fontFamily.values.monospace');
+      right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      content: '';
+      display: block;
+      height: 40px;
+      border-radius: 30% 50%/0% 80%;
+      box-shadow: 10px 40px 0 35px #FFF, 0px 70px 0 8px oo('palette.primary');
+    }
+  }
+  .demo-bottom {
+    margin-bottom: 100px;
+    &::after {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      content: '';
+      background-color: inherit;
+      border-radius: 0 0 80%/75% 0;
+      box-shadow: 0px 5px 0 0px oo('palette.primary');
+    }
+  }
+
+  .bg-100 {
+    background-color: #263943;
+    .preview {
+      box-shadow: 5px 5px 0 0px #1d2d35;
+    }
+    & + .demo::before {
+      box-shadow: 10px 40px 0 35px #263943;
+    }
+  }
+  .bg-200 {
+    background-color: #1d2d35;
+    :global(.preview) {
+      box-shadow: 5px 5px 0 0px #162429;
+    }
+    & + .demo::before {
+      box-shadow: 10px 40px 0 35px #1d2d35;
+    }
+  }
+  .bg-300 {
+    background-color: #1a2529;
+    .preview {
+      box-shadow: 5px 5px 0 0px #141e21;
+    }
+    & + .demo::before {
+      box-shadow: 10px 40px 0 35px #1a2529;
+    }
+  }
+  .bg-400 {
+    background-color: #141e21;
+    .preview {
+      box-shadow: 5px 5px 0 0px #0f1719;
+    }
+    & + .demo::before {
+      box-shadow: 10px 40px 0 35px #141e21;
+    }
+  }
+  .bg-500 {
+    background-color: #0f1719;
+    & + .demo::before {
+      box-shadow: 10px 40px 0 35px #0f1719;
     }
   }
 
@@ -151,7 +156,7 @@
   }
 </style>
 
-<section class="demo demo-bg-100 demo-top">
+<section class="demo bg-100 demo-top">
   <div class="container">
     <h2>Quick Element Layout</h2>
     <Row prop="align-center">
@@ -202,7 +207,7 @@
   </div>
 </section>
 
-<section class="demo demo-bg-200">
+<section class="demo bg-200">
   <div class="container">
     <h2 class="">Simple Responsive Template Design</h2>
     <Row prop="align-between">
@@ -259,7 +264,7 @@ $ooLoop: ooSet('template.gap', 1rem);
   </div>
 </section>
 
-<section class="demo demo-bottom demo-bg-300">
+<section class="demo demo-bottom bg-300">
   <h2>Easy Use of Config Data</h2>
   <div class="container">
     <Row prop="align-center">
@@ -322,7 +327,7 @@ $ooLoop: ooSet('template.gap', 1rem);
     </Col>
   </div>
 </section>
-<section class="demo demo-top demo-bg-300">
+<section class="demo demo-top bg-300">
   <br>
   <h2>Take Advantage of Utilities</h2>
   <div class="container">
@@ -408,9 +413,9 @@ $ooLoop: ooPipe(
       </Col>
     </Row>
 </section>
-<section class="demo demo-bottom demo-bg-400">
+<section class="demo bg-400">
   <div class="container">
-    <h2>Turn recurring style into Component<br><small>(From Config)</small></h2>
+    <h2>Turn recurring style into Component</h2>
     <Row prop="align-evenly">
       <Col prop="span6@sm span5@md" class="mt-10">
 {@html highlight(
@@ -495,7 +500,11 @@ $ooLoop: ooAdd('components', (
         </div>
       </Col>
     </Row>
-    <h3 class="text-center color-white font-light mt-45 mb-45">(From Mixins)</h3>
+  </div>
+</section>
+<section class="demo demo-bottom bg-500">
+  <div class="container">
+    <h2>Develop Component with more Freedom<br><small>(Mixins)</small></h2>
     <Row prop="align-center">
       <Col prop="span11@sm span6@md order0@md">
 {@html highlight(
