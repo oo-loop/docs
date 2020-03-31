@@ -3,7 +3,7 @@
   import { cubicOut } from 'svelte/easing'
   import { create_animation } from 'svelte/internal'
 
-  const screens = ['rt', 'sm', 'md']
+  const screens = ['rt', 'sm', 'md', 'lg']
   let activeScreenIndex = 0, direction = 1
   let autoAnimation = null
   let template = undefined
@@ -60,8 +60,8 @@
       position:absolute;\n
       top: ${(from.y - (t * distanceY)) - template.getBoundingClientRect().y + 16}px;\n
       left: ${(from.x - (t * distanceX)) - template.getBoundingClientRect().x + 16}px;\n
-      width: ${from.width - (t * distanceW)}px;\n
-      height: ${from.height - (t * distanceH)}px;\n
+      min-width: ${from.width - (t * distanceW)}px;\n
+      min-height: ${from.height - (t * distanceH)}px;\n
       // transform: translate3d(${u * distanceX}px, ${u * distanceY}px, 0);\n
       `,
     }
@@ -124,6 +124,17 @@
   min-height: 306px;
   > div {
     grid-template-areas:
+      "header header header header"
+      "nav main main widgets"
+      "nav footer footer widgets";
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.template-lg {
+  min-height: 306px;
+  > div {
+    grid-template-areas:
       "header nav nav"
       "main main widgets"
       "footer footer widgets";
@@ -147,13 +158,25 @@
     vertical-align: bottom;
     transition: all ease-out 300ms;
     &:not(:first-child) {
-      margin-left: 10px;
+      margin-left: 15px;
     }
 
     &:hover,
     &:active,
     &.active {
       color: #fff;
+    }
+    @media (max-width:359px) {
+      transform: scale(.9) translateY(10%);
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+    @media (max-width:339px) {
+      transform: scale(.8) translateY(20%);
+      &:not(:first-child) {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -179,10 +202,10 @@
 }
 </style>
 
- <div class="switchers">
-  <span class:active={screen === 'rt'} class="screen-rt" on:click|preventDefault={() => setActiveScreen('rt')}>rt</span>
-  <span class:active={screen === 'sm'} class="screen-sm" on:click|preventDefault={() => setActiveScreen('sm')}>sm</span>
-  <span class:active={screen === 'md'} class="screen-md" on:click|preventDefault={() => setActiveScreen('md')}>md</span>
+<div class="switchers">
+{#each screens as screenSize}
+  <span class:active={screen === screenSize} class="screen-{screenSize}" on:click|preventDefault={() => setActiveScreen(screenSize)}>{screenSize}</span>
+{/each}
 </div>
 <div class="template-canvas">
   <div class="preview preview-template template-{screen} clear mt-5">

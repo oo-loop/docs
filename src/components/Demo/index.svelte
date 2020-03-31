@@ -228,10 +228,15 @@ $ooLoop: ooSet('template.areas', (
     sm: (
       "header header header"
       "nav main main"
-      "nav widgets widgets"
       "footer footer footer"
     ),
     md: (
+      "header header header header"
+      "nav main main widgets"
+      "nav main main widgets"
+      "footer footer footer footer"
+    ),
+    lg: (
       "header nav nav"
       "main main widgets"
       "footer footer widgets"
@@ -538,8 +543,8 @@ $ooLoop: ooAdd('components', (
     white-space: nowrap;
   }
 
-  + [#{ooPrefix()}-weather] {
-    margin-top: 15px
+  & + & {
+    margin-top: 15px;
   }
 }
 
