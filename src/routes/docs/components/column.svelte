@@ -380,7 +380,7 @@ $ooLoop: ooAdd('column.gutter.sizes', (
 </div>
 
 <h4>Vertical gutter</h4>
-<p>Target the vertical gap only by setting <em>vscreens</em> and <em>vsizes</em> the same way as <em>screens</em> and <em>sizes</em></p>
+<p>Target the vertical gap only by setting <em>vscreens</em> and <em>vsizes</em> the same way as it is done for <em>screens</em> and <em>sizes</em></p>
 
 {@html highlight(`// default config
 column: (
