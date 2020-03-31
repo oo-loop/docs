@@ -60,8 +60,9 @@
       position:absolute;\n
       top: ${(from.y - (t * distanceY)) - template.getBoundingClientRect().y + 16}px;\n
       left: ${(from.x - (t * distanceX)) - template.getBoundingClientRect().x + 16}px;\n
-      min-width: ${from.width - (t * distanceW)}px;\n
-      min-height: ${from.height - (t * distanceH)}px;\n
+      width: ${from.width - (t * distanceW)}px;\n
+      height: ${from.height - (t * distanceH)}px;\n
+      grid-area: none;\n
       // transform: translate3d(${u * distanceX}px, ${u * distanceY}px, 0);\n
       `,
     }
@@ -93,6 +94,7 @@
       align-items: center;
       will-change: top, left, height, width;
       transition: all ease-out 300ms;
+      backface-visibility: hidden;
     }
   }
 }
