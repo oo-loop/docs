@@ -27,6 +27,6 @@ $ooLoop: ooPipe(
   )),
   _set('checkbox.screens', (sm, md)),
   _set('radio.sizes.large', 2rem),
-  _set('radio.screens', (sm)),
+  _set('radio.screens', (sm, md)),
   _set('toggle.sizes.large', 2rem),
 );

@@ -60,7 +60,6 @@ $ooLoop: (
   ...
 );
 `, 'scss')}
-
 {@html highlight(`// Your config.scss file
 
 @import '~loop/scss';
@@ -88,7 +87,20 @@ $ooLoop: (
 	<li><strong>$hard</strong> <em class="font-monospace">(boolean) <span class="color-secondary">Optional</span></em>
   <br>Destructive mode?</li>
 </ul>
+{@html highlight(`// Loop default config
 
+$ooLoop: (
+  breakpoints: (
+    xs: 30em,     // 480px
+    sm: 37.500em, // 600px
+    md: 60em,     // 960px
+    lg: 80em,     // 1280px
+    xl: 120em,    // 1980px
+  ),
+  screens: (sm, md, lg),
+  ...
+);
+`, 'scss')}
 {@html highlight(`@import '~loop/scss';
 
 $ooLoop: ooSet('breakpoints', (
@@ -112,7 +124,20 @@ $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 	<li><strong>$value</strong> <em class="font-monospace">(mixed)</em>
   <br>Value to append</li>
 </ul>
+{@html highlight(`// Loop default config
 
+$ooLoop: (
+  breakpoints: (
+    xs: 30em,     // 480px
+    sm: 37.500em, // 600px
+    md: 60em,     // 960px
+    lg: 80em,     // 1280px
+    xl: 120em,    // 1980px
+  ),
+  screens: (sm, md, lg),
+  ...
+);
+`, 'scss')}
 {@html highlight(`@import '~loop/scss';
 
 $ooLoop: ooAdd('breakpoints', (
