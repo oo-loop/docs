@@ -10,7 +10,7 @@
 <HeadTitle title="Installation"/>
 
 <h1>Installation</h1>
-<p class="font-large">Loop being a sass framework, a sass environment needs to be setup</p>
+<p class="font-large">Being a sass framework, Loop requires a sass environment to be setup</p>
 
 <h3>Setup options</h3>
 <ol>

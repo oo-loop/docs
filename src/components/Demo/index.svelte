@@ -327,7 +327,7 @@ $ooLoop: ooSet('template.gap', 1rem);
   <div class="container">
     <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
       <p class="font-large mb-0">
-        Loop is not a framework providing any possible existing components. It's more like a companion for CSS development.<br><br>
+        Like a companion, Loop supports your development, giving you the tools to make it your own.<br><br>
         Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a> while <a href="docs/components" title="Create your own components">considering components</a> for recurring usage.</p>
     </Col>
   </div>
@@ -335,7 +335,7 @@ $ooLoop: ooSet('template.gap', 1rem);
 <section class="demo demo-top bg-300">
   <br>
   <h2>Take Advantage of Utilities<br>
-    <small>Prototype Rapidly</small>
+    <small>Adjust your Needs - Build Rapidly</small>
   </h2>
   <div class="container">
     <Row prop="align-evenly">
@@ -423,7 +423,7 @@ $ooLoop: ooPipe(
 <section class="demo bg-400">
   <div class="container">
     <h2>Turn recurring style into Component<br>
-      <small>Get more readable HTML</small>
+      <small>Make Html more Readable</small>
     </h2>
     <Row prop="align-evenly">
       <Col prop="span6@sm span5@md" class="mt-10">
@@ -513,7 +513,7 @@ $ooLoop: ooAdd('components', (
 </section>
 <section class="demo demo-bottom bg-500">
   <div class="container">
-    <h2>Develop Component with more Freedom<br><small>Use Mixins after the initialization</small></h2>
+    <h2>Develop Component with more Freedom<br><small>Pure Scss coding with Mixins</small></h2>
     <Row prop="align-center">
       <Col prop="span11@sm span6@md order0@md">
 {@html highlight(
