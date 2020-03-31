@@ -42,10 +42,10 @@ You may still turn off the option to remove verbosity and get a shorter name for
 
 <h4 class="mt-30 mb-15">Loop components</h4>
 <ul>
-  <li><a href="docs/column" title="Column component">Column</a><code>oo-row</code><code>oo-col</code></li>
-  <li><a href="docs/template" title="Template component">Template</a><code>oo-template</code><code>oo-area</code></li>
-  <li><a href="docs/button" title="Button component">Button</a><code>oo-button</code></li>
-  <li><a href="docs/form" title="Form component">Form</a><code>oo-input</code><code>oo-select</code><code>oo-radio</code><code>oo-checkbox</code><code>oo-toggle</code></li>
+  <li><a href="docs/components/column" title="Column component">Column</a><code>oo-row</code><code>oo-col</code></li>
+  <li><a href="docs/components/template" title="Template component">Template</a><code>oo-template</code><code>oo-area</code></li>
+  <li><a href="docs/components/button" title="Button component">Button</a><code>oo-button</code></li>
+  <li><a href="docs/components/form" title="Form component">Form</a><code>oo-input</code><code>oo-select</code><code>oo-radio</code><code>oo-checkbox</code><code>oo-toggle</code></li>
 </ul>
 
 <hr>

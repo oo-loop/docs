@@ -16,7 +16,7 @@
 
 <ul>
   <li class="mb-5"><a href="docs/helpers/container">Container</a>, layout your page <code>.container</code><code>.container-fluid</code></li>
-  <li class="mb-5"><a href="docs/helpers/visiblity">Visibility</a>, hide elements between devices<code>.hidden@<i>screenName</i></code><code>.hidden!@<i>screenName</code></li>
+  <li class="mb-5"><a href="docs/helpers/visibility">Visibility</a>, hide elements between devices<code>.hidden@<i>screenName</i></code><code>.hidden!@<i>screenName</code></li>
   <li class="mb-5"><a href="docs/helpers/list">List</a>, format ul/ol elements easily<code>.list-unstyle</code><code>.list-inline</code><code>.list-center</code></li>
   <li><a href="docs/helpers/misc">Miscellaneous</a>, set an image responsive <code>.responsive</code> and add your own</li>
 </ul>
