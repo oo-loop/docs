@@ -1,7 +1,7 @@
 <script>
   export let href
   export let label
-  export let title
+  export let title = null
 
   $: titleAttr = title ? title : label
 </script>
