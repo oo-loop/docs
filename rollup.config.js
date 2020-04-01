@@ -24,13 +24,20 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
+const postcssPlugins = [
+	autoprefixer({
+		grid: "autoplace"
+	}),
+	cssnano()
+]
+
 const preprocess = sveltePreprocess({
 	scss: {
 		data: `@import 'scss/config/all';`,
 		includePaths: ['src'],
 	},
 	postcss: {
-		plugins: [autoprefixer],
+		plugins: postcssPlugins,
 	},
 });
 
@@ -55,12 +62,7 @@ export default {
 				processor: css =>
 					postcss(dev
 						? []
-						: [
-							autoprefixer({
-								grid: "autoplace"
-							}),
-							cssnano()
-						]
+						: postcssPlugins
 					)
 					.process(css, {
 						from: 'undefined',
