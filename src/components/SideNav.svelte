@@ -2,7 +2,7 @@
   import { stores } from '@sapper/app'
 </script>
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
   export let segment
   let pathname = undefined
 
@@ -22,9 +22,29 @@
   onMount(() => {
     elHeight = el.scrollHeight
     elOffsetHeight = el.offsetHeight
+
+    //fix scroll position on reload with a hash
+    addEventListener('beforeunload', () => {
+      history.scrollRestoration = 'auto'
+    })
+    addEventListener('load', () => {
+      history.scrollRestoration = 'manual'
+    })
+  })
+
+  onDestroy(() => {
+    if (typeof removeEventListener !== 'undefined') {
+      removeEventListener('beforeunload', () => {
+        history.scrollRestoration = 'auto'
+      })
+      removeEventListener('load', () => {
+        history.scrollRestoration = 'manual'
+      })
+    }
   })
 
   page.subscribe(({ path, params, query }) => {
+    console.log(path)
     pathname = path
     isOn = false
 
@@ -33,6 +53,16 @@
     }
   })
 
+  function scrollToHash() {
+    const hashElement = document.getElementById(hash.slice(1))
+    if (hashElement) {
+      scroll = {
+        x: 0,
+        y: hashElement.getBoundingClientRect().top
+      }
+      scrollTo(scroll.x, scroll.y)
+    }
+  }
   function onHashChange() {
     hash = location.hash
   }
