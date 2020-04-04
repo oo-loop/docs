@@ -1,2 +1,2 @@
 import { writable } from 'svelte/store'
-export const pathname = writable(undefined)
+export const pathname = writable(null)

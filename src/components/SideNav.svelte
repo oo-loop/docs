@@ -4,8 +4,6 @@
   export let segment
 
   let path
-  let prevPathname = undefined
-
   let el
   let elHeight
   let elOffsetHeight
