@@ -41,7 +41,7 @@
     padding: 0 1em;
     margin-bottom: .5rem;
     @include breakpoint(md) {
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
   }
   ul {

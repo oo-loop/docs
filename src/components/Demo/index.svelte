@@ -148,6 +148,10 @@
     & + .demo::before {
       box-shadow: 10px 40px 0 35px #0f1719;
     }
+    :global(code),
+    h2 {
+      color: #f5f5f5;
+    }
   }
 
   [data-oo-button] {
