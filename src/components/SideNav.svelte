@@ -1,12 +1,10 @@
-<script context="module">
-  import { stores } from '@sapper/app'
-</script>
 <script>
-  import { onMount, onDestroy } from 'svelte'
+  import { onMount } from 'svelte'
+  import { pathname } from '@/stores.js'
   export let segment
-  let pathname = undefined
 
-  const { page } = stores()
+  let path
+  let prevPathname = undefined
 
   let el
   let elHeight
@@ -22,56 +20,26 @@
   onMount(() => {
     elHeight = el.scrollHeight
     elOffsetHeight = el.offsetHeight
-
-    //fix scroll position on reload with a hash
-    addEventListener('beforeunload', () => {
-      history.scrollRestoration = 'auto'
-    })
-    addEventListener('load', () => {
-      history.scrollRestoration = 'manual'
-    })
+    hash = location.hash
   })
 
-  onDestroy(() => {
-    if (typeof removeEventListener !== 'undefined') {
-      removeEventListener('beforeunload', () => {
-        history.scrollRestoration = 'auto'
-      })
-      removeEventListener('load', () => {
-        history.scrollRestoration = 'manual'
-      })
-    }
-  })
-
-  page.subscribe(({ path, params, query }) => {
-    console.log(path)
-    pathname = path
+  pathname.subscribe(value => {
+    path = value
     isOn = false
-
     if (typeof location !== 'undefined') {
       hash = location.hash
     }
   })
 
-  function scrollToHash() {
-    const hashElement = document.getElementById(hash.slice(1))
-    if (hashElement) {
-      scroll = {
-        x: 0,
-        y: hashElement.getBoundingClientRect().top
-      }
-      scrollTo(scroll.x, scroll.y)
-    }
-  }
-  function onHashChange() {
-    hash = location.hash
+  function onHashChange(e) {
+    hash = e.target.location.hash
   }
   function onResize() {
     elOffsetHeight = el.offsetHeight
   }
 
-  function isActive(current, pathname) {
-    return pathname.indexOf(current) !== -1
+  function isActive(current, path) {
+    return path ? path.indexOf(current) !== -1 : false
   }
   function isHashActive(current, hash) {
     return current === hash
@@ -152,7 +120,8 @@
 
 <svelte:window
   on:resize={onResize}
-  on:hashchange={onHashChange} />
+  on:hashchange={onHashChange}
+  />
 
 <nav bind:this={el} style={isOn ? `max-height:${elHeight}px` : ''}>
   <span class="trigger" on:click={() => isOn = !isOn}>{label}</span>
@@ -198,29 +167,29 @@
     <li>
       <h4><a class:color-primary={segment === 'components'} href="docs/components">Components</a></h4>
       <ul class="list-unstyle">
-        <li><a class:color-primary={isActive('components/column', pathname)} href="docs/components/column">Column</a></li>
-        <li><a class:color-primary={isActive('components/template', pathname)} href="docs/components/template">Template</a></li>
-        <li><a class:color-primary={isActive('components/button', pathname)} href="docs/components/button">Button</a></li>
-        <li><a class:color-primary={isActive('components/form', pathname)} href="docs/components/form">Form</a></li>
+        <li><a class:color-primary={isActive('components/column', path)} href="docs/components/column">Column</a></li>
+        <li><a class:color-primary={isActive('components/template', path)} href="docs/components/template">Template</a></li>
+        <li><a class:color-primary={isActive('components/button', path)} href="docs/components/button">Button</a></li>
+        <li><a class:color-primary={isActive('components/form', path)} href="docs/components/form">Form</a></li>
       </ul>
     </li>
     <li>
       <h4><a class:color-primary={segment === 'helpers'} href="docs/helpers">Helper Classes</a></h4>
       <ul class="list-unstyle">
-        <li><a class:color-primary={isActive('helpers/container', pathname)} href="docs/helpers/container">Container</a></li>
-        <li><a class:color-primary={isActive('helpers/visibility', pathname)} href="docs/helpers/visibility">Visibility</a></li>
-        <li><a class:color-primary={isActive('helpers/list', pathname)} href="docs/helpers/list">List</a></li>
-        <li><a class:color-primary={isActive('helpers/misc', pathname)} href="docs/helpers/misc">Miscellaneous</a></li>
+        <li><a class:color-primary={isActive('helpers/container', path)} href="docs/helpers/container">Container</a></li>
+        <li><a class:color-primary={isActive('helpers/visibility', path)} href="docs/helpers/visibility">Visibility</a></li>
+        <li><a class:color-primary={isActive('helpers/list', path)} href="docs/helpers/list">List</a></li>
+        <li><a class:color-primary={isActive('helpers/misc', path)} href="docs/helpers/misc">Miscellaneous</a></li>
       </ul>
     </li>
     <li>
       <h4><a class:color-primary={segment === 'utilities'} href="docs/utilities">Utilities</a></h4>
       <ul class="list-unstyle">
-        <li><a class:color-primary={isActive('utilities/color', pathname)} href="docs/utilities/color">Color</a></li>
-        <li><a class:color-primary={isActive('utilities/typography', pathname)} href="docs/utilities/typography">Typography</a></li>
-        <li><a class:color-primary={isActive('utilities/spacing', pathname)} href="docs/utilities/spacing">Spacing</a></li>
-        <li><a class:color-primary={isActive('utilities/float', pathname)} href="docs/utilities/float">Float</a></li>
-        <li><a class:color-primary={isActive('utilities/wrapper', pathname)} href="docs/utilities/wrapper">Wrapper</a></li>
+        <li><a class:color-primary={isActive('utilities/color', path)} href="docs/utilities/color">Color</a></li>
+        <li><a class:color-primary={isActive('utilities/typography', path)} href="docs/utilities/typography">Typography</a></li>
+        <li><a class:color-primary={isActive('utilities/spacing', path)} href="docs/utilities/spacing">Spacing</a></li>
+        <li><a class:color-primary={isActive('utilities/float', path)} href="docs/utilities/float">Float</a></li>
+        <li><a class:color-primary={isActive('utilities/wrapper', path)} href="docs/utilities/wrapper">Wrapper</a></li>
       </ul>
     </li>
   </ul>

@@ -189,7 +189,7 @@ column: (
 
 <hr>
 <h2 id="fit"><a href="docs/components/column#fit">#</a> Fit column</h2>
-<p>Let the column fits to the size of the content.<code>col="fit"</code><br>
+<p>Let the column fit to the size of the content.<code>col="fit"</code><br>
 The config <em>screens</em> property is refering to the column component screens, giving you the reponsive variants <code>fit@sm</code><code>fit@md</code><code>fit@lg</code>.</p>
 
 {@html highlight(`// default config
