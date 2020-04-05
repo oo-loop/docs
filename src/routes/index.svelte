@@ -147,12 +147,23 @@ h3 {
 <Demo />
 
 <Col prop="span8@md self-align-center">
-  <h3>Why Loop ?</h3>
-  <p>Have you ever worked on a project with your go-to css framework realizing that you were only using 10% of it. You had to add your own utilities, your own components and when trying to reuse something from its library, you actually had to overwrite some rules, tweak it, in order to reproduce what you wish for.</p>  
-  <p>Have you ever wonder if the framework you were using was a real fit?.</p>
-  <p>Loop has been developed out of that feeling to overcome this problem.</p>
-  
-  <div class="hr"></div>
-  <h3>Philosophy</h3>
-  <p>Loop is not a framework providing any possible existing components. It's more like a companion for CSS development, encouraging the use and creation of utilities while considering recurring components. Loop works towards flexibility and expressive CSS.</p>
+  <h3>Why Loop?</h3>
+  <p>
+    The first iteration of Loop <em>(0.4)</em> focused on bringing the minimum to bootstrap any project.
+    Instead of providing any possible existing components, Loop worked towards flexibility and customization to let the developer manage his
+    own set of utilities; thus, making the CSS easier to maintain. Loop also introduced a new component syntax to improve HTML readibility
+    making styling code more expressive and less confusing.
+  </p>
+  <p>
+    <strong>Loop v1</strong> continues into the same philosophy tackling this time the variables situation.
+     We often get from a css framework a list of single variable to customize elements or components properties.
+     The list tend to be exhaustive and can become painful while searching for a possible change or not.
+  </p>
+  <p>
+    Loop proposes to treat the variables as a single structured map to facilitate its use.
+    Thus, it is enabling easing parsing and access of all the config data during the development.
+    Also, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements or components.
+    No more missing variables, just add whatever your need.
+  </p>
+  <hr>
 </Col>
