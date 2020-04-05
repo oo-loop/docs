@@ -127,6 +127,9 @@ Check the <a href="docs/html-elements" title="HTML elements documentation">HTML 
 ),
 `, 'scss')}
 
+<p class="info">Same as <em>props</em>, the rules for <strong>pseudo-elements</strong> and <strong>child-elements</strong> also apply to <em>states</em>.</p>
+
+
 <hr>
 <h2 id="this"><a href="docs/config#this">#</a> <em class="font-regular">This</em> Referer</h2>
 <p>The keyword <code>this()</code> refers to a value in the context of the config map.</p>

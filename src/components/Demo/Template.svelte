@@ -11,6 +11,8 @@
 
   $: screen = screens[activeScreenIndex]
 
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
   beforeUpdate(() => {
     if (template !== undefined) {
       for (let i = 0; i < template.children.length; i++) {
@@ -65,7 +67,29 @@
       grid-area: none;\n
       // transform: translate3d(${u * distanceX}px, ${u * distanceY}px, 0);\n
       `,
+      tick: async (t,u) => {
+        // avoid anim flick
+        if (u > 0) {
+          Object.assign(node.style, {
+            top: `${params.to.x}px`,
+            left: `${params.to.y}px`,
+            width: `${params.to.width}px`,
+            height: `${params.to.height}px`,
+          })
+          await delay(800)
+          resetAnimNode(node)
+        }
+      }
     }
+  }
+
+  function resetAnimNode(node) {
+    Object.assign(node.style, {
+      top: '',
+      left: '',
+      width: '',
+      height: '',
+    });
   }
 
   function setActiveScreen(screenName) {
