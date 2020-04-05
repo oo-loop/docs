@@ -54,14 +54,18 @@
     const distanceY = from.y - params.to.y;
     const distanceW = from.width - params.to.width;
     const distanceH = from.height - params.to.height;
+
+    const canvasComputedStyle = window.getComputedStyle(template.parentNode)
+    const canvasPadding = parseInt(canvasComputedStyle.getPropertyValue('padding-left').slice(0, -2), 10)
+
     return {
       delay: 0,
       duration: 800,
       easing: cubicOut,
       css: (t, u) => `
       position:absolute;\n
-      top: ${(from.y - (t * distanceY)) - template.getBoundingClientRect().y + 16}px;\n
-      left: ${(from.x - (t * distanceX)) - template.getBoundingClientRect().x + 16}px;\n
+      top: ${(from.y - (t * distanceY)) - template.getBoundingClientRect().y + canvasPadding}px;\n
+      left: ${(from.x - (t * distanceX)) - template.getBoundingClientRect().x + canvasPadding}px;\n
       width: ${from.width - (t * distanceW)}px;\n
       height: ${from.height - (t * distanceH)}px;\n
       grid-area: none;\n
@@ -76,7 +80,7 @@
             width: `${params.to.width}px`,
             height: `${params.to.height}px`,
           })
-          await delay(800)
+          await delay(1000)
           resetAnimNode(node)
         }
       }

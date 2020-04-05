@@ -44,7 +44,7 @@
     }
     :global(.preview) {
       position: relative;
-      padding: .8rem;
+      padding: rem(12);
       margin-left: -.5rem;
       margin-right: -.5rem;
       border: 1px solid oo('palette.primary');
