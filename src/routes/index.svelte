@@ -135,7 +135,7 @@ h3 {
   <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
   
   <h3>Single Configuration</h3>
-  <p>No endless variables file, Loop offers easy management and access to all configuration in a single map.</p>
+  <p>No endless list of variables, Loop offers easy management and access to all configuration in a single map.</p>
 
   <h3>Separation of concerns</h3>
   <p>Loop differentiates components and utilities with semantic for more clarity</p>
@@ -157,13 +157,13 @@ h3 {
   <p>
     <strong>Loop v1</strong> continues into the same philosophy tackling this time the variables situation.
      We often get from a css framework a list of single variable to customize elements or components properties.
-     The list tend to be exhaustive and can become painful while searching for a possible change or not.
+     The list tends to be exhaustive and can become painful while searching for a possible change or not.
   </p>
   <p>
     Loop proposes to treat the variables as a single structured map to facilitate its use.
-    Thus, it is enabling easing parsing and access of all the config data during the development.
-    Also, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements or components.
-    No more missing variables, just add whatever your need.
+    Thus, the config map is enabling easy parsing and access to all the data during the development.
+    Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
+    It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's possible or not.
   </p>
   <hr>
 </Col>
