@@ -673,7 +673,7 @@ $ooLoop: ooSet('column.order.screens', (
 
 /* Other situation */
 $ooLoop: ooSet('column.order.screens', (
-  sm: (),// from order0@sm to order11@sm
+  sm: '✲',// All, from order0@sm to order11@sm
   md: 0, // order0@md
 ));
 

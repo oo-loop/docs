@@ -134,7 +134,7 @@
       ),
       screens: (
         sm: 'small',
-        lg: () // non specified targets all
+        lg: '✲' // Target all
       )
     ),
   )
