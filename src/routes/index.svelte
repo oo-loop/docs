@@ -156,14 +156,14 @@ h3 {
   </p>
   <p>
     <strong>Loop v1</strong> continues into the same philosophy tackling this time the variables situation.
-     We often get from a css framework a list of single variable to customize elements or components properties.
-     The list tends to be exhaustive and can become painful while searching for a possible change or not.
+     What we often get from a css framework, is a list of single variable to customize elements or components properties.
+     The list, trying to cover a multitude of parameters, tends to be exhaustive and can become painful while searching for a possible change.
   </p>
   <p>
     Loop proposes to treat the variables as a single structured map to facilitate its use.
-    Thus, the config map is enabling easy parsing and access to all the data during the development.
+    As the result, the config map is enabling easy parsing and access to all the data during the development.
     Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
-    It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's possible or not.
+    It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's changeable or not.
   </p>
   <hr>
   <p class="info font-bold">Loop documentation is still on going, more samples and details coming soon.</p>
