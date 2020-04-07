@@ -62,7 +62,7 @@
     @include breakpoint(md) {
       max-height: none;
 
-      @supports not (position: sticky) {
+      @supports (position: sticky) {
         position: sticky;
         top: 0;
         overflow: auto;
