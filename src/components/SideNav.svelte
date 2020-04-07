@@ -60,15 +60,19 @@
     }
 
     @include breakpoint(md) {
-      position: sticky;
-      top: 1rem;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      
+      max-height: none;
+
+      @supports not (position: sticky) {
+        position: sticky;
+        top: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: 100vh;
+      }
+
       margin-right: auto;
       margin-left: auto;
       width: 200px;
-      max-height: calc(100vh - 2rem);
 
       background-color: transparent;
       border-right: oo('hr.props.borderBottom');
