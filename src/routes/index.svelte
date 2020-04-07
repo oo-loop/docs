@@ -63,7 +63,7 @@ h3 {
   height: 20px;
 }
 
-[data-oo-button] {
+.start-button {
   position: relative;
   z-index: 2;
   margin: -40px auto -100px;
@@ -129,7 +129,7 @@ h3 {
   </div>
 </section>
 <Col prop="span8@md self-align-center">
-  <a data-oo-button href="/docs">Start</a>
+  <a data-oo-button class="start-button" href="/docs">Start</a>
   <div class="hr"></div>
   <h3>Fully customizable</h3>
   <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
@@ -165,6 +165,8 @@ h3 {
     Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
     It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's changeable or not.
   </p>
+  <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="/docs">Let's go</a></p>
   <hr>
-  <p class="info font-bold">Loop documentation is still on going, more samples and details coming soon.</p>
+  <p class="info">Loop documentation is still on going, more samples and details coming soon.</p>
+  <hr>
 </Col>
