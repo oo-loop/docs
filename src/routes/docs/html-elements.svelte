@@ -173,7 +173,7 @@ body {
 <hr>
 
 <h2 id="headings"><a href="docs/html-elements#headings">#</a> Headings</h2>
-<p>Sets HTML headings from <code>{`<h1>`}</code> through <code>{`<h6>`}</code>. Unlike <a href="v0.4" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilitate the conversion from pixel to rem unit.</p>
+<p>Sets HTML headings from <code>{`<h1>`}</code> through <code>{`<h6>`}</code>. Unlike <a href="https://oo-loop.github.io/v0.4" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilitate the conversion from pixel to rem unit.</p>
 <div class="ground">
   <h1>H1 heading</h1>
   <h2>H2 heading</h2>

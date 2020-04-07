@@ -166,4 +166,5 @@ h3 {
     It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's possible or not.
   </p>
   <hr>
+  <p class="info font-bold">Loop documentation is still on going, more samples and details coming soon.</p>
 </Col>

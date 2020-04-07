@@ -329,7 +329,7 @@ $ooLoop: ooSet('template.gap', 1rem);
 </section>
 <section>
   <div class="container">
-    <Col prop="span9@sm span7@md span6@lg self-align-center" class="wrapper-wide">
+    <Col prop="span9@sm span7@md self-align-center" class="wrapper-wide">
       <p class="font-large mb-0">
         Like a companion, Loop supports your development, giving you the tools to make it your own.<br><br>
         Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a>
