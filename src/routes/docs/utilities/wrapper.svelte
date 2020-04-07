@@ -57,7 +57,7 @@ wrapper: (
 // set .wrapper-tiny@md .wrapper-small@md
 // set .wrapper-small@lg .wrapper-medium@lg
 $ooLoop: ooSet('wrapper.screens', (
-  sm: (),
+  sm: '✲',
   md: ('tiny', 'small'),
   lg: ('small', 'medium')
 ));
