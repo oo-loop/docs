@@ -2,7 +2,7 @@
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
-  import Demo from '@/components/Demo/index.svelte'
+  import Demo from './_demo/index.svelte'
 </script>
 
 <style lang="scss">

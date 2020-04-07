@@ -2,7 +2,7 @@
   import highlight from '@/utils/highlight.js'
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
-  import TemplateSample from './Template.svelte'
+  import TemplateSample from './template.svelte'
   
   const date = new Date()
   let showWeatherCode = {
