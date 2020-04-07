@@ -14,7 +14,7 @@ $ooLoop: ooPipe(
       )
     ),
     screens: ('sm', 'md'),
-    vsizes: ('less' : 0),
+    vsizes: ('less': 0),
   )),
   _add('column.alignment.screens', 'lg'),
   _set('column.childAlignment.use', true),
