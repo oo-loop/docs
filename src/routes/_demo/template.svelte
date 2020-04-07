@@ -6,6 +6,7 @@
   const screens = ['rt', 'sm', 'md', 'lg']
   let activeScreenIndex = 0, direction = 1
   let autoAnimation = null
+  let isAnimOn = false
   let template = undefined
   let areas = []
 
@@ -50,6 +51,8 @@
   })
 
   const relocate = (node, { from }, params) => {
+    isAnimOn = true
+
     const distanceX = from.x - params.to.x;
     const distanceY = from.y - params.to.y;
     const distanceW = from.width - params.to.width;
@@ -74,17 +77,21 @@
       tick: async (t,u) => {
         // avoid anim flick
         if (u > 0) {
-          Object.assign(node.style, {
-            top: `${params.to.x}px`,
-            left: `${params.to.y}px`,
-            width: `${params.to.width}px`,
-            height: `${params.to.height}px`,
-          })
+          setAnimNode(node, params)
           await delay(1000)
           resetAnimNode(node)
         }
       }
     }
+  }
+
+  function setAnimNode(node, params) {
+     Object.assign(node.style, {
+      top: `${params.to.x}px`,
+      left: `${params.to.y}px`,
+      width: `${params.to.width}px`,
+      height: `${params.to.height}px`,
+    })
   }
 
   function resetAnimNode(node) {
@@ -94,12 +101,22 @@
       width: '',
       height: '',
     });
+    isAnimOn = false
   }
 
-  function setActiveScreen(screenName) {
+ async function setActiveScreen(screenName) {
     if (autoAnimation !== null) {
       clearInterval(autoAnimation)
       autoAnimation = null
+    }
+    // avoid flick when clicking everywhere (@todo improve that)
+    if (isAnimOn) {
+      for (let i = 0; i < template.children.length; i++) {
+        const node = template.children[i]
+        setAnimNode(node,  areas[i])
+        await delay(300)
+        resetAnimNode(node)
+      }
     }
     activeScreenIndex = screens.indexOf(screenName)
   }
