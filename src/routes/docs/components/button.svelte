@@ -14,7 +14,7 @@
 <HeadTitle title="Button component"/>
 
 <h1>Button</h1>
-<p class="font-large">Modular component and 100% customizable to fit your needs<br>
+<p class="font-large">Modular component and 100% customizable<br>
 <code class="ml-0">oo-button</code></p>
 
 <ul>

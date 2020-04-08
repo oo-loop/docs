@@ -122,6 +122,42 @@ $ooLoop: ooAdd('spacing', (
   .mb-gutter { margin-bottom: 1.5rem !important; }
 }
 `, 'css')}
+
+<h4 class="mt-45">Set your own logic</h4>
+<p>Use a different approach if the numbers or names makes more sense to you.</p>
+
+{@html highlight(
+`// your-config.scss
+$ooLoop: ooSet('spacing.left.values', (
+  '0': 0,
+  '1': .5rem,
+  '2': 1rem,
+  '3': 1.5rem,
+));
+
+// or
+
+$ooLoop: ooSet('spacing.top.values', (
+  'less': 0,
+  'small': .5rem,
+  'medium': 1rem,
+  'large': 2rem,
+));
+`, 'scss')}
+{@html highlight(
+`/** It will generate **/
+
+.ml-0 { margin-left: 0rem !important; }
+.ml-1 { margin-left: .5rem !important; }
+.ml-2 { margin-left: 1rem !important; }
+.ml-3 { margin-left: 1.5rem !important; }
+
+.mt-less { margin-top: 0rem !important; }
+.mt-small { margin-top: .5rem !important; }
+.mt-medium { margin-top: 1rem !important; }
+.mt-large { margin-top: 2rem !important; }
+`, 'css')}
+
 <hr>
 <p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>
 

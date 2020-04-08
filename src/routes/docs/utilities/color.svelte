@@ -52,7 +52,7 @@ color: (
   <p class="wrapper-small bg-secondary">this is a block with a the class <em>.bg-secondary</em></p>
 </div>
 
-<p><strong>Set your preferences by adding your necessary colors to config.</strong></p>
+<p><strong>Set your preferences to the config.</strong></p>
 
 {@html highlight(
 `$ooLoop: ooPipe(
@@ -63,7 +63,7 @@ color: (
     'warning': #ce8a0d,
   )),
   _add('color.background.values', (
-    'danger': #f7c8c8, //overwrite the danger value for background
+    'danger': #f7c8c8, //override the danger value for background
   )),
   _set('color.border.values', this('palette')), //add global values
 );

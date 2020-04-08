@@ -31,7 +31,7 @@ misc: (
 
 <div class="hr"></div>
 <h2 class="mt-45" id="custom"><a href="docs/helpers/misc#custom">#</a> Custom</h2>
-<p>As for now, Loop is providing only one micellaneous class. You can still add your own recurring class through the config file though.</p>
+<p>As for now, Loop is providing only one miscellaneous class. You can still add your own recurring class through the config file though.</p>
 {@html highlight(
 `// add .thumbnail class
 $ooLoop: ooAdd('misc', (

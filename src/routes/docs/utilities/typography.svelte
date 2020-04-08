@@ -30,6 +30,7 @@ typo: (
   ),
   fontWeight: (
     values: (
+      'light': 300,
       'bold': 700,
     ),
   ),
@@ -53,6 +54,7 @@ typo: (
   <p class="font-small">This is a text with the class <em>.font-small</em></p>
   <div class="hr"></div>
   <p class="font-italic">This is a text with the class <em>.font-italic</em></p>
+  <p class="font-light">This is a text with the class <em>.font-light</em></p>
   <p class="font-bold">This is a text with the class <em>.font-bold</em></p>
   <div class="hr"></div>
   <p class="text-left">This is a text with the class <em>.text-left</em></p>
@@ -70,11 +72,6 @@ typo: (
     values: (
       'tiny': rem(12), // add .font-tiny
       'large': rem(18), // update .font-large
-    )
-  ),
-  fontWeight: (
-    values: (
-      'light': 300,  // add .font-light
     )
   ),
   fontFamily: (
@@ -98,7 +95,6 @@ typo: (
   <p class="font-tiny mb-0">This is a text with the class <em>.font-tiny</em></p>
   <p class="font-large-2">This is a text with the updated size of the class <em>.font-large</em></p>
   <!-- for documentation purposes the class used is .font-large-2 -->
-  <p class="font-light">This is a text with the class <em>.font-light</em></p>
   <p class="font-monospace mb-0">This is a text with the class <em>.font-monospace</em></p>
   <p class="font-serif">This is a text with the class <em>.font-serif</em></p>
   <p class="text-tight mb-0">This is a text with the class <em>.text-tight</em></p>
