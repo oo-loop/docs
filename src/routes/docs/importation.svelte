@@ -12,7 +12,12 @@
 <p class="font-large">A single import for the entire framework</p>
 <p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a> including the selection of the part of the framework. This makes the loop main file <strong>the only needed</strong> import.</p>
 
-{@html highlight(`@import 'loop/scss'; // that's all`, 'scss')}
+{@html highlight(`@import 'oo-loop/loop'; // that's all`, 'scss')}
+
+<p class="info">Make sure to use the <strong>correct path</strong> to the <strong>Loop node_modules</strong>.
+Javascript task runners can help you simplify the import, otherwise please use the following path <strong class="color-primary">node_modules/oo-loop/loop</strong>.</p>
+
+<div class="hr"></div>
 
 <h2 class="mt-30" id="config">Use of Config</h2>
 <p>Adjust your needs of the framework by updating the <em>use</em> property of the config map.</p>

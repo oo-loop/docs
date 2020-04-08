@@ -28,6 +28,9 @@
 @include ooCreate(); // Launch loop
 `, 'scss')}
 
+<p class="info">Make sure to use the <strong>correct path</strong> to the <strong>Loop node_modules</strong>.
+Javascript task runners can help you simplify the import, otherwise please use the following path <strong class="color-primary">node_modules/oo-loop/loop</strong>.</p>
+
 <div class="hr"></div>
 <h2 class="mt-45" id="adjust">Adjust to your need</h2>
 <p>Loop encourages you to set your own rules and shape the css the way you like. Following the structure of the <a href="docs/config" title="Config Map">config map</a>, modify its properties to match your needs.</p>
