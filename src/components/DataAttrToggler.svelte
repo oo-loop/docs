@@ -1,20 +1,14 @@
 <script>
-  import { afterUpdate } from 'svelte'
   import highlight from '@/utils/highlight.js'
   
   let classes = undefined;
   export {classes as class};
   export let content = ''
 
-  let code
   let isChecked = false
   $: htmlContent = isChecked
     ? highlight(content.replace(/oo-/g, 'data-oo-'), 'html', classes)
     : highlight(content, 'html', classes)
-
-  afterUpdate(() => {
-    code.innerHTML = htmlContent
-  })
 </script>
 
 <style lang="scss">
@@ -45,5 +39,5 @@
     <input data-oo-checkbox="small" type="checkbox" bind:checked={isChecked}>
     <label on:click={() => isChecked = !isChecked}>dataAttr</label>
   </div>
-  <div bind:this={code}></div>
+  {@html htmlContent}
 </section>
