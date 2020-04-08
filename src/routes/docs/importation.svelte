@@ -53,7 +53,7 @@ use: (
 <p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
 This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
 
-{@html highlight(`@import '~loop/scss';
+{@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: ooUse((
   input: (
@@ -72,7 +72,7 @@ $ooLoop: ooUse((
 <h3 class="h4 mt-45">Update with ooCreate</h3>
 <p>Use the <code>ooCreate()</code> config to pass some preferences.</p>
 {@html highlight(
-`@import '~loop/scss';
+`@import 'oo-loop/loop';
 
 @include ooCreate((
   use: (
@@ -88,7 +88,7 @@ $ooLoop: ooUse((
 ));
 `, 'scss')}
 {@html highlight(
-`@import '~loop/scss';
+`@import 'oo-loop/loop';
 
 @include ooCreate((
   use: (
@@ -103,7 +103,7 @@ $ooLoop: ooUse((
 <h3 class="h4 mt-45">Update one property at a time</h3>
 <p>Use the functions <code>ooSet()</code> or <code>ooPipe()</code> to set individual properties.</p>
 {@html highlight(
-`@import '~loop/scss';
+`@import 'oo-loop/loop';
 
 $ooLoop: ooSet('use.utilities.wrapper', false);
 
@@ -129,7 +129,7 @@ That will also give you the opportunity to set some global settings.</p>
 {@html highlight(
 `// Here is an example
 
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 // Initialize Loop
 @include ooInit((

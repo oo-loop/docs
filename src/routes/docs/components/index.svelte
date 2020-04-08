@@ -323,7 +323,7 @@ While making reusable modular code and repeating common style paterns, it might 
 {#if ooEvent === 'config'}
   {@html highlight(
 `// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 $ooLoop: ooSet('palette.alert': #f15f63);
 $ooLoop: ooSet('button.outline', true);
@@ -385,7 +385,7 @@ $ooLoop: ooSet('components', ('event': (
 
 {:else}
   {@html highlight(`// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 $ooLoop: ooSet('palette.alert': #f15f63);
 $ooLoop: ooSet('button.outline', true);

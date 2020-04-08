@@ -167,7 +167,7 @@
       <Col prop="span4@md order0@md">
 {@html highlight(
 `// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 @include ooCreate((
   dataAttr: false,
@@ -218,7 +218,7 @@
       <Col prop="span6@md" class="mt-15">
 {@html highlight(
 `// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 $ooLoop: ooSet('template.areas', (
   'home': (
@@ -348,7 +348,7 @@ $ooLoop: ooSet('template.gap', 1rem);
       <Col prop="fit self-align-center">
 {@html highlight(
 `// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 $ooLoop: ooPipe(
   _add('palette', (
@@ -435,7 +435,7 @@ $ooLoop: ooPipe(
       <Col prop="span6@sm span5@md" class="mt-10">
 {@html highlight(
 `// _config.scss
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 $ooLoop: ooAdd('components', (
   'notification': (

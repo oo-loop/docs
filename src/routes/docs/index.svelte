@@ -24,7 +24,7 @@
 
 <p>Import <strong>Loop framework</strong> into your sass file and <strong>launch it</strong> to start with.</p>
 
-{@html highlight(`@import '~loop/scss'; // Import loop
+{@html highlight(`@import 'oo-loop/loop'; // Import loop
 @include ooCreate(); // Launch loop
 `, 'scss')}
 
@@ -62,7 +62,7 @@ $ooLoop: (
 `, 'scss')}
 {@html highlight(`// Your config.scss file
 
-@import '~loop/scss';
+@import 'oo-loop/loop';
 
 @include ooCreate((
   breakpoints: (
@@ -101,7 +101,7 @@ $ooLoop: (
   ...
 );
 `, 'scss')}
-{@html highlight(`@import '~loop/scss';
+{@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: ooSet('breakpoints', (
   sm: 37.500em,
@@ -138,7 +138,7 @@ $ooLoop: (
   ...
 );
 `, 'scss')}
-{@html highlight(`@import '~loop/scss';
+{@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: ooAdd('breakpoints', (
   xxl: 140em, // add xxl breakpoint to map
@@ -159,7 +159,7 @@ $ooLoop: ooAdd('screens', xxl); // add responsive screen to list
   <br>List of setter <code>_set(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code> and adder<code>_add(<span class="color-base">$path</span>, <span class="color-base">$value</span>)</code></li>
 </ul>
 
-{@html highlight(`@import '~loop/scss';
+{@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: ooPipe(
   _set('breakpoints.xl', 100em),
@@ -175,7 +175,7 @@ $ooLoop: ooPipe(
 <h3 id="copy-paste"><a href="docs#copy-paste" title="Copy/paste config">#</a> Copy/paste</h3>
 <p>If you like to see everything at once, you can copy/paste the <strong>entire</strong> default config map, override its values and add new ones.
 <strong class="color-danger">Make sure not to remove referred properties!</strong></p>
-{@html highlight(`@import '~loop/scss';
+{@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: (
   /** the ENTIRE configuration **/
