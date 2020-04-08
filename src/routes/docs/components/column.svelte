@@ -173,7 +173,7 @@ column: (
 <hr>
 <h2 id="single"><a href="docs/components/column#single">#</a> Single column</h2>
 <p>Set a specific size for the content of the page or center it with a single html element.
-<br>(<strong>no need for an extra div</strong> with the <code>oo-row</code> atttribute).</p>
+<br>(<strong>no need for an extra div</strong> to wrap the column with the <code>oo-row</code> attribute).</p>
 <DataAttrToggler content={
 `<div oo-col="span10 span9@sm span7@md self-align-center">
   <h3>Consectetur adipisicing elit.</h3>
@@ -189,7 +189,7 @@ column: (
 
 <hr>
 <h2 id="fit"><a href="docs/components/column#fit">#</a> Fit column</h2>
-<p>Let the column fit to the size of the content.<code>col="fit"</code><br>
+<p>Let the column fits the size of the content.<code>col="fit"</code><br>
 The config <em>screens</em> property is refering to the column component screens, giving you the reponsive variants <code>fit@sm</code><code>fit@md</code><code>fit@lg</code>.</p>
 
 {@html highlight(`// default config
@@ -255,7 +255,7 @@ column: (
 </div>
 `} />
 
-<button data-oo-button class="float-right mb-root" on:click={() => isClear = !isClear}>toggle clear</button>
+<button data-oo-button class="float-right mb-root" on:click={() => isClear = !isClear}>{isClear ? 'Remove clear' : 'Add clear'}</button>
 <div class="ground">
   <Row>
     <Col class="cell" prop="span2">1</Col>
