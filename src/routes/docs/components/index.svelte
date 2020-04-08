@@ -17,14 +17,14 @@
 <HeadTitle title="Components"/>
 
 <h1>Components</h1>
-<p class="font-large">Use components for a group of recurring styles.</p>
+<p class="font-large">Use oo-component to group recurring styling.</p>
 <p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
 <p>By default, Loop components are used along with the <em>data</em> attribute <code>data-oo-componentName</code> to be a fully-valid HTML attribute.
 You may still turn off the option to remove verbosity and get a shorter name for speed purposes <code>oo-componentName</code> <i>(Which was the case in Loop v0.4)</i></p>
 
-<button class="float-right mb-5" data-oo-button on:click="{() => dataAttr = !dataAttr}">Toggle dataAttr</button>
+<button class="float-right mb-5" data-oo-button on:click="{() => dataAttr = !dataAttr}">Toggle dataAttr {dataAttr ? 'Off' : 'On'}</button>
 {@html highlight(
 `@include ooCreate((
   dataAttr: ${dataAttr}, // ${dataAttr ? 'default': 'setting'} ${attr}-componentName
@@ -48,8 +48,16 @@ You may still turn off the option to remove verbosity and get a shorter name for
   <li><a href="docs/components/form" title="Form component">Form</a><code>oo-input</code><code>oo-select</code><code>oo-radio</code><code>oo-checkbox</code><code>oo-toggle</code></li>
 </ul>
 
+<h4 class="mt-30 mb-15">Custom components</h4>
+<ul>
+  <li><a href="docs/components/#custom" title="Sample of situation">Sample of situation</a></li>
+  <li><a href="docs/components/#from-config" title="Create component from config">Create component from Config</a></li>
+  <li><a href="docs/components/#from-mixin" title="Create component from mixin">Create component from Mixin</a></li>
+  <li><a href="docs/components/#turn-utility-into-component" title="Turn utility-first component into oo-component">Turn utility-first component into oo-component</a></li>
+</ul>
+
 <hr>
-<h2>Custom components</h2>
+<h2 id="custom"><a href="docs/components/#custom">#</a> Custom components</h2>
 <p>Loop gives you the possibilty to create your own Loop syntax component.
 That offers you an alternative to regular css in the case of making a recurring style along with numerous modifiers.</p>
 
@@ -140,7 +148,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
   <strong>Hey, well done!</strong><br>You've created a <i>danger</i> notification component.
 </div>
 <h4 class="mt-30">Target children elements</h4>
-<p>Use <code>></code> as property name within the list of CSS properties to target nested elements. Then, define a map of CSS selector with CSS properties.</p>
+<p>Use <code>></code> as a property name within the list of CSS properties to target nested elements. Then, define a map of CSS selector with CSS properties.</p>
 {@html highlight(
 `$ooLoop: ooAdd('components', (
   'notification': (
@@ -191,7 +199,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
         background-color: #c8f7e1,
         'before': (
           content: '\\2713',
-          background-color: #015a31,
+          background-color: #4ea97d,
         )
       )
     )
@@ -207,7 +215,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 </div>
 
 <h3 class="mt-45" id="from-mixin"><a href="docs/components#from-mixin" title="Create from mixin">#</a> Creation from mixin</h3>
-<p>Combine two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
+<p>Combine the two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
 
 <h4 class="font-code mt-30">ooComponent(<span class="color-primary">$name</span>){'{ '}<span class="color-secondary">@content</span>{' }'}</h4>
 <p><em class="text-uppercase font-small">Mixin</em> - Create a base component</p>
@@ -279,11 +287,13 @@ I sometimes get confused between the modifiers and the utilities.</p>
 
 <h2 id="turn-utility-into-component"><a href="docs/components#turn-utility-into-component">#</a> Turn Utility First Component into Loop Component</h2>
 <p>Developing with utilities increases speed and help us prototyping rapidly custom components.
-Still, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
-While making reusable modular code and repeating common style paterns, it might be time to think of turning the <em>utility-first-component</em> into a <em>loop-component</em>. Write less HTML with more CSS</p>
+Therefore, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
+Repeating the same classes while making reusable modular code could easily start to be unproductive.</p>
+<p>So take into condiseration setting aside <em>utility-first-component</em> for common group paterns and turn them into <em>loop-component</em>.
+Write less HTML with more CSS.</p>
 
 <strong>Example with the Event utility-first</strong>
-
+<p>16 classes + 1 component & 2 modifiers</p>
 {@html highlight(
 `<div class="bg-white text-center shape-squircle overflow-hidden">
   <time datetime="${datetime}"
@@ -458,6 +468,7 @@ $ooLoop: ooSet('button.variants.stadium', (
   <button oo-button="alert stadium outline">Join</button>
 </div>
 `, 'html')}
+<p class="mt-30">0 class, 2 components & 3 modifers</p>
 <div class="ground">
   <div data-oo-event class="mb-30">
     <time datetime={datetime}>September 8th, 10am</time>

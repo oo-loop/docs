@@ -10,11 +10,12 @@
 
 <h1>Importation</h1>
 <p class="font-large">A single import for the entire framework</p>
-<p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a> including the selection of the part of the framework. This makes the loop main file <strong>the only needed</strong> import.</p>
+<p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a>.
+Being also the case when including pieces of the framework, Loop main file becomes <strong>the only needed</strong> import.</p>
 
 {@html highlight(`@import 'oo-loop/loop'; // that's all`, 'scss')}
 
-<p class="info">Make sure to use the <strong>correct path</strong> to the <strong>Loop node_modules</strong>.
+<p class="info">Make sure to use the <strong>correct path</strong> to the Loop <strong>node_modules</strong>.
 Javascript task runners can help you simplify the import, otherwise please use the following path <strong class="color-primary">node_modules/oo-loop/loop</strong>.</p>
 
 <div class="hr"></div>
@@ -31,7 +32,7 @@ use: (
   column: true,
   template: true,
   button: true,
-  input: (
+  form: (
     textfield: true,
     select: true,
     checkbox: true,
@@ -41,12 +42,12 @@ use: (
 
   container: true,
   visibility: true,
+  list: true,
   misc: true,
 
   utilities: (
     color: true,
     float: true,
-    list: true,
     spacing: true,
     typo: true,
     wrapper: true,
@@ -61,7 +62,7 @@ This allows you to avoid going through <code>ooCreate()</code> gaining more read
 {@html highlight(`@import 'oo-loop/loop';
 
 $ooLoop: ooUse((
-  input: (
+  form: (
     select: false,
     checkbox: false,
     radio: false,
@@ -81,7 +82,7 @@ $ooLoop: ooUse((
 
 @include ooCreate((
   use: (
-    input: (
+    form: (
       select: false, // remove select component
       checkbox: false, // remove checkbox component
       radio: false,  // remove radio component
@@ -97,7 +98,7 @@ $ooLoop: ooUse((
 
 @include ooCreate((
   use: (
-    input: false, // remove all input components
+    form: false, // remove all form components
     utilities: (
       wrapper: false,
     )
@@ -113,9 +114,9 @@ $ooLoop: ooUse((
 $ooLoop: ooSet('use.utilities.wrapper', false);
 
 $ooLoop: ooPipe(
-  _set('use.input.select', false),
-  _set('use.input.checkbox', false),
-  _set('use.input.radio', false)
+  _set('use.form.select', false),
+  _set('use.form.checkbox', false),
+  _set('use.form.radio', false)
 );
 
 @include ooCreate();
