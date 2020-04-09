@@ -27,8 +27,8 @@
 
 <p>Import <strong>Loop framework</strong> into your sass file and <strong>launch it</strong> to start with.</p>
 
-{@html highlight(`@import 'oo-loop/loop'; // Import loop
-@include ooCreate(); // Launch loop
+{@html highlight(`@import 'oo-loop/loop'; // Import
+@include ooCreate(); // Launch
 `, 'scss')}
 
 <p class="info">Make sure to use the <strong>correct path</strong> to the Loop <strong>node_modules</strong>.

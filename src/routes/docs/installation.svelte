@@ -14,10 +14,10 @@
 
 <h3>Setup options</h3>
 <ol>
-  <li>Via <a class="font-bold" href="https://sass-lang.com/install" title="Sass" target="blank">Sass library</a></li>
+  <li>Via <a class="font-bold" href="https://sass-lang.com/install" title="Sass" target="blank">Sass</a> applications or commande line</li>
   <li>Via <a class="font-bold" href="https://github.com/sass/node-sass#readme" title="Node sass" target="blank">node-sass</a> <code>npm install node-sass</code></li>
   <li>Via <a class="font-bold" href="https://webpack.js.org/loaders/sass-loader/" title="Webpack sass loader" target="blank">Webpack and sass loader</a> <code>npm install sass-loader node-sass webpack --save-dev</code></li>
-  <li>Via <a class="font-bold" href="https://rollupjs.org/guide/en/" title="Rollup" target="blank">Rollup</a> and <a class="font-bold" href="https://github.com/differui/rollup-plugin-sass#readme" title="Rollup sass plugin" target="blank">rollup-plugin-sass</a> <code>npm install rollup-plugin-sass -D</code></li>
+  <li>Via <a class="font-bold" href="https://rollupjs.org/guide/en/" title="Rollup" target="blank">Rollup</a> and <a class="font-bold" href="https://github.com/differui/rollup-plugin-sass#readme" title="Rollup sass plugin" target="blank">rollup-plugin-sass</a> <code>npm install rollup rollup-plugin-sass -D</code></li>
 </ol>
 
 <h3 class="mt-30">Loop package</h3>
