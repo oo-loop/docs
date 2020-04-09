@@ -1,0 +1,32 @@
+// Form
+$ooLoop: ooPipe(
+  _add('input.variants', (
+    'danger': (
+      border-color: #ca7878,
+      background-color: #f9e4e4,
+    ),
+    'large': (
+      padding: 1rem 1.25rem
+    ),
+    'rounded': (
+      border-radius: 50em,
+    ),
+  )),
+  _add('select.variants', (
+    'secondary': (
+      borderColor: #222,
+      caret: (
+        color: #fff,
+        bgcolor: #222,
+      )
+    ),
+  )),
+  _add('checkbox.sizes', (
+    'medium': 1.5rem,
+    'large': 2rem,
+  )),
+  _set('checkbox.screens', (sm, md)),
+  _set('radio.sizes.large', 2rem),
+  _set('radio.screens', (sm, md)),
+  _set('toggle.sizes.large', 2rem),
+);

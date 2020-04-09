@@ -1,0 +1,19 @@
+.info {
+  padding: rem(14) !important;
+  color: #5f7984;
+  font-size: rem(14);
+  border: 1px solid #b0ceda;
+  background-color: #e7f4ff;
+}
+
+.ground {
+  padding: 1.25rem;
+  margin-bottom: 30px;
+  border: 1px solid #d5d6d6;
+  background-color: #e7efef;
+
+  .hr {
+    margin-top: rem(25);
+    margin-bottom: rem(25);
+  }
+}

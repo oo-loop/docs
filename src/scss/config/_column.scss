@@ -1,0 +1,33 @@
+// Column
+$ooLoop: ooPipe(
+  _add('column.gutter', (
+    sizes: (
+      'tiny': (
+        rt: 0.5rem,
+        sm: 1rem,
+      ),
+      'small': 1rem,
+      'medium': 2rem,
+      'large': (
+        rt: rem(30),
+        md: rem(50),
+      )
+    ),
+    screens: ('sm', 'md'),
+    vsizes: ('less': 0),
+  )),
+  _add('column.alignment.screens', 'lg'),
+  _set('column.childAlignment.use', true),
+  _set('column.order', (
+    use: true,
+    screens: (
+      sm: (0, 3),
+      md: 0,
+      lg: (0, 2),
+    )
+  )),
+  _set('column.offset', (
+    use: true,
+    screens: sm,
+  )),
+);
