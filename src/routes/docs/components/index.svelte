@@ -287,13 +287,13 @@ I sometimes get confused between the modifiers and the utilities.</p>
 
 <h2 id="turn-utility-into-component"><a href="docs/components#turn-utility-into-component">#</a> Turn Utility First Component into Loop Component</h2>
 <p>Developing with utilities increases speed and help us prototyping rapidly custom components.
-Therefore, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
+As a result, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
 Repeating the same classes while making reusable modular code could easily start to be unproductive.</p>
-<p>So take into condiseration setting aside <em>utility-first-component</em> for common group paterns and turn them into <em>loop-component</em>.
+<p>Take into condiseration setting aside <em>utility-first-component</em> for common group paterns and turn them into <em>loop-component</em>.
 Write less HTML with more CSS.</p>
 
 <strong>Example with the Event utility-first</strong>
-<p>16 classes + 1 component & 2 modifiers</p>
+<p>16 classes + 1 button component & 2 modifiers</p>
 {@html highlight(
 `<div class="bg-white text-center shape-squircle overflow-hidden">
   <time datetime="${datetime}"
@@ -468,7 +468,7 @@ $ooLoop: ooSet('button.variants.stadium', (
   <button oo-button="alert stadium outline">Join</button>
 </div>
 `, 'html')}
-<p class="mt-30">0 class, 2 components & 3 modifers</p>
+<p class="mt-30">0 class, 1 event component + 1 button component & 3 modifers</p>
 <div class="ground">
   <div data-oo-event class="mb-30">
     <time datetime={datetime}>September 8th, 10am</time>

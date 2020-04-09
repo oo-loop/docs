@@ -123,7 +123,8 @@ column: (
   ...
 ),`, 'scss')}
 
-<table class="mt-30 mb-45">
+<div class="table-responsive mt-30 mb-45">
+<table>
   <thead>
     <tr class="font-small">
       <th></th>
@@ -150,6 +151,7 @@ column: (
     </tr>
   </tbody>
 </table>
+</div>
 
 <p>Remember that Loop is taking the <strong>mobile first approach</strong>. Set the main sizes for root (mobile) and adjust them going towards bigger devices.</p>
 <DataAttrToggler content={
