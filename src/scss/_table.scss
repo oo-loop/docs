@@ -1,0 +1,37 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+tr {
+  border-bottom: 1px solid #d5d6d6;
+}
+th, td {
+  padding: .5rem;
+}
+
+.table-responsive {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-height: 0.01%; // IE9 bug
+
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width:480px) {
+    &::after {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      content: ">";
+      line-height: 26px;
+      color: #d5d6d6;
+    }
+  }
+
+  > table {
+    min-width: 450px;
+  }
+}

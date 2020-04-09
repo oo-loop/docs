@@ -1,21 +1,17 @@
-# loop-docs
+# Loop documentation
 
-> Documentation for loop
+Loop v1 documentation is using [Sapper](https://sapper.svelte.dev/)
 
-## Build Setup
-
-``` bash
-# install dependencies
+```bash
+# install packages
 npm install
 
-# serve with hot reload at localhost:8080
+# Run development
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+**Note:** The doc is facing a [deeplinks bug](https://github.com/sveltejs/sapper/pull/1139) from Sapper.
+The fix had been temporary added manually. Be aware when pulling new version of Sapper that the fix might be gone.
+
+## Production
+Run `npm run export` to generate the static site.
