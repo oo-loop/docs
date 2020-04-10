@@ -232,6 +232,7 @@ $ooLoop: ooSet('template.areas', (
     sm: (
       "header header header"
       "nav main main"
+      "nav widgets widgets"
       "footer footer footer"
     ),
     md: (
