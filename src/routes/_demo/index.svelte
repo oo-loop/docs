@@ -422,8 +422,14 @@ $ooLoop: ooPipe(
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="font-medium mb-10 ml-10 mr-10" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
-        <a class="font-medium mb-10" data-oo-button="primary outline" href="docs/components#turn-utility-into-component" title="Turn utility first component into Loop component">Turn event into Loop component</a>
+        <Row prop="gutter-small align-center">
+          <Col prop="span12 fit@sm">
+            <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
+          </Col>
+          <Col prop="fit@sm">
+            <a class="font-medium" data-oo-button="primary outline" href="docs/components#turn-utility-into-component" title="Turn utility first component into Loop component">Turn event into Loop component</a>
+          </Col>
+        </Row>
       </Col>
     </Row>
 </section>
