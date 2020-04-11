@@ -7,10 +7,14 @@
 }
 
 .ground {
-  padding: 1.25rem;
+  padding: 1rem;
   margin-bottom: 30px;
-  border: 1px solid #d5d6d6;
-  background-color: #e7efef;
+  border: 1px solid #cdcdcd;
+  background-color: #fbfbfb;
+
+  @include breakpoint(sm) {
+    padding: 1.25rem;
+  }
 
   .hr {
     margin-top: rem(25);

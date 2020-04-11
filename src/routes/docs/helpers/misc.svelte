@@ -40,7 +40,7 @@ $ooLoop: ooAdd('misc', (
       padding: 5px,
       border: 1px solid #d6d6d6,
       border-radius: 5px,
-      background-color: #f7f7f7,
+      background-color: #ffffff,
     )
   )
 ));
