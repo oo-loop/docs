@@ -87,9 +87,9 @@ $ooLoop: (
 <p><em class="text-uppercase font-small">Function</em> - Set new values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
-  <br>Concatenated path to a Loop config attribute</li>
+  <br>Concatenated path to a Loop config property</li>
 	<li class="mb-10"><strong>$value</strong> <em class="font-monospace">(mixed)</em>
-  <br>New Loop attribute value</li>
+  <br>New Loop property value</li>
 	<li><strong>$hard</strong> <em class="font-monospace">(boolean) <span class="color-secondary">Optional</span></em>
   <br>Destructive mode?</li>
 </ul>
@@ -126,7 +126,7 @@ $ooLoop: ooSet('screens', (sm, md, xl)); // set responsive screens
 <p><em class="text-uppercase font-small">Function</em> - Add values to Loop config. To be used with <code>$ooLoop</code>.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
-  <br>Concatenated path to a Loop config attribute</li>
+  <br>Concatenated path to a Loop config property</li>
 	<li><strong>$value</strong> <em class="font-monospace">(mixed)</em>
   <br>Value to append</li>
 </ul>
