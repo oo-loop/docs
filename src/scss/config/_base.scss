@@ -1,7 +1,6 @@
 $ooLoop: ooPipe(
   _add('body.props', (
     background-color: #fff,
-    word-break: break-word,
   )),
   _set('hr.props.margin', rem(45) auto),
   _set('headings.props.fontWeight', 700),
