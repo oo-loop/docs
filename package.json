@@ -1,8 +1,10 @@
 {
   "name": "loop-docs",
   "description": "Documentation for loop",
-  "version": "1.0.0-beta",
-  "author": "oo-loop",
+  "version": "1.0.1",
+  "author": {
+    "name": "micantoine"
+  },
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
