@@ -144,8 +144,8 @@
       <h4><a class:color-primary={segment === 'config'} href="docs/config">Config Map</a></h4>
       <ul class="list-unstyle">
         <li><a class:color-primary={isHashActive('#global', hash)} href="docs/config#global">Global properties</a></li>
-        <li><a class:color-primary={isHashActive('#props', hash)} href="docs/config#props"><i>Props</i> attribute</a></li>
-        <li><a class:color-primary={isHashActive('#states', hash)} href="docs/config#states"><i>States</i> attribute</a></li>
+        <li><a class:color-primary={isHashActive('#props', hash)} href="docs/config#props"><i>Props</i> property</a></li>
+        <li><a class:color-primary={isHashActive('#states', hash)} href="docs/config#states"><i>States</i> property</a></li>
         <li><a class:color-primary={isHashActive('#this', hash)} href="docs/config#this"><i>This</i> referer</a></li>
         <li><a class:color-primary={isHashActive('#access', hash)} href="docs/config#access">Access data</a></li>
         <li><a class:color-primary={isHashActive('#store', hash)} href="docs/config#store">Store</a></li>

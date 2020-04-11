@@ -43,8 +43,8 @@ Loop offers a single config map.</p>
 ),`, 'scss')}
 
 <hr>
-<h2 id="props"><a href="docs/config#props">#</a> <em class="font-regular">Props</em> Attribute</h2>
-<p>The <em>props</em> attribute is reserved to pass a map of CSS properties within the config.
+<h2 id="props"><a href="docs/config#props">#</a> <em class="font-regular">Props</em> Property</h2>
+<p>The <em>props</em> property is reserved to pass a map of CSS properties within the config.
 <br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
 
 {@html highlight(
@@ -67,10 +67,33 @@ Loop offers a single config map.</p>
 ),
 `, 'scss')}
 
-<p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> attributes to provide default styling.
+<p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> property to provide default styling.
 Check the <a href="docs/html-elements" title="HTML elements documentation">HTML elements documentation</a> to know what they are and change them at your own will.</p>
 
-<h3>Pseudo-elements</h3>
+<h3>Responsive value</h3>
+<p>A property can accept a map of breakpoints to generate responsive values</p>
+{@html highlight(`
+body : (
+  props: (
+    font-size: (
+      rt: 1rem, // root value (default)
+      sm: 1.2rem, // value @sm 
+    )
+  )
+),
+`, 'scss')}
+{@html highlight(`/* Generating */
+body {
+  font-size: 1rem;
+}
+@media (min-width: 37.500em) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+`, 'css')}
+
+<h3 class="mt-30">Pseudo-elements</h3>
 <p>Style pseudo-elements <code>before</code> and <code>after</code> by using them as property names with a map of CSS properties as value.</p>
 {@html highlight(`
 ... : (
@@ -107,8 +130,8 @@ Check the <a href="docs/html-elements" title="HTML elements documentation">HTML 
 
 <p class="info">Styling <strong>pseudo-elements</strong> and <strong>child-elements</strong> are mainly used when developing components from the Loop config.</p>
 <hr>
-<h2 id="states"><a href="docs/config#states">#</a> <em class="font-regular">States</em> Attribute</h2>
-<p>The <em>states</em> attribute is reserved to pass a map of Element states containing CSS properties.
+<h2 id="states"><a href="docs/config#states">#</a> <em class="font-regular">States</em> Property</h2>
+<p>The <em>states</em> property is reserved to pass a map of Element states containing CSS properties.
 <br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
 
 <p>Any css state is available such as <strong>active, hover, focus, visited</strong>...</p>
@@ -275,7 +298,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 <p><em class="text-uppercase font-small">Function</em> - Get values from Loop config.</p>
 <ul>
 	<li class="mb-10"><strong>$path</strong> <em class="font-monospace">(string)</em>
-  <br>Concatenated path to a Loop config attribute.
+  <br>Concatenated path to a Loop config property.
   <br>When accessing a value from <em>props</em>, the kebab-case css property can be targetting with a camelCase name.</li>
 </ul>
 
