@@ -522,7 +522,7 @@ $ooLoop: ooAdd('components', (
   <div class="container">
     <h2>Develop Component with more Freedom<br><small>Pure Scss coding with Mixins</small></h2>
     <Row prop="align-center">
-      <Col prop="span11@sm span6@md order0@md">
+      <Col prop="span12 span11@sm span6@md order0@md">
 {@html highlight(
 `// index.scss
 @import 'config';
@@ -578,7 +578,7 @@ $ooLoop: ooAdd('components', (
   }
 }`, 'scss', 'mt-0 mb-0 wrapper-less')}
       </Col>
-      <Col prop="span12 span11@lg">
+      <Col prop="span12 span11@sm span12@md span11@lg">
 {@html highlight(
 `@include ooComponentVariant('weather', 'clear') {
   background-color: #212240;`, 'scss', 'mt-0 mb-0 wrapper-less')}
@@ -606,12 +606,12 @@ $ooLoop: ooAdd('components', (
     {@html highlight(
 `  &::before {
     background:
-      linear-gradient(-60deg, transparent 7px, #64e9fd 9px, transparent 10px) 2px 32px repeat-x,
-      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
-      radial-gradient(12px 12px, #fff 90%, transparent 100%) 2px -11px no-repeat,
-      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+      linear-gradient(-60deg, rgba(250,250,250, 0) 7px, #64e9fd 9px, rgba(250,250,250, 0) 10px) 2px 32px repeat-x,
+      radial-gradient(10px 9px, #fff 10px, rgba(250,250,250, 0) 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, rgba(250,250,250, 0) 100%) 2px -11px no-repeat,
+      linear-gradient(#fff 8px, rgba(250,250,250, 0) 9px) 10px 20px no-repeat
     ;
-    background-size: 11px 7px, 23px, 45px 48px, 24px;
+    background-size: 11px 7px, 23px 44px, 45px 48px, 24px 24px;
   }`, 'scss', 'mt-0 mb-0 wrapper-less')}
   {:else}
     <code class="color-white" on:click={() => showWeatherCode.rain = !showWeatherCode.rain} role="button">...</code>
@@ -625,14 +625,14 @@ $ooLoop: ooAdd('components', (
     {@html highlight(
 `  &::before {
     background:
-      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 31px repeat-x,
-      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px repeat-x,
-      radial-gradient(2px 2px, #fff 2px, transparent 2px) 1px 29px no-repeat,
-      radial-gradient(10px 9px, #fff 10px, transparent 11px) 0 -3px repeat-x,
-      radial-gradient(12px 12px, #fff 90%, transparent 100%) -2px -10px no-repeat,
-      linear-gradient(#fff 8px, transparent 9px) 10px 20px no-repeat
+      radial-gradient(2px 2px, #fff 2px, rgba(250,250,250, 0) 3px) 1px 31px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, rgba(250,250,250, 0) 3px) 1px 30px repeat-x,
+      radial-gradient(2px 2px, #fff 2px, rgba(250,250,250, 0) 3px) 1px 30px no-repeat,
+      radial-gradient(10px 9px, #fff 10px, rgba(250,250,250, 0) 11px) 0 -3px repeat-x,
+      radial-gradient(12px 12px, #fff 90%, rgba(250,250,250, 0) 100%) -2px -10px no-repeat,
+      linear-gradient(#fff 8px, rgba(250,250,250, 0) 9px) 10px 20px no-repeat
     ;
-    background-size: 11px 7px, 22px 20px, 44px 20px, 23px, 48px, 24px;
+    background-size: 11px 7px, 22px 20px, 44px 20px, 23px 44px, 48px 44px, 24px 24px;
   }`, 'scss', 'mt-0 mb-0 wrapper-less')}
   {:else}
     <code class="color-white" on:click={() => showWeatherCode.snow = !showWeatherCode.snow} role="button">...</code>
