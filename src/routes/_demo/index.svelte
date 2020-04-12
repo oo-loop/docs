@@ -185,10 +185,10 @@
 `<!-- App -->
 <div oo-row>
   <div oo-col="fit">
-    <img src="orange.jpg" width="100" alt="oranges" />
+    <img src="orange.jpg" width="85" alt="oranges" />
   </div>
   <div oo-col class="color-white">
-    <h3 class="mt-10">Orange <small class="color-secondary">/ˈɒrɪn(d)ʒ/</small></h3>
+    <h3 class="mt-0">Orange <small class="color-secondary">/ˈɒrɪn(d)ʒ/</small></h3>
     <p>A large round juicy citrus fruit with a tough bright reddish-yellow rind.</p>
   </div>
 </div>`, 'html', 'mt-0 mb-0 wrapper-less')}
@@ -196,9 +196,9 @@
       <Col prop="span6@md self-valign-middle order0@md">
         <div class="preview mt-30  mb-30">
           <Row prop="gutter-small">
-            <Col prop="fit"><img src="orange.jpg" width="100" alt="oranges" /></Col>
+            <Col prop="fit"><img src="orange.jpg" width="85" alt="oranges" /></Col>
             <Col class="color-white">
-              <h3 class="mt-10">Orange <small class="color-secondary">/ˈɒrɪn(d)ʒ/</small></h3>
+              <h3 class="mt-0">Orange <small class="color-secondary">/ˈɒrɪn(d)ʒ/</small></h3>
               <p class="mb-0">A large round juicy citrus fruit with a tough bright reddish-yellow{@html '&nbsp;'}rind.</p>
             </Col>
           </Row>
