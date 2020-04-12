@@ -4,6 +4,8 @@
   text-align: center;
   background-color: #fff;
   border-radius: 1em;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0, .15);
+
   @include breakpoint(sm) {
     padding: 1.5rem;
   }

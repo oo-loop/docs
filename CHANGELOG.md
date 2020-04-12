@@ -1,5 +1,9 @@
 # Loop Documentation
 
+## 1.0.3
+- Fix Event display (blending in with the ground background color)
+- Improve column demo for mobile
+
 ## 1.0.2
 - Fix wrong use of word, replace attribute by property
 

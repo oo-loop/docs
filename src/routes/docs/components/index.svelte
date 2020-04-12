@@ -293,9 +293,9 @@ Repeating the same classes while making reusable modular code could easily start
 Write less HTML with more CSS.</p>
 
 <strong>Example with the Event utility-first</strong>
-<p>16 classes + 1 button component & 2 modifiers</p>
+<p>17 classes + 1 button component & 2 modifiers</p>
 {@html highlight(
-`<div class="bg-white text-center shape-squircle overflow-hidden">
+`<div class="bg-white text-center shape-squircle overflow-hidden shadow-tiny">
   <time datetime="${datetime}"
     class="d-block wrapper-tiny bg-primary color-white font-small text-uppercase">
     September 7th, 10am
@@ -308,8 +308,8 @@ Write less HTML with more CSS.</p>
 </div>
 `, 'html')}
 <div class="ground">
-  <div class="bg-white text-center shape-squircle overflow-hidden">
-    <time datetime={datetime}
+  <div class="bg-white text-center shape-squircle overflow-hidden shadow-tiny">
+    <time {datetime}
       class="d-block wrapper-tiny bg-primary color-white text-center font-small text-uppercase">
       September 7th, 10am
     </time>
@@ -351,6 +351,7 @@ $ooLoop: ooSet('components', ('event': (
     text-align: center,
     background-color: #fff,
     border-radius: 1em,
+    box-shadow: 0 1px 1px 0 rgba(0,0,0, .15),
     '>': (
       'time': (
         padding: .5rem,
@@ -413,6 +414,7 @@ $ooLoop: ooSet('button.variants.stadium', (
   text-align: center;
   background-color: #fff;
   border-radius: 1em;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0, .15);
 
   @include breakpoint(sm) {
     padding: 1.5rem;
@@ -471,13 +473,13 @@ $ooLoop: ooSet('button.variants.stadium', (
 <p class="mt-30">0 class, 1 event component + 1 button component & 3 modifers</p>
 <div class="ground">
   <div data-oo-event class="mb-30">
-    <time datetime={datetime}>September 8th, 10am</time>
+    <time {datetime}>September 7th, 10am</time>
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
     <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
     <button data-oo-button="primary stadium outline">Join</button>
   </div>
   <div data-oo-event="alert">
-    <time datetime={datetime}>September 8th, 10am</time>
+    <time {datetime}>September 7th, 10am</time>
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
     <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
     <button data-oo-button="alert stadium outline">Get Refund</button>
