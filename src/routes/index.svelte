@@ -123,7 +123,7 @@ h3 {
   <img alt="" src="logo.svg" height="637">
   <div>
     <h1>Loop</h1>
-    <h2>Dev Companion for<br>Flexible and Expressive CSS</h2>
+    <h2>Flexible and Expressive CSS</h2>
     <p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
     <code class="large">npm install oo-loop</code>
   </div>
