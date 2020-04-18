@@ -4,12 +4,15 @@
 	import Row from '@/components/Loop/Row.svelte';
 	import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Importation';
+  const description = 'A single import for the entire framework';
 </script>
 
-<HeadTitle title="Importation"/>
+<HeadTitle {title} {description} />
 
-<h1>Importation</h1>
-<p class="font-large">A single import for the entire framework</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a>.
 Being also the case when including pieces of the framework, Loop main file becomes <strong>the only needed</strong> import.</p>
 

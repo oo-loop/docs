@@ -2,12 +2,14 @@
 	import HeadTitle from '@/components/HeadTitle.svelte';
 	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const description = 'Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.';
 </script>
 
-<HeadTitle title="Getting Started"/>
+<HeadTitle title="Getting Started" {description}/>
 
 <h1>Start with Loop</h1>
-<p class="font-large">Loop offers a minimum styling along with common components and utilities to bootstrap any project as a base.</p>
+<p class="font-large">{description}</p>
 <ul>
 	<li><a href="docs/html-elements" title="HTML elements">HTML formatting</a></li>
 	<li><a href="docs/components/column">Column component</a></li>

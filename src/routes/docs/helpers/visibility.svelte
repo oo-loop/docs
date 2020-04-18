@@ -4,6 +4,9 @@
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Visibility';
+  const description = 'Hide elements on the page.';
 </script>
 
 <style lang="scss">
@@ -28,10 +31,10 @@
   }
 </style>
 
-<HeadTitle title="Visibility"/>
+<HeadTitle {title} {description}/>
 
-<h1>Visibility</h1>
-<p class="font-large">Hide elements on the page.<br>
+<h1>{title}</h1>
+<p class="font-large">{description}<br>
 <code class="ml-0">.hidden</code> <code>.hidden@<i class="color-secondary">screenName</i></code> <code>.hidden!@<i class="color-secondary">screenName</i></code></p>
 <p>Based on hidden status, hide elements <strong>from a breakpoint</strong> or <strong>up to a breakpoint</strong> without worrying about its original display.</p>
 

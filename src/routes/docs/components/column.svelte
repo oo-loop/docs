@@ -6,6 +6,8 @@
   import Col from '@/components/Loop/Col.svelte'
   import highlight from '@/utils/highlight.js'
 
+  const description = 'Layout elements in a page based on the 12 columns system.'
+
   let isClear = true
   let isStretch = true
 
@@ -68,10 +70,10 @@
   }
 </style>
 
-<HeadTitle title="Column component"/>
+<HeadTitle title="Column component" {description}/>
 
 <h1>Column</h1>
-<p class="font-large">Layout elements in a page based on the 12 columns system.<br>
+<p class="font-large">{description}<br>
 <code class="ml-0">oo-row</code><code>oo-col</code></p>
 
 <ul class="mb-30">

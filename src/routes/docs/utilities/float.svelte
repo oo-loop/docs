@@ -2,6 +2,9 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Float utilities';
+  const description = 'Set a floating element on the fly.';
 </script>
 
 <style lang="scss">
@@ -21,10 +24,10 @@
 }
 </style>
 
-<HeadTitle title="Float utilities"/>
+<HeadTitle {title} {description}/>
 
-<h1>Float utilities</h1>
-<p class="font-large">Set a floating element on the fly.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>The two standard float options are available as well as a clearfix, <code>.float-left</code> <code>.float-right</code> <code>.clearfix</code> and <code>.clear</code>.</p>
 
 {@html highlight(

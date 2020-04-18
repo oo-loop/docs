@@ -4,13 +4,10 @@
   import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import Row from '@/components/Loop/Row.svelte';
   import Col from '@/components/Loop/Col.svelte';
-  import highlight from '@/utils/highlight.js'
+  import highlight from '@/utils/highlight.js';
 </script>
 
-<style lang="scss">
-</style>
-
-<HeadTitle title="Form component"/>
+<HeadTitle title="Form component" description="Compoenet for textfield, textarea, select, checkbox, radio and toggle"/>
 
 <h1>Form</h1>
 <p class="font-large">Component for form elements<br>

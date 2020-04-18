@@ -2,16 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Color utilities';
+  const description = 'Modify the color of any elements tagetting font, background and/or border.';
 </script>
 
-<style>
+<HeadTitle {title} {description}/>
 
-</style>
-
-<HeadTitle title="Color utilities"/>
-
-<h1>Color utilities</h1>
-<p class="font-large">Modify the color of any elements tagetting font, background and/or border.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Loop gives you few colors by default to avoid overloading the CSS of rules you might not need.</p>
 
 {@html highlight(

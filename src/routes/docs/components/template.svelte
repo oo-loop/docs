@@ -4,6 +4,9 @@
   import DataAttrToggler from '@/components/DataAttrToggler.svelte'
   import highlight from '@/utils/highlight.js'
 
+  const title = 'Template component';
+  const description = 'Blueprint semantically a page or elements in a page.';
+
   let gap = ['default', 'less', 'small']
   let gapSelected = 'default'
   $: gapProp = gapSelected === 'default' ? '' : ` gap-${gapSelected}`
@@ -42,7 +45,7 @@
   }
 </style>
 
-<HeadTitle title="Template component"/>
+<HeadTitle {title} {description}/>
 
 <h1>Template</h1>
 <p class="font-large"><i>Blueprint</i> semantically a page or elements in a page.<br>

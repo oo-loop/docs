@@ -11,7 +11,7 @@
   .ground { text-align: center; }
 </style>
 
-<HeadTitle title="Button component"/>
+<HeadTitle title="Button component" description="Modular button component and 100% customizable"/>
 
 <h1>Button</h1>
 <p class="font-large">Modular component and 100% customizable<br>

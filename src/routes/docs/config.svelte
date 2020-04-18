@@ -2,12 +2,14 @@
 	import HeadTitle from '@/components/HeadTitle.svelte';
 	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const description = 'Simplify the use of variables and the configuration of the framework.';
 </script>
 
-<HeadTitle title="Config map"/>
+<HeadTitle title="Config map" {description}/>
 
 <h1>Loop Config Map</h1>
-<p class="font-large">Simplify the use of variables and the configuration of the framework.</p>
+<p class="font-large">{description}</p>
 
 <p>Because going through a single <i>variables.scss</i> file can be tedious and remembering every names is becoming a challenge,
 Loop offers a single config map.</p>

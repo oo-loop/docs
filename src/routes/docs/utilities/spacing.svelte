@@ -2,16 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Spacing utilities';
+  const description = 'Space out elements from each others.';
 </script>
 
-<style>
+<HeadTitle {title} {description}/>
 
-</style>
-
-<HeadTitle title="Spacing utilities"/>
-
-<h1>Spacing utilities</h1>
-<p class="font-large">Space out elements from each others.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Four types of classes are available, <code>.mt-<em class="color-secondary">keyName</em></code> <code>.mb-<em class="color-secondary">keyName</em></code> <code>.ml-<em class="color-secondary">keyName</em></code> and <code>.mr-<em class="color-secondary">keyName</em></code>. Loop chose to name the values by pixel numbers to give a better understanding of the space representation. The generated values are on the contrary in rem units.</p>
 
 {@html highlight(

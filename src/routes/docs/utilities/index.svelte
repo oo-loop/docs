@@ -2,16 +2,14 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const description = 'A bunch of handy classes doing one job to customize elements on the fly.';
 </script>
-
-<style>
-
-</style>
 
 <HeadTitle title="Utility classes"/>
 
 <h1>Utilities</h1>
-<p class="font-large">A bunch of handy classes doing one job to customize elements on the fly.</p>
+<p class="font-large">{description}</p>
 <p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">Loop config</a> with the correct <a href="docs/utilities#format" title="Utility format">format</a>.</p>
 <ul>
   <li><a href="docs/utilities/color">Color</a></li>

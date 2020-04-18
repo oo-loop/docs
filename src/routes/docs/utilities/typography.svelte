@@ -2,6 +2,9 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Typography utilities';
+  const description = 'Modify the appearance of any text elements.';
 </script>
 
 <style>
@@ -10,10 +13,10 @@
  }
 </style>
 
-<HeadTitle title="Typography utilities"/>
+<HeadTitle {title} {description}/>
 
-<h1>Typography utilities</h1>
-<p class="font-large">Modify the appearance of any text elements.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Loop gives you some recurring text utilities by default. Adjust the rest to your need (<a href="docs/utilities#format" title="Check the options">Check the options</a>).</p>
 
 {@html highlight(

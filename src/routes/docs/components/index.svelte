@@ -3,6 +3,9 @@
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
 
+  const title= 'Components';
+  const description= 'Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.';
+
   const date = new Date()
   let ooEvent = 'config'
   let dataAttr = false
@@ -10,15 +13,11 @@
   $: datetime = `${date.getFullYear()}-09-07 10:00`
 </script>
 
-<style lang="scss">
+<HeadTitle {title} {description}/>
 
-</style>
-
-<HeadTitle title="Components"/>
-
-<h1>Components</h1>
+<h1>{title}</h1>
 <p class="font-large">Use oo-component to group recurring styling.</p>
-<p>Loop semantic offers separation of concerns to differentiate components from other styling and to facilitate readibility.
+<p>{description}
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
 <p>By default, Loop components are used along with the <em>data</em> attribute <code>data-oo-componentName</code> to be a fully-valid HTML attribute.
