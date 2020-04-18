@@ -167,6 +167,4 @@ h3 {
   </p>
   <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="/docs">Let's go</a></p>
   <hr>
-  <p class="info">Loop documentation is still on going, more samples and details coming soon.</p>
-  <hr>
 </Col>
