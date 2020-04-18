@@ -240,6 +240,41 @@ a {
 .color-danger  { color: red }
 `, 'css')}
 
+<h4>Chaining</h4>
+<p>Add as many spreads as needed</p>
+
+{@html highlight(`$ooLoop: (
+  palette: (
+    'primary': #0ea7d6,
+    'secondary': #959595,
+    'warning': #f7f3c8,
+  ),
+
+  // utilities
+  color: (
+    font: (
+      prefix: 'color',
+      property: 'color',
+      values: (
+        _this('palette.primary'),
+        _this('palette.secondary'),
+        (
+          'danger': red,
+        )
+      )
+    )
+  ),
+  ...
+);
+`, 'scss')}
+
+{@html highlight(
+`/* will generate */
+.color-primary { color: #0ea7d6 }
+.color-secondary { color: #959595 }
+.color-danger  { color: red }
+`, 'css')}
+
 <h3 class="mt-45">Aliases</h3>
 <p>The config map not being initialized,
 <em class="color-danger">the use of sass functions <strong>along with</strong> the keyword <code>this</code> <strong>cannot be performed</strong></em>.
