@@ -1,5 +1,11 @@
 # Loop Documentation
 
+## 1.0.4
+- Update spread section regarding chaining possibilities
+- Add "sized column" section to Template component
+- Add Meta description to all pages
+- Remove w.i.p notice on the top page
+
 ## 1.0.3
 - Fix Event display (blending in with the ground background color)
 - Improve column demo for mobile
