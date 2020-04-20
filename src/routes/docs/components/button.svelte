@@ -18,12 +18,12 @@
 <code class="ml-0">oo-button</code></p>
 
 <ul>
-  <li><a href="docs/components/button#colors" title="Button colors">Button Colors</a></li>
-  <li><a href="docs/components/button#variants" title="Button variants">Button Variants</a></li>
-  <li><a href="docs/components/button#sizes" title="Button sizes">Button Sizes</a></li>
+  <li><a href="docs/components/button/#colors" title="Button colors">Button Colors</a></li>
+  <li><a href="docs/components/button/#variants" title="Button variants">Button Variants</a></li>
+  <li><a href="docs/components/button/#sizes" title="Button sizes">Button Sizes</a></li>
 </ul>
 
-<p>The base style of the button is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you complete control on the appearance to make it the way you like.</p>
+<p>The base style of the button is set through the <a href="docs/config/#props" title="Props attribute"><em>props</em></a> & <a href="docs/config/#states" title="States attribute"><em>states</em></a> properties giving you complete control on the appearance to make it the way you like.</p>
 
 {@html highlight(
 `//default config
@@ -65,7 +65,7 @@ button: (
   </Col>
 </Row>
 
-<h2 class="mt-45" id="colors"><a href="docs/components/button#colors" title="Colors">#</a> Colors</h2>
+<h2 class="mt-45" id="colors"><a href="docs/components/button/#colors" title="Colors">#</a> Colors</h2>
 <p>Loop is giving you two colors by default, it's up to you to add more or less.<code>oo-button="<i>colorName</i>"</code></p>
 {@html highlight(
 `//default config
@@ -87,7 +87,7 @@ button: (
 `} />
 <div class="ground">
   <button data-oo-button>Base</button>
-  <a data-oo-button="primary" href="docs/components/button#colors">Primary</a>
+  <a data-oo-button="primary" href="docs/components/button/#colors">Primary</a>
   <input data-oo-button="secondary" type="button" value="Secondary">
 </div>
 
@@ -134,7 +134,7 @@ button: (
 </div>
 <hr>
 
-<h2 id="variants"><a href="docs/components/button#variants" title="Button variants">#</a> Variants</h2>
+<h2 id="variants"><a href="docs/components/button/#variants" title="Button variants">#</a> Variants</h2>
 <p>Change the size, the shape, the appearance of the button via the <em>variants</em> property by passing a list of css rules attached to a name. <code>oo-button="<i>variantName</i>"</code>.</p>
 {@html highlight(
 `//default config
@@ -177,8 +177,8 @@ button: (
 </div>
 
 <hr>
-<h2 class="mt-45" id="sizes"><a href="docs/components/button#sizes" title="Sizes">#</a> Sizes</h2>
-<p>While the size of the button can be modified from <a href="docs/components/button#variants" title="Button variants">variants</a>.
+<h2 class="mt-45" id="sizes"><a href="docs/components/button/#sizes" title="Sizes">#</a> Sizes</h2>
+<p>While the size of the button can be modified from <a href="docs/components/button/#variants" title="Button variants">variants</a>.
 It is also possible to <strong>use text-utilites to quickly achieve some adjustments</strong>.</p>
 
 <DataAttrToggler content={
@@ -196,4 +196,4 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
   <button data-oo-button="primary large">Variant large</button>
 </div>
 
-<Pagination href="docs/components/form" label="Use Form" />
+<Pagination href="docs/components/form/" label="Use Form" />

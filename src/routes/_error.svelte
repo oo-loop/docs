@@ -22,7 +22,7 @@
       <pre>{error.stack}</pre>
     {/if}
   </div>
-  <p class="text-center">Check the <a href="docs" title="documentation">documentation</a></p>
+  <p class="text-center">Check the <a href="docs/" title="documentation">documentation</a></p>
   <hr>
 {@html highlight(
 `<div data-oo-column="span10@sm span8@md self-align-center">
@@ -30,7 +30,7 @@
     <h1>Oops!</h1>
     <p class="font-large">${status}: ${error.message}</p>
   </div>
-  <p class="text-center">Check the <a href="docs" title="documentation">documentation</a></p>
+  <p class="text-center">Check the <a href="docs/" title="documentation">documentation</a></p>
 </div>
 `, 'html')}
 </Col>

@@ -14,10 +14,10 @@
 <p>Unlike utilities classes, helpers classes does not follow any specific format and can achieve multiple things. They are global classes.</p>
 
 <ul>
-  <li class="mb-5"><a href="docs/helpers/container">Container</a>, layout your page <code>.container</code><code>.container-fluid</code></li>
-  <li class="mb-5"><a href="docs/helpers/visibility">Visibility</a>, hide elements between devices<code>.hidden@<i>screenName</i></code><code>.hidden!@<i>screenName</code></li>
-  <li class="mb-5"><a href="docs/helpers/list">List</a>, format ul/ol elements easily<code>.list-unstyle</code><code>.list-inline</code><code>.list-center</code></li>
-  <li><a href="docs/helpers/misc">Miscellaneous</a>, set an image responsive <code>.responsive</code> and add your own</li>
+  <li class="mb-5"><a href="docs/helpers/container/">Container</a>, layout your page <code>.container</code><code>.container-fluid</code></li>
+  <li class="mb-5"><a href="docs/helpers/visibility/">Visibility</a>, hide elements between devices<code>.hidden@<i>screenName</i></code><code>.hidden!@<i>screenName</code></li>
+  <li class="mb-5"><a href="docs/helpers/list/">List</a>, format ul/ol elements easily<code>.list-unstyle</code><code>.list-inline</code><code>.list-center</code></li>
+  <li><a href="docs/helpers/misc/">Miscellaneous</a>, set an image responsive <code>.responsive</code> and add your own</li>
 </ul>
 <hr>
 <h3>Example</h3>
@@ -44,4 +44,4 @@
 </footer>
 `, 'html')}
 
-<Pagination href="docs/helpers/container" label="Use Container classes" />
+<Pagination href="docs/helpers/container/" label="Use Container classes" />

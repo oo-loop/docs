@@ -14,18 +14,18 @@
 <code>oo-input</code><code>oo-select</code><code>oo-checkbox</code><code>oo-radio</code><code>oo-toggle</code></p>
 
 <ul>
-  <li><a href="docs/components/form#input" title="Input fields">Input fields</a></li>
-  <li><a href="docs/components/form#select" title="Select">Select</a></li>
-  <li><a href="docs/components/form#checkbox" title="Checkbox">Checkbox</a></li>
-  <li><a href="docs/components/form#radio" title="Radio button">Radio button</a></li>
-  <li><a href="docs/components/form#toggle" title="Toggle button">Toggle</a></li>
-  <li><a href="docs/components/form#utilities" title="Utilities as modifers">Utilities as Modifiers</a></li>
+  <li><a href="docs/components/form/#input" title="Input fields">Input fields</a></li>
+  <li><a href="docs/components/form/#select" title="Select">Select</a></li>
+  <li><a href="docs/components/form/#checkbox" title="Checkbox">Checkbox</a></li>
+  <li><a href="docs/components/form/#radio" title="Radio button">Radio button</a></li>
+  <li><a href="docs/components/form/#toggle" title="Toggle button">Toggle</a></li>
+  <li><a href="docs/components/form/#utilities" title="Utilities as modifers">Utilities as Modifiers</a></li>
 </ul>
 
-<p>The style of each form element is set through the <a href="docs/config#props" title="Props attribute"><em>props</em></a> & <a href="docs/config#states" title="States attribute"><em>states</em></a> properties giving you control on the component looks.</p>
+<p>The style of each form element is set through the <a href="docs/config/#props" title="Props attribute"><em>props</em></a> & <a href="docs/config/#states" title="States attribute"><em>states</em></a> properties giving you control on the component looks.</p>
 
 <hr>
-<h2 id="input"><a href="docs/components/form#input">#</a> Input fields</h2>
+<h2 id="input"><a href="docs/components/form/#input">#</a> Input fields</h2>
 <p>Use <code>oo-input</code> for any textfield elements.</p>
 
 {@html highlight(
@@ -117,7 +117,7 @@ input: (
 <p class="info">Loop config <strong>includes <em>input.textfield</em> by default</strong>. In manual mode add the mixins <strong>Label()</strong> and <strong>TextField()</strong></p>
 
 <hr>
-<h2 id="select"><a href="docs/components/form#select">#</a> Select</h2>
+<h2 id="select"><a href="docs/components/form/#select">#</a> Select</h2>
 <p>Use <code>oo-select</code> on a parent element having <code>{`<select>`}</code> as a child.</p>
 
 {@html highlight(
@@ -210,7 +210,7 @@ select: (
 <p class="info">Loop config <strong>includes <em>input.select</em> by default</strong>. In manual mode add the mixin <strong>SelectField()</strong></p>
 
 <hr>
-<h2 id="checkbox"><a href="docs/components/form#checkbox">#</a> Checkbox</h2>
+<h2 id="checkbox"><a href="docs/components/form/#checkbox">#</a> Checkbox</h2>
 <p>Use <code>oo-checkbox</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
 
 {@html highlight(
@@ -288,7 +288,7 @@ checkbox: (
   <label for="checkbox-medium-a">Checkbox Medium A</label>
   <div class="hr mt-15 mb-15"></div>
   <input data-oo-checkbox="large " id="checkbox-large-b" type="checkbox" value="b">
-  <label for="checkbox-large-b">Checkbox Large B</label> 
+  <label for="checkbox-large-b">Checkbox Large B</label>
 </div>
 
 <h3>Responsive Checkbox</h3>
@@ -308,7 +308,7 @@ checkbox: (
 <p class="info">Loop config <strong>includes <em>input.checkbox</em> by default</strong>. In manual mode add the mixin <strong>Checkbox()</strong></p>
 
 <hr>
-<h2 id="radio"><a href="docs/components/form#radio">#</a> Radio</h2>
+<h2 id="radio"><a href="docs/components/form/#radio">#</a> Radio</h2>
 <p>Use <code>oo-radio</code> on an <em>input radio element </em><strong>followed by</strong> a <em>label element</em> targetting that radio.</p>
 
 {@html highlight(
@@ -397,7 +397,7 @@ radio: (
 <p class="info">Loop config <strong>includes <em>input.radio</em> by default</strong>. In manual mode add the mixin <strong>Radio()</strong></p>
 
 <hr>
-<h2 id="toggle"><a href="docs/components/form#toggle">#</a> Toggle</h2>
+<h2 id="toggle"><a href="docs/components/form/#toggle">#</a> Toggle</h2>
 <p>Use <code>oo-toggle</code> on an <em>input checkbox element </em><strong>followed by</strong> a <em>label element</em> targetting that checkbox.</p>
 
 {@html highlight(
@@ -409,7 +409,7 @@ toggle: (
     backgroundColor: #d6d6d6,
     transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out),
   ),
-  toggler: ( // Props 
+  toggler: ( // Props
     borderRadius: 50%,
     backgroundColor: #fff,
     boxShadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
@@ -454,7 +454,7 @@ toggle: (
 <p class="info">Loop config <strong>does <span class="color-primary">not</span> includes <em>input.toggle</em> by default</strong>. In manual mode add the mixin <strong>Toggle()</strong></p>
 
 <hr/>
-<h2 id="utilities"><a href="docs/components/form#utilities">#</a> Utilities as modifiers</h2>
+<h2 id="utilities"><a href="docs/components/form/#utilities">#</a> Utilities as modifiers</h2>
 <p>Text or color utilities can help you alter the size or the appearance of your input elements.</p>
 
 <div class="ground mb-0">
@@ -514,4 +514,4 @@ toggle: (
 <small class="color-danger">Radio is required</small>
 `} class="mt-5" />
 
-<Pagination href="docs/helpers" label="Use Helper classes" />
+<Pagination href="docs/helpers/" label="Use Helper classes" />

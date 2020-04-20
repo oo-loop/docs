@@ -33,4 +33,4 @@ Please use <a class="font-bold" href="https://github.com/postcss/autoprefixer#re
 
 <hr>
 <p class="info font-bold">Loop documentation is a work in progress, a more detailed page with code sample will be available soon.</p>
-<Pagination href="docs" title="Start using Loop" label="Start using Loop" />
+<Pagination href="docs/" title="Start using Loop" label="Start using Loop" />
