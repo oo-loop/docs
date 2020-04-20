@@ -10,17 +10,17 @@
 
 <h1>Utilities</h1>
 <p class="font-large">{description}</p>
-<p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config" title="Loop Config">Loop config</a> with the correct <a href="docs/utilities#format" title="Utility format">format</a>.</p>
+<p>Loop provides flexible utilities to assist you during your development. Extend them, set your own needs by adjusting the <a href="docs/config/" title="Loop Config">Loop config</a> with the correct <a href="docs/utilities/#format" title="Utility format">format</a>.</p>
 <ul>
-  <li><a href="docs/utilities/color">Color</a></li>
-  <li><a href="docs/utilities/typography">Typography</a></li>
-  <li><a href="docs/utilities/spacing">Spacing</a></li>
-  <li><a href="docs/utilities/float">Float</a></li>
-  <li><a href="docs/utilities/wrapper">Wrapper</a></li>
+  <li><a href="docs/utilities/color/">Color</a></li>
+  <li><a href="docs/utilities/typography/">Typography</a></li>
+  <li><a href="docs/utilities/spacing/">Spacing</a></li>
+  <li><a href="docs/utilities/float/">Float</a></li>
+  <li><a href="docs/utilities/wrapper/">Wrapper</a></li>
 </ul>
 
 <div class="hr"></div>
-<h2 id="format"><a href="docs/utilities#format">#</a> Format</h2>
+<h2 id="format"><a href="docs/utilities/#format">#</a> Format</h2>
 <p>A utility follows a specific map format being passed to the config.</p>
 <ul>
   <li class="mb-10"><code>prefix</code><em class="font-monospace">(string)</em><em class="font-monospace color-secondary">(optional)</em>
@@ -38,7 +38,7 @@
 </ul>
 <p class="info">The generated class will be created from <strong><span class="color-primary">.</span>(prefix | namePart1)<span class="color-primary">-</span>valueName</strong></p>
 <div class="hr"></div>
-<h2 id="custom"><a href="docs/utilities#format">#</a> Custom Utilities</h2>
+<h2 id="custom"><a href="docs/utilities/#format">#</a> Custom Utilities</h2>
 <p>Following the appropriate map format create your own utitlies via the proterty <em>utilities</em> of the Loop config.</p>
 {@html highlight(
 `$ooLoop: ooAdd('utilities', (
@@ -91,7 +91,7 @@
 `, 'css')}
 
 <div class="hr"></div>
-<h2 id="responsive"><a href="docs/utilities#responsive">#</a> Responsive utilities</h2>
+<h2 id="responsive"><a href="docs/utilities/#responsive">#</a> Responsive utilities</h2>
 <p>The <em>screens</em> propertity can be used to set global responsive rules to apply to all listed values.<code><i class="colo-secondary">prefix</i>-<i class="colo-secondary">valueName</i>@<i class="colo-secondary">screenName</i></code></p>
 
 {@html highlight(
@@ -176,4 +176,4 @@
 .radius-large { border-radius: 1.5rem !important }
 `, 'css')}
 
-<Pagination href="docs/utilities/color" label="Use Color utilities" />
+<Pagination href="docs/utilities/color/" label="Use Color utilities" />

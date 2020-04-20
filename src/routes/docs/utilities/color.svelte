@@ -80,4 +80,4 @@ color: (
 <hr>
 <p class="info">In manual mode add the mixin <strong>Color()</strong></p>
 
-<Pagination href="docs/utilities/typography" label="Use Typography utilities" />
+<Pagination href="docs/utilities/typography/" label="Use Typography utilities" />

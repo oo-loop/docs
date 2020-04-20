@@ -41,10 +41,10 @@ You may still turn off the option to remove verbosity and get a shorter name for
 
 <h4 class="mt-30 mb-15">Loop components</h4>
 <ul>
-  <li><a href="docs/components/column" title="Column component">Column</a><code>oo-row</code><code>oo-col</code></li>
-  <li><a href="docs/components/template" title="Template component">Template</a><code>oo-template</code><code>oo-area</code></li>
-  <li><a href="docs/components/button" title="Button component">Button</a><code>oo-button</code></li>
-  <li><a href="docs/components/form" title="Form component">Form</a><code>oo-input</code><code>oo-select</code><code>oo-radio</code><code>oo-checkbox</code><code>oo-toggle</code></li>
+  <li><a href="docs/components/column/" title="Column component">Column</a><code>oo-row</code><code>oo-col</code></li>
+  <li><a href="docs/components/template/" title="Template component">Template</a><code>oo-template</code><code>oo-area</code></li>
+  <li><a href="docs/components/button/" title="Button component">Button</a><code>oo-button</code></li>
+  <li><a href="docs/components/form/" title="Form component">Form</a><code>oo-input</code><code>oo-select</code><code>oo-radio</code><code>oo-checkbox</code><code>oo-toggle</code></li>
 </ul>
 
 <h4 class="mt-30 mb-15">Custom components</h4>
@@ -102,7 +102,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 </div>
 `, 'html')}
 
-<h3 class="mt-45" id="from-config"><a href="docs/components#from-config" title="Create from config">#</a> Create from config</h3>
+<h3 class="mt-45" id="from-config"><a href="docs/components/#from-config" title="Create from config">#</a> Create from config</h3>
 <p>Pass css properties to <em>props</em> and to the <em>variants name</em> as a map value.</p>
 
 {@html highlight(
@@ -213,7 +213,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
   <strong>Hey, well done!</strong><br>You've created a <i>success</i> notification component.
 </div>
 
-<h3 class="mt-45" id="from-mixin"><a href="docs/components#from-mixin" title="Create from mixin">#</a> Creation from mixin</h3>
+<h3 class="mt-45" id="from-mixin"><a href="docs/components/#from-mixin" title="Create from mixin">#</a> Creation from mixin</h3>
 <p>Combine the two mixins <code>ooComponent()</code> and <code>ooComponentVariant()</code> and develop your own Loop component <strong>after the initialization of the Loop config</strong>.</p>
 
 <h4 class="font-code mt-30">ooComponent(<span class="color-primary">$name</span>){'{ '}<span class="color-secondary">@content</span>{' }'}</h4>
@@ -284,7 +284,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
 </div>
 <div class="hr"></div>
 
-<h2 id="turn-utility-into-component"><a href="docs/components#turn-utility-into-component">#</a> Turn Utility First Component into Loop Component</h2>
+<h2 id="turn-utility-into-component"><a href="docs/components/#turn-utility-into-component">#</a> Turn Utility First Component into Loop Component</h2>
 <p>Developing with utilities increases speed and help us prototyping rapidly custom components.
 As a result, we tend to add an incredible amount of single classes to a single html element to achieve a specific style.
 Repeating the same classes while making reusable modular code could easily start to be unproductive.</p>
@@ -485,4 +485,4 @@ $ooLoop: ooSet('button.variants.stadium', (
   </div>
 </div>
 
-<Pagination href="docs/components/column" label="Use Column" />
+<Pagination href="docs/components/column/" label="Use Column" />

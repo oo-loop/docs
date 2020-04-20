@@ -13,7 +13,7 @@
 
 <h1>{title}</h1>
 <p class="font-large">{description}</p>
-<p>Loop is basing all its settings around the <a href="docs/config" title="Loop Map">config map</a>.
+<p>Loop is basing all its settings around the <a href="docs/config/" title="Loop Map">config map</a>.
 Being also the case when including pieces of the framework, Loop main file becomes <strong>the only needed</strong> import.</p>
 
 {@html highlight(`@import 'oo-loop/loop'; // that's all`, 'scss')}
@@ -23,7 +23,7 @@ Javascript task runners can help you simplify the import, otherwise please use t
 
 <div class="hr"></div>
 
-<h2 class="mt-30" id="config">Use of Config</h2>
+<h2 class="mt-30" id="config"><a href="docs/importation/#config" title="Use of Config">#</a> Use of Config</h2>
 <p>Adjust your needs of the framework by updating the <em>use</em> property of the config map.</p>
 
 {@html highlight(`// the default use map
@@ -126,7 +126,7 @@ $ooLoop: ooPipe(
 `, 'scss')}
 
 <hr>
-<h2 id="mixin">Use of mixin</h2>
+<h2 id="mixin"><a href="docs/importation/#mixin" title="Use of Mixin">#</a> Use of mixin</h2>
 <p>Instead of using the autobuild of <code>ooCreate()</code>, you can include one by one the desired elements from Loop framework.</p>
 <p>In any case, and before doing so, <strong>the initialization of $ooLoop is necessary</strong> and will be done via <code>ooInit()</code>.
 That will also give you the opportunity to set some global settings.</p>
@@ -185,7 +185,7 @@ That will also give you the opportunity to set some global settings.</p>
 
 <hr>
 <h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config" title="Loop Map">$ooLoop</a> config.</p>
+<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config/" title="Loop Map">$ooLoop</a> config.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
@@ -202,7 +202,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements" title="Base documentation">Use Base</a>
+    <a data-oo-button href="docs/html-elements/" title="Base documentation">Use Base</a>
   </Col>
 </Row>
 
@@ -217,7 +217,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements#content" title="Content documentation">Use Content</a>
+    <a data-oo-button href="docs/html-elements/#content" title="Content documentation">Use Content</a>
   </Col>
 </Row>
 
@@ -232,7 +232,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/html-elements#headings" title="Headings documentation">Use Headings</a>
+    <a data-oo-button href="docs/html-elements/#headings" title="Headings documentation">Use Headings</a>
   </Col>
 </Row>
 
@@ -247,7 +247,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/column" title="Column documentation">Use Column</a>
+    <a data-oo-button href="docs/components/column/" title="Column documentation">Use Column</a>
   </Col>
 </Row>
 
@@ -262,7 +262,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/template" title="Template documentation">Use Template</a>
+    <a data-oo-button href="docs/components/template/" title="Template documentation">Use Template</a>
   </Col>
 </Row>
 
@@ -277,7 +277,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/button" title="Button documentation">Use Button</a>
+    <a data-oo-button href="docs/components/button/" title="Button documentation">Use Button</a>
   </Col>
 </Row>
 
@@ -292,7 +292,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#input" title="Label documentation">Set Label</a>
+    <a data-oo-button href="docs/components/form/#input" title="Label documentation">Set Label</a>
   </Col>
 </Row>
 
@@ -307,7 +307,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#input" title="Input documentation">Use Input</a>
+    <a data-oo-button href="docs/components/form/#input" title="Input documentation">Use Input</a>
   </Col>
 </Row>
 
@@ -322,7 +322,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#select" title="Select documentation">Use Select</a>
+    <a data-oo-button href="docs/components/form/#select" title="Select documentation">Use Select</a>
   </Col>
 </Row>
 
@@ -337,7 +337,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#checkbox" title="Checkbox documentation">Use Checkbox</a>
+    <a data-oo-button href="docs/components/form/#checkbox" title="Checkbox documentation">Use Checkbox</a>
   </Col>
 </Row>
 
@@ -352,7 +352,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#radio" title="Radio documentation">Use Radio</a>
+    <a data-oo-button href="docs/components/form/#radio" title="Radio documentation">Use Radio</a>
   </Col>
 </Row>
 
@@ -367,7 +367,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/components/form#toggle" title="Toggle documentation">Use Toggle</a>
+    <a data-oo-button href="docs/components/form/#toggle" title="Toggle documentation">Use Toggle</a>
   </Col>
 </Row>
 
@@ -382,7 +382,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/helpers/container" title="Container documentation">Use Container</a>
+    <a data-oo-button href="docs/helpers/container/" title="Container documentation">Use Container</a>
   </Col>
 </Row>
 
@@ -397,7 +397,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/helpers/visibility" title="Visibility documentation">Use Visibility</a>
+    <a data-oo-button href="docs/helpers/visibility/" title="Visibility documentation">Use Visibility</a>
   </Col>
 </Row>
 
@@ -412,7 +412,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/helpers/misc" title="Miscellaneous documentation">Use Misc</a>
+    <a data-oo-button href="docs/helpers/misc/" title="Miscellaneous documentation">Use Misc</a>
   </Col>
 </Row>
 
@@ -427,7 +427,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/float" title="Float documentation">Use Float</a>
+    <a data-oo-button href="docs/utilities/float/" title="Float documentation">Use Float</a>
   </Col>
 </Row>
 
@@ -442,7 +442,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/spacing" title="Spacing documentation">Use Spacing</a>
+    <a data-oo-button href="docs/utilities/spacing/" title="Spacing documentation">Use Spacing</a>
   </Col>
 </Row>
 
@@ -457,7 +457,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/color" title="Color documentation">Use Color utilities</a>
+    <a data-oo-button href="docs/utilities/color/" title="Color documentation">Use Color utilities</a>
   </Col>
 </Row>
 
@@ -472,7 +472,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/typography" title="Typography documentation">Use Typo utilities</a>
+    <a data-oo-button href="docs/utilities/typography/" title="Typography documentation">Use Typo utilities</a>
   </Col>
 </Row>
 
@@ -487,7 +487,7 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/helpers/list" title="List documentation">Use List</a>
+    <a data-oo-button href="docs/helpers/list/" title="List documentation">Use List</a>
   </Col>
 </Row>
 
@@ -502,8 +502,8 @@ That will also give you the opportunity to set some global settings.</p>
     </ul>
   </Col>
   <Col prop="span12 fit@sm self-valign-middle">
-    <a data-oo-button href="docs/utilities/wrapper" title="Spacing documentation">Use Wrapper</a>
+    <a data-oo-button href="docs/utilities/wrapper/" title="Spacing documentation">Use Wrapper</a>
   </Col>
 </Row>
 
-<Pagination href="docs/html-elements" label="Adjust Html elements" />
+<Pagination href="docs/html-elements/" label="Adjust Html elements" />

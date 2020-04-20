@@ -44,7 +44,7 @@ wrapper: (
   </div>
 </div>
 
-<h4 class="mt-30">Add more, update data, set responsive values <span class="font-regular font-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
+<h4 class="mt-30">Add more, update data, set responsive values <span class="font-regular font-medium">(<a href="docs/utilities/#format" title="Check the options">Check the options</a>)</span></h4>
 {@html highlight(
 `$ooLoop: ooAdd('wrapper.values', (
   'tiny': .5rem,

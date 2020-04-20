@@ -3,7 +3,7 @@
   import Row from '@/components/Loop/Row.svelte'
   import Col from '@/components/Loop/Col.svelte'
   import TemplateSample from './template.svelte'
-  
+
   const date = new Date()
   let showWeatherCode = {
     clear: false,
@@ -205,7 +205,7 @@
         </div>
       </Col>
       <Col prop="span12" class="text-center">
-        <a class="font-medium" data-oo-button="primary" href="docs/components/column" title="Start using Columns">Start using Columns</a>
+        <a class="font-medium" data-oo-button="primary" href="docs/components/column/" title="Start using Columns">Start using Columns</a>
       </Col>
     </Row>
   </div>
@@ -267,7 +267,7 @@ $ooLoop: ooSet('template.gap', 1rem);
       <Col prop="span12 span5@md order0@md" class="mt-45">
         <TemplateSample />
         <div class="text-center mt-30">
-          <a class="font-medium" data-oo-button="primary" href="docs/components/template" title="Create Templates">Create Templates</a>
+          <a class="font-medium" data-oo-button="primary" href="docs/components/template/" title="Create Templates">Create Templates</a>
         </div>
       </Col>
     </Row>
@@ -284,7 +284,7 @@ $ooLoop: ooSet('template.gap', 1rem);
 .hero {
   padding: oo('container.gutter.rt');
   display: flex;
-  min-height: 300px; 
+  min-height: 300px;
   align-items: center;
   text-align: center;
   color: #fff;
@@ -322,7 +322,7 @@ $ooLoop: ooSet('template.gap', 1rem);
       </Col>
       <Col prop="span12">
         <p class="text-center mt-45">
-          <a class="font-medium" data-oo-button="primary" href="docs/config" title="Learn about Loop config">Learn about Loop config</a>
+          <a class="font-medium" data-oo-button="primary" href="docs/config/" title="Learn about Loop config">Learn about Loop config</a>
         </p>
       </Col>
     </Row>
@@ -333,8 +333,8 @@ $ooLoop: ooSet('template.gap', 1rem);
     <Col prop="span9@sm span7@md self-align-center" class="wrapper-wide">
       <p class="font-large mb-0">
         Like a companion, Loop supports your development, giving you the tools to make it your own.<br><br>
-        Loop encourages the use and <a href="docs/utilities" title="Make your own utilties set">creation of utilities</a>
-        while considering <a href="docs/components" title="Create your own components">making components</a> for recurring styling.
+        Loop encourages the use and <a href="docs/utilities/" title="Make your own utilties set">creation of utilities</a>
+        while considering <a href="docs/components/" title="Create your own components">making components</a> for recurring styling.
       </p>
     </Col>
   </div>
@@ -424,10 +424,10 @@ $ooLoop: ooPipe(
       <Col prop="span12" class="text-center">
         <Row prop="gutter-small align-center">
           <Col prop="span12 fit@sm">
-            <a class="font-medium" data-oo-button="primary" href="docs/utilities" title="Make your own Set">Make your own Set</a>
+            <a class="font-medium" data-oo-button="primary" href="docs/utilities/" title="Make your own Set">Make your own Set</a>
           </Col>
           <Col prop="fit@sm">
-            <a class="font-medium" data-oo-button="primary outline" href="docs/components#turn-utility-into-component" title="Turn utility first component into Loop component">Turn event into Loop component</a>
+            <a class="font-medium" data-oo-button="primary outline" href="docs/components/#turn-utility-into-component" title="Turn utility first component into Loop component">Turn event into Loop component</a>
           </Col>
         </Row>
       </Col>
@@ -518,7 +518,7 @@ $ooLoop: ooAdd('components', (
           </div>
         </div>
         <div class="text-center mt-45">
-          <a data-oo-button="primary" class="mt-15" href="docs/components" title="Learn about Loop Component">Develop Loop Component</a>
+          <a data-oo-button="primary" class="mt-15" href="docs/components/" title="Learn about Loop Component">Develop Loop Component</a>
         </div>
       </Col>
     </Row>
@@ -671,7 +671,7 @@ $ooLoop: ooAdd('components', (
 </div>
 \n
 `, 'html', 'mt-0 mb-20 wrapper-less')}
-        <Col prop="span11@sm span10@md span11@lg"> 
+        <Col prop="span11@sm span10@md span11@lg">
         <div class="preview mb-45">
           <div data-oo-weather="sunny" data-degree="28">
             <span>Marseille<br><small>Sunny</small></span>
@@ -690,7 +690,7 @@ $ooLoop: ooAdd('components', (
           </div>
         </div>
         <div class="text-center">
-          <a class="font-medium mt-10" data-oo-button="primary" href="docs/components#from-mixin" title="Develop Custom Component">Develop Custom Component</a>
+          <a class="font-medium mt-10" data-oo-button="primary" href="docs/components/#from-mixin" title="Develop Custom Component">Develop Custom Component</a>
         </div>
         </Col>
       </Col>

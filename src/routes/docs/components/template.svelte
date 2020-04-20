@@ -95,7 +95,7 @@ template: (
 </div>
 
 <hr>
-<h2 id="sized-column"><a href="docs/components/template#sized-column" title="Sized Columns">#</a> Sized Column</h2>
+<h2 id="sized-column"><a href="docs/components/template/#sized-column" title="Sized Columns">#</a> Sized Column</h2>
 <p>The template is fluid and relies on the propotional percentage by default.
 By using the pipe <code>|</code> character after the area name,
 you can set the value of <strong>the column where the area is, <u>Not</u> the area itself</strong>.</p>
@@ -140,7 +140,7 @@ you can set the value of <strong>the column where the area is, <u>Not</u> the ar
 </div>
 
 <hr>
-<h2 id="multiple"><a href="docs/components/template#multiple" title="Multiple templates">#</a> Multiple templates</h2>
+<h2 id="multiple"><a href="docs/components/template/#multiple" title="Multiple templates">#</a> Multiple templates</h2>
 <p>Pass a list of <strong>named templates</strong> to the <em>areas</em> property.</p>
 
 {@html highlight(
@@ -199,7 +199,7 @@ you can set the value of <strong>the column where the area is, <u>Not</u> the ar
 </div>
 
 <hr>
-<h2 id="gap"><a href="docs/components/template#gap" title="Gap">#</a> Gap</h2>
+<h2 id="gap"><a href="docs/components/template/#gap" title="Gap">#</a> Gap</h2>
 <p>Change the horizontal and vertical space between the areas.<code>gap-<i>gapName</i> <code>vgap-<i>gapName</i></code></p>
 
 {@html highlight(
