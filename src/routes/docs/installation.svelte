@@ -2,15 +2,18 @@
 	import HeadTitle from '@/components/HeadTitle.svelte';
 	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Installation';
+  const description = 'Being a sass framework, Loop requires a sass environment to be setup';
 </script>
 
 <style>
 </style>
 
-<HeadTitle title="Installation"/>
+<HeadTitle {title} {description}/>
 
-<h1>Installation</h1>
-<p class="font-large">Being a sass framework, Loop requires a sass environment to be setup</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 
 <h3>Setup options</h3>
 <ol>

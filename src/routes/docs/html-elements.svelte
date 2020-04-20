@@ -2,16 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'HTML elements';
+  const description = 'Set default styles and format css elements to act the same accross browsers.';
 </script>
 
-<style>
-  /* your styles go here */
-</style>
+<HeadTitle {title} {description}/>
 
-<HeadTitle title="HTML elements"/>
-
-<h1>HTML elements</h1>
-<p class="font-large">Set default styles and format css elements to act the same accross browsers.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 
 <h2 id="base"><a href="docs/html-elements#base">#</a> Base</h2>
 <p>The Base is <strong>highly recommended</strong> as it sets global styling and renders html elements more consistently. It includes:</p>

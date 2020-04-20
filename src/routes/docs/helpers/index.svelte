@@ -2,16 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Helper classes';
+  const description = 'A set of classes to help you deal with common styling.';
 </script>
 
-<style>
+<HeadTitle {title} {description}/>
 
-</style>
-
-<HeadTitle title="Helper classes"/>
-
-<h1>Helper classes</h1>
-<p class="font-large">A set of classes to help you deal with common styling.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Unlike utilities classes, helpers classes does not follow any specific format and can achieve multiple things. They are global classes.</p>
 
 <ul>

@@ -2,12 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Micellaneous';
+  const description = 'Recurring handy classes';
 </script>
 
-<HeadTitle title="Micellaneous"/>
+<HeadTitle {title} {description}/>
 
-<h1>Miscellaneous</h1>
-<p class="font-large">Recurring handy classes.</p>
+<h1>{title}</h1>
+<p class="font-large">{title}</p>
 <p>Those styles are generated from the property <em>misc</em> of the config map.</p>
 {@html highlight(
 `//default config

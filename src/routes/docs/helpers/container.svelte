@@ -2,13 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Container';
+  const description = 'Set the main container of the page with proper spacing on the sides.';
 </script>
 
+<HeadTitle {title} {description}/>
 
-<HeadTitle title="Container"/>
-
-<h1>Container</h1>
-<p class="font-large">Set the main container of the page with proper spacing on the sides.<br>
+<h1>{title}</h1>
+<p class="font-large">{description}<br>
 <code class="ml-0">.container</code> <code>.container-fluid</code></p>
 {@html highlight(
 `// default config

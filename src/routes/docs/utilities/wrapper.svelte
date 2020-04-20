@@ -1,6 +1,9 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'Wrapper utilities';
+  const description = 'Wrap elements with padding around them.';
 </script>
 
 <style lang="scss">
@@ -12,10 +15,10 @@
 }
 </style>
 
-<HeadTitle title="Wrapper utilities"/>
+<HeadTitle {title} {description}/>
 
-<h1>Wrapper utilities</h1>
-<p class="font-large">Wrap elements with padding around them.</p>
+<h1>{title}</h1>
+<p class="font-large">{description}</p>
 <p>Two classes available from start <code>.wrapper-small</code> and <code>.wrapper-medium</code>.</p>
 
 {@html highlight(

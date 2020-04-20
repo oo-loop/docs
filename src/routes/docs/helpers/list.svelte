@@ -2,15 +2,15 @@
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const title = 'List';
+  const description = 'Format list elements.';
 </script>
 
-<style>
-</style>
+<HeadTitle {title} {description}/>
 
-<HeadTitle title="List"/>
-
-<h1>List</h1>
-<p class="font-large">Format list elements.<br>
+<h1>{title}</h1>
+<p class="font-large">{description}<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
 <h2 id="unstyle"><a href="docs/helpers/list#unstyle">#</a> Unstyle</h2>

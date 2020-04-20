@@ -2,12 +2,14 @@
 	import HeadTitle from '@/components/HeadTitle.svelte';
 	import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
+
+  const description = 'Simplify the use of variables and the configuration of the framework.';
 </script>
 
-<HeadTitle title="Config map"/>
+<HeadTitle title="Config map" {description}/>
 
 <h1>Loop Config Map</h1>
-<p class="font-large">Simplify the use of variables and the configuration of the framework.</p>
+<p class="font-large">{description}</p>
 
 <p>Because going through a single <i>variables.scss</i> file can be tedious and remembering every names is becoming a challenge,
 Loop offers a single config map.</p>
@@ -235,6 +237,41 @@ a {
 {@html highlight(
 `/* will generate */
 .color-primary { color: #0ea7d6 }
+.color-danger  { color: red }
+`, 'css')}
+
+<h4>Chaining</h4>
+<p>Add as many spreads as needed</p>
+
+{@html highlight(`$ooLoop: (
+  palette: (
+    'primary': #0ea7d6,
+    'secondary': #959595,
+    'warning': #f7f3c8,
+  ),
+
+  // utilities
+  color: (
+    font: (
+      prefix: 'color',
+      property: 'color',
+      values: (
+        _this('palette.primary'),
+        _this('palette.secondary'),
+        (
+          'danger': red,
+        )
+      )
+    )
+  ),
+  ...
+);
+`, 'scss')}
+
+{@html highlight(
+`/* will generate */
+.color-primary { color: #0ea7d6 }
+.color-secondary { color: #959595 }
 .color-danger  { color: red }
 `, 'css')}
 

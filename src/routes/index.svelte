@@ -123,7 +123,7 @@ h3 {
   <img alt="" src="logo.svg" height="637">
   <div>
     <h1>Loop</h1>
-    <h2>Dev Companion for<br>Flexible and Expressive CSS</h2>
+    <h2>Flexible and Expressive CSS</h2>
     <p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
     <code class="large">npm install oo-loop</code>
   </div>
@@ -166,7 +166,5 @@ h3 {
     It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's changeable or not.
   </p>
   <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="/docs">Let's go</a></p>
-  <hr>
-  <p class="info">Loop documentation is still on going, more samples and details coming soon.</p>
   <hr>
 </Col>
