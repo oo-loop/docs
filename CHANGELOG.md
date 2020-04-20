@@ -1,5 +1,9 @@
 # Loop Documentation
 
+## 1.0.5
+- Add trailing slash to all internal links
+- Add title attribute to all sidenav links
+
 ## 1.0.4
 - Update spread section regarding chaining possibilities
 - Add "sized column" section to Template component
