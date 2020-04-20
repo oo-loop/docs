@@ -13,7 +13,7 @@
 <p class="font-large">{description}<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
-<h2 id="unstyle"><a href="docs/helpers/list#unstyle">#</a> Unstyle</h2>
+<h2 id="unstyle"><a href="docs/helpers/list/#unstyle">#</a> Unstyle</h2>
 <p>Remove default style of list elements</p>
 
 {@html highlight(
@@ -32,7 +32,7 @@
 </div>
 
 <div class="hr"></div>
-<h2 id="inline"><a href="docs/helpers/list#inline">#</a> Inline</h2>
+<h2 id="inline"><a href="docs/helpers/list/#inline">#</a> Inline</h2>
 <p>Set horizontal list. Adjust the the gap between from the property <em class="font-bold">inlineSpacing</em> of <em>list</em>.</p>
 
 {@html highlight(
@@ -60,7 +60,7 @@ list: (
 </div>
 
 <div class="hr"></div>
-<h2 id="center"><a href="docs/helpers/list#center">#</a> Center</h2>
+<h2 id="center"><a href="docs/helpers/list/#center">#</a> Center</h2>
 <p>Horizontally center list elements.</p>
 
 {@html highlight(
@@ -102,4 +102,4 @@ list: (
 <hr>
 <p class="info">In manual mode add the mixin <strong>List()</strong></p>
 
-<Pagination href="docs/helpers/misc" label="Use Miscellaneous classes" />
+<Pagination href="docs/helpers/misc/" label="Use Miscellaneous classes" />

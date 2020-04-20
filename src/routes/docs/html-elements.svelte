@@ -12,7 +12,7 @@
 <h1>{title}</h1>
 <p class="font-large">{description}</p>
 
-<h2 id="base"><a href="docs/html-elements#base">#</a> Base</h2>
+<h2 id="base"><a href="docs/html-elements/#base">#</a> Base</h2>
 <p>The Base is <strong>highly recommended</strong> as it sets global styling and renders html elements more consistently. It includes:</p>
 
 <ul class="mb-30">
@@ -63,7 +63,7 @@ $ooLoop: ooPipe(
   ))
 );
 
-// or 
+// or
 @include ooCreate((
   body: (
     props: (
@@ -109,7 +109,7 @@ body {
 
 <hr>
 
-<h2 id="content"><a href="docs/html-elements#content">#</a> Content</h2>
+<h2 id="content"><a href="docs/html-elements/#content">#</a> Content</h2>
 <p>Sets global content elements such as paragraph, anchor and list as well as the hr tag</p>
 <p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
 
@@ -171,7 +171,7 @@ body {
 
 <hr>
 
-<h2 id="headings"><a href="docs/html-elements#headings">#</a> Headings</h2>
+<h2 id="headings"><a href="docs/html-elements/#headings">#</a> Headings</h2>
 <p>Sets HTML headings from <code>{`<h1>`}</code> through <code>{`<h6>`}</code>. Unlike <a href="https://oo-loop.github.io/v0.4" title="Loop v0.4">Loop v0.4</a>, the font-size is relative to the default 100% and the <code>rem()</code> function is used to facilitate the conversion from pixel to rem unit.</p>
 <div class="ground">
   <h1>H1 heading</h1>
@@ -223,7 +223,7 @@ body {
   h3: rem(22),
   h4: rem(18),
   h5: 1rem,
-  h6: rem(14), 
+  h6: rem(14),
 ));
 `, 'scss')}
 

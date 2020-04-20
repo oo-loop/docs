@@ -58,7 +58,7 @@ visibility: (
 `, 'scss')}
 <div class="hr"></div>
 
-<h2 id="hide-from"><a href="docs/helpers/visibility#hide-from">#</a> Hide from</h2>
+<h2 id="hide-from"><a href="docs/helpers/visibility/#hide-from">#</a> Hide from</h2>
 <p>Use the values from the property <em class="font-bold">breakpoints</em> of <em>Visibility</em> <code class="ml-0">.hidden</code><code>.hidden@<i class="color-secondary">screenName</i></code></p>
 
 <div class="display">
@@ -101,7 +101,7 @@ visibility: (
 
 <div class="hr"></div>
 
-<h2 id="hide-upto"><a href="docs/helpers/visibility#hide-upto">#</a> Hide up to</h2>
+<h2 id="hide-upto"><a href="docs/helpers/visibility/#hide-upto">#</a> Hide up to</h2>
 <p>Use the values from the property <em class="font-bold">pointbreaks</em> of <em>Visibility</em> <code>.hidden!@<i class="color-secondary">screenName</i></code></p>
 
 <div class="display">
@@ -144,7 +144,7 @@ visibility: (
 
 <div class="hr"></div>
 
-<h2 id="misc"><a href="docs/helpers/visibility#misc">#</a> Misc</h2>
+<h2 id="misc"><a href="docs/helpers/visibility/#misc">#</a> Misc</h2>
 <p>Loop gives you two more visibility classes in the case of working on a print version.</p>
 <ul>
   <li><code class="ml-0">.hidden@print</code> Hide elements from print</li>
@@ -154,4 +154,4 @@ visibility: (
 <hr>
 <p class="info">In manual mode add the mixin <strong>Visibility()</strong></p>
 
-<Pagination href="docs/helpers/list" label="Use List classes" />
+<Pagination href="docs/helpers/list/" label="Use List classes" />

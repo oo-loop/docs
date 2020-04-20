@@ -20,7 +20,7 @@ Loop offers a single config map.</p>
 );
 `, 'scss')}
 
-<h2 class="mt-45" id="global"><a href="docs/config#global">#</a> Global Properties</h2>
+<h2 class="mt-45" id="global"><a href="docs/config/#global">#</a> Global Properties</h2>
 <p>The global properties are data to be refered to within your configuration to avoid duplicating them.</p>
 
 <h3 class="h4 mt-30 font-code">breakpoints</h3>
@@ -45,7 +45,7 @@ Loop offers a single config map.</p>
 ),`, 'scss')}
 
 <hr>
-<h2 id="props"><a href="docs/config#props">#</a> <em class="font-regular">Props</em> Property</h2>
+<h2 id="props"><a href="docs/config/#props">#</a> <em class="font-regular">Props</em> Property</h2>
 <p>The <em>props</em> property is reserved to pass a map of CSS properties within the config.
 <br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
 
@@ -70,7 +70,7 @@ Loop offers a single config map.</p>
 `, 'scss')}
 
 <p class="mt-30">Core settings (<strong>body, headings, paragraph</strong>...) are mainly using the <em>props</em> property to provide default styling.
-Check the <a href="docs/html-elements" title="HTML elements documentation">HTML elements documentation</a> to know what they are and change them at your own will.</p>
+Check the <a href="docs/html-elements/" title="HTML elements documentation">HTML elements documentation</a> to know what they are and change them at your own will.</p>
 
 <h3>Responsive value</h3>
 <p>A property can accept a map of breakpoints to generate responsive values</p>
@@ -79,7 +79,7 @@ body : (
   props: (
     font-size: (
       rt: 1rem, // root value (default)
-      sm: 1.2rem, // value @sm 
+      sm: 1.2rem, // value @sm
     )
   )
 ),
@@ -132,7 +132,7 @@ body {
 
 <p class="info">Styling <strong>pseudo-elements</strong> and <strong>child-elements</strong> are mainly used when developing components from the Loop config.</p>
 <hr>
-<h2 id="states"><a href="docs/config#states">#</a> <em class="font-regular">States</em> Property</h2>
+<h2 id="states"><a href="docs/config/#states">#</a> <em class="font-regular">States</em> Property</h2>
 <p>The <em>states</em> property is reserved to pass a map of Element states containing CSS properties.
 <br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
 
@@ -156,7 +156,7 @@ body {
 
 
 <hr>
-<h2 id="this"><a href="docs/config#this">#</a> <em class="font-regular">This</em> Referer</h2>
+<h2 id="this"><a href="docs/config/#this">#</a> <em class="font-regular">This</em> Referer</h2>
 <p>The keyword <code>this()</code> refers to a value in the context of the config map.</p>
 {@html highlight(`$ooLoop: (
   palette: (
@@ -328,7 +328,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 `, 'scss')}
 
 <hr>
-<h2 id="access"><a href="docs/config#access">#</a> Access Data</h2>
+<h2 id="access"><a href="docs/config/#access">#</a> Access Data</h2>
 <p>Access any data of the config map during your development.</p>
 
 <h3 class="h4 font-code" id="oo">oo(<span class="color-primary">$path</span>)</h3>
@@ -367,7 +367,7 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 <p class="info mt-15">Make sure to <strong>use <span class="color-primary">oo()</span> after the initialization </strong>of the config map to have all the updated data.</p>
 
 <hr>
-<h2 id="store"><a href="docs/config#store">#</a> Store</h2>
+<h2 id="store"><a href="docs/config/#store">#</a> Store</h2>
 <p>Add your own data to the config map through the property <code>store</code> to reuse them anywhere in your project.</p>
 <p>Those data <strong>will not generate any CSS rules</strong>, It's just a way to set and access your project global values during your development.</p>
 
@@ -425,4 +425,4 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 `, 'css')}
 
 
-<Pagination href="docs/importation" title="Customize your Loop import" label="Use what you need" />
+<Pagination href="docs/importation/" title="Customize your Loop import" label="Use what you need" />

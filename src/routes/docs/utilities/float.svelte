@@ -16,7 +16,7 @@
   display: block;
   width: 80px;
   height: 80px;
-  background-color: oo('palette.sample.light');    
+  background-color: oo('palette.sample.light');
   @include breakpoint(xs) {
     width: 100px;
     height: 100px;
@@ -95,4 +95,4 @@ $ooLoop: ooSet('float.screens', 'sm');
 <hr>
 <p class="info">In manual mode add the mixin <strong>Float()</strong></p>
 
-<Pagination href="docs/utilities/wrapper" label="Use Wrapper utilities" />
+<Pagination href="docs/utilities/wrapper/" label="Use Wrapper utilities" />

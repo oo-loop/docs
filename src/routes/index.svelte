@@ -129,19 +129,19 @@ h3 {
   </div>
 </section>
 <Col prop="span8@md self-align-center">
-  <a data-oo-button class="start-button" href="/docs">Start</a>
+  <a data-oo-button class="start-button" href="docs/">Start</a>
   <div class="hr"></div>
   <h3>Fully customizable</h3>
   <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
-  
+
   <h3>Single Configuration</h3>
   <p>No endless list of variables, Loop offers easy management and access to all configuration in a single map.</p>
 
   <h3>Separation of concerns</h3>
   <p>Loop differentiates components and utilities with semantic for more clarity</p>
   <ul>
-  <li><a href="docs/components" title="Components documentation">data-oo-componentName</a> / <a href="docs/components" title="Components documentation">oo-componentName</a> for component attributes</li>
-  <li><a href="docs/utilities" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
+  <li><a href="docs/components/" title="Components documentation">data-oo-componentName</a> / <a href="docs/components/" title="Components documentation">oo-componentName</a> for component attributes</li>
+  <li><a href="docs/utilities/" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
 </Col>
 
 <Demo />
@@ -165,6 +165,6 @@ h3 {
     Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
     It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's changeable or not.
   </p>
-  <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="/docs">Let's go</a></p>
+  <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="docs/">Let's go</a></p>
   <hr>
 </Col>

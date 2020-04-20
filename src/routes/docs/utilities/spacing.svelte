@@ -76,7 +76,7 @@ spacing: (
 .mb-30 { margin-bottom: 1.875rem !important; }
 `, 'css')}
 
-<h4 class="mt-45">Add more, update data, set responsive values <span class="font-regular font-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
+<h4 class="mt-45">Add more, update data, set responsive values <span class="font-regular font-medium">(<a href="docs/utilities/#format" title="Check the options">Check the options</a>)</span></h4>
 {@html highlight(
 `// config.scss
 $ooLoop: (
@@ -97,7 +97,7 @@ $ooLoop: ooAdd('spacing', (
     ),
     screens: (
       lg: '45'
-    ), 
+    ),
   ),
   bottom: ('values': (
     'gutter': this('container.gutter') // grabbing value from gutter config
@@ -160,4 +160,4 @@ $ooLoop: ooSet('spacing.top.values', (
 <hr>
 <p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>
 
-<Pagination href="docs/utilities/float" label="Use Float utilities" />
+<Pagination href="docs/utilities/float/" label="Use Float utilities" />

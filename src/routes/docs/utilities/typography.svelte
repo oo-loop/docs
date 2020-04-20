@@ -17,7 +17,7 @@
 
 <h1>{title}</h1>
 <p class="font-large">{description}</p>
-<p>Loop gives you some recurring text utilities by default. Adjust the rest to your need (<a href="docs/utilities#format" title="Check the options">Check the options</a>).</p>
+<p>Loop gives you some recurring text utilities by default. Adjust the rest to your need (<a href="docs/utilities/#format" title="Check the options">Check the options</a>).</p>
 
 {@html highlight(
 `// default config
@@ -67,7 +67,7 @@ typo: (
   <p class="text-uppercase">This is a text with the class <em>.text-uppercase</em></p>
 </div>
 
-<h4>Add more or update data <span class="font-regular font-medium">(<a href="docs/utilities#format" title="Check the options">Check the options</a>)</span></h4>
+<h4>Add more or update data <span class="font-regular font-medium">(<a href="docs/utilities/#format" title="Check the options">Check the options</a>)</span></h4>
 
 {@html highlight(
 `$ooLoop: ooAdd('typo', (
@@ -106,7 +106,7 @@ typo: (
 </div>
 
 
-<h4>Set responsive values <span class="font-regular font-medium">(<a href="docs/utilities#responsive" title="Check the options">Check the options</a>)</span></h4>
+<h4>Set responsive values <span class="font-regular font-medium">(<a href="docs/utilities/#responsive" title="Check the options">Check the options</a>)</span></h4>
 
 {@html highlight(
 `$ooLoop: ooAdd('typo', (
@@ -131,4 +131,4 @@ typo: (
 <hr>
 <p class="info">In manual mode add the mixin <strong>Typography()</strong></p>
 
-<Pagination href="docs/utilities/spacing" label="Use Spacing utilities" />
+<Pagination href="docs/utilities/spacing/" label="Use Spacing utilities" />

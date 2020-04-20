@@ -43,4 +43,4 @@ The side gutters are also applied.</p>
 <hr>
 <p class="info">In manual mode add the mixin <strong>Container()</strong></p>
 
-<Pagination href="docs/helpers/visibility" label="Use Visibility classes" />
+<Pagination href="docs/helpers/visibility/" label="Use Visibility classes" />
