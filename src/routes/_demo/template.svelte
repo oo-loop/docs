@@ -228,15 +228,15 @@
   }
 }
 
-.dark {
+.isdark {
   color: #c8e2e8;
   background-color: oo('palette.sample.dark');
 }
-.darker {
+.isdarker {
   color: #c8e2e8;
   background-color: oo('palette.sample.darker');
 }
-.light {
+.islight {
   color: #01536d;
   background-color: oo('palette.sample.light');
 }
@@ -249,19 +249,19 @@
 }
 </style>
 
-<div class="switchers">
+<div class="$style.switchers">
 {#each screens as screenSize}
   <span class:active={screen === screenSize} class="screen-{screenSize}" on:click|preventDefault={() => setActiveScreen(screenSize)}>{screenSize}</span>
 {/each}
 </div>
-<div class="template-canvas">
-  <div class="preview preview-template template-{screen} clear mt-5">
+<div class="$style.template-canvas">
+  <div class="preview $style.preview-template template-{screen} clear mt-5">
     <div bind:this={template}>
-      <div class="small light template-header">Header</div>
-      <div class="small dark template-nav">Nav</div>
-      <div class="high darker template-main">Main</div>
-      <div class="small dark template-widgets">Widgets</div>
-      <div class="small light template-footer">Footer</div>
+      <div class="$style.small $style.islight $style.template-header">Header</div>
+      <div class="$style.small $style.isdark $style.template-nav">Nav</div>
+      <div class="$style.high $style.isdarker $style.template-main">Main</div>
+      <div class="$style.small $style.isdark $style.template-widgets">Widgets</div>
+      <div class="$style.small $style.islight $style.template-footer">Footer</div>
     </div>
   </div>
 </div>

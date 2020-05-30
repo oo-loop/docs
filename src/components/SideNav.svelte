@@ -126,7 +126,7 @@
   />
 
 <nav bind:this={el} style={isOn ? `max-height:${elHeight}px` : ''}>
-  <span class="trigger" on:click={() => isOn = !isOn}>{label}</span>
+  <span class="$style.trigger" on:click={() => isOn = !isOn}>{label}</span>
   <ul class="list-unstyle">
     <li>
       <h4><a class:color-primary={segment === 'installation'} href="docs/installation/" title="Installation">Installation</a></h4>

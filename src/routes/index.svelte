@@ -31,14 +31,6 @@ h3 {
   align-items: center;
   max-width: 960px;
   min-height: 540px;
-
-  img {
-    position: absolute;
-    top: -110px;
-    left: -210px;
-    z-index: -1;
-    height: 710px;
-  }
   @include breakpoint(sm) {
     padding: 0 oo('container.gutter.sm');
     margin: -35px -#{oo('container.gutter.sm')} 0;
@@ -48,13 +40,20 @@ h3 {
     > div {
       padding-left: 50px;
     }
+  }
+}
 
-    img {
-      top: -50px;
-      left: calc(50% - 440px);
-      z-index: -1;
-      height: 637px;
-    }
+.logo {
+  position: absolute;
+  top: -110px;
+  left: -210px;
+  z-index: -1;
+  height: 710px;
+  @include breakpoint(sm) {
+    top: -50px;
+    left: calc(50% - 440px);
+    z-index: -1;
+    height: 637px;
   }
 }
 
@@ -119,8 +118,8 @@ h3 {
 
 <HeadTitle />
 
-<section class="brand">
-  <img alt="" src="logo.svg" height="637">
+<section class="$style.brand">
+  <img class="$style.logo" alt="" src="logo.svg" height="637">
   <div>
     <h1>Loop</h1>
     <h2>Flexible and Expressive CSS</h2>
@@ -129,7 +128,7 @@ h3 {
   </div>
 </section>
 <Col prop="span8@md self-align-center">
-  <a data-oo-button class="start-button" href="docs/">Start</a>
+  <a data-oo-button class="$style.start-button" href="docs/">Start</a>
   <div class="hr"></div>
   <h3>Fully customizable</h3>
   <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
