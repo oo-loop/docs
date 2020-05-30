@@ -163,7 +163,7 @@ h3 {
     Loop proposes to treat the variables as a single structured map to facilitate its use.
     As the result, the config map is enabling easy parsing and access to all the data during the development.
     Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
-    It is simplifying its customization by allowing you to add whatever CSS properties your need without worrying if it's changeable or not.
+    It is simplifying its customization by allowing you to add whatever CSS properties you need without worrying if it's changeable or not.
   </p>
   <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="docs/">Let's go</a></p>
   <hr>
