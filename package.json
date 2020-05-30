@@ -43,7 +43,8 @@
     "rollup-plugin-terser": "^4.0.4",
     "sapper": "^0.27.12",
     "svelte": "^3.20.1",
-    "svelte-preprocess": "^3.7.1"
+    "svelte-preprocess": "^3.7.1",
+    "svelte-preprocess-cssmodules": "^1.0.1"
   },
   "browserslist": [
     "last 2 versions",
