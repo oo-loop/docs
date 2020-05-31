@@ -1,8 +1,7 @@
 <script>
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
-  import Row from '@/components/Loop/Row.svelte';
-  import Col from '@/components/Loop/Col.svelte';
+  import { Row, Col } from '@/components/Loop';
   import highlight from '@/utils/highlight.js';
 
   const title = 'Visibility';
@@ -56,6 +55,24 @@ visibility: (
   pointbreaks: this('screens'), // refering to screens value
 ),
 `, 'scss')}
+
+<Row prop="stretch gutter-small vgutter-less">
+  <Col prop="span12 auto@sm">
+{@html highlight(
+`// Auto
+// Is included by default
+@include ooCreate();
+`, 'scss', 'mb-0')}
+  </Col>
+  <Col>
+{@html highlight(
+`// Manual
+@include ooInit();
+@include Visibility();
+`, 'scss', 'mb-0')}
+  </Col>
+</Row>
+
 <div class="hr"></div>
 
 <h2 id="hide-from"><a href="docs/helpers/visibility/#hide-from">#</a> Hide from</h2>
@@ -150,8 +167,5 @@ visibility: (
   <li><code class="ml-0">.hidden@print</code> Hide elements from print</li>
   <li><code>.hidden@screen</code> Hide elements from screen (targetting print only)</li>
 </ul>
-
-<hr>
-<p class="info">In manual mode add the mixin <strong>Visibility()</strong></p>
 
 <Pagination href="docs/helpers/list/" label="Use List classes" />
