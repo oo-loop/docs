@@ -32,10 +32,10 @@
 `//default config
 label: (
   props: (
-    marginBottom: rem(3),
+    margin-bottom: rem(3),
     display: inline-block,
-    fontWeight: 500,
-    lineHeight: 1.5
+    font-weight: 500,
+    line-height: 1.5
   )
 ),
 input: (
@@ -43,18 +43,18 @@ input: (
     padding: .5em .625em,
     display: block,
     width: 100%,
-    minHeight: 2.5em,
+    min-height: 2.5em,
     color: #4d4d4d,
-    fontSize: 1rem,
-    lineHeight: 1.15,
-    backgroundColor: #fff,
+    font-size: 1rem,
+    line-height: 1.15,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
-    borderRadius: .2em,
+    border-radius: .2em,
   ),
   states: (
     focus: (
       outline: none,
-      boxShadow: 0 0 8px 0 rgba(#aaa, .25),
+      box-shadow: 0 0 8px 0 rgba(#aaa, .25),
     ),
   ),
 ),
@@ -180,7 +180,7 @@ select: (
 {@html highlight(
 `$ooLoop: ooAdd('select.variants', (
   'secondary': (
-    borderColor: #222,
+    border-color: #222,
     caret: (
       color: #fff,
       bgcolor: #222,
@@ -217,15 +217,15 @@ select: (
 `//default config
 checkbox: (
   props: (
-    backgroundColor: #fff,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
-    borderRadius: .2em,
+    border-radius: .2em,
     transition: background-color 250ms ease-out,
   ),
   checked: (
     markColor: #fff,
     props: (
-      backgroundColor: #4d4d4d,
+      background-color: #4d4d4d,
       border: 1px solid #4d4d4d,
     )
   ),
@@ -315,14 +315,14 @@ checkbox: (
 `//default config
 radio: (
   props: (
-    backgroundColor: #fff,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
   ),
   checked: (
     markColor: #fff,
     props: (
-      backgroundColor: #4d4d4d,
-      borderColor: #4d4d4d,
+      background-color: #4d4d4d,
+      border-color: #4d4d4d,
       transition: background-color 250ms ease-out,
     )
   ),
@@ -405,20 +405,20 @@ radio: (
 toggle: (
   props: (
     border: 1px solid #d6d6d6,
-    borderRadius: 50em,
-    backgroundColor: #d6d6d6,
+    border-radius: 50em,
+    background-color: #d6d6d6,
     transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out),
   ),
   toggler: ( // Props
-    borderRadius: 50%,
-    backgroundColor: #fff,
-    boxShadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
+    border-radius: 50%,
+    background-color: #fff,
+    box-shadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
     transition: transform 300ms ease-out,
   ),
   checked: (
     props: (
-      borderColor: #4d4d4d,
-      backgroundColor: this('toggle.checked.props.borderColor'),
+      border-color: #4d4d4d,
+      background-color: this('toggle.checked.props.borderColor'),
     )
   ),
   sizes: (

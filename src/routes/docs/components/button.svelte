@@ -30,23 +30,23 @@
 button: (
   props: (
     padding: .438em 1.2em,
-    fontSize: rem(14),
-    fontWeight: bold,
-    lineHeight: 1.45,
+    font-size: rem(14),
+    font-weight: bold,
+    line-height: 1.45,
     color: #333,
-    backgroundColor: #fff,
+    background-color: #fff,
     border: 1px solid #cecece,
-    borderRadius: .2em,
+    border-radius: .2em,
   ),
   states: (
     hover: (
       color: this('button.props.color'),
-      backgroundColor: ooDarken(this('button.props.backgroundColor'), 10%),
+      background-color: ooDarken(this('button.props.backgroundColor'), 10%),
     ),
     focus: this('button.states.hover'),
     active: (
-      backgroundColor: ooDarken(this('button.props.backgroundColor'), 12%),
-      boxShadow: inset 1px 1px 1px 0 ooDarken(this('button.props.backgroundColor'), 25%),
+      background-color: ooDarken(this('button.props.backgroundColor'), 12%),
+      box-shadow: inset 1px 1px 1px 0 ooDarken(this('button.props.backgroundColor'), 25%),
       outline: none,
     ),
   ),
