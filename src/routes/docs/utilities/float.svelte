@@ -93,6 +93,7 @@ $ooLoop: ooSet('float.screens', 'sm');
 `, 'scss')}
 
 <hr>
-<p class="info">In manual mode add the mixin <strong>Float()</strong></p>
+
+<p class="info mt-30">In manual mode add the mixin <strong>Float()</strong>.</p>
 
 <Pagination href="docs/utilities/wrapper/" label="Use Wrapper utilities" />

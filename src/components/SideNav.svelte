@@ -126,7 +126,7 @@
   />
 
 <nav bind:this={el} style={isOn ? `max-height:${elHeight}px` : ''}>
-  <span class="trigger" on:click={() => isOn = !isOn}>{label}</span>
+  <span class="$style.trigger" on:click={() => isOn = !isOn}>{label}</span>
   <ul class="list-unstyle">
     <li>
       <h4><a class:color-primary={segment === 'installation'} href="docs/installation/" title="Installation">Installation</a></h4>
@@ -134,6 +134,7 @@
     <li>
       <h4><a class:color-primary={segment === undefined} href="docs/" title="Getting started">Getting started</a></h4>
       <ul class="list-unstyle">
+        <li><a class:color-primary={isHashActive('#ooinit', hash)} href="docs/#ooinit" title="ooCreate mixin">ooInit</a></li>
         <li><a class:color-primary={isHashActive('#oocreate', hash)} href="docs/#oocreate" title="ooCreate mixin">ooCreate</a></li>
         <li><a class:color-primary={isHashActive('#ooset', hash)} href="docs/#ooset" title="ooSet function">ooSet</a></li>
         <li><a class:color-primary={isHashActive('#ooadd', hash)} href="docs/#ooadd" title="ooAdd function">ooAdd</a></li>

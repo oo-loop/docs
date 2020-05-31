@@ -31,6 +31,7 @@ wrapper: (
   ),
 ),
 `, 'scss')}
+
 {@html highlight(
 `<div class="wrapper-small">small</div>
 <div class="wrapper-medium">medium</div>
@@ -83,4 +84,6 @@ $ooLoop: ooSet('wrapper.screens', (
   </div>
 </div>
 <hr>
-<p class="info">In manual mode add the mixin <strong>Wrapper()</strong></p>
+
+<p class="info mt-30">In manual mode add the mixin <strong>Wrapper()</strong>.</p>
+

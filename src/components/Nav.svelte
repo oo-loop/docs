@@ -57,7 +57,7 @@
     font-weight: 700;
   }
   .active {
-    color: #0ea7d6;
+    color: #0ea7d6 !important;
   }
   img {
     // margin-right: -10px;
@@ -70,8 +70,8 @@
 
 <nav>
   <ul class="list-inline">
-    <li><a class="brand" href="."><img alt="loop css" src="logo-inverted.svg" width="35" height="35">Loop</a></li>
-    <li><a class="{segment === 'docs' ? "active" : ''}" href="docs/">Docs</a></li>
+    <li><a class="$style.brand" href="."><img alt="loop css" src="logo-inverted.svg" width="35" height="35">Loop</a></li>
+    <li><a class="{segment === 'docs' ? "$style.active" : ''}" href="docs/">Docs</a></li>
     <li><a href="https://github.com/oo-loop/loop" rel="external">Github</a></li>
     <li><a href="https://oo-loop.github.io/v0.4">v0.4</a></li>
   </ul>

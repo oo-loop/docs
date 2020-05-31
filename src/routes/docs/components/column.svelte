@@ -2,8 +2,7 @@
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
   import DataAttrToggler from '@/components/DataAttrToggler.svelte'
-  import Row from '@/components/Loop/Row.svelte'
-  import Col from '@/components/Loop/Col.svelte'
+  import { Row, Col } from '@/components/Loop'
   import highlight from '@/utils/highlight.js'
 
   const description = 'Layout elements in a page based on the 12 columns system.'
@@ -87,6 +86,7 @@
 <li><a href="docs/components/column/#self-alignment" title="Self alignment">Self alignment</a></li>
 <li><a href="docs/components/column/#children-alignment" title="Children alignment">Children alignment</a></li>
 <li><a href="docs/components/column/#order" title="Order column">Order column</a></li>
+<li><a href="docs/components/column/#variants" title="Create column variants">Create variants</a></li>
 </ul>
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
@@ -105,6 +105,9 @@
     <Col class="cell"></Col>
   </Row>
 </div>
+
+<p class="info">Loop config <strong>includes <em>column</em> by default</strong>. In manual mode add the mixin <strong>Column()</strong></p>
+
 <hr>
 <h2 class="mt-45" id="responsive-screens"><a href="docs/components/column/#responsive-screens">#</a> Responsive screens</h2>
 <p>The column system is using the <a href="docs/config/#global">global responsive screens</a> by default.</p>
@@ -684,5 +687,30 @@ $ooLoop: ooSet('column.order.screens', (
 /**/
 $ooLoop: ooSet('column.order.screens', 'sm'); // from order0@sm to order11@sm
 `, 'scss')}
+
+<hr>
+<h2 id="variants"><a href="docs/components/column/#variants">#</a> Create variants</h2>
+<p>Add your own custom rules to <code>oo-col</code>.</p>
+{@html highlight(`// Rules to set a width of 120px
+$ooLoop: ooSet('column.variants', (
+  'w120': (
+    flex-grow: 0,
+    min-width: 120px,
+  )
+));
+`, 'scss')}
+
+<DataAttrToggler content={
+`<div oo-row>
+  <div oo-col="w120"></div>
+  <div oo-col></div>
+</div>
+`} />
+<div class="ground">
+  <Row>
+    <Col class="cell" prop="w120"></Col>
+    <Col class="cell"></Col>
+  </Row>
+</div>
 
 <Pagination href="docs/components/template/" label="Use Template" />

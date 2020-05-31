@@ -160,7 +160,7 @@
   }
 </style>
 
-<section class="demo bg-100 demo-top">
+<section class="$style.demo $style.bg-100 $style.demo-top">
   <div class="container">
     <h2>Quick Element Layout</h2>
     <Row prop="align-center">
@@ -170,8 +170,6 @@
 @import 'oo-loop/loop';
 
 @include ooCreate((
-  dataAttr: false,
-
   palette: (
     'white': #fff,
   ),
@@ -194,7 +192,7 @@
 </div>`, 'html', 'mt-0 mb-0 wrapper-less')}
       </Col>
       <Col prop="span6@md self-valign-middle order0@md">
-        <div class="preview mt-30  mb-30">
+        <div class="preview mt-30 mb-30">
           <Row prop="gutter-small">
             <Col prop="fit"><img src="orange.jpg" width="85" alt="oranges" /></Col>
             <Col class="color-white">
@@ -211,9 +209,9 @@
   </div>
 </section>
 
-<section class="demo bg-200">
+<section class="$style.demo $style.bg-200">
   <div class="container">
-    <h2 class="">Simple Responsive Template Design</h2>
+    <h2>Simple Responsive Template Design</h2>
     <Row prop="align-between">
       <Col prop="span6@md" class="mt-15">
 {@html highlight(
@@ -250,9 +248,7 @@ $ooLoop: ooSet('template.areas', (
 ));
 $ooLoop: ooSet('template.gap', 1rem);
 
-@include ooCreate((
-  dataAttr: false,
-));`, 'scss', 'mt-0 mb-5 wrapper-less')}
+@include ooCreate();`, 'scss', 'mt-0 mb-5 wrapper-less')}
 {@html highlight(
 `\n<!-- App -->
 <div oo-template="home">
@@ -274,7 +270,7 @@ $ooLoop: ooSet('template.gap', 1rem);
   </div>
 </section>
 
-<section class="demo demo-bottom bg-300">
+<section class="$style.demo $style.demo-bottom $style.bg-300">
   <h2>Easy Use of Config Data</h2>
   <div class="container">
     <Row prop="align-center">
@@ -339,7 +335,7 @@ $ooLoop: ooSet('template.gap', 1rem);
     </Col>
   </div>
 </section>
-<section class="demo demo-top bg-300">
+<section class="$style.demo $style.demo-top $style.bg-300">
   <br>
   <h2>Take Advantage of Utilities<br>
     <small>Adjust your Needs - Build Rapidly</small>
@@ -403,7 +399,7 @@ $ooLoop: ooPipe(
   <div class="wrapper-small wrapper-medium@md">
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
     <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-    <button class="shape-stadium" data-oo-button="lavender outline">Join</button>
+    <button class="shape-stadium" oo-button="lavender outline">Join</button>
   </div>
 </div>\n
 `, 'html', 'mt-0 mb-30 wrapper-less')}
@@ -433,7 +429,7 @@ $ooLoop: ooPipe(
       </Col>
     </Row>
 </section>
-<section class="demo bg-400">
+<section class="$style.demo $style.bg-400">
   <div class="container">
     <h2>Turn recurring style into Component<br>
       <small>Make Html more Readable</small>
@@ -483,7 +479,7 @@ $ooLoop: ooAdd('components', (
   ),
 ));
 
-@include ooCreate((dataAttr: false));
+@include ooCreate();
 `, 'scss', 'mt-0 wrapper-less')}
       </Col>
       <Col prop="span12 span6@sm span5@md order0@md" class="mt-10">
@@ -524,7 +520,7 @@ $ooLoop: ooAdd('components', (
     </Row>
   </div>
 </section>
-<section class="demo demo-bottom bg-500">
+<section class="$style.demo $style.demo-bottom $style.bg-500">
   <div class="container">
     <h2>Develop Component with more Freedom<br><small>Pure Scss coding with Mixins</small></h2>
     <Row prop="align-center">

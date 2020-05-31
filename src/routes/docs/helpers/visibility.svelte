@@ -1,8 +1,7 @@
 <script>
+  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
-  import Row from '@/components/Loop/Row.svelte';
-  import Col from '@/components/Loop/Col.svelte';
   import highlight from '@/utils/highlight.js';
 
   const title = 'Visibility';
@@ -56,6 +55,9 @@ visibility: (
   pointbreaks: this('screens'), // refering to screens value
 ),
 `, 'scss')}
+
+<p class="info">Loop config <strong>includes <em>visibility classes</em> by default</strong>. In manual mode use the mixin <strong>Visibility()</strong></p>
+
 <div class="hr"></div>
 
 <h2 id="hide-from"><a href="docs/helpers/visibility/#hide-from">#</a> Hide from</h2>
@@ -150,8 +152,5 @@ visibility: (
   <li><code class="ml-0">.hidden@print</code> Hide elements from print</li>
   <li><code>.hidden@screen</code> Hide elements from screen (targetting print only)</li>
 </ul>
-
-<hr>
-<p class="info">In manual mode add the mixin <strong>Visibility()</strong></p>
 
 <Pagination href="docs/helpers/list/" label="Use List classes" />

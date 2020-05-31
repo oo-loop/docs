@@ -13,7 +13,9 @@
 <p class="font-large">{description}<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
-<h2 id="unstyle"><a href="docs/helpers/list/#unstyle">#</a> Unstyle</h2>
+<p class="info">Loop config <strong>includes <em>list classes</em> by default</strong>. In manual mode use the mixin <strong>List()</strong></p>
+
+<h2 class="mt-45" id="unstyle"><a href="docs/helpers/list/#unstyle">#</a> Unstyle</h2>
 <p>Remove default style of list elements</p>
 
 {@html highlight(
@@ -99,7 +101,5 @@ list: (
     <li>item 4</li>
   </ul>
 </div>
-<hr>
-<p class="info">In manual mode add the mixin <strong>List()</strong></p>
 
 <Pagination href="docs/helpers/misc/" label="Use Miscellaneous classes" />

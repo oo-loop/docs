@@ -12,6 +12,7 @@
 <h1>{title}</h1>
 <p class="font-large">{description}<br>
 <code class="ml-0">.container</code> <code>.container-fluid</code></p>
+<p class="info">Loop config <strong>includes <em>container</em> by default</strong>. In manual mode use the mixin <strong>Container()</strong></p>
 {@html highlight(
 `// default config
 container: (
@@ -21,7 +22,7 @@ container: (
   ),
   maxWidth: 1280px,
 ),
-`, 'scss')}
+`, 'scss', 'mb-0')}
 
 <h3 class="h4 font-code mt-30">.container</h3>
 <p>The class <code>.container</code> helps you center the content horizontally while reaching the <em>maxWidth</em> threshold.
@@ -39,8 +40,5 @@ The side gutters are also applied.</p>
 <!-- your content here -->
 </div>
 `, 'html')}
-
-<hr>
-<p class="info">In manual mode add the mixin <strong>Container()</strong></p>
 
 <Pagination href="docs/helpers/visibility/" label="Use Visibility classes" />

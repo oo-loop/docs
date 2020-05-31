@@ -2,8 +2,7 @@
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
   import DataAttrToggler from '@/components/DataAttrToggler.svelte'
-  import Row from '@/components/Loop/Row.svelte';
-  import Col from '@/components/Loop/Col.svelte';
+  import { Row, Col } from '@/components/Loop';
   import highlight from '@/utils/highlight.js';
 </script>
 
@@ -24,6 +23,31 @@
 
 <p>The style of each form element is set through the <a href="docs/config/#props" title="Props attribute"><em>props</em></a> & <a href="docs/config/#states" title="States attribute"><em>states</em></a> properties giving you control on the component looks.</p>
 
+<p class="info">Loop config <strong>only includes <em>input</em> by default</strong>. Enable the others one from the config or via the mixins.</p>
+
+<Row prop="stretch gutter-small">
+  <Col prop="span12 auto@sm">
+{@html highlight(
+`// Auto
+@include ooCreate((
+  use: (
+    form: true, // include all
+  )
+));`, 'scss', 'mb-0')}
+  </Col>
+  <Col>
+{@html highlight(
+`// Manual
+@include ooInit();
+@include Label();
+@include InputField();
+@include SelectField();
+@include Checkbox();
+@include Radio();
+@include Toggle();
+`, 'scss', 'mb-0')}
+  </Col>
+</Row>
 <hr>
 <h2 id="input"><a href="docs/components/form/#input">#</a> Input fields</h2>
 <p>Use <code>oo-input</code> for any textfield elements.</p>
@@ -32,10 +56,10 @@
 `//default config
 label: (
   props: (
-    marginBottom: rem(3),
+    margin-bottom: rem(3),
     display: inline-block,
-    fontWeight: 500,
-    lineHeight: 1.5
+    font-weight: 500,
+    line-height: 1.5
   )
 ),
 input: (
@@ -43,18 +67,18 @@ input: (
     padding: .5em .625em,
     display: block,
     width: 100%,
-    minHeight: 2.5em,
+    min-height: 2.5em,
     color: #4d4d4d,
-    fontSize: 1rem,
-    lineHeight: 1.15,
-    backgroundColor: #fff,
+    font-size: 1rem,
+    line-height: 1.15,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
-    borderRadius: .2em,
+    border-radius: .2em,
   ),
   states: (
     focus: (
       outline: none,
-      boxShadow: 0 0 8px 0 rgba(#aaa, .25),
+      box-shadow: 0 0 8px 0 rgba(#aaa, .25),
     ),
   ),
 ),
@@ -114,7 +138,6 @@ input: (
   <label for="form-textarea-danger">Textarea danger</label>
   <textarea data-oo-input="danger" id="form-textarea-danger" rows="4"></textarea>
 </div>
-<p class="info">Loop config <strong>includes <em>input.textfield</em> by default</strong>. In manual mode add the mixins <strong>Label()</strong> and <strong>TextField()</strong></p>
 
 <hr>
 <h2 id="select"><a href="docs/components/form/#select">#</a> Select</h2>
@@ -180,7 +203,7 @@ select: (
 {@html highlight(
 `$ooLoop: ooAdd('select.variants', (
   'secondary': (
-    borderColor: #222,
+    border-color: #222,
     caret: (
       color: #fff,
       bgcolor: #222,
@@ -207,7 +230,6 @@ select: (
     </select>
   </div>
 </div>
-<p class="info">Loop config <strong>includes <em>input.select</em> by default</strong>. In manual mode add the mixin <strong>SelectField()</strong></p>
 
 <hr>
 <h2 id="checkbox"><a href="docs/components/form/#checkbox">#</a> Checkbox</h2>
@@ -217,15 +239,15 @@ select: (
 `//default config
 checkbox: (
   props: (
-    backgroundColor: #fff,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
-    borderRadius: .2em,
+    border-radius: .2em,
     transition: background-color 250ms ease-out,
   ),
   checked: (
     markColor: #fff,
     props: (
-      backgroundColor: #4d4d4d,
+      background-color: #4d4d4d,
       border: 1px solid #4d4d4d,
     )
   ),
@@ -305,7 +327,6 @@ checkbox: (
   <input data-oo-checkbox="large medium@sm default@md" id="checkbox-responsive" type="checkbox">
   <label for="checkbox-responsive">Responsive Checkbox</label>
 </div>
-<p class="info">Loop config <strong>includes <em>input.checkbox</em> by default</strong>. In manual mode add the mixin <strong>Checkbox()</strong></p>
 
 <hr>
 <h2 id="radio"><a href="docs/components/form/#radio">#</a> Radio</h2>
@@ -315,14 +336,14 @@ checkbox: (
 `//default config
 radio: (
   props: (
-    backgroundColor: #fff,
+    background-color: #fff,
     border: 1px solid #d6d6d6,
   ),
   checked: (
     markColor: #fff,
     props: (
-      backgroundColor: #4d4d4d,
-      borderColor: #4d4d4d,
+      background-color: #4d4d4d,
+      border-color: #4d4d4d,
       transition: background-color 250ms ease-out,
     )
   ),
@@ -394,7 +415,6 @@ radio: (
   <input data-oo-radio="large default@md" id="radio-responsive" type="radio" value="">
   <label for="radio-responsive">Responsive Radio</label>
 </div>
-<p class="info">Loop config <strong>includes <em>input.radio</em> by default</strong>. In manual mode add the mixin <strong>Radio()</strong></p>
 
 <hr>
 <h2 id="toggle"><a href="docs/components/form/#toggle">#</a> Toggle</h2>
@@ -405,20 +425,20 @@ radio: (
 toggle: (
   props: (
     border: 1px solid #d6d6d6,
-    borderRadius: 50em,
-    backgroundColor: #d6d6d6,
+    border-radius: 50em,
+    background-color: #d6d6d6,
     transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out),
   ),
   toggler: ( // Props
-    borderRadius: 50%,
-    backgroundColor: #fff,
-    boxShadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
+    border-radius: 50%,
+    background-color: #fff,
+    box-shadow: 1px 1px 2px 0 rgba(#4d4d4d, 0.3),
     transition: transform 300ms ease-out,
   ),
   checked: (
     props: (
-      borderColor: #4d4d4d,
-      backgroundColor: this('toggle.checked.props.borderColor'),
+      border-color: #4d4d4d,
+      background-color: this('toggle.checked.props.borderColor'),
     )
   ),
   sizes: (
@@ -451,7 +471,6 @@ toggle: (
   <input data-oo-toggle="large" id="toggle-large-a" type="checkbox" value="a">
   <label for="toggle-large-a">Toggle Large A</label>
 </div>
-<p class="info">Loop config <strong>does <span class="color-primary">not</span> includes <em>input.toggle</em> by default</strong>. In manual mode add the mixin <strong>Toggle()</strong></p>
 
 <hr/>
 <h2 id="utilities"><a href="docs/components/form/#utilities">#</a> Utilities as modifiers</h2>

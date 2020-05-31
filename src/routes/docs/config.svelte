@@ -47,13 +47,13 @@ Loop offers a single config map.</p>
 <hr>
 <h2 id="props"><a href="docs/config/#props">#</a> <em class="font-regular">Props</em> Property</h2>
 <p>The <em>props</em> property is reserved to pass a map of CSS properties within the config.
-<br>The properties can be written in pure css or in camelCase depending on your preferences.</p>
+<br>The properties are <strong>written in css kebab-case</strong>.</p>
 
 {@html highlight(
 `... : (
   props: (
-    fontSize: 1.6em,    // camelCase
-    line-height: 1.375, // CSS kebab-case
+    font-size: 1.6em,
+    line-height: 1.375,
   )
 ),
 `, 'scss')}
@@ -63,7 +63,7 @@ Loop offers a single config map.</p>
 {@html highlight(`// parenthesis wrapping CSS multiple value
 ... : (
   props: (
-    fontFamily: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+    font-family: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
     transition: (background-color 300ms ease-in-out, border-color 300ms ease-in-out)
   )
 ),

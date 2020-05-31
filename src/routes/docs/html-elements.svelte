@@ -33,9 +33,9 @@
 {@html highlight(
 `body: (
   props: (
-    fontFamily: ('Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
-    fontSize: 1em, // 16px
-    lineHeight: 1.375,
+    font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+    font-size: 1em, // 16px
+    line-height: 1.375,
     color: #444,
   ),
   smoothing: true,
@@ -51,15 +51,15 @@ $ooLoop: ooSet('body.props.backgroundColor', #f8f8f8); // add new one
 
 // or
 $ooLoop: ooAdd('body.props', (
-  backgroundColor: #f8f8f8, //add new one
-  color: #333, // will overwrite current value
+  background-color: #f8f8f8, //add new one
+  color: #333, // will overwride current value
 ));
 
 //or
 $ooLoop: ooPipe(
   _set('body.props.color', #333),
   _add('body.props', (
-    backgroundColor: #f8f8f8,
+    background-color: #f8f8f8,
   ))
 );
 
@@ -67,7 +67,7 @@ $ooLoop: ooPipe(
 @include ooCreate((
   body: (
     props: (
-      backgroundColor: #f8f8f8,
+      background-color: #f8f8f8,
       color: #333,
     )
   )
@@ -76,7 +76,7 @@ $ooLoop: ooPipe(
 // or in Manual mode
 @include Base((
   props: (
-    backgroundColor: #f8f8f8,
+    background-color: #f8f8f8,
     color: #333,
   )
 ));
@@ -84,7 +84,7 @@ $ooLoop: ooPipe(
 
 {@html highlight(`/* generating */
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1em;
   line-height: 1.375;
   color: #333;
@@ -94,9 +94,9 @@ body {
 
 <p class="mt-30">Add only the properties you want to the body</p>
 {@html highlight(`$ooLoop: ooSet('body.props', (
-  fontFamily: Robotto,
+  font-family: Robotto,
   color: #333,
-  backgroundColor: #f8f8f8,
+  background-color: #f8f8f8,
 ));`, 'scss')}
 
 {@html highlight(`/* generating */
@@ -111,7 +111,7 @@ body {
 
 <h2 id="content"><a href="docs/html-elements/#content">#</a> Content</h2>
 <p>Sets global content elements such as paragraph, anchor and list as well as the hr tag</p>
-<p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
+<p class="info">Loop config <strong>includes <em>content</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
 
 <h3 class="mt-30"><em class="font-regular">paragraph</em> Config</h3>
 <ul>
@@ -120,8 +120,8 @@ body {
 {@html highlight(
 `paragraph: (
   props: (
-    marginTop: .5em,
-    marginBottom: 1.125em,
+    margin-top: .5em,
+    margin-bottom: 1.125em,
   )
 )`, 'scss')}
 
@@ -134,7 +134,7 @@ body {
 `anchor: (
   props: (
     color: this('palette.primary'),
-    textDecoration: none,
+    text-decoration: none,
   ),
   states: (
     hover: (
@@ -151,9 +151,9 @@ body {
 {@html highlight(
 `list: (
   props: (
-    marginTop: .5em,
-    marginBottom: 1.125em,
-    paddingLeft: 1.1em,
+    margin-top: .5em,
+    margin-bottom: 1.125em,
+    padding-left: 1.1em,
   )
 )`, 'scss')}
 
@@ -165,7 +165,7 @@ body {
 `hr: (
   props:(
     margin: 1rem auto,
-    borderBottom: 1px solid #cdcdcd,
+    border-bottom: 1px solid #cdcdcd,
   )
 )`, 'scss')}
 
@@ -193,9 +193,9 @@ body {
 {@html highlight(
 `headings: (
   props: (
-    marginTop: .67em,
-    marginBottom: .45em,
-    lineHeight: 1.125,
+    margin-top: .67em,
+    margin-bottom: .45em,
+    line-height: 1.125,
   ),
   sizes: (
     h1: 2rem,    // equivalent to 32px

@@ -9,7 +9,8 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 import path from 'path';
-import sveltePreprocess from 'svelte-preprocess';
+import { scss as scssPreprocess, postcss as postcssPreprocess } from 'svelte-preprocess';
+import cssModules from 'svelte-preprocess-cssmodules';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import postcss from 'postcss';
@@ -29,17 +30,21 @@ const postcssPlugins = [
 		grid: "autoplace"
 	}),
 	cssnano()
-]
+];
 
-const preprocess = sveltePreprocess({
-	scss: {
-		data: `@import 'scss/config/all';`,
-		includePaths: ['src'],
-	},
-	postcss: {
-		plugins: postcssPlugins,
-	},
-});
+const preprocess = [
+  cssModules({
+    includePaths: ['src'],
+    localIdentName: dev ? '[local]-[hash:base64:6]' : '[hash:base64:10]',
+  }),
+  scssPreprocess({
+    data: `@import 'scss/config/all';`,
+    includePaths: ['src'],
+  }),
+  postcssPreprocess({
+    plugins: postcssPlugins,
+  })
+];
 
 const aliases = alias({
 	resolve: ['.js', '.svelte'],
@@ -69,7 +74,7 @@ export default {
 						map: dev
 						? {
 							inline: true
-						} : false 
+						} : false
 					})
 					.then(result => result.css),
 			}),

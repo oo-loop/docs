@@ -42,17 +42,20 @@ Javascript task runners can help you simplify the import, otherwise please use t
 
 <p>It can be done in various ways</p>
 <ul>
-  <li>By passing your preferences to the mixin <code>ooCreate</code> when launching loop</li>
+  <li>By passing your preferences to the mixins <code>ooInit</code> or <code>ooCreate</code> when launching loop</li>
   <li>By setting/adding values one at the time with the functions <code>ooSet</code><code>ooAdd</code><code>ooPipe</code></li>
   <li>By coping and pasting the full config file</li>
 </ul>
 
-<h3 class="h4 font-code mt-45" id="oocreate"><a href="docs/#oocreate" title="ooCreate() Mixin">#</a> ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
-<p><em class="text-uppercase font-small">Mixin</em> - Launch framework by initializing <a href="docs/config/" title="Loop Map">$ooLoop</a> and generate styling.</p>
+<h3 class="h4 font-code mt-45" id="ooinit"><a href="docs/#ooinit" title="ooInit() Mixin">#</a> ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
+<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config/" title="Loop Map">$ooLoop</a> config map.</p>
 <ul>
   <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
   <br>Set of rules that will be merged into the default Loop config</li>
 </ul>
+
+<p><code>ooInit</code> initializes the loop config map <strong>without generating any style</strong>.
+This step can be skipped on autobuild by only using <code>ooCreate</code> which will do both initialization and style generation. This is however mandatory on <a href="docs/importation/#mixin" title="Import Loop with mixin">manual build</a>.</p>
 
 {@html highlight(`// Loop default config
 
@@ -68,6 +71,35 @@ $ooLoop: (
   ...
 );
 `, 'scss')}
+
+{@html highlight(`// Your config.scss file
+
+@import 'oo-loop/loop';
+
+@include ooInit((
+  breakpoints: (
+    xl: 100em, // update value for xl breakpoint to 1600px
+    xxl: 140em, // add extra breakpoint
+  ),
+  screens: (sm, md, lg, xl, xxl), // add xl & xxl to available responsive value
+));
+
+@include Base(/** config **/);
+@include Content(/** config **/);
+@include Visibility(/** config **/);
+`, 'scss')}
+
+<p class="info">On manual build, each individual include can accept their own config map as parameters.</p>
+
+<div class="hr"></div>
+
+<h3 class="h4 font-code mt-45" id="oocreate"><a href="docs/#oocreate" title="ooCreate() Mixin">#</a> ooCreate(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h3>
+<p><em class="text-uppercase font-small">Mixin</em> - Launch framework by initializing <a href="docs/config/" title="Loop Map">$ooLoop</a> and generate styling.</p>
+<ul>
+  <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
+  <br>Set of rules that will be merged into the default Loop config</li>
+</ul>
+
 {@html highlight(`// Your config.scss file
 
 @import 'oo-loop/loop';
@@ -80,6 +112,8 @@ $ooLoop: (
   screens: (sm, md, lg, xl, xxl), // add xl & xxl to available responsive value
 ));
 `, 'scss')}
+
+<p><strong>Remember:</strong> <u class="font-italic">No individual include must be used with</u><code>ooCreate</code> or else the styles will be <u class="font-italic">generated multiple times</u>.</p>
 
 <hr>
 <section class="info">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration being passed to <strong class="color-primary">ooCreate()</strong>.</section>

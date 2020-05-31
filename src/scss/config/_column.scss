@@ -26,8 +26,10 @@ $ooLoop: ooPipe(
       lg: (0, 2),
     )
   )),
-  _set('column.offset', (
-    use: true,
-    screens: sm,
-  )),
+  _set('column.variants', (
+    'w120': (
+      flex-grow: 0,
+      min-width: 120px
+    )
+  ))
 );

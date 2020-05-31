@@ -35,11 +35,12 @@ use: (
   column: true,
   template: true,
   button: true,
+
   form: (
-    textfield: true,
-    select: true,
-    checkbox: true,
-    radio: true,
+    input: true,
+    select: false,
+    checkbox: false,
+    radio: false,
     toggle: false,
   ),
 
@@ -50,15 +51,15 @@ use: (
 
   utilities: (
     color: true,
-    float: true,
-    spacing: true,
     typo: true,
+    spacing: true,
+    float: true,
     wrapper: true,
   ),
 ),
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update with ooUse()</h3>
+<h3 class="mt-45">Update with ooUse()</h3>
 <p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
 This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
 
@@ -66,33 +67,39 @@ This allows you to avoid going through <code>ooCreate()</code> gaining more read
 
 $ooLoop: ooUse((
   form: (
-    select: false,
-    checkbox: false,
-    radio: false,
+    checkbox: true, // include oo-checkbox
+    radio: true, // include oo-radio
   ),
   utilities: (
-    wrapper: false,
+    wrapper: false, // remove wrapper utilities
   )
 ));
 
 @include ooCreate();
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update with ooCreate</h3>
+<h4 class="mt-30">Include multiple styles at once</h4>
+<p>all <code>form</code> components and <code>utilities</code> classes can be included from the same parent property.</p>
+
+{@html highlight(`@import 'oo-loop/loop';
+
+$ooLoop: ooUse((
+  form: true, // include all
+  utilities: false // remove all
+));
+
+@include ooCreate();
+`, 'scss')}
+
+<h3 class="mt-45">Update with ooCreate</h3>
 <p>Use the <code>ooCreate()</code> config to pass some preferences.</p>
 {@html highlight(
 `@import 'oo-loop/loop';
 
 @include ooCreate((
   use: (
-    form: (
-      select: false, // remove select component
-      checkbox: false, // remove checkbox component
-      radio: false,  // remove radio component
-    ),
-    utilities: (
-      wrapper: false,
-    )
+    form: true, // include all
+    utilities: false // remove all
   )
 ));
 `, 'scss')}
@@ -101,15 +108,18 @@ $ooLoop: ooUse((
 
 @include ooCreate((
   use: (
-    form: false, // remove all form components
+    form: (
+      select: true, // add oo-select component
+    ),
     utilities: (
-      wrapper: false,
+      typo: false, // remove typo utilities
+      float: false, // remove float utilities
     )
   )
 ));
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update one property at a time</h3>
+<h3 class="mt-45">Update one property at a time</h3>
 <p>Use the functions <code>ooSet()</code> or <code>ooPipe()</code> to set individual properties.</p>
 {@html highlight(
 `@import 'oo-loop/loop';
@@ -117,9 +127,9 @@ $ooLoop: ooUse((
 $ooLoop: ooSet('use.utilities.wrapper', false);
 
 $ooLoop: ooPipe(
-  _set('use.form.select', false),
-  _set('use.form.checkbox', false),
-  _set('use.form.radio', false)
+  _set('use.form.select', true),
+  _set('use.form.checkbox', true),
+  _set('use.form.radio', true)
 );
 
 @include ooCreate();
@@ -150,14 +160,14 @@ That will also give you the opportunity to set some global settings.</p>
 // Add base and set the main font-family
 @include Base((
   props: (
-    fontFamily: (Robotto, arial, serif),
+    font-family: (Robotto, arial, serif),
   )
 ));
 
 // Add headings and set some styles
 @include Headings((
   props: (
-    fontFamily: (Georgia, serif),
+    font-family: (Georgia, serif),
     color: oo('palette.darkGray'),
   )
 ));
@@ -166,11 +176,11 @@ That will also give you the opportunity to set some global settings.</p>
 @include Button((
   props: (
     color: #fff,
-    backgroundColor: oo('palette.darkGray'),
+    background-color: oo('palette.darkGray'),
   ),
   states: (
     hover: (
-      backgroundColor: ooDarken(this('button.props.backgroundColor'), 12%),
+      background-color: ooDarken(this('button.props.backgroundColor'), 12%),
     ),
     focus: this('button.states.hover'),
   )
@@ -182,14 +192,6 @@ That will also give you the opportunity to set some global settings.</p>
 // Add visibility classes helper
 @include Visibility();
 `, 'scss')}
-
-<hr>
-<h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config/" title="Loop Map">$ooLoop</a> config.</p>
-<ul>
-  <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
-  <br>Set of rules that will be merged into the default Loop config</li>
-</ul>
 
 <hr>
 <Row>
@@ -299,7 +301,7 @@ That will also give you the opportunity to set some global settings.</p>
 <hr>
 <Row>
   <Col>
-    <h4 class="font-code">TextField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <h4 class="font-code">InputField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
     <p><em class="text-uppercase font-small">Mixin</em> - Include the input component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>

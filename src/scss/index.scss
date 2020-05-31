@@ -1,12 +1,12 @@
 @import 'config/all';
 
 $ooLoop: ooUse((
-  form: (
-    toggle: true,
-  )
+  form: true,
 ));
 
-@include ooCreate();
+@include ooCreate((
+  dataAttr: true,
+));
 
 @import 'code';
 @import 'info';
