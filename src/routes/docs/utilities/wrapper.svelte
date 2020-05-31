@@ -31,7 +31,7 @@ wrapper: (
   ),
 ),
 `, 'scss')}
-å
+
 {@html highlight(
 `<div class="wrapper-small">small</div>
 <div class="wrapper-medium">medium</div>
