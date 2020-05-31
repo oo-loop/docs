@@ -1,5 +1,4 @@
 <script>
-  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
@@ -13,6 +12,7 @@
 <h1>{title}</h1>
 <p class="font-large">{description}<br>
 <code class="ml-0">.container</code> <code>.container-fluid</code></p>
+<p class="info">Loop config <strong>includes <em>container</em> by default</strong>. In manual mode use the mixin <strong>Container()</strong></p>
 {@html highlight(
 `// default config
 container: (
@@ -23,23 +23,6 @@ container: (
   maxWidth: 1280px,
 ),
 `, 'scss', 'mb-0')}
-
-<Row prop="stretch gutter-small vgutter-less">
-  <Col prop="span12 auto@sm">
-{@html highlight(
-`// Auto
-// Is included by default
-@include ooCreate();
-`, 'scss', 'mb-0')}
-  </Col>
-  <Col>
-{@html highlight(
-`// Manual
-@include ooInit();
-@include Container();
-`, 'scss', 'mb-0')}
-  </Col>
-</Row>
 
 <h3 class="h4 font-code mt-30">.container</h3>
 <p>The class <code>.container</code> helps you center the content horizontally while reaching the <em>maxWidth</em> threshold.

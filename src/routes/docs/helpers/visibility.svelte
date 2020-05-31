@@ -54,24 +54,9 @@ visibility: (
   breakpoints: this('screens'), // refering to screens value
   pointbreaks: this('screens'), // refering to screens value
 ),
-`, 'scss', 'mb-0')}
+`, 'scss')}
 
-<Row prop="stretch gutter-small vgutter-less">
-  <Col prop="span12 auto@sm">
-{@html highlight(
-`// Auto
-// Is included by default
-@include ooCreate();
-`, 'scss', 'mb-0')}
-  </Col>
-  <Col>
-{@html highlight(
-`// Manual
-@include ooInit();
-@include Visibility();
-`, 'scss', 'mb-0')}
-  </Col>
-</Row>
+<p class="info">Loop config <strong>includes <em>visibility classes</em> by default</strong>. In manual mode use the mixin <strong>Visibility()</strong></p>
 
 <div class="hr"></div>
 

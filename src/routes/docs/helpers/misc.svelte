@@ -11,7 +11,8 @@
 <HeadTitle {title} {description}/>
 
 <h1>{title}</h1>
-<p class="font-large">{title}</p>
+<p class="font-large">{title} classes</p>
+
 <p>Those styles are generated from the property <em>misc</em> of the config map.</p>
 {@html highlight(
 `//default config
@@ -23,24 +24,9 @@ misc: (
     )
   ),
 )
-`, 'scss', 'mb-0')}
+`, 'scss')}
 
-<Row prop="stretch gutter-small vgutter-less">
-  <Col prop="span12 auto@sm">
-  {@html highlight(
-  `// Auto
-// is included by default
-@include ooCreate();
-`, 'scss', 'mb-0')}
-  </Col>
-  <Col>
-{@html highlight(
-`// Manual
-@include ooInit();
-@include Misc();
-`, 'scss', 'mb-0')}
-  </Col>
-</Row>
+<p class="info">Loop config <strong>includes <em>miscellaneous classes</em> by default</strong>. In manual mode use the mixin <strong>Misc()</strong></p>
 
 <h2 class="mt-45" id="responsive"><a href="docs/helpers/misc/#responsive">#</a> Responsive</h2>
 {@html highlight(

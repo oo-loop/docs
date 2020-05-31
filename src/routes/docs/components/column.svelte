@@ -2,8 +2,7 @@
   import HeadTitle from '@/components/HeadTitle.svelte'
   import Pagination from '@/components/Pagination.svelte'
   import DataAttrToggler from '@/components/DataAttrToggler.svelte'
-  import Row from '@/components/Loop/Row.svelte'
-  import Col from '@/components/Loop/Col.svelte'
+  import { Row, Col } from '@/components/Loop'
   import highlight from '@/utils/highlight.js'
 
   const description = 'Layout elements in a page based on the 12 columns system.'
@@ -87,7 +86,7 @@
 <li><a href="docs/components/column/#self-alignment" title="Self alignment">Self alignment</a></li>
 <li><a href="docs/components/column/#children-alignment" title="Children alignment">Children alignment</a></li>
 <li><a href="docs/components/column/#order" title="Order column">Order column</a></li>
-<li><a href="docs/components/column/#variants" title="Create column variants">Create Variants</a></li>
+<li><a href="docs/components/column/#variants" title="Create column variants">Create variants</a></li>
 </ul>
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
