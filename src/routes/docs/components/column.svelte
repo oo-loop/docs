@@ -105,6 +105,9 @@
     <Col class="cell"></Col>
   </Row>
 </div>
+
+<p class="info">Loop config <strong>includes <em>column</em> by default</strong>. In manual mode add the mixin <strong>Column()</strong></p>
+
 <hr>
 <h2 class="mt-45" id="responsive-screens"><a href="docs/components/column/#responsive-screens">#</a> Responsive screens</h2>
 <p>The column system is using the <a href="docs/config/#global">global responsive screens</a> by default.</p>

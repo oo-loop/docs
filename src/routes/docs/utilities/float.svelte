@@ -1,4 +1,5 @@
 <script>
+  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
@@ -40,6 +41,31 @@ float: (
   clearfix: true, // activate clearfix classes
 ),
 `, 'scss')}
+
+<p class="info mt-30">Float is not include by default</p>
+
+<Row prop="stretch gutter-small">
+  <Col prop="span12 auto@sm">
+{@html highlight(
+`// Auto
+@include ooCreate((
+  use: (
+    utilities: (
+      float: true,
+    )
+  )
+));`, 'scss', 'mb-0')}
+  </Col>
+  <Col>
+{@html highlight(
+`// Manual
+@include ooInit();
+@include Float(
+  /** some config **/
+);
+`, 'scss', 'mb-0')}
+  </Col>
+</Row>
 
 {@html highlight(
 `<img class="float-left mr-10" src="blue-square.jpg" width="100" height="100"/>
@@ -91,8 +117,5 @@ $ooLoop: ooAdd('float.values', 'none');
 // set .float-left@sm .float-right@sm and float-none@sm
 $ooLoop: ooSet('float.screens', 'sm');
 `, 'scss')}
-
-<hr>
-<p class="info">In manual mode add the mixin <strong>Float()</strong></p>
 
 <Pagination href="docs/utilities/wrapper/" label="Use Wrapper utilities" />

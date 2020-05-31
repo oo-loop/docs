@@ -65,6 +65,10 @@ button: (
   </Col>
 </Row>
 
+<p class="info mt-45">Loop config <strong>includes <em>button</em> by default</strong>. In manual mode add the mixin <strong>Button()</strong></p>
+
+<div class="hr"></div>
+
 <h2 class="mt-45" id="colors"><a href="docs/components/button/#colors" title="Colors">#</a> Colors</h2>
 <p>Loop is giving you two colors by default, it's up to you to add more or less.<code>oo-button="<i>colorName</i>"</code></p>
 {@html highlight(
