@@ -29,9 +29,7 @@ misc: (
   <Col prop="span12 auto@sm">
   {@html highlight(
   `// Auto
-$ooLoop: ooUse((
-  misc: true,
-));
+// is included by default
 @include ooCreate();
 `, 'scss', 'mb-0')}
   </Col>

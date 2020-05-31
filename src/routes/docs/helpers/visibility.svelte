@@ -54,7 +54,7 @@ visibility: (
   breakpoints: this('screens'), // refering to screens value
   pointbreaks: this('screens'), // refering to screens value
 ),
-`, 'scss')}
+`, 'scss', 'mb-0')}
 
 <Row prop="stretch gutter-small vgutter-less">
   <Col prop="span12 auto@sm">

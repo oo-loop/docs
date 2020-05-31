@@ -18,16 +18,13 @@
   <Col prop="span12 auto@sm">
 {@html highlight(
 `// Auto
-$ooLoop: ooUse((
-  list: true,
-));
+// is included by default
 @include ooCreate();
 `, 'scss', 'mb-0')}
   </Col>
   <Col>
 {@html highlight(
 `// Manual
-
 @include ooInit();
 @include List();
 `, 'scss', 'mb-0')}

@@ -52,7 +52,7 @@ $ooLoop: ooSet('body.props.backgroundColor', #f8f8f8); // add new one
 // or
 $ooLoop: ooAdd('body.props', (
   background-color: #f8f8f8, //add new one
-  color: #333, // will overwrite current value
+  color: #333, // will overwride current value
 ));
 
 //or
@@ -111,7 +111,7 @@ body {
 
 <h2 id="content"><a href="docs/html-elements/#content">#</a> Content</h2>
 <p>Sets global content elements such as paragraph, anchor and list as well as the hr tag</p>
-<p class="info">Loop config <strong>includes <em>type</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
+<p class="info">Loop config <strong>includes <em>content</em> by default</strong>. In manual mode add the mixin <strong>Content()</strong></p>
 
 <h3 class="mt-30"><em class="font-regular">paragraph</em> Config</h3>
 <ul>

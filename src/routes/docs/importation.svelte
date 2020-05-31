@@ -46,13 +46,13 @@ use: (
 
   container: true,
   visibility: true,
-  list: false,
-  misc: false,
+  list: true,
+  misc: true,
 
   utilities: (
     color: true,
     typo: true,
-    spacing: false,
+    spacing: true,
     float: false,
     wrapper: false,
   ),
@@ -72,7 +72,6 @@ $ooLoop: ooUse((
     radio: true, // include oo-radio
   ),
   utilities: (
-    spacing: true, // include spacing utilities
     wrapper: true, // include wrapper utilities
   )
 ));
@@ -116,7 +115,7 @@ $ooLoop: ooUse((
     ),
     utilities: (
       typo: false, // remove typo utilities
-      spacing: true, // add spacing utilities
+      float: true, // add float utilities
     )
   )
 ));
@@ -195,14 +194,6 @@ That will also give you the opportunity to set some global settings.</p>
 // Add visibility classes helper
 @include Visibility();
 `, 'scss')}
-
-<hr>
-<h4 class="mt-30 font-code">ooInit(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
-<p><em class="text-uppercase font-small">Mixin</em> - Initialize <a href="docs/config/" title="Loop Map">$ooLoop</a> config.</p>
-<ul>
-  <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>
-  <br>Set of rules that will be merged into the default Loop config</li>
-</ul>
 
 <hr>
 <Row>
@@ -312,7 +303,7 @@ That will also give you the opportunity to set some global settings.</p>
 <hr>
 <Row>
   <Col>
-    <h4 class="font-code">TextField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
+    <h4 class="font-code">InputField(<span class="color-primary">$config</span>:<span class="color-secondary">null</span>)</h4>
     <p><em class="text-uppercase font-small">Mixin</em> - Include the input component.</p>
     <ul>
       <li><strong>$config</strong> <em class="font-monospace">(map) <span class="color-secondary">Optional</span></em>

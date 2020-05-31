@@ -22,7 +22,7 @@ container: (
   ),
   maxWidth: 1280px,
 ),
-`, 'scss')}
+`, 'scss', 'mb-0')}
 
 <Row prop="stretch gutter-small vgutter-less">
   <Col prop="span12 auto@sm">
@@ -30,14 +30,14 @@ container: (
 `// Auto
 // Is included by default
 @include ooCreate();
-`, 'scss', 'mt-0 mb-0')}
+`, 'scss', 'mb-0')}
   </Col>
   <Col>
 {@html highlight(
 `// Manual
 @include ooInit();
 @include Container();
-`, 'scss', 'mt-0 mb-0')}
+`, 'scss', 'mb-0')}
   </Col>
 </Row>
 
