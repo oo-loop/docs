@@ -42,7 +42,7 @@ float: (
 ),
 `, 'scss')}
 
-<p class="info mt-30">Float is not include by default</p>
+<p class="info mt-30">Float is not included by default</p>
 
 <Row prop="stretch gutter-small">
   <Col prop="span12 auto@sm">
