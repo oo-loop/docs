@@ -1,7 +1,7 @@
 <script>
+  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
-  import { Row, Col } from '@/components/Loop';
   import highlight from '@/utils/highlight.js';
 
   const title = 'Visibility';

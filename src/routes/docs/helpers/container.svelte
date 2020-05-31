@@ -1,4 +1,5 @@
 <script>
+  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
@@ -23,6 +24,23 @@ container: (
 ),
 `, 'scss')}
 
+<Row prop="stretch gutter-small vgutter-less">
+  <Col prop="span12 auto@sm">
+{@html highlight(
+`// Auto
+// Is included by default
+@include ooCreate();
+`, 'scss', 'mt-0 mb-0')}
+  </Col>
+  <Col>
+{@html highlight(
+`// Manual
+@include ooInit();
+@include Container();
+`, 'scss', 'mt-0 mb-0')}
+  </Col>
+</Row>
+
 <h3 class="h4 font-code mt-30">.container</h3>
 <p>The class <code>.container</code> helps you center the content horizontally while reaching the <em>maxWidth</em> threshold.
 The side gutters are also applied.</p>
@@ -39,8 +57,5 @@ The side gutters are also applied.</p>
 <!-- your content here -->
 </div>
 `, 'html')}
-
-<hr>
-<p class="info">In manual mode add the mixin <strong>Container()</strong></p>
 
 <Pagination href="docs/helpers/visibility/" label="Use Visibility classes" />
