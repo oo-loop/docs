@@ -1,4 +1,8 @@
 # Loop Documentation
+## 1.1.0
+- Introdude cssModules
+- Update documentation to loop `v1.0.0`
+- Update to sapper `v0.27.13`
 
 ## 1.0.5
 - Add trailing slash to all internal links
