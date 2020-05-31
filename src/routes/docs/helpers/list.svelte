@@ -1,4 +1,5 @@
 <script>
+  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import Pagination from '@/components/Pagination.svelte';
   import highlight from '@/utils/highlight.js';
@@ -13,7 +14,27 @@
 <p class="font-large">{description}<br>
 <code class="ml-0">.list-unstyle</code> <code>.list-inline</code> <code>.list-center</code></p>
 
-<h2 id="unstyle"><a href="docs/helpers/list/#unstyle">#</a> Unstyle</h2>
+<Row prop="stretch gutter-small vgutter-less">
+  <Col prop="span12 auto@sm">
+{@html highlight(
+`// Auto
+$ooLoop: ooUse((
+  list: true,
+));
+@include ooCreate();
+`, 'scss', 'mb-0')}
+  </Col>
+  <Col>
+{@html highlight(
+`// Manual
+
+@include ooInit();
+@include List();
+`, 'scss', 'mb-0')}
+  </Col>
+</Row>
+
+<h2 class="mt-45" id="unstyle"><a href="docs/helpers/list/#unstyle">#</a> Unstyle</h2>
 <p>Remove default style of list elements</p>
 
 {@html highlight(
@@ -99,7 +120,5 @@ list: (
     <li>item 4</li>
   </ul>
 </div>
-<hr>
-<p class="info">In manual mode add the mixin <strong>List()</strong></p>
 
 <Pagination href="docs/helpers/misc/" label="Use Miscellaneous classes" />
