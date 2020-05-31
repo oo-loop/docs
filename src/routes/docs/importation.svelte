@@ -53,8 +53,8 @@ use: (
     color: true,
     typo: true,
     spacing: true,
-    float: false,
-    wrapper: false,
+    float: true,
+    wrapper: true,
   ),
 ),
 `, 'scss')}
@@ -71,7 +71,7 @@ $ooLoop: ooUse((
     radio: true, // include oo-radio
   ),
   utilities: (
-    wrapper: true, // include wrapper utilities
+    wrapper: false, // remove wrapper utilities
   )
 ));
 
@@ -85,7 +85,7 @@ $ooLoop: ooUse((
 
 $ooLoop: ooUse((
   form: true, // include all
-  utilities: true // include all
+  utilities: false // remove all
 ));
 
 @include ooCreate();
@@ -113,7 +113,7 @@ $ooLoop: ooUse((
     ),
     utilities: (
       typo: false, // remove typo utilities
-      float: true, // add float utilities
+      float: false, // remove float utilities
     )
   )
 ));
@@ -124,7 +124,7 @@ $ooLoop: ooUse((
 {@html highlight(
 `@import 'oo-loop/loop';
 
-$ooLoop: ooSet('use.utilities.wrapper', true);
+$ooLoop: ooSet('use.utilities.wrapper', false);
 
 $ooLoop: ooPipe(
   _set('use.form.select', true),

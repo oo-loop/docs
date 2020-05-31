@@ -1,5 +1,4 @@
 <script>
-  import { Row, Col } from '@/components/Loop';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import highlight from '@/utils/highlight.js';
 
@@ -32,32 +31,7 @@ wrapper: (
   ),
 ),
 `, 'scss')}
-
-<p class="info mt-30">Wrapper is not included by default</p>
-
-<Row prop="stretch gutter-small">
-  <Col prop="span12 auto@sm">
-{@html highlight(
-`// Auto
-@include ooCreate((
-  use: (
-    utilities: (
-      wrapper: true,
-    )
-  )
-));`, 'scss', 'mb-0')}
-  </Col>
-  <Col>
-{@html highlight(
-`// Manual
-@include ooInit();
-@include Wrapper(
-  /** some config **/
-);
-`, 'scss', 'mb-0')}
-  </Col>
-</Row>
-
+å
 {@html highlight(
 `<div class="wrapper-small">small</div>
 <div class="wrapper-medium">medium</div>
@@ -110,3 +84,6 @@ $ooLoop: ooSet('wrapper.screens', (
   </div>
 </div>
 <hr>
+
+<p class="info mt-30">In manual mode add the mixin <strong>Wrapper()</strong>.</p>
+
