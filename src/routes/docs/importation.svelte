@@ -150,14 +150,14 @@ That will also give you the opportunity to set some global settings.</p>
 // Add base and set the main font-family
 @include Base((
   props: (
-    fontFamily: (Robotto, arial, serif),
+    font-family: (Robotto, arial, serif),
   )
 ));
 
 // Add headings and set some styles
 @include Headings((
   props: (
-    fontFamily: (Georgia, serif),
+    font-family: (Georgia, serif),
     color: oo('palette.darkGray'),
   )
 ));
@@ -166,11 +166,11 @@ That will also give you the opportunity to set some global settings.</p>
 @include Button((
   props: (
     color: #fff,
-    backgroundColor: oo('palette.darkGray'),
+    background-color: oo('palette.darkGray'),
   ),
   states: (
     hover: (
-      backgroundColor: ooDarken(this('button.props.backgroundColor'), 12%),
+      background-color: ooDarken(this('button.props.backgroundColor'), 12%),
     ),
     focus: this('button.states.hover'),
   )

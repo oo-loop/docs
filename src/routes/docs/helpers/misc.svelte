@@ -17,7 +17,7 @@
 misc: (
   responsive: ( // name of the class
     props: ( // css properties
-      maxWidth: 100%,
+      max-width: 100%,
       height: auto,
     )
   ),
