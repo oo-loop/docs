@@ -34,10 +34,10 @@ use: (
 
   column: true,
   template: true,
-  button: false,
+  button: true,
 
   form: (
-    input: false,
+    input: true,
     select: false,
     checkbox: false,
     radio: false,
@@ -67,7 +67,6 @@ This allows you to avoid going through <code>ooCreate()</code> gaining more read
 
 $ooLoop: ooUse((
   form: (
-    input: true, // include oo-input
     checkbox: true, // include oo-checkbox
     radio: true, // include oo-radio
   ),
@@ -109,9 +108,8 @@ $ooLoop: ooUse((
 
 @include ooCreate((
   use: (
-    button: true, // add oo-button component
     form: (
-      input: true, // add oo-input component
+      select: true, // add oo-select component
     ),
     utilities: (
       typo: false, // remove typo utilities
