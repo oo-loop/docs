@@ -139,7 +139,7 @@ h3 {
   <h3>Separation of concerns</h3>
   <p>Loop differentiates components and utilities with semantic for more clarity</p>
   <ul>
-  <li><a href="docs/components/" title="Components documentation">data-oo-componentName</a> / <a href="docs/components/" title="Components documentation">oo-componentName</a> for component attributes</li>
+  <li><a href="docs/components/" title="Components documentation">oo-componentName</a> / <a href="docs/components/" title="Components documentation">data-oo-componentName</a> for component attributes</li>
   <li><a href="docs/utilities/" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
 </Col>
 

@@ -20,13 +20,13 @@
 <p>{description}
 The HTML becomes easier to understand and to maintain while lightening the class attribute which can be too often overcrowded <i>(A class with a component name along with a list of modifiers + a bunch of unrelated utilities)</i>. </p>
 
-<p>By default, Loop components are used along with the <em>data</em> attribute <code>data-oo-componentName</code> to be a fully-valid HTML attribute.
-You may still turn off the option to remove verbosity and get a shorter name for speed purposes <code>oo-componentName</code> <i>(Which was the case in Loop v0.4)</i></p>
+<p>By default, Loop components are used without the <em>data</em> attribute to remove verbosity and to get a shorter name for speed purposes <code>oo-componentName</code>.
+You may turn on the option <code>dataAttr</code> to be a fully-valid HTML attribute.</p>
 
 <button class="float-right mb-5" data-oo-button on:click="{() => dataAttr = !dataAttr}">Toggle dataAttr {dataAttr ? 'Off' : 'On'}</button>
 {@html highlight(
 `@include ooCreate((
-  dataAttr: ${dataAttr}, // ${dataAttr ? 'default': 'setting'} ${attr}-componentName
+  dataAttr: ${dataAttr}, // ${dataAttr ? 'setting': 'default'} ${attr}-componentName
 ));
 `, 'scss')}
 
@@ -390,7 +390,7 @@ $ooLoop: ooSet('components', ('event': (
   ),
 )));
 
-@include ooCreate((dataAttr: false));
+@include ooCreate();
 `, 'scss')}
 
 {:else}
@@ -403,7 +403,7 @@ $ooLoop: ooSet('button.variants.stadium', (
   border-radius: 50em,
 );
 
-@include ooCreate((dataAttr: false));
+@include ooCreate();
 
 // ----
 // component/_event.scss

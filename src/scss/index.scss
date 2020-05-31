@@ -8,7 +8,9 @@ $ooLoop: ooUse((
   utilities: true,
 ));
 
-@include ooCreate();
+@include ooCreate((
+  dataAttr: true,
+));
 
 @import 'code';
 @import 'info';

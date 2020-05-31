@@ -170,8 +170,6 @@
 @import 'oo-loop/loop';
 
 @include ooCreate((
-  dataAttr: false,
-
   palette: (
     'white': #fff,
   ),
@@ -250,9 +248,7 @@ $ooLoop: ooSet('template.areas', (
 ));
 $ooLoop: ooSet('template.gap', 1rem);
 
-@include ooCreate((
-  dataAttr: false,
-));`, 'scss', 'mt-0 mb-5 wrapper-less')}
+@include ooCreate();`, 'scss', 'mt-0 mb-5 wrapper-less')}
 {@html highlight(
 `\n<!-- App -->
 <div oo-template="home">
@@ -403,7 +399,7 @@ $ooLoop: ooPipe(
   <div class="wrapper-small wrapper-medium@md">
     <h3 class="mt-0 mb-0">Frontend Developer Festival</h3>
     <p class="text-wide">Tokyo, Odaiba, Big Sight</p>
-    <button class="shape-stadium" data-oo-button="lavender outline">Join</button>
+    <button class="shape-stadium" oo-button="lavender outline">Join</button>
   </div>
 </div>\n
 `, 'html', 'mt-0 mb-30 wrapper-less')}
@@ -483,7 +479,7 @@ $ooLoop: ooAdd('components', (
   ),
 ));
 
-@include ooCreate((dataAttr: false));
+@include ooCreate();
 `, 'scss', 'mt-0 wrapper-less')}
       </Col>
       <Col prop="span12 span6@sm span5@md order0@md" class="mt-10">
