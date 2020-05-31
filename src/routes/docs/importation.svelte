@@ -34,31 +34,32 @@ use: (
 
   column: true,
   template: true,
-  button: true,
+  button: false,
+
   form: (
-    textfield: true,
-    select: true,
-    checkbox: true,
-    radio: true,
+    input: false,
+    select: false,
+    checkbox: false,
+    radio: false,
     toggle: false,
   ),
 
   container: true,
   visibility: true,
-  list: true,
-  misc: true,
+  list: false,
+  misc: false,
 
   utilities: (
     color: true,
-    float: true,
-    spacing: true,
     typo: true,
-    wrapper: true,
+    spacing: false,
+    float: false,
+    wrapper: false,
   ),
 ),
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update with ooUse()</h3>
+<h3 class="mt-45">Update with ooUse()</h3>
 <p>Pass a config map to <code>ooUse()</code> to only update the <em>use</em> property. <br>
 This allows you to avoid going through <code>ooCreate()</code> gaining more readibility by not overloading the config there (depending on your preferences).</p>
 
@@ -66,33 +67,41 @@ This allows you to avoid going through <code>ooCreate()</code> gaining more read
 
 $ooLoop: ooUse((
   form: (
-    select: false,
-    checkbox: false,
-    radio: false,
+    input: true, // include oo-input
+    checkbox: true, // include oo-checkbox
+    radio: true, // include oo-radio
   ),
   utilities: (
-    wrapper: false,
+    spacing: true, // include spacing utilities
+    wrapper: true, // include wrapper utilities
   )
 ));
 
 @include ooCreate();
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update with ooCreate</h3>
+<h4 class="mt-30">Include multiple styles at once</h4>
+<p>all <code>form</code> components and <code>utilities</code> classes can be included from the same parent property.</p>
+
+{@html highlight(`@import 'oo-loop/loop';
+
+$ooLoop: ooUse((
+  form: true, // include all
+  utilities: true // include all
+));
+
+@include ooCreate();
+`, 'scss')}
+
+<h3 class="mt-45">Update with ooCreate</h3>
 <p>Use the <code>ooCreate()</code> config to pass some preferences.</p>
 {@html highlight(
 `@import 'oo-loop/loop';
 
 @include ooCreate((
   use: (
-    form: (
-      select: false, // remove select component
-      checkbox: false, // remove checkbox component
-      radio: false,  // remove radio component
-    ),
-    utilities: (
-      wrapper: false,
-    )
+    form: true, // include all
+    utilities: false // remove all
   )
 ));
 `, 'scss')}
@@ -101,25 +110,29 @@ $ooLoop: ooUse((
 
 @include ooCreate((
   use: (
-    form: false, // remove all form components
+    button: true, // add oo-button component
+    form: (
+      input: true, // add oo-input component
+    ),
     utilities: (
-      wrapper: false,
+      typo: false, // remove typo utilities
+      spacing: true, // add spacing utilities
     )
   )
 ));
 `, 'scss')}
 
-<h3 class="h4 mt-45">Update one property at a time</h3>
+<h3 class="mt-45">Update one property at a time</h3>
 <p>Use the functions <code>ooSet()</code> or <code>ooPipe()</code> to set individual properties.</p>
 {@html highlight(
 `@import 'oo-loop/loop';
 
-$ooLoop: ooSet('use.utilities.wrapper', false);
+$ooLoop: ooSet('use.utilities.wrapper', true);
 
 $ooLoop: ooPipe(
-  _set('use.form.select', false),
-  _set('use.form.checkbox', false),
-  _set('use.form.radio', false)
+  _set('use.form.select', true),
+  _set('use.form.checkbox', true),
+  _set('use.form.radio', true)
 );
 
 @include ooCreate();
