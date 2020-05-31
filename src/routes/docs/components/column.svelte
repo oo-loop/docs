@@ -87,6 +87,7 @@
 <li><a href="docs/components/column/#self-alignment" title="Self alignment">Self alignment</a></li>
 <li><a href="docs/components/column/#children-alignment" title="Children alignment">Children alignment</a></li>
 <li><a href="docs/components/column/#order" title="Order column">Order column</a></li>
+<li><a href="docs/components/column/#variants" title="Create column variants">Create Variants</a></li>
 </ul>
 
 <p>The <strong>default size</strong>  of each column is <strong>set as auto</strong></p>
@@ -684,5 +685,30 @@ $ooLoop: ooSet('column.order.screens', (
 /**/
 $ooLoop: ooSet('column.order.screens', 'sm'); // from order0@sm to order11@sm
 `, 'scss')}
+
+<hr>
+<h2 id="variants"><a href="docs/components/column/#variants">#</a> Create variants</h2>
+<p>Add your own custom rules to <code>oo-col</code>.</p>
+{@html highlight(`// Rules to set a width of 120px
+$ooLoop: ooSet('column.variants', (
+  'w120': (
+    flex-grow: 0,
+    min-width: 120px,
+  )
+));
+`, 'scss')}
+
+<DataAttrToggler content={
+`<div oo-row>
+  <div oo-col="w120"></div>
+  <div oo-col></div>
+</div>
+`} />
+<div class="ground">
+  <Row>
+    <Col class="cell" prop="w120"></Col>
+    <Col class="cell"></Col>
+  </Row>
+</div>
 
 <Pagination href="docs/components/template/" label="Use Template" />
