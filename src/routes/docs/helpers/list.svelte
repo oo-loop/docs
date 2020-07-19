@@ -102,4 +102,8 @@ list: (
   </ul>
 </div>
 
-<Pagination href="docs/helpers/misc/" label="Use Miscellaneous classes" />
+<Pagination
+  prevHref="docs/helpers/visibility/"
+  prevLabel="Use Visibility classes"
+  nextHref="docs/helpers/misc/"
+  nextLabel="Use Miscellaneous classes" />

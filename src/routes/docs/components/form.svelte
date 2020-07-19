@@ -21,7 +21,7 @@
   <li><a href="docs/components/form/#utilities" title="Utilities as modifers">Utilities as Modifiers</a></li>
 </ul>
 
-<p>The style of each form element is set through the <a href="docs/config/#props" title="Props attribute"><em>props</em></a> & <a href="docs/config/#states" title="States attribute"><em>states</em></a> properties giving you control on the component looks.</p>
+<p>The style of each form element is set through the <a href="docs/config/#props" title="Props attribute"><em>props</em></a> & <a href="docs/config/#states" title="States attribute"><em>states</em></a> properties giving you control on each component appearance.</p>
 
 <p class="info">Loop config <strong>only includes <em>input</em> by default</strong>. Enable the others one from the config or via the mixins.</p>
 
