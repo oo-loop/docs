@@ -261,11 +261,7 @@ template: (
   </div>
 </div>
 
-<Pagination
-  prevHref="docs/components/column/"
-  prevLabel="Use Column"
-  nextHref="docs/components/button/"
-  nextLabel="Use Button" />
+<Pagination page="template" />
 
 <style lang="scss">
   .dark {

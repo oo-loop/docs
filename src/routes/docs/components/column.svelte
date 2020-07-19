@@ -33,42 +33,6 @@
 
 </script>
 
-<style lang="scss">
-  .child {
-    padding: .5rem;
-    margin: .5rem;
-    color:#1d3035;
-    background-color: oo('palette.sample.dark');
-  }
-
-  .square {
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-color: oo('palette.sample.light');
-    @include breakpoint(xs) {
-      width: 100px;
-      height: 100px;
-    }
-  }
-  .ground {
-    color: #046886;
-    text-align: center;
-  }
-
-  :global(.cell) {
-    padding: .5rem;
-    background-color: oo('palette.sample.light');
-    min-height: 2rem;
-  }
-  :global(.cell-large) {
-    padding: 1.5rem;
-  }
-  :global(.bordered) {
-    border: 1px solid oo('palette.sample.dark');;
-  }
-</style>
-
 <HeadTitle title="Column component" {description}/>
 
 <h1>Column</h1>
@@ -713,8 +677,40 @@ $ooLoop: ooSet('column.variants', (
   </Row>
 </div>
 
-<Pagination
-  prevHref="docs/components/"
-  prevLabel="Set Components"
-  nextHref="docs/components/template/"
-  nextLabel="Use Template" />
+<Pagination page="column" />
+
+<style lang="scss">
+  .child {
+    padding: .5rem;
+    margin: .5rem;
+    color:#1d3035;
+    background-color: oo('palette.sample.dark');
+  }
+
+  .square {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: oo('palette.sample.light');
+    @include breakpoint(xs) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .ground {
+    color: #046886;
+    text-align: center;
+  }
+
+  :global(.cell) {
+    padding: .5rem;
+    background-color: oo('palette.sample.light');
+    min-height: 2rem;
+  }
+  :global(.cell-large) {
+    padding: 1.5rem;
+  }
+  :global(.bordered) {
+    border: 1px solid oo('palette.sample.dark');;
+  }
+</style>

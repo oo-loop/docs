@@ -83,8 +83,4 @@ $ooLoop: ooAdd('misc', (
   <img class="thumbnail" src="orange.jpg" alt="orange" width="150">
 </div>
 
-<Pagination
-  prevHref="docs/helpers/list/"
-  prevLabel="Use List classes"
-  nextHref="docs/utilities/"
-  nextLabel="Make Utilities" />
+<Pagination page="misc" />

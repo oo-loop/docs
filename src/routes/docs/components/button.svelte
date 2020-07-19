@@ -196,11 +196,7 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
   <button data-oo-button="primary large">Variant large</button>
 </div>
 
-<Pagination
-  prevHref="docs/components/template/"
-  prevLabel="Use Template"
-  nextHref="docs/components/form/"
-  nextLabel="Use Form" />
+<Pagination page="button" />
 
 <style>
   .ground { text-align: center; }

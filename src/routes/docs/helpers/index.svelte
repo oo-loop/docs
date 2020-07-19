@@ -44,8 +44,4 @@
 </footer>
 `, 'html')}
 
-<Pagination
-  prevHref="docs/components/form/"
-  prevLabel="Use Form"
-  nextHref="docs/helpers/container/"
-  nextLabel="Use Container classes" />
+<Pagination page="helpers" />

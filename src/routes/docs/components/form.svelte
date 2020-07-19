@@ -533,8 +533,4 @@ toggle: (
 <small class="color-danger">Radio is required</small>
 `} class="mt-5" />
 
-<Pagination
-  prevHref="docs/components/button/"
-  prevLabel="Use Button"
-  nextHref="docs/helpers/"
-  nextLabel="Use Helper classes" />
+<Pagination page="form" />

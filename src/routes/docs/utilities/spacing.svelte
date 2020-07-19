@@ -160,4 +160,4 @@ $ooLoop: ooSet('spacing.top.values', (
 <hr>
 <p class="info">In manual mode add the mixin <strong>Spacing()</strong></p>
 
-<Pagination href="docs/utilities/float/" label="Use Float utilities" />
+<Pagination page="spacing" />

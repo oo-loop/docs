@@ -131,11 +131,7 @@ visibility: (
   <li><code>.hidden@screen</code> Hide elements from screen (targetting print only)</li>
 </ul>
 
-<Pagination
-  prevHref="docs/helpers/container/"
-  prevLabel="Use Container classes"
-  nextHref="docs/helpers/list/"
-  nextLabel="Use List classes" />
+<Pagination page="visibility" />
 
 <style lang="scss">
   .display {

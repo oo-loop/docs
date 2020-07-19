@@ -485,8 +485,4 @@ $ooLoop: ooSet('button.variants.stadium', (
   </div>
 </div>
 
-<Pagination
-  prevHref="docs/html-elements/"
-  prevLabel="Adjust Html elements"
-  nextHref="docs/components/column/"
-  nextLabel="Use Column" />
+<Pagination page="components" />

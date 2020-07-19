@@ -268,9 +268,4 @@ h6 { font-size: 0.875rem; }
   <span class="h2">A text with the style of an h2</span>
 </div>
 
-<Pagination
-  prevHref="docs/importation/"
-  prevTitle="Customize your Loop import"
-  prevLabel="Use what you need"
-  nextHref="docs/components/"
-  nextLabel="Set Components" />
+<Pagination page="html-elements" />

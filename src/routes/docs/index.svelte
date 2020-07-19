@@ -225,9 +225,4 @@ $ooLoop: (
 @include ooCreate();
 `, 'scss')}
 
-<Pagination
-  prevHref="docs/installation"
-  prevLabel="Installation"
-  nextHref="docs/config/"
-  nextTitle="Read about the Loop config map"
-  nextLabel="The Loop config map" />
+<Pagination page="start" />
