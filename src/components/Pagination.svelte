@@ -1,12 +1,27 @@
 <script>
-  export let href
-  export let label
-  export let title = null
+  export let prevHref = null
+  export let prevLabel = null
+  export let prevTitle = null
+  export let nextHref = null
+  export let nextLabel = null
+  export let nextTitle = null
 
-  $: titleAttr = title ? title : label
+  $: prevTitleAttr = prevTitle ? prevTitle : prevLabel
+  $: nextTitleAttr = nextTitle ? nextTitle : nextLabel
 </script>
 
 <hr>
-<p class="text-right mb-30">
-  <a class="font-code" {href} title={titleAttr}>>> {label}</a>
+<p class="text-right clearfix mb-30">
+  {#if prevHref != null}
+    <a
+      class="font-code float-left"
+      href={prevHref}
+      title={prevTitleAttr}>{prevLabel} {'<<'}</a>
+  {/if}
+  {#if nextHref != null}
+    <a
+      class="font-code"
+      href={nextHref}
+      title={nextTitleAttr}>{'>>'} {nextLabel}</a>
+  {/if}
 </p>

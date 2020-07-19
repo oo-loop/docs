@@ -508,4 +508,9 @@ That will also give you the opportunity to set some global settings.</p>
   </Col>
 </Row>
 
-<Pagination href="docs/html-elements/" label="Adjust Html elements" />
+<Pagination
+  prevHref="docs/config/"
+  prevTitle="Read about the Loop config map"
+  prevLabel="The Loop config map"
+  nextHref="docs/html-elements/"
+  nextLabel="Adjust Html elements" />

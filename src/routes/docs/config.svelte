@@ -433,5 +433,9 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 }
 `, 'css')}
 
-
-<Pagination href="docs/importation/" title="Customize your Loop import" label="Use what you need" />
+<Pagination
+  prevHref="docs/"
+  prevLabel="Start using Loop"
+  nextHref="docs/importation/"
+  nextTitle="Customize your Loop import"
+  nextLabel="Use what you need" />
