@@ -14,37 +14,6 @@
   let isVgapless = false
 </script>
 
-<style lang="scss">
-  .dark {
-    color: #c8e2e8;
-    background-color: oo('palette.sample.dark');
-  }
-  .darker {
-    color: #c8e2e8;
-    background-color: oo('palette.sample.darker');
-  }
-  .light { background-color: oo('palette.sample.light'); }
-
-  .small {
-    height: 45px;
-  }
-  .high {
-    height: 150px;
-  }
-  [data-oo-template] {
-    clear: both;
-  }
-  [data-oo-area] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .ground {
-    color: #046886;
-    text-align: center;
-  }
-</style>
-
 <HeadTitle {title} {description}/>
 
 <h1>Template</h1>
@@ -292,4 +261,39 @@ template: (
   </div>
 </div>
 
-<Pagination href="docs/components/button" label="Use Button" />
+<Pagination
+  prevHref="docs/components/column/"
+  prevLabel="Use Column"
+  nextHref="docs/components/button/"
+  nextLabel="Use Button" />
+
+<style lang="scss">
+  .dark {
+    color: #c8e2e8;
+    background-color: oo('palette.sample.dark');
+  }
+  .darker {
+    color: #c8e2e8;
+    background-color: oo('palette.sample.darker');
+  }
+  .light { background-color: oo('palette.sample.light'); }
+
+  .small {
+    height: 45px;
+  }
+  .high {
+    height: 150px;
+  }
+  [data-oo-template] {
+    clear: both;
+  }
+  [data-oo-area] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ground {
+    color: #046886;
+    text-align: center;
+  }
+</style>

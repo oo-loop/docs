@@ -713,4 +713,8 @@ $ooLoop: ooSet('column.variants', (
   </Row>
 </div>
 
-<Pagination href="docs/components/template/" label="Use Template" />
+<Pagination
+  prevHref="docs/components/"
+  prevLabel="Set Components"
+  nextHref="docs/components/template/"
+  nextLabel="Use Template" />

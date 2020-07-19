@@ -181,7 +181,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
   'notification': (
     props: (
       ...,
-      'before' : (
+      '::before' : (
         margin-left: 10px,
         float: right,
         width: 22px,
@@ -196,7 +196,7 @@ I sometimes get confused between the modifiers and the utilities.</p>
         color: #015a31,
         border-color: #83cca9,
         background-color: #c8f7e1,
-        'before': (
+        '::before': (
           content: '\\2713',
           background-color: #4ea97d,
         )
@@ -485,4 +485,8 @@ $ooLoop: ooSet('button.variants.stadium', (
   </div>
 </div>
 
-<Pagination href="docs/components/column/" label="Use Column" />
+<Pagination
+  prevHref="docs/html-elements/"
+  prevLabel="Adjust Html elements"
+  nextHref="docs/components/column/"
+  nextLabel="Use Column" />

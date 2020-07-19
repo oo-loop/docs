@@ -44,82 +44,6 @@
   }
 </script>
 
-<style lang="scss">
-  nav {
-    padding: 15px 20px;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    max-height: 10px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    transition: max-height ease-in-out 300ms;
-
-    @include breakpoint(sm) {
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
-    }
-
-    @include breakpoint(md) {
-      max-height: none;
-
-      @supports (position: sticky) {
-        position: sticky;
-        top: 0;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        max-height: 100vh;
-      }
-
-      margin-right: auto;
-      margin-left: auto;
-      width: 200px;
-
-      background-color: transparent;
-      border-right: oo('hr.props.borderBottom');
-      border-radius: 10% / 50%;
-
-      transition: none;
-    }
-  }
-  .trigger {
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
-
-    display: block;
-    line-height: 1.2;
-    text-align: center;
-    color: #777;
-    cursor: pointer;
-
-    &::after {
-      margin-top: 6px;
-      margin-bottom: 24px;
-      content: '';
-      display: block;
-      border-bottom: 1px solid #cccc;
-    }
-
-    @include breakpoint(md) {
-      display: none;
-    }
-  }
-  ul {
-    font-size: .875rem;
-  }
-  li {
-    margin-bottom: 3px;
-  }
-  a {
-    color: #555;
-  }
-  h4 {
-    color: #808080;
-    font-size: inherit;
-    text-transform: uppercase;
-  }
-</style>
-
 <svelte:window
   on:resize={onResize}
   on:hashchange={onHashChange}
@@ -197,3 +121,79 @@
     </li>
   </ul>
 </nav>
+
+<style lang="scss">
+  nav {
+    padding: 15px 20px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    max-height: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    transition: max-height ease-in-out 300ms;
+
+    @include breakpoint(sm) {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    @include breakpoint(md) {
+      max-height: none;
+
+      @supports (position: sticky) {
+        position: sticky;
+        top: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: 100vh;
+      }
+
+      margin-right: auto;
+      margin-left: auto;
+      width: 200px;
+
+      background-color: transparent;
+      border-right: oo('hr.props.borderBottom');
+      border-radius: 10% / 50%;
+
+      transition: none;
+    }
+  }
+  .trigger {
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    display: block;
+    line-height: 1.2;
+    text-align: center;
+    color: #777;
+    cursor: pointer;
+
+    &::after {
+      margin-top: 6px;
+      margin-bottom: 24px;
+      content: '';
+      display: block;
+      border-bottom: 1px solid #cccc;
+    }
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+  ul {
+    font-size: .875rem;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  a {
+    color: #555;
+  }
+  h4 {
+    color: #808080;
+    font-size: inherit;
+    text-transform: uppercase;
+  }
+</style>
