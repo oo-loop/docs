@@ -96,7 +96,7 @@ body {
 `, 'css')}
 
 <h3 class="mt-30">Pseudo-elements, States and Pseudo-selectors</h3>
-<p>Style any pseudo-elements (<code>before</code>, <code>after</code> etc.) and any CSS states (<code>hover</code>,<code>focus</code> etc.) and other pseudo-selectors (<code>first-child</code> etc.) by using them as property names with a map of CSS properties as value.</p>
+<p>Style any pseudo-elements (<code>before</code>, <code>after</code>... ) and any CSS states (<code>hover</code>,<code>focus</code>... ) and other pseudo-selectors (<code>first-child</code>... ) by using them as property names with a map of CSS properties as value.</p>
 {@html highlight(`
 ... : (
   props: (

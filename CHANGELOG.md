@@ -1,4 +1,11 @@
 # Loop Documentation
+
+## 1.1.1 : 2020-07-30
+- Add previous pagination
+- Update home copy and site description
+- Adjust text for props pseudo-element, states and pseudo-selector
+- Bump lodash from 4.17.15 to 4.17.19
+
 ## 1.1.0
 - Introdude cssModules
 - Update documentation to loop `v1.0.0`
