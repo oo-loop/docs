@@ -41,4 +41,4 @@ The side gutters are also applied.</p>
 </div>
 `, 'html')}
 
-<Pagination href="docs/helpers/visibility/" label="Use Visibility classes" />
+<Pagination page="container" />

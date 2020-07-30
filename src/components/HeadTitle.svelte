@@ -1,6 +1,6 @@
 <script>
   export let title = null;
-  export let description = 'Full customizable Sass framework for a more maintainable and readable CSS';
+  export let description = 'Fully customizable CSS framework, aiming to create a more maintainable and readable code';
 
   $: headTitle = title ? `${title} | ` : '';
 </script>

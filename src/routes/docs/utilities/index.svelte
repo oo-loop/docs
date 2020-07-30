@@ -176,4 +176,4 @@
 .radius-large { border-radius: 1.5rem !important }
 `, 'css')}
 
-<Pagination href="docs/utilities/color/" label="Use Color utilities" />
+<Pagination page="utilities" />

@@ -8,28 +8,6 @@
   const description = 'Hide elements on the page.';
 </script>
 
-<style lang="scss">
-  .display {
-    text-align: center;
-  }
-  :global(.display > div > div:first-child) {
-    flex-basis: 55px;
-    flex-grow: 0;
-    @include breakpoint(sm) {
-      flex-basis: 100px;
-    }
-  }
-  :global(.display > div:first-child div) {
-    white-space: nowrap;
-  }
-  :global(.visible-cell) {
-    background-color: oo('palette.sample.light');
-  }
-  :global(.hidden-cell) {
-    background-color: #d4d6d6;
-  }
-</style>
-
 <HeadTitle {title} {description}/>
 
 <h1>{title}</h1>
@@ -153,4 +131,26 @@ visibility: (
   <li><code>.hidden@screen</code> Hide elements from screen (targetting print only)</li>
 </ul>
 
-<Pagination href="docs/helpers/list/" label="Use List classes" />
+<Pagination page="visibility" />
+
+<style lang="scss">
+  .display {
+    text-align: center;
+  }
+  :global(.display > div > div:first-child) {
+    flex-basis: 55px;
+    flex-grow: 0;
+    @include breakpoint(sm) {
+      flex-basis: 100px;
+    }
+  }
+  :global(.display > div:first-child div) {
+    white-space: nowrap;
+  }
+  :global(.visible-cell) {
+    background-color: oo('palette.sample.light');
+  }
+  :global(.hidden-cell) {
+    background-color: #d4d6d6;
+  }
+</style>

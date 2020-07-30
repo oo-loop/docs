@@ -102,4 +102,4 @@ list: (
   </ul>
 </div>
 
-<Pagination href="docs/helpers/misc/" label="Use Miscellaneous classes" />
+<Pagination page="list" />
