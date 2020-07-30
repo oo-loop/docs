@@ -95,15 +95,24 @@ body {
 }
 `, 'css')}
 
-<h3 class="mt-30">Pseudo-elements</h3>
-<p>Style pseudo-elements <code>before</code> and <code>after</code> by using them as property names with a map of CSS properties as value.</p>
+<h3 class="mt-30">Pseudo-elements, States and Pseudo-selectors</h3>
+<p>Style any pseudo-elements (<code>before</code>, <code>after</code>... ) and any CSS states (<code>hover</code>,<code>focus</code>... ) and other pseudo-selectors (<code>first-child</code>... ) by using them as property names with a map of CSS properties as value.</p>
 {@html highlight(`
 ... : (
   props: (
     font-size: 1rem,
-    'before': (
+    '::before': (
       content: 'Tokyo –',
       font-size: .8rem,
+    ),
+    ':hover': (
+      text-decoration: underline,
+      '::before': (
+        color: #cdcdcd,
+      )
+    )
+    ':first-child': (
+      margin-top: 10px,
     )
   )
 ),
@@ -424,5 +433,4 @@ At this stage, the few available are <code>ooDarken</code> and <code>ooLighten</
 }
 `, 'css')}
 
-
-<Pagination href="docs/importation/" title="Customize your Loop import" label="Use what you need" />
+<Pagination page="config" />

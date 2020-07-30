@@ -1,19 +1,11 @@
 <script>
+  import Pagination from '@/components/Pagination.svelte';
   import HeadTitle from '@/components/HeadTitle.svelte';
   import highlight from '@/utils/highlight.js';
 
   const title = 'Wrapper utilities';
   const description = 'Wrap elements with padding around them.';
 </script>
-
-<style lang="scss">
-.cell {
-  background-color: oo('palette.sample.dark');
-}
-[class^="wrapper"] {
-  background-color: oo('palette.sample.light');
-}
-</style>
 
 <HeadTitle {title} {description}/>
 
@@ -87,3 +79,13 @@ $ooLoop: ooSet('wrapper.screens', (
 
 <p class="info mt-30">In manual mode add the mixin <strong>Wrapper()</strong>.</p>
 
+<Pagination page="wrapper" />
+
+<style lang="scss">
+.cell {
+  background-color: oo('palette.sample.dark');
+}
+[class^="wrapper"] {
+  background-color: oo('palette.sample.light');
+}
+</style>

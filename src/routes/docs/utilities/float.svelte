@@ -7,23 +7,6 @@
   const description = 'Set a floating element on the fly.';
 </script>
 
-<style lang="scss">
-.cell {
-  padding: .5rem;
-  background-color: oo('palette.sample.dark');
-}
-.square {
-  display: block;
-  width: 80px;
-  height: 80px;
-  background-color: oo('palette.sample.light');
-  @include breakpoint(xs) {
-    width: 100px;
-    height: 100px;
-  }
-}
-</style>
-
 <HeadTitle {title} {description}/>
 
 <h1>{title}</h1>
@@ -96,4 +79,21 @@ $ooLoop: ooSet('float.screens', 'sm');
 
 <p class="info mt-30">In manual mode add the mixin <strong>Float()</strong>.</p>
 
-<Pagination href="docs/utilities/wrapper/" label="Use Wrapper utilities" />
+<Pagination page="float" />
+
+<style lang="scss">
+.cell {
+  padding: .5rem;
+  background-color: oo('palette.sample.dark');
+}
+.square {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-color: oo('palette.sample.light');
+  @include breakpoint(xs) {
+    width: 100px;
+    height: 100px;
+  }
+}
+</style>

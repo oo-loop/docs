@@ -44,4 +44,4 @@
 </footer>
 `, 'html')}
 
-<Pagination href="docs/helpers/container/" label="Use Container classes" />
+<Pagination page="helpers" />

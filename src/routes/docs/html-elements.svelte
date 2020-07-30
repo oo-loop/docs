@@ -268,4 +268,4 @@ h6 { font-size: 0.875rem; }
   <span class="h2">A text with the style of an h2</span>
 </div>
 
-<Pagination href="docs/components" label="Set Components" />
+<Pagination page="html-elements" />

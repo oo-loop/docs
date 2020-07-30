@@ -7,10 +7,6 @@
   import highlight from '@/utils/highlight.js'
 </script>
 
-<style lang="scss">
-  .ground { text-align: center; }
-</style>
-
 <HeadTitle title="Button component" description="Modular button component and 100% customizable"/>
 
 <h1>Button</h1>
@@ -200,4 +196,8 @@ It is also possible to <strong>use text-utilites to quickly achieve some adjustm
   <button data-oo-button="primary large">Variant large</button>
 </div>
 
-<Pagination href="docs/components/form/" label="Use Form" />
+<Pagination page="button" />
+
+<style>
+  .ground { text-align: center; }
+</style>

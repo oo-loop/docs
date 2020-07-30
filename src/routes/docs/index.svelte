@@ -89,7 +89,7 @@ $ooLoop: (
 @include Visibility(/** config **/);
 `, 'scss')}
 
-<p class="info">On manual build, each individual include can accept their own config map as parameters.</p>
+<p class="info">On manual build, each individual <strong>@include</strong> can accept their own config map as parameters.</p>
 
 <div class="hr"></div>
 
@@ -113,7 +113,7 @@ $ooLoop: (
 ));
 `, 'scss')}
 
-<p><strong>Remember:</strong> <u class="font-italic">No individual include must be used with</u><code>ooCreate</code> or else the styles will be <u class="font-italic">generated multiple times</u>.</p>
+<p><strong>Remember:</strong> <u class="font-italic">No individual <strong>@include</strong> must be used with</u><code>ooCreate</code> or else the styles will be <u class="font-italic">generated multiple times</u>.</p>
 
 <hr>
 <section class="info">Functions such as <strong class="color-primary">ooSet()</strong>, <strong class="color-primary">ooAdd()</strong>, <strong class="color-primary">ooPipe()</strong> can be used as <em class="font-bold">an alternative</em> or <em class="font-bold">be combined</em> to the configuration being passed to <strong class="color-primary">ooCreate()</strong>.</section>
@@ -225,4 +225,4 @@ $ooLoop: (
 @include ooCreate();
 `, 'scss')}
 
-<Pagination href="docs/config/" title="Read about the Loop config map" label="The Loop config map" />
+<Pagination page="start" />

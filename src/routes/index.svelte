@@ -5,6 +5,58 @@
   import Demo from './_demo/index.svelte'
 </script>
 
+<HeadTitle />
+
+<section class="$style.brand">
+  <img class="$style.logo" alt="" src="logo.svg" height="637">
+  <div>
+    <h1>Loop</h1>
+    <h2>Flexible and Expressive CSS</h2>
+    <p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
+    <code class="large">npm install oo-loop</code>
+  </div>
+</section>
+<Col prop="span8@md self-align-center">
+  <a data-oo-button class="$style.start-button" href="docs/">Start</a>
+  <div class="hr"></div>
+  <h3>Fully customizable</h3>
+  <p>Loop is a fully customizable CSS framework built with Sass. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
+
+  <h3>Single Configuration</h3>
+  <p>No endless list of variables, Loop offers easy management and access to all configuration in a single map.</p>
+
+  <h3>Separation of concerns</h3>
+  <p>Loop differentiates components and utilities with semantic for more clarity</p>
+  <ul>
+  <li><a href="docs/components/" title="Components documentation">oo-componentName</a> / <a href="docs/components/" title="Components documentation">data-oo-componentName</a> for component attributes</li>
+  <li><a href="docs/utilities/" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
+</Col>
+
+<Demo />
+
+<Col prop="span8@md self-align-center">
+  <h3>Why Loop?</h3>
+  <p>
+    The first iteration of Loop <em>(0.4)</em> focused on bringing the minimum to bootstrap any project.
+    Instead of providing any possible existing components, Loop worked towards flexibility and customization to let the developer manage his
+    own set of utilities; thus, making the CSS easier to maintain. Loop also introduced a new component syntax to improve HTML readibility
+    making styling code more expressive and less confusing.
+  </p>
+  <p>
+    <strong>Loop v1</strong> continues into the same philosophy tackling this time the variables situation.
+     What we often get from a css framework, is a list of single variable to customize elements or components properties.
+     The list, trying to cover a multitude of parameters, tends to be exhaustive and can become painful while searching for a possible change.
+  </p>
+  <p>
+    Loop proposes to treat the variables as a single structured map to facilitate its use.
+    As the result, the config map is enabling easy parsing and access to all the data during the development.
+    Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
+    It is simplifying its customization by allowing you to add whatever CSS properties you need without worrying if it's changeable or not.
+  </p>
+  <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="docs/">Let's go</a></p>
+  <hr>
+</Col>
+
 <style lang="scss">
 h1 {
   margin-top: 0;
@@ -115,55 +167,3 @@ h3 {
   }
 }
 </style>
-
-<HeadTitle />
-
-<section class="$style.brand">
-  <img class="$style.logo" alt="" src="logo.svg" height="637">
-  <div>
-    <h1>Loop</h1>
-    <h2>Flexible and Expressive CSS</h2>
-    <p class="font-large mb-30">Aiming to create a more maintainable and readable CSS</p>
-    <code class="large">npm install oo-loop</code>
-  </div>
-</section>
-<Col prop="span8@md self-align-center">
-  <a data-oo-button class="$style.start-button" href="docs/">Start</a>
-  <div class="hr"></div>
-  <h3>Fully customizable</h3>
-  <p>Loop is a fully customizable Sass framework. It gives you complete control on your project to let you create and match your styles with your design needs.</p>
-
-  <h3>Single Configuration</h3>
-  <p>No endless list of variables, Loop offers easy management and access to all configuration in a single map.</p>
-
-  <h3>Separation of concerns</h3>
-  <p>Loop differentiates components and utilities with semantic for more clarity</p>
-  <ul>
-  <li><a href="docs/components/" title="Components documentation">oo-componentName</a> / <a href="docs/components/" title="Components documentation">data-oo-componentName</a> for component attributes</li>
-  <li><a href="docs/utilities/" title="Utilities documentation">.prefixName-valueName</a> for utility classes</li>
-</Col>
-
-<Demo />
-
-<Col prop="span8@md self-align-center">
-  <h3>Why Loop?</h3>
-  <p>
-    The first iteration of Loop <em>(0.4)</em> focused on bringing the minimum to bootstrap any project.
-    Instead of providing any possible existing components, Loop worked towards flexibility and customization to let the developer manage his
-    own set of utilities; thus, making the CSS easier to maintain. Loop also introduced a new component syntax to improve HTML readibility
-    making styling code more expressive and less confusing.
-  </p>
-  <p>
-    <strong>Loop v1</strong> continues into the same philosophy tackling this time the variables situation.
-     What we often get from a css framework, is a list of single variable to customize elements or components properties.
-     The list, trying to cover a multitude of parameters, tends to be exhaustive and can become painful while searching for a possible change.
-  </p>
-  <p>
-    Loop proposes to treat the variables as a single structured map to facilitate its use.
-    As the result, the config map is enabling easy parsing and access to all the data during the development.
-    Moreover, the introduction of properties such <em>props</em> and <em>states</em> offers a complete control over the style of elements and components.
-    It is simplifying its customization by allowing you to add whatever CSS properties you need without worrying if it's changeable or not.
-  </p>
-  <p class="text-center mt-30"><a data-oo-button="primary outline" class="font-medium" href="docs/">Let's go</a></p>
-  <hr>
-</Col>

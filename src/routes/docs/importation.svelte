@@ -508,4 +508,4 @@ That will also give you the opportunity to set some global settings.</p>
   </Col>
 </Row>
 
-<Pagination href="docs/html-elements/" label="Adjust Html elements" />
+<Pagination page="importation" />
