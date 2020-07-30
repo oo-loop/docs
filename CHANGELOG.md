@@ -1,4 +1,10 @@
 # Loop Documentation
+
+## 1.1.1 : 2020-07-30
+- Add previous pagination
+- Update home copy and site description
+- Adjust text for props pseudo-element, states and pseudo-selector
+
 ## 1.1.0
 - Introdude cssModules
 - Update documentation to loop `v1.0.0`
